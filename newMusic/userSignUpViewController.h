@@ -17,6 +17,7 @@
     NSArray *_country;
 }
 
+@property (nonatomic,assign) int select_num;
 @property (weak, nonatomic) IBOutlet UIImageView *userImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *flagImageView;
 - (IBAction)nameText:(id)sender;

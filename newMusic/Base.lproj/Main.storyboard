@@ -232,12 +232,20 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wqx-Lc-DCr">
                                 <rect key="frame" x="26" y="61" width="47" height="46"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5V-Ni-Zsp">
+                                <rect key="frame" x="169" y="68" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="zSq-4X-TLc"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="userImageView" destination="wqx-Lc-DCr" id="GWX-iT-vs4"/>
+                        <outlet property="userNameLabel" destination="G5V-Ni-Zsp" id="12s-EI-yAL"/>
                         <segue destination="ihS-Oc-myU" kind="show" id="uBE-wN-ewQ"/>
                     </connections>
                 </viewController>

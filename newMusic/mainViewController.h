@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+//ViewControllerを継承
+#import "ViewController.h"
+
 @interface mainViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *userImageView;
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 
 @end

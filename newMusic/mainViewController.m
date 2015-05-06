@@ -8,9 +8,6 @@
 
 #import "mainViewController.h"
 
-//ViewControllerを継承
-#import "ViewController.h"
-
 @interface mainViewController ()
 
 @end

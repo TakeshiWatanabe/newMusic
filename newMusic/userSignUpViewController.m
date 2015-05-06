@@ -20,28 +20,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //写真の場所を押された時の処理
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"タイトル" message:@"メッセージ" preferredStyle:UIAlertControllerStyleAlert];
-    
-        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-    
-            // ボタンが押された時の処理
-    
-        }]];
-    
-        [self presentViewController:alert animated:YES completion:^{
-            // 表示完了時の処理
-        }];
-    
     //PickerViewを宣言
     self.genrePickerView.delegate = self;
     
+    NSLog(@"%d",self.select_num);
+    
     //ジャンルの配列
-    _genre = [NSArray arrayWithObjects:
-                    @"総合",@"クラシック",@"ジャズ",@"トランス・ハウス",@"EDM・ダンス",@"ロック",@"ポップ",@"R&B",@"ヒップホップ",@"年代別",@"レゲエ",@"ハワイアン",@"K-pop",@"アニメ・アニソン",@"J-pop",@"歌謡曲",nil];
+    _genre = @[@"総合",@"クラシック",@"ジャズ",@"トランス・ハウス",@"EDM・ダンス",@"ロック",@"ポップ",@"R&B",@"ヒップホップ",@"年代別",@"レゲエ",@"ハワイアン",@"K-pop",@"アニメ・アニソン",@"J-pop",@"歌謡曲"];
     
     //ジャンルを表示する
-    self.inputTextGenre = [NSString stringWithFormat:_genre];
+    self.inputTextGenre = [NSString stringWithFormat:_genre[self.select_num]];
     
     //PickerViewを宣言
     self.countryPickerView.delegate = self;
@@ -124,17 +112,16 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     
     //記入欄に薄く文字を表示する
-    self.inputTextName.placeholder = @"ここに名前を入力してください";
-    self.inputTextGenre.placeholder = @"ここにジャンルが入ります";
-    self.inputTextCountry.placeholder = @"国名";
+//    self.inputTextName.placeholder = @"ここに名前を入力してください";
+//    self.inputTextGenre.placeholder = @"ここにジャンルが入ります";
+//    self.inputTextCountry.placeholder = @"国名";
 }
 
 //pickerViewの横方向の個数を指定
--(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)genrePickerView,countryPickerView{
-    
-    
-    return 1;
-}
+//-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)genrePickerView,countryPickerView{
+//    
+//    return 1;
+//}
 
 //
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
