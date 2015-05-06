@@ -41,7 +41,7 @@
     [super viewDidLoad];
     
     //動画を表示
-    NSURL *filePath = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"IMG_1300" ofType:@"MOV"]];
+    NSURL *filePath = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"IMG_1592" ofType:@"MOV"]];
     
     MPMPlayerController = [[MPMoviePlayerViewController alloc]initWithContentURL:filePath];
     MPMPlayerController.moviePlayer.backgroundView.backgroundColor = [UIColor whiteColor];

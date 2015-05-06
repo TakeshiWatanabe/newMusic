@@ -17,15 +17,6 @@
 
 @implementation userSignUpViewController
 
-//遷移先の処理
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-    }
-    return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -42,11 +33,18 @@
             // 表示完了時の処理
         }];
     
+    //PickerViewを宣言
+    self.genrePickerView.delegate = self;
+    
     //ジャンルの配列
-    _genre = @[@"総合",@"クラシック",@"ジャズ",@"トランス・ハウス",@"EDM・ダンス",@"ロック",@"ポップ",@"R&B",@"ヒップホップ",@"年代別",@"レゲエ",@"ハワイアン",@"K-pop",@"アニメ・アニソン",@"J-pop",@"歌謡曲",];
+    _genre = [NSArray arrayWithObjects:
+                    @"総合",@"クラシック",@"ジャズ",@"トランス・ハウス",@"EDM・ダンス",@"ロック",@"ポップ",@"R&B",@"ヒップホップ",@"年代別",@"レゲエ",@"ハワイアン",@"K-pop",@"アニメ・アニソン",@"J-pop",@"歌謡曲",nil];
     
     //ジャンルを表示する
-    self.inputTextGenre = _genre;
+    self.inputTextGenre = [NSString stringWithFormat:_genre];
+    
+    //PickerViewを宣言
+    self.countryPickerView.delegate = self;
     
     //国名と国旗の配列
     _country = @[@{@"name":@"アイスランド",@"image":@"アイスランド国旗.gif"},
@@ -131,11 +129,14 @@
     self.inputTextCountry.placeholder = @"国名";
 }
 
--(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+//pickerViewの横方向の個数を指定
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)genrePickerView,countryPickerView{
+    
     
     return 1;
 }
 
+//
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     
     int cnt = [_country count];
@@ -170,6 +171,29 @@
 
 - (IBAction)countryText:(id)sender {
 }
+
 - (IBAction)inputTextname:(id)sender {
+}
+
+- (IBAction)picButton:(id)sender {
+    
+    //カメラロールの起動と画像選択処理
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
+    imagePicker.delegate = self;
+    [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+- (void)imagePickerController :(UIImagePickerController *)picker
+        didFinishPickingImage :(UIImage *)image editingInfo :(NSDictionary *)editingInfo {
+    NSLog(@"selected");
+    [self.userImageView setImage:image];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)genreButton:(id)sender {
+}
+
+- (IBAction)countryButton:(id)sender {
 }
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B02594731AF9E7DF00F68C95 /* IMG_1592.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B02594711AF9E7DF00F68C95 /* IMG_1592.MOV */; };
 		B0C283F61AF9B4F500C38707 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C283F51AF9B4F500C38707 /* main.m */; };
 		B0C283F91AF9B4F500C38707 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C283F81AF9B4F500C38707 /* AppDelegate.m */; };
 		B0C283FC1AF9B4F500C38707 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C283FB1AF9B4F500C38707 /* ViewController.m */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B02594721AF9E7DF00F68C95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Base; path = Base.lproj/IMG_1592.MOV; sourceTree = "<group>"; };
 		B0C283F01AF9B4F500C38707 /* newMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C283F41AF9B4F500C38707 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0C283F51AF9B4F500C38707 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		B0C283F31AF9B4F500C38707 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B02594711AF9E7DF00F68C95 /* IMG_1592.MOV */,
 				B0C284241AF9B7B000C38707 /* 世界国旗 */,
 				B0C283F41AF9B4F500C38707 /* Info.plist */,
 				B0C283F51AF9B4F500C38707 /* main.m */,
@@ -228,6 +231,7 @@
 				B0C283FF1AF9B4F500C38707 /* Main.storyboard in Resources */,
 				B0C284041AF9B4F500C38707 /* LaunchScreen.xib in Resources */,
 				B0C284011AF9B4F500C38707 /* Images.xcassets in Resources */,
+				B02594731AF9E7DF00F68C95 /* IMG_1592.MOV in Resources */,
 				B0C2842B1AF9B7B000C38707 /* 世界国旗 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +280,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		B02594711AF9E7DF00F68C95 /* IMG_1592.MOV */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B02594721AF9E7DF00F68C95 /* Base */,
+			);
+			name = IMG_1592.MOV;
+			sourceTree = "<group>";
+		};
 		B0C283FD1AF9B4F500C38707 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

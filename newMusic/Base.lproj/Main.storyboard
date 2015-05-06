@@ -51,7 +51,7 @@
                                 </state>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gjH-cn-P2I">
-                                <rect key="frame" x="16" y="50" width="85" height="77"/>
+                                <rect key="frame" x="16" y="28" width="85" height="77"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="名前" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NpL-US-RS1">
                                 <rect key="frame" x="46" y="152" width="34" height="21"/>
@@ -75,19 +75,11 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I97-zZ-NkV">
-                                <rect key="frame" x="118" y="193" width="186" height="30"/>
+                                <rect key="frame" x="144" y="193" width="160" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="genreText:" destination="Qtn-8s-8d2" eventType="editingDidEnd" id="Xpo-lp-LuP"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y5p-2X-dAz">
-                                <rect key="frame" x="118" y="235" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="countryText:" destination="Qtn-8s-8d2" eventType="editingDidEnd" id="tM4-xb-UyJ"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="コメント" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWI-Wu-xjn">
@@ -121,8 +113,48 @@
                                 </state>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T0j-y0-uOt">
-                                <rect key="frame" x="126" y="231" width="81" height="44"/>
+                                <rect key="frame" x="162" y="229" width="81" height="44"/>
                             </pickerView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qEW-Zt-ZSl">
+                                <rect key="frame" x="137" y="182" width="111" height="50"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZ9-E0-jGW">
+                                <rect key="frame" x="29" y="106" width="60" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="写真選択">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="picButton:" destination="Qtn-8s-8d2" eventType="touchUpInside" id="LCn-TT-7ig"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpd-4i-6vs">
+                                <rect key="frame" x="100" y="193" width="36" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="genreButton:" destination="Qtn-8s-8d2" eventType="touchUpInside" id="6xa-id-XbG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVH-tB-Zqn">
+                                <rect key="frame" x="100" y="231" width="36" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="countryButton:" destination="Qtn-8s-8d2" eventType="touchUpInside" id="lR9-em-E8L"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y5p-2X-dAz">
+                                <rect key="frame" x="144" y="234" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="countryText:" destination="Qtn-8s-8d2" eventType="editingDidEnd" id="tM4-xb-UyJ"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -132,9 +164,11 @@
                         <outlet property="commentTextView" destination="JbQ-a9-t4h" id="map-mE-adp"/>
                         <outlet property="countryPickerView" destination="T0j-y0-uOt" id="dbB-Rt-2mR"/>
                         <outlet property="flagImageView" destination="iTN-xz-kP3" id="wzl-yB-7ct"/>
+                        <outlet property="genrePickerView" destination="qEW-Zt-ZSl" id="LJi-oB-oiZ"/>
                         <outlet property="inputTextCountry" destination="y5p-2X-dAz" id="fpc-go-bA3"/>
                         <outlet property="inputTextGenre" destination="I97-zZ-NkV" id="ihv-KI-VU3"/>
                         <outlet property="inputTextName" destination="QSJ-Wz-hrz" id="LXM-2b-IIJ"/>
+                        <outlet property="picButton" destination="DZ9-E0-jGW" id="LLO-lM-1l5"/>
                         <outlet property="userImageView" destination="gjH-cn-P2I" id="CHh-lk-c47"/>
                     </connections>
                 </viewController>

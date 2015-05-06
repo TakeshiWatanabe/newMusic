@@ -11,11 +11,12 @@
 @interface userSignUpViewController : UIViewController
 
 //宣言
-<UIPageViewControllerDelegate,UIPickerViewDataSource> {
+<UIPageViewControllerDelegate,UIPickerViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate> {
     //配列の宣言
-    NSArray *_country;
     NSArray *_genre;
+    NSArray *_country;
 }
+
 @property (weak, nonatomic) IBOutlet UIImageView *userImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *flagImageView;
 - (IBAction)nameText:(id)sender;
@@ -26,6 +27,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *inputTextName;
 @property (weak, nonatomic) IBOutlet UITextField *inputTextGenre;
 @property (weak, nonatomic) IBOutlet UITextField *inputTextCountry;
-
+@property (weak, nonatomic) IBOutlet UIPickerView *genrePickerView;
+- (IBAction)picButton:(id)sender;
+- (IBAction)genreButton:(id)sender;
+- (IBAction)countryButton:(id)sender;
 
 @end
