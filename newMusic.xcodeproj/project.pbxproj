@@ -20,7 +20,6 @@
 		B0C284291AF9B7B000C38707 /* myPage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B0C284201AF9B7B000C38707 /* myPage.xcdatamodeld */; };
 		B0C2842A1AF9B7B000C38707 /* userSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C284231AF9B7B000C38707 /* userSignUpViewController.m */; };
 		B0C2842B1AF9B7B000C38707 /* 世界国旗 in Resources */ = {isa = PBXBuildFile; fileRef = B0C284241AF9B7B000C38707 /* 世界国旗 */; };
-		B0C2842E1AF9BB7E00C38707 /* IMG_1300.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B0C2842C1AF9BB7E00C38707 /* IMG_1300.MOV */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +56,6 @@
 		B0C284221AF9B7B000C38707 /* userSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userSignUpViewController.h; sourceTree = "<group>"; };
 		B0C284231AF9B7B000C38707 /* userSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userSignUpViewController.m; sourceTree = "<group>"; };
 		B0C284241AF9B7B000C38707 /* 世界国旗 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "世界国旗"; sourceTree = "<group>"; };
-		B0C2842D1AF9BB7E00C38707 /* Base */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Base; path = Base.lproj/IMG_1300.MOV; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,12 +103,12 @@
 				B0C283FB1AF9B4F500C38707 /* ViewController.m */,
 				B0C284221AF9B7B000C38707 /* userSignUpViewController.h */,
 				B0C284231AF9B7B000C38707 /* userSignUpViewController.m */,
+				B0C2841E1AF9B7B000C38707 /* mainViewController.h */,
+				B0C2841F1AF9B7B000C38707 /* mainViewController.m */,
 				B0C284191AF9B7B000C38707 /* detailViewController.h */,
 				B0C2841A1AF9B7B000C38707 /* detailViewController.m */,
 				B0C2841B1AF9B7B000C38707 /* genreViewController.h */,
 				B0C2841C1AF9B7B000C38707 /* genreViewController.m */,
-				B0C2841E1AF9B7B000C38707 /* mainViewController.h */,
-				B0C2841F1AF9B7B000C38707 /* mainViewController.m */,
 				B0C283FD1AF9B4F500C38707 /* Main.storyboard */,
 				B0C284201AF9B7B000C38707 /* myPage.xcdatamodeld */,
 				B0C284001AF9B4F500C38707 /* Images.xcassets */,
@@ -123,7 +121,6 @@
 		B0C283F31AF9B4F500C38707 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B0C2842C1AF9BB7E00C38707 /* IMG_1300.MOV */,
 				B0C284241AF9B7B000C38707 /* 世界国旗 */,
 				B0C283F41AF9B4F500C38707 /* Info.plist */,
 				B0C283F51AF9B4F500C38707 /* main.m */,
@@ -231,7 +228,6 @@
 				B0C283FF1AF9B4F500C38707 /* Main.storyboard in Resources */,
 				B0C284041AF9B4F500C38707 /* LaunchScreen.xib in Resources */,
 				B0C284011AF9B4F500C38707 /* Images.xcassets in Resources */,
-				B0C2842E1AF9BB7E00C38707 /* IMG_1300.MOV in Resources */,
 				B0C2842B1AF9B7B000C38707 /* 世界国旗 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,14 +290,6 @@
 				B0C284031AF9B4F500C38707 /* Base */,
 			);
 			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-		B0C2842C1AF9BB7E00C38707 /* IMG_1300.MOV */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B0C2842D1AF9BB7E00C38707 /* Base */,
-			);
-			name = IMG_1300.MOV;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -462,6 +450,7 @@
 				B0C284151AF9B4F500C38707 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B0C284161AF9B4F500C38707 /* Build configuration list for PBXNativeTarget "newMusicTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +459,7 @@
 				B0C284181AF9B4F500C38707 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
