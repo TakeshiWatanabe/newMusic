@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  newMusic
+//  musicRunning
 //
-//  Created by 渡邉　剛志 on 2015/05/06.
+//  Created by 渡邉　剛志 on 2015/04/30.
 //  Copyright (c) 2015年 渡邉　剛志. All rights reserved.
 //
 
@@ -15,7 +15,7 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application {
     // Override point for customization after application launch.
     return YES;
 }

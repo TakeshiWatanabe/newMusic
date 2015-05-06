@@ -1,8 +1,8 @@
 //
 //  main.m
-//  newMusic
+//  musicRunning
 //
-//  Created by 渡邉　剛志 on 2015/05/06.
+//  Created by 渡邉　剛志 on 2015/04/30.
 //  Copyright (c) 2015年 渡邉　剛志. All rights reserved.
 //
 

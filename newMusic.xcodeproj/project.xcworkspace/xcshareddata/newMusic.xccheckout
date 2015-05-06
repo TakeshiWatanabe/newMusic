@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DABE3976-60B6-4DA7-8F42-E5AB6F291E2C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>newMusic</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>4C8C70212F32400B387C62643432D283078872A8</key>
+		<string>https://github.com/TakeshiWatanabe/newMusic.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>newMusic.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>4C8C70212F32400B387C62643432D283078872A8</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/TakeshiWatanabe/newMusic.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>4C8C70212F32400B387C62643432D283078872A8</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4C8C70212F32400B387C62643432D283078872A8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>newMusic</string>
+		</dict>
+	</array>
+</dict>
+</plist>

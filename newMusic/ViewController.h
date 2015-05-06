@@ -1,16 +1,27 @@
 //
 //  ViewController.h
-//  newMusic
+//  musicRunning
 //
-//  Created by 渡邉　剛志 on 2015/05/06.
+//  Created by 渡邉　剛志 on 2015/04/30.
 //  Copyright (c) 2015年 渡邉　剛志. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import <MediaPlayer/MediaPlayer.h>
 
-@interface ViewController : UIViewController
+//遷移先を宣言
+#import "userSignUpViewController.h"
+#import "mainViewController.h"
 
-@property (weak, nonatomic) IBOutlet UILabel *myLabel;
+@interface ViewController : UIViewController < UIAlertViewDelegate >{
+    
+    UIButton *_mySignUpButton; //SignUpButtonを宣言
+    UIButton *_mySignInButton; //SignInButtonを宣言
+    bool _is_playing;          //ムービーが再生中である事を示す
+}
+//リピート再生するか
+@property (nonatomic,assign) BOOL repeat;
+
 
 @end
 
