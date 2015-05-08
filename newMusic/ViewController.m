@@ -57,8 +57,8 @@
                                                     name:MPMoviePlayerPlaybackDidFinishNotification
                                                   object:MPMPlayerController.moviePlayer];
     
-    MPMPlayerController.moviePlayer.repeatMode = MPMovieRepeatModeOne; //動画を繰り返し再生
-    
+    //動画を繰り返し再生
+    MPMPlayerController.moviePlayer.repeatMode = MPMovieRepeatModeOne;
     MPMPlayerController.moviePlayer.scalingMode = MPMovieScalingModeAspectFill;
     [MPMPlayerController.moviePlayer setFullscreen:YES animated:NO];
     
@@ -93,15 +93,29 @@
 }
 
 //SignUpボタンを押されたら、userSignUpViewControllerに画面遷移
--(void)tapBtn1:(UIButton*)button{
-    userSignUpViewController *secondVC = [[userSignUpViewController alloc] init];
-    [self presentViewController: secondVC animated:YES completion: nil];
+-(void)tapBtn1:(UIButton*)button1{
+    
+    //ボタンを押されたら動画を停止する
+    [MPMPlayerController.moviePlayer stop];
+    userSignUpViewController *secondVC1 = [[userSignUpViewController alloc] init];
+    
+    //インスタンス化
+    secondVC1 = [self.storyboard instantiateViewControllerWithIdentifier:@"userSignUp"];
+    
+    [self presentViewController:secondVC1 animated:YES completion: nil];
 }
 
 //SignIpボタンを押されたら、mainViewControllerに画面遷移
--(void)tapBtn2:(UIButton*)button{
-    mainViewController *secondVC = [[mainViewController alloc] init];
-    [self presentViewController: secondVC animated:YES completion: nil];
+-(void)tapBtn2:(UIButton*)button2{
+    
+    //ボタンを押されたら動画を停止する
+    [MPMPlayerController.moviePlayer stop];
+    mainViewController *secondVC2 = [[mainViewController alloc] init];
+    
+    //インスタンス化
+    secondVC2 = [self.storyboard instantiateViewControllerWithIdentifier:@"userSignIp"];
+    
+    [self presentViewController:secondVC2 animated:YES completion: nil];
 }
 
 - (void)didReceiveMemoryWarning {

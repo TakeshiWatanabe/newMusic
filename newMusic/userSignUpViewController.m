@@ -8,17 +8,30 @@
 
 #import "userSignUpViewController.h"
 
-//ViewControllerを継承
-#import "ViewController.h"
-
 @interface userSignUpViewController ()
 
 @end
 
 @implementation userSignUpViewController
 
+//ボタンに枠を付ける処理
+@synthesize okButton;
+@synthesize noButton;
+@synthesize picButton;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //ボタンに枠を付ける処理
+    okButton.layer.cornerRadius = 10;
+    [[okButton layer] setBorderColor:[[UIColor blackColor]CGColor]];
+    [[okButton layer] setBorderWidth:1.0];
+    noButton.layer.cornerRadius = 10;
+    [[noButton layer] setBorderColor:[[UIColor blackColor]CGColor]];
+    [[noButton layer] setBorderWidth:1.0];
+    picButton.layer.cornerRadius = 10;
+    [[picButton layer] setBorderColor:[[UIColor blackColor]CGColor]];
+    [[picButton layer] setBorderWidth:1.0];
     
     //PickerViewを宣言
     self.genrePickerView.delegate = self;
@@ -29,10 +42,10 @@
     _genre = @[@"総合",@"クラシック",@"ジャズ",@"トランス・ハウス",@"EDM・ダンス",@"ロック",@"ポップ",@"R&B",@"ヒップホップ",@"年代別",@"レゲエ",@"ハワイアン",@"K-pop",@"アニメ・アニソン",@"J-pop",@"歌謡曲"];
     
     //ジャンルを表示する
-    self.inputTextGenre = [NSString stringWithFormat:_genre[self.select_num]];
+    self.nameLabel = [NSString stringWithFormat:_genre[self.select_num]];
     
     //PickerViewを宣言
-    self.countryPickerView.delegate = self;
+    self.genrePickerView.delegate = self;
     
     //国名と国旗の配列
     _country = @[@{@"name":@"アイスランド",@"image":@"アイスランド国旗.gif"},
@@ -102,20 +115,28 @@
                  ];
     
     //国名と国旗を表示する
-    self.inputTextCountry.text = @"name";
-    self.flagImageView.image = @"image";
+    //self.inputTextCountry.text = @"name";
+    //self.flagImageView.image = @"image";
     
     //
-    self.countryPickerView.delegate = self;
+    //self.countryPickerView.delegate = self;
     
     //viewContorrerから画面遷移
     [self dismissViewControllerAnimated:YES completion:nil];
     
     //記入欄に薄く文字を表示する
-//    self.inputTextName.placeholder = @"ここに名前を入力してください";
-//    self.inputTextGenre.placeholder = @"ここにジャンルが入ります";
-//    self.inputTextCountry.placeholder = @"国名";
+    //self.inputTextName.placeholder = @"ここに名前を入力してください";
+    //self.inputTextGenre.placeholder = @"ここにジャンルが入ります";
+    //self.inputTextCountry.placeholder = @"国名";
+    
+    //アニメーションのオブジェクト呼び出し
+    [self backView];
+    
+    //キーボードのオブジェクト呼び出し
+    [self nameText];
+    
 }
+
 
 //pickerViewの横方向の個数を指定
 //-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)genrePickerView,countryPickerView{
@@ -124,16 +145,16 @@
 //}
 
 //
--(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    
-    int cnt = [_country count];
-    return cnt;
-}
-
+//-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+//    
+//    int cnt = [_country count];
+//    return cnt;
+//}
+//
 //ピッカービューのタイトルを変える
--(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    return [_country objectAtIndex:row];
-}
+//-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+//    return [_country objectAtIndex:row];
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -178,9 +199,75 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)genreButton:(id)sender {
+//下からPickerViewをだす処理
+- (IBAction)nameButton:(id)sender {
+    
+    //アニメーションのオブジェクト呼び出し
+    [self backView];
+    
+    //キーボードのオブジェクト呼び出し
+    [self nameText];
+    
 }
 
+- (IBAction)genreButton:(id)sender {
+    
+    //アニメーションのオブジェクト
+    [self backView];
+    
+}
 - (IBAction)countryButton:(id)sender {
 }
+- (IBAction)okButton:(id)sender {
+}
+
+//アニメーション開始の処理
+- (void)backView {
+    
+    //アニメーション開始の処理
+    [UIView beginAnimations:nil context:nil];
+    
+    //アニメーション再生時間（０、１秒で動くように）
+    [UIView setAnimationDuration:0.1];
+    
+    if (_isVisibleFlag){
+        //位置を指定
+        //_myButton.frame = CGRectMake(280, 548, 40, 20);
+        
+        //移動位置を指定
+        _backView.frame = CGRectMake(0, self.view.bounds.size.height,self.view.bounds.size.width , 250);
+        
+        //_isVisibleFlagをNOにする
+        _isVisibleFlag = NO;
+        
+        //[self downObjects];
+        
+    }else{
+        
+        //backViewの移動位置を指定
+        _backView.frame = CGRectMake(0, self.view.bounds.size.height-400,self.view.bounds.size.width , 250);
+        
+        //_isVisibleFlagをYESにする
+        _isVisibleFlag = YES;
+    }
+    //アニメーションここで終了処理
+    [UIView commitAnimations];
+}
+
+//backViewにテキストフィールドを載せる
+- (void)nameText {
+    //テキストフィールドを初期化
+    //view.bounds.size.width(実行しているデバイス画面の幅)
+    _backView = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 40)];
+    
+    //テキストフィールドのbackColor指定
+    _backView.backgroundColor = [UIColor grayColor];
+    
+    //テキストフィールドのReturnキーのイベントとメソッドtapReturnを関連付ける
+    //[_backView addTarget:self action:@selector(tapReturn:) forControlEvents:UIControlEventEditingDidEndOnExit];
+    
+    //backViewに追加する
+    [_backView addSubview:_myText];
+}
+
 @end
