@@ -130,11 +130,15 @@
     //self.inputTextCountry.placeholder = @"国名";
     
     //アニメーションのオブジェクト呼び出し
-    [self backView];
+    //[self backView];
     
     //キーボードのオブジェクト呼び出し
-    [self nameText];
+    //[self nameText];
     
+    
+    
+    _backView.frame = CGRectMake(0, self.view.bounds.size.height,self.view.bounds.size.width , 250);
+    [self.view addSubview:_backView];
 }
 
 
@@ -206,7 +210,7 @@
     [self backView];
     
     //キーボードのオブジェクト呼び出し
-    [self nameText];
+    //[self nameText];
     
 }
 
@@ -256,18 +260,18 @@
 
 //backViewにテキストフィールドを載せる
 - (void)nameText {
-    //テキストフィールドを初期化
-    //view.bounds.size.width(実行しているデバイス画面の幅)
-    _backView = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 40)];
-    
-    //テキストフィールドのbackColor指定
-    _backView.backgroundColor = [UIColor grayColor];
-    
-    //テキストフィールドのReturnキーのイベントとメソッドtapReturnを関連付ける
-    //[_backView addTarget:self action:@selector(tapReturn:) forControlEvents:UIControlEventEditingDidEndOnExit];
-    
-    //backViewに追加する
-    [_backView addSubview:_myText];
+//    //テキストフィールドを初期化
+//    //view.bounds.size.width(実行しているデバイス画面の幅)
+//    _backView = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 40)];
+//    
+//    //テキストフィールドのbackColor指定
+//    _backView.backgroundColor = [UIColor grayColor];
+//    
+//    //テキストフィールドのReturnキーのイベントとメソッドtapReturnを関連付ける
+//    //[_backView addTarget:self action:@selector(tapReturn:) forControlEvents:UIControlEventEditingDidEndOnExit];
+//    
+//    //backViewに追加する
+//    //[_backView addSubview:_myText];
 }
 
 @end
