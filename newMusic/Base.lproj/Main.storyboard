@@ -62,13 +62,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JbQ-a9-t4h">
-                                <rect key="frame" x="119" y="291" width="186" height="172"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADd-dK-Ayl">
                                 <rect key="frame" x="58" y="486" width="91" height="30"/>
                                 <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
@@ -77,9 +70,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qEW-Zt-ZSl">
-                                <rect key="frame" x="64" y="305" width="111" height="50"/>
-                            </pickerView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iTN-xz-kP3">
                                 <rect key="frame" x="180" y="224" width="99" height="59"/>
                             </imageView>
@@ -136,21 +126,23 @@
                                     <action selector="picButton:" destination="Qtn-8s-8d2" eventType="touchUpInside" id="LCn-TT-7ig"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qEW-Zt-ZSl">
+                                <rect key="frame" x="24" y="291" width="274" height="107"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="eNU-Ux-4dB"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="commentTextView" destination="JbQ-a9-t4h" id="map-mE-adp"/>
                         <outlet property="flagImageView" destination="iTN-xz-kP3" id="wzl-yB-7ct"/>
-                        <outlet property="genrePickerView" destination="qEW-Zt-ZSl" id="LJi-oB-oiZ"/>
                         <outlet property="genrelabel" destination="gqS-At-Jbh" id="iqF-Dp-Ssj"/>
                         <outlet property="nameLabel" destination="nWd-65-qZh" id="yUC-D9-FhR"/>
                         <outlet property="noButton" destination="ADd-dK-Ayl" id="I4H-7G-mED"/>
                         <outlet property="okButton" destination="32h-xm-eqO" id="kBW-UG-m5H"/>
                         <outlet property="picButton" destination="DZ9-E0-jGW" id="6x5-Fq-oyo"/>
                         <outlet property="userImageView" destination="gjH-cn-P2I" id="CHh-lk-c47"/>
+                        <outlet property="viewPickerView" destination="qEW-Zt-ZSl" id="8dI-9P-Soh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bg5-zn-w3V" userLabel="First Responder" sceneMemberID="firstResponder"/>

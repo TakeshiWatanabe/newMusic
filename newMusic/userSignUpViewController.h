@@ -34,7 +34,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *userImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *flagImageView;
 @property (weak, nonatomic) IBOutlet UITextView *commentTextView;
-@property (weak, nonatomic) IBOutlet UIPickerView *genrePickerView;
+@property (weak, nonatomic) IBOutlet UIPickerView *viewPickerView;
 - (IBAction)nameButton:(id)sender;
 
 - (IBAction)genreButton:(id)sender;
