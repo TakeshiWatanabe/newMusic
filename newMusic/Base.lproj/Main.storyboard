@@ -23,7 +23,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <segue destination="Qtn-8s-8d2" kind="show" identifier="userSignUpViewController" id="dom-3e-x88"/>
-                        <segue destination="opA-2k-ZuU" kind="show" identifier="mainViewController" id="rbO-bZ-0xn"/>
+                        <segue destination="0LV-vd-dwg" kind="show" identifier="mainViewController" id="rbO-bZ-0xn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -73,32 +73,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iTN-xz-kP3">
                                 <rect key="frame" x="180" y="224" width="99" height="59"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWd-65-qZh">
-                                <rect key="frame" x="199" y="79" width="99" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="名前" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWd-65-qZh">
+                                <rect key="frame" x="124" y="76" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJe-WC-Eef">
-                                <rect key="frame" x="118" y="75" width="57" height="30"/>
-                                <state key="normal" title="名前">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="nameButton:" destination="Qtn-8s-8d2" eventType="touchUpInside" id="pDV-2X-yf1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Csc-g5-SXF">
-                                <rect key="frame" x="54" y="174" width="79" height="30"/>
-                                <state key="normal" title="ジャンル">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="genreButton:" destination="Qtn-8s-8d2" eventType="touchUpInside" id="8dd-ou-M41"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReA-Na-1Bh">
                                 <rect key="frame" x="64" y="239" width="58" height="30"/>
                                 <state key="normal" title="国籍">
@@ -109,8 +89,8 @@
                                     <action selector="countryButton:" destination="Qtn-8s-8d2" eventType="touchUpInside" id="ERx-uH-b8s"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqS-At-Jbh">
-                                <rect key="frame" x="186" y="174" width="93" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ジャンル" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqS-At-Jbh">
+                                <rect key="frame" x="73" y="175" width="76" height="25"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -126,18 +106,52 @@
                                     <action selector="picButton:" destination="Qtn-8s-8d2" eventType="touchUpInside" id="LCn-TT-7ig"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qEW-Zt-ZSl">
-                                <rect key="frame" x="24" y="291" width="274" height="107"/>
-                            </pickerView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aWu-Uh-Gqk">
+                                <rect key="frame" x="180" y="72" width="124" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="nameText:" destination="Qtn-8s-8d2" eventType="editingDidEndOnExit" id="eRf-bi-M0w"/>
+                                    <action selector="nameText:" destination="Qtn-8s-8d2" eventType="editingDidEnd" id="iV5-ld-nts"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HSz-1y-F43">
+                                <rect key="frame" x="180" y="170" width="124" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="teZ-5P-1Q8">
+                                <rect key="frame" x="16" y="569" width="288" height="167"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbx-j6-WJs">
+                                        <rect key="frame" x="226" y="0.0" width="37" height="30"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="done:" destination="Qtn-8s-8d2" eventType="touchUpInside" id="COo-oM-cX6"/>
+                                        </connections>
+                                    </button>
+                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qEW-Zt-ZSl">
+                                        <rect key="frame" x="-16" y="30" width="320" height="151"/>
+                                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </pickerView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="eNU-Ux-4dB"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="doneButton" destination="kbx-j6-WJs" id="gFH-eg-EaH"/>
                         <outlet property="flagImageView" destination="iTN-xz-kP3" id="wzl-yB-7ct"/>
+                        <outlet property="genreText" destination="HSz-1y-F43" id="uMs-Yp-lEc"/>
                         <outlet property="genrelabel" destination="gqS-At-Jbh" id="iqF-Dp-Ssj"/>
+                        <outlet property="moveGenreView" destination="teZ-5P-1Q8" id="d3y-U4-l5b"/>
                         <outlet property="nameLabel" destination="nWd-65-qZh" id="yUC-D9-FhR"/>
+                        <outlet property="nameText" destination="aWu-Uh-Gqk" id="PnE-9H-D9a"/>
                         <outlet property="noButton" destination="ADd-dK-Ayl" id="I4H-7G-mED"/>
                         <outlet property="okButton" destination="32h-xm-eqO" id="kBW-UG-m5H"/>
                         <outlet property="picButton" destination="DZ9-E0-jGW" id="6x5-Fq-oyo"/>
@@ -214,6 +228,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="ctz-en-jcH"/>
                     <navigationItem key="navigationItem" id="zSq-4X-TLc"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -224,7 +239,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jSE-vp-JQZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3630" y="342"/>
+            <point key="canvasLocation" x="4442" y="342"/>
         </scene>
         <!--genreViewController-->
         <scene sceneID="BuB-yS-BO1">
@@ -252,7 +267,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dIg-1l-tWx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4210" y="-664"/>
+            <point key="canvasLocation" x="5002" y="-588"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="dda-AG-JJx">
@@ -271,7 +286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dYU-IF-qoc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4210" y="14"/>
+            <point key="canvasLocation" x="5002" y="1450"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="cc0-mA-ltg">
@@ -290,7 +305,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sjs-E7-RIg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4210" y="686"/>
+            <point key="canvasLocation" x="5002" y="754"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="guh-2X-Civ">
@@ -309,7 +324,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xui-Mm-KzV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4210" y="1358"/>
+            <point key="canvasLocation" x="5002" y="70"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Noa-rs-Ik5">
@@ -328,7 +343,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bl6-wY-NYe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4768" y="14"/>
+            <point key="canvasLocation" x="6040" y="-490"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wpa-0J-r7O">
@@ -348,6 +363,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6uX-sD-CZg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1886" y="342"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="5o3-r9-oDi">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="0LV-vd-dwg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="aQG-in-9ok">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="opA-2k-ZuU" kind="relationship" relationship="viewControllers" id="TwV-81-xny"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yF4-sh-e8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3770" y="342"/>
         </scene>
     </scenes>
 </document>

@@ -38,9 +38,6 @@
     //ジャンルの配列
     _genre = @[@"総合",@"クラシック",@"ジャズ",@"トランス・ハウス",@"EDM・ダンス",@"ロック",@"ポップ",@"R&B",@"ヒップホップ",@"年代別",@"レゲエ",@"ハワイアン",@"K-pop",@"アニメ・アニソン",@"J-pop",@"歌謡曲"];
     
-    //ジャンルを表示する
-    //self.nameLabel = [NSString stringWithFormat:_genre[self.select_num]];
-    
     //国名と国旗の配列
     _country = @[@{@"name":@"アイスランド",@"image":@"アイスランド国旗.gif"},
                  @{@"name":@"アイルランド",@"image":@"アイルランド国旗.gif"},
@@ -118,63 +115,122 @@
     //viewContorrerから画面遷移
     [self dismissViewControllerAnimated:YES completion:nil];
     
-    //記入欄に薄く文字を表示する
-    //self.inputTextName.placeholder = @"ここに名前を入力してください";
-    //self.inputTextGenre.placeholder = @"ここにジャンルが入ります";
+    // textFieldのDelegate通知を受け取る
+    self.nameText.delegate = self;
+    self.genreText.delegate = self;
+    
+    //nameとgenreの記入欄に薄く文字を表示する
+    self.nameText.placeholder = @"ここをタップ";
+    self.genreText.placeholder = @"ここをタップ";
+    
+    
+    //テキストフィールドのReturnキーのイベントとメソッドtapReturnを関連付ける
+    //[_nameText addTarget:self action:@selector(namtext:) forControlEvents:UIControlEventEditingDidEndOnExit];
+    
+    
     //self.inputTextCountry.placeholder = @"国名";
-    
-    //backViewの初期化
-    _backView = [UIView new];
-    
-    //backViewの出てくる位置指定
-    _backView.frame = CGRectMake(0, self.view.bounds.size.height,self.view.bounds.size.width , 250);
-    
-    //ボタンの表示文字色（透明度）を設定  []の中で細かく色の指定する
-    [_backView setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.7]];
 
-    [self.view addSubview:_backView];
-    
-    //キーボードを表示
-    //self.nameLabel = self;
     
     //最初は非表示なのでNO
     _isVisibleFlag = NO;
+    
+    self.genreText.delegate = self;
+    
+    self.viewPickerView.delegate = self;
+    //self.viewPickerView.dataSource = self;
+    
+    //ジャンルpickerViewのスタート位置
+    self.moveGenreView.center = CGPointMake(160, 800);
+}
+
+
+//name
+//エンターキーでキーボードを隠す
+- (BOOL)textFieldShouldReturn:(UITextField *)nameText;
+{
+    [nameText resignFirstResponder];
+    return YES;
+}
+
+//genre
+//キーボードを出さない処理
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    
+    NSLog(@"%d",textField.tag);
+    if (textField.tag == 0){
+        return YES;
+    } else {
+        [self showPicker];
+        return NO;
+    }
+}
+
+// ピッカーが下から出るアニメーション
+- (void)showPicker {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.1];
+    [UIView setAnimationDelegate:self];
+    self.moveGenreView.center = CGPointMake(160, 320);
+    [UIView commitAnimations];
+    
+    // 右上にdoneボタン
+    if (!self.navigationItem.rightBarButtonItem) {
+        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
+        [self.navigationItem setRightBarButtonItem:doneButton animated:YES];
+        [doneButton class];
+    }
+}
+
+// ピッカーが下に隠れるアニメーション
+- (void)hidePicker {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.1];
+    [UIView setAnimationDelegate:self];
+    self.moveGenreView.center = CGPointMake(160, 700);
+    [UIView commitAnimations];
+    
+    // doneボタンを消す
+    [self.navigationItem setRightBarButtonItem:nil animated:YES];
+}
+
+// ピッカーしまう
+- (void)done:(id)sender {
+    [self hidePicker];
+}
+
+// ピッカー表示開始
+- (BOOL)genreText:(UITextField *)textField {
+    [self showPicker];
+    return NO;
 }
 
 //pickerViewの横方向の個数を指定
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 1;
 }
 
-// pickerViewの縦の長さを決める
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
-{
+ //pickerViewの縦の長さを決める
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     int cnt = [_genre count];
     return cnt;
 }
 
 //ピッカービューの行のタイトルを返す
--(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     return [_genre objectAtIndex:row];
 }
 
-//選択された行番号を取得
--(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-{
+// 配列から要素を取得する
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     NSInteger selectedRow = [pickerView selectedRowInComponent:0];
     NSLog(@"%d",selectedRow);
+    NSLog(@"%@",[_genre objectAtIndex:selectedRow]);
+    _genreText.text = [NSString stringWithFormat:@"%@",[_genre objectAtIndex:row]];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
+//カメラロールの起動と画像選択処理
 - (IBAction)picButton:(id)sender {
-    
-    //カメラロールの起動と画像選択処理
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
     imagePicker.delegate = self;
     [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
@@ -188,96 +244,27 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-//下からPickerViewをだす処理
-- (IBAction)nameButton:(id)sender {
-    
-    //アニメーションのオブジェクト呼び出し
-    [self backView];
-    
-    //キーボードのオブジェクト呼び出し
-    [self newMyText];
-    [self.view endEditing:YES];
-    
-    
+- (IBAction)nameText:(id)sender {
 }
 
-- (IBAction)genreButton:(id)sender {
-    
-    //アニメーションのオブジェクト
-    [self backView];
-    
-    //PickerViewを宣言
-    self.viewPickerView.delegate = self;
-    
-}
 - (IBAction)countryButton:(id)sender {
-    
-    //アニメーションのオブジェクト
-    [self backView];
 }
+
 - (IBAction)okButton:(id)sender {
 }
 
-//アニメーション開始の処理
-- (void)backView {
-    
-    //アニメーション開始の処理
-    [UIView beginAnimations:nil context:nil];
-    
-    //アニメーション再生時間（０、１秒で動くように）
-    [UIView setAnimationDuration:0.1];
-    
-    if (_isVisibleFlag){
-        //位置を指定
-        _backView.frame = CGRectMake(280, 548, 0, 0);
-        
-        //移動位置を指定
-        _backView.frame = CGRectMake(0, self.view.bounds.size.height,self.view.bounds.size.width , 250);
-        
-        //_isVisibleFlagをNOにする
-        _isVisibleFlag = NO;
-        
-        //[self downObjects];
-        
-    }else{
-        
-        //backViewの移動位置を指定
-        _backView.frame = CGRectMake(0, self.view.bounds.size.height-300,self.view.bounds.size.width , 350);
-        
-        //_isVisibleFlagをYESにする
-        _isVisibleFlag = YES;
-    }
-    
-    //アニメーションここで終了処理
-    [UIView commitAnimations];
+- (void)showAreaView:(UIButton*)button
+{
+    //[self.view bringSubviewToFront:_genre]; // 最前面に移動
+//    self.viewPickerView.frame = [[UIScreen mainScreen] bounds];
+//    [UIView animateWithDuration:.20 animations:^{
+//        self..transform = CGAffineTransformMakeTranslation(0, -(AREA_PICKER_ACCESSORY_HEIGHT + AREA_PICKER_HEIGHT));
+//    }];
 }
 
-//backViewにテキストフィールドを載せる
-- (void)newMyText{
-    //テキストフィールドを初期化
-    //view.bounds.size.width(実行しているデバイス画面の幅)
-    _myText = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 40)];
-    
-    //テキストフィールドのbackColor指定
-    _myText.backgroundColor = [UIColor colorWithRed:0.6 green:0.6 blue:0.6 alpha:0.7];
-    
-    //テキストフィールドのReturnキーのイベントとメソッドtapReturnを関連付ける
-    [_myText addTarget:self action:@selector(nameButtonReturn:) forControlEvents:UIControlEventEditingDidEndOnExit];
-    
-    //backViewに追加する
-    [_backView addSubview:_myText];
-    
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
-
-// リターンキーでキーボードを閉じる。 delegate必須
-- (BOOL)_isVisibleFlag:(UITextField *)targetTextField {
-    // viewのy座標を元に戻してキーボードをしまう
-    [UIView animateWithDuration:0.2
-                     animations:^{_backView.frame = CGRectMake(0, 0, _backView.frame.size.width,_backView.frame.size.height);
-                     }];
-    [targetTextField resignFirstResponder];
-    return YES;
-}
-
 
 @end

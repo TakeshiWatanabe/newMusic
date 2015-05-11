@@ -17,7 +17,7 @@
 @interface userSignUpViewController : UIViewController
 
 //宣言
-<UIPageViewControllerDelegate,UIPickerViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIAlertViewDelegate> {
+<UIPageViewControllerDelegate,UIPickerViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIAlertViewDelegate,UITextFieldDelegate> {
     
     //配列の宣言
     NSArray *_genre;
@@ -35,14 +35,16 @@
 @property (weak, nonatomic) IBOutlet UIImageView *flagImageView;
 @property (weak, nonatomic) IBOutlet UITextView *commentTextView;
 @property (weak, nonatomic) IBOutlet UIPickerView *viewPickerView;
-- (IBAction)nameButton:(id)sender;
-
-- (IBAction)genreButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *nameText;
+@property (weak, nonatomic) IBOutlet UITextField *genreText;
 - (IBAction)countryButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *genrelabel;
 @property (weak, nonatomic) IBOutlet UIButton *okButton;
 @property (weak, nonatomic) IBOutlet UIButton *noButton;
 @property (weak, nonatomic) IBOutlet UIButton *picButton;
+@property (weak, nonatomic) IBOutlet UIView *moveGenreView;
+@property (weak, nonatomic) IBOutlet UIButton *doneButton;
 
+- (IBAction)done:(id)sender;
 @end
