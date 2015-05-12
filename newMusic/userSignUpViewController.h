@@ -24,19 +24,20 @@
     NSArray *_country;
     
     //ボタンを押された時にPickerViewをだす
-    BOOL _isVisibleFlag; //true or folesで判断させる
-    UIView *_backView; //backViewの指定
+    BOOL _genreFlag;        //true or folesで判断させる
+    BOOL _isVisibleFlag;    //true or folesで判断させる
+    UIView *_backView;      //backViewの指定
     UILabel *_myLabelInput; //入力された文字を表示
-    UITextField *_myText; //テキストフィールド
+    UITextField *_myText;   //テキストフィールド
 }
 
 @property (nonatomic,assign) int select_num;
 @property (weak, nonatomic) IBOutlet UIImageView *userImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *flagImageView;
 @property (weak, nonatomic) IBOutlet UITextView *commentTextView;
 @property (weak, nonatomic) IBOutlet UIPickerView *viewPickerView;
 @property (weak, nonatomic) IBOutlet UITextField *nameText;
 @property (weak, nonatomic) IBOutlet UITextField *genreText;
+
 - (IBAction)countryButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *genrelabel;
@@ -45,6 +46,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *picButton;
 @property (weak, nonatomic) IBOutlet UIView *moveGenreView;
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
-
+@property (weak, nonatomic) IBOutlet UILabel *countryLabel;
 - (IBAction)done:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *btnCountry;
+@property (weak, nonatomic) IBOutlet UIImageView *countryImage;
+
 @end

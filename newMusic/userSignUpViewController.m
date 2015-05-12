@@ -40,7 +40,7 @@
     
     //国名と国旗の配列
     _country = @[@{@"name":@"アイスランド",@"image":@"アイスランド国旗.gif"},
-                 @{@"name":@"アイルランド",@"image":@"アイルランド国旗.gif"},
+                 @{@"name":@"アイルランド",@"image":@"al.gif"},
                  @{@"name":@"アメリカ",@"image":@"アメリカ国旗.gif"},
                  @{@"name":@"アルゼンチン",@"image":@"アルゼンチン国旗.gif"},
                  @{@"name":@"イギリス",@"image":@"イギリス国旗.gif"},
@@ -51,7 +51,7 @@
                  @{@"name":@"オマーン",@"image":@"オマーン国旗.gif"},
                  @{@"name":@"オランダ",@"image":@"オランダ国旗.gif"},
                  @{@"name":@"ガーナ",@"image":@"ガーナ国旗.gif"},
-                 @{@"nmae":@"カタール",@"image":@"カタール国旗.gif"},
+                 @{@"name":@"カタール",@"image":@"カタール国旗.gif"},
                  @{@"name":@"カナダ",@"image":@"カナダ国旗.gif"},
                  @{@"name":@"カメルーン",@"image":@"カメルーン国旗.gif"},
                  @{@"name":@"ギニア",@"image":@"ギニア国旗.gif"},
@@ -123,31 +123,29 @@
     self.nameText.placeholder = @"ここをタップ";
     self.genreText.placeholder = @"ここをタップ";
     
-    
     //テキストフィールドのReturnキーのイベントとメソッドtapReturnを関連付ける
     //[_nameText addTarget:self action:@selector(namtext:) forControlEvents:UIControlEventEditingDidEndOnExit];
-    
-    
-    //self.inputTextCountry.placeholder = @"国名";
-
     
     //最初は非表示なのでNO
     _isVisibleFlag = NO;
     
-    self.genreText.delegate = self;
-    
     self.viewPickerView.delegate = self;
-    //self.viewPickerView.dataSource = self;
+    self.viewPickerView.dataSource = self;
     
     //ジャンルpickerViewのスタート位置
     self.moveGenreView.center = CGPointMake(160, 800);
+    
+    //countryの国旗を表示
+    //self.countryImage.image = [UIImage imageNamed:_country[objectAtIndex:row][@"image"]];
+    
+    //self.countryImage.image = [UIImage imageNamed:@"al.gif"];
+    //[self.countryImage setImage:[UIImage imageNamed:@"al.gif"] forState:UIControlStateNormal];
 }
 
 
 //name
 //エンターキーでキーボードを隠す
-- (BOOL)textFieldShouldReturn:(UITextField *)nameText;
-{
+- (BOOL)textFieldShouldReturn:(UITextField *)nameText; {
     [nameText resignFirstResponder];
     return YES;
 }
@@ -155,11 +153,14 @@
 //genre
 //キーボードを出さない処理
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    
     NSLog(@"%d",textField.tag);
     if (textField.tag == 0){
+        //name
         return YES;
     } else {
+        //genre
+        _genreFlag = YES;
+        [self.viewPickerView reloadComponent:0];
         [self showPicker];
         return NO;
     }
@@ -209,23 +210,41 @@
     return 1;
 }
 
- //pickerViewの縦の長さを決める
+//pickerViewの縦の長さを決める
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    int cnt = [_genre count];
-    return cnt;
+    
+    //条件で_genreか_countryのpickerViewを出す
+    if (_genreFlag == YES) {
+        int cnt = [_genre count];
+        return cnt;
+    } else {
+        int cnt = [_country count];
+        return cnt;
+    }
 }
 
 //ピッカービューの行のタイトルを返す
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return [_genre objectAtIndex:row];
+    if (_genreFlag == YES) {
+        return [_genre objectAtIndex:row];
+    } else {
+        //配列の国名指定
+        return [_country objectAtIndex:row][@"name"];
+    }
 }
 
 // 配列から要素を取得する
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     NSInteger selectedRow = [pickerView selectedRowInComponent:0];
     NSLog(@"%d",selectedRow);
-    NSLog(@"%@",[_genre objectAtIndex:selectedRow]);
-    _genreText.text = [NSString stringWithFormat:@"%@",[_genre objectAtIndex:row]];
+    if (_genreFlag == YES) {
+        NSLog(@"%@",[_genre objectAtIndex:selectedRow]);
+        _genreText.text = [NSString stringWithFormat:@"%@",[_genre objectAtIndex:row]];
+    } else {
+        NSLog(@"%@",[_country objectAtIndex:selectedRow]);
+        _countryImage.image = [UIImage imageNamed:[_country objectAtIndex:row][@"image"]];
+        //[_countryButton setImage:[UIImage imageNamed:[_country objectAtIndex:selectedRow][@"image"]] forState:UIControlStateNormal];
+    }
 }
 
 
@@ -248,7 +267,18 @@
 }
 
 - (IBAction)countryButton:(id)sender {
+    //self.countryImage.image = [UIImage imageNamed:_country[self.select_num][@"image"]];
+
+    UIImage *flagImage = [UIImage imageNamed:@"al.gif"];
+    
+    [self.countryImage setImage:flagImage];
+    
+    //pickerViewの中身を再設定
+    [self.viewPickerView reloadComponent:0];
+
+    [self showPicker];
 }
+
 
 - (IBAction)okButton:(id)sender {
 }
