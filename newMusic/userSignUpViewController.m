@@ -171,7 +171,7 @@
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.1];
     [UIView setAnimationDelegate:self];
-    self.moveGenreView.center = CGPointMake(160, 320);
+    self.moveGenreView.center = CGPointMake(160, 380);
     [UIView commitAnimations];
     
     // 右上にdoneボタン
@@ -269,7 +269,7 @@
 - (IBAction)countryButton:(id)sender {
     //self.countryImage.image = [UIImage imageNamed:_country[self.select_num][@"image"]];
 
-    UIImage *flagImage = [UIImage imageNamed:@"al.gif"];
+    UIImage *flagImage = [UIImage imageNamed:@"image"];
     
     [self.countryImage setImage:flagImage];
     

@@ -1,18 +1,18 @@
 //
-//  mainViewController.m
-//  musicRunning
+//  searchViewController.m
+//  newMusic
 //
-//  Created by 渡邉　剛志 on 2015/05/03.
+//  Created by 渡邉　剛志 on 2015/05/12.
 //  Copyright (c) 2015年 渡邉　剛志. All rights reserved.
 //
 
-#import "mainViewController.h"
+#import "searchViewController.h"
 
-@interface mainViewController ()
+@interface searchViewController ()
 
 @end
 
-@implementation mainViewController
+@implementation searchViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,12 +34,4 @@
 }
 */
 
-- (IBAction)goodButton:(id)sender {
-}
-
-- (IBAction)listenButton:(id)sender {
-}
-
-- (IBAction)commentButton:(id)sender {
-}
 @end

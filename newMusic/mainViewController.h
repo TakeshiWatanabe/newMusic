@@ -13,6 +13,12 @@
 
 @interface mainViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *userImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *mainImageView;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *musicInformationLabel;
+- (IBAction)goodButton:(id)sender;
+- (IBAction)listenButton:(id)sender;
+- (IBAction)commentButton:(id)sender;
+
 
 @end
