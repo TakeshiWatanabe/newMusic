@@ -107,6 +107,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="ここをタップ" translatesAutoresizingMaskIntoConstraints="NO" id="QnO-4Y-VUN">
+                                <rect key="frame" x="146" y="302" width="158" height="170"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="teZ-5P-1Q8">
                                 <rect key="frame" x="16" y="569" width="288" height="167"/>
                                 <subviews>
@@ -132,20 +138,20 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kuQ-tn-UVk">
-                                <rect key="frame" x="139" y="234" width="27" height="29"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Zn-IJ-IHf">
+                                <rect key="frame" x="180" y="208" width="124" height="72"/>
                                 <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="No Image">
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kuQ-tn-UVk">
+                                <rect key="frame" x="136" y="231" width="36" height="35"/>
+                                <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="No Image" image="クリックボタン.jpeg">
                                     <color key="titleColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="countryButton:" destination="Qtn-8s-8d2" eventType="touchUpInside" id="DIY-Mr-kUt"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Zn-IJ-IHf">
-                                <rect key="frame" x="180" y="208" width="124" height="72"/>
-                                <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -153,6 +159,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="btnCountry" destination="kuQ-tn-UVk" id="XUW-UH-rHL"/>
+                        <outlet property="commentTextView" destination="QnO-4Y-VUN" id="71C-ic-m5V"/>
                         <outlet property="countryImage" destination="5Zn-IJ-IHf" id="i53-P7-3Ar"/>
                         <outlet property="countryLabel" destination="2Xr-f2-ps8" id="zjW-X2-voW"/>
                         <outlet property="doneButton" destination="kbx-j6-WJs" id="gFH-eg-EaH"/>
@@ -189,7 +196,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6uX-sD-CZg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1886" y="341.99999999999994"/>
+            <point key="canvasLocation" x="2002" y="341"/>
         </scene>
         <!--detailViewController-->
         <scene sceneID="ER1-zn-FKc">
@@ -419,6 +426,7 @@
     </scenes>
     <resources>
         <image name="いいねボタン.jpeg" width="231" height="218"/>
+        <image name="クリックボタン.jpeg" width="134" height="134"/>
         <image name="コメント.png" width="160" height="76"/>
         <image name="再生ボタン.jpg" width="256" height="256"/>
     </resources>

@@ -76,6 +76,7 @@
 		B041C7E71B01ECCE00DAF891 /* コメント.png in Resources */ = {isa = PBXBuildFile; fileRef = B041C7E41B01ECCE00DAF891 /* コメント.png */; };
 		B041C7E81B01ECCE00DAF891 /* 再生ボタン.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B041C7E51B01ECCE00DAF891 /* 再生ボタン.jpg */; };
 		B041C7EB1B01EEE500DAF891 /* searchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B041C7EA1B01EEE500DAF891 /* searchViewController.m */; };
+		B041C7EF1B02504200DAF891 /* クリックボタン.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B041C7EE1B02504200DAF891 /* クリックボタン.jpeg */; };
 		B0C283F61AF9B4F500C38707 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C283F51AF9B4F500C38707 /* main.m */; };
 		B0C283F91AF9B4F500C38707 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C283F81AF9B4F500C38707 /* AppDelegate.m */; };
 		B0C283FC1AF9B4F500C38707 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C283FB1AF9B4F500C38707 /* ViewController.m */; };
@@ -170,6 +171,7 @@
 		B041C7E51B01ECCE00DAF891 /* 再生ボタン.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "再生ボタン.jpg"; sourceTree = "<group>"; };
 		B041C7E91B01EEE500DAF891 /* searchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = searchViewController.h; path = ../searchViewController.h; sourceTree = "<group>"; };
 		B041C7EA1B01EEE500DAF891 /* searchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = searchViewController.m; path = ../searchViewController.m; sourceTree = "<group>"; };
+		B041C7EE1B02504200DAF891 /* クリックボタン.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "クリックボタン.jpeg"; sourceTree = "<group>"; };
 		B0C283F01AF9B4F500C38707 /* newMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C283F41AF9B4F500C38707 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0C283F51AF9B4F500C38707 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 		B041C7E21B01ECCE00DAF891 /* 各種ボタン */ = {
 			isa = PBXGroup;
 			children = (
+				B041C7EE1B02504200DAF891 /* クリックボタン.jpeg */,
 				B041C7E31B01ECCE00DAF891 /* いいねボタン.jpeg */,
 				B041C7E41B01ECCE00DAF891 /* コメント.png */,
 				B041C7E51B01ECCE00DAF891 /* 再生ボタン.jpg */,
@@ -452,6 +455,7 @@
 				B041C7D11B01EB0500DAF891 /* メキシコ国旗.gif in Resources */,
 				B041C7C11B01EB0500DAF891 /* パナマ国旗.gif in Resources */,
 				B041C7D71B01EB0500DAF891 /* 中央アフリカ国旗.gif in Resources */,
+				B041C7EF1B02504200DAF891 /* クリックボタン.jpeg in Resources */,
 				B041C7B91B01EB0500DAF891 /* デンマーク国旗.gif in Resources */,
 				B041C7B61B01EB0500DAF891 /* チェコ国旗.gif in Resources */,
 				B041C79E1B01EB0500DAF891 /* イタリア国旗.gif in Resources */,

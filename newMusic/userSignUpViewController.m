@@ -33,8 +33,6 @@
     [[picButton layer] setBorderColor:[[UIColor blackColor]CGColor]];
     [[picButton layer] setBorderWidth:1.0];
     
-    //NSLog(@"%d",self.select_num);
-    
     //ジャンルの配列
     _genre = @[@"総合",@"クラシック",@"ジャズ",@"トランス・ハウス",@"EDM・ダンス",@"ロック",@"ポップ",@"R&B",@"ヒップホップ",@"年代別",@"レゲエ",@"ハワイアン",@"K-pop",@"アニメ・アニソン",@"J-pop",@"歌謡曲"];
     
@@ -105,48 +103,42 @@
                  @{@"name":@"ロシア",@"image":@"ロシア国旗.gif"}
                  ];
     
-    //国名と国旗を表示する
-    //self.inputTextCountry.text = @"name";
-    //self.flagImageView.image = @"image";
-    
-    //
-    //self.countryPickerView.delegate = self;
-    
     //viewContorrerから画面遷移
     [self dismissViewControllerAnimated:YES completion:nil];
     
-    // textFieldのDelegate通知を受け取る
+    //Delegate通知を受け取る
     self.nameText.delegate = self;
     self.genreText.delegate = self;
+    self.commentTextView.delegate = self;
+    self.viewPickerView.delegate = self;
     
     //nameとgenreの記入欄に薄く文字を表示する
     self.nameText.placeholder = @"ここをタップ";
     self.genreText.placeholder = @"ここをタップ";
     
-    //テキストフィールドのReturnキーのイベントとメソッドtapReturnを関連付ける
-    //[_nameText addTarget:self action:@selector(namtext:) forControlEvents:UIControlEventEditingDidEndOnExit];
-    
     //最初は非表示なのでNO
     _isVisibleFlag = NO;
-    
-    self.viewPickerView.delegate = self;
-    self.viewPickerView.dataSource = self;
+    _genreFlag = NO;
     
     //ジャンルpickerViewのスタート位置
     self.moveGenreView.center = CGPointMake(160, 800);
     
-    //countryの国旗を表示
-    //self.countryImage.image = [UIImage imageNamed:_country[objectAtIndex:row][@"image"]];
-    
-    //self.countryImage.image = [UIImage imageNamed:@"al.gif"];
-    //[self.countryImage setImage:[UIImage imageNamed:@"al.gif"] forState:UIControlStateNormal];
+    //[「改行（Return）」キーの設定]
+    self.commentTextView.returnKeyType = UIReturnKeyDone;
 }
 
 
 //name
 //エンターキーでキーボードを隠す
-- (BOOL)textFieldShouldReturn:(UITextField *)nameText; {
+- (BOOL)textFieldShouldReturn1:(UITextField *)nameText; {
     [nameText resignFirstResponder];
+    return YES;
+}
+
+//comment
+//エンターキーでキーボードを隠す
+- (BOOL)textFieldShouldReturn2:(UITextField *)textField {
+    [textField resignFirstResponder];
     return YES;
 }
 
@@ -171,7 +163,7 @@
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.1];
     [UIView setAnimationDelegate:self];
-    self.moveGenreView.center = CGPointMake(160, 380);
+    self.moveGenreView.center = CGPointMake(160, 430);
     [UIView commitAnimations];
     
     // 右上にdoneボタン
@@ -243,10 +235,19 @@
     } else {
         NSLog(@"%@",[_country objectAtIndex:selectedRow]);
         _countryImage.image = [UIImage imageNamed:[_country objectAtIndex:row][@"image"]];
-        //[_countryButton setImage:[UIImage imageNamed:[_country objectAtIndex:selectedRow][@"image"]] forState:UIControlStateNormal];
     }
 }
 
+- (IBAction)countryButton:(id)sender {
+    //国旗を表示する
+    _genreFlag = NO;
+    UIImage *flagImage = [UIImage imageNamed:@"image"];
+    [self.countryImage setImage:flagImage];
+    
+    //pickerViewの中身を再設定
+    [self.viewPickerView reloadComponent:0];
+    [self showPicker];
+}
 
 //カメラロールの起動と画像選択処理
 - (IBAction)picButton:(id)sender {
@@ -266,30 +267,7 @@
 - (IBAction)nameText:(id)sender {
 }
 
-- (IBAction)countryButton:(id)sender {
-    //self.countryImage.image = [UIImage imageNamed:_country[self.select_num][@"image"]];
-
-    UIImage *flagImage = [UIImage imageNamed:@"image"];
-    
-    [self.countryImage setImage:flagImage];
-    
-    //pickerViewの中身を再設定
-    [self.viewPickerView reloadComponent:0];
-
-    [self showPicker];
-}
-
-
 - (IBAction)okButton:(id)sender {
-}
-
-- (void)showAreaView:(UIButton*)button
-{
-    //[self.view bringSubviewToFront:_genre]; // 最前面に移動
-//    self.viewPickerView.frame = [[UIScreen mainScreen] bounds];
-//    [UIView animateWithDuration:.20 animations:^{
-//        self..transform = CGAffineTransformMakeTranslation(0, -(AREA_PICKER_ACCESSORY_HEIGHT + AREA_PICKER_HEIGHT));
-//    }];
 }
 
 - (void)didReceiveMemoryWarning {
