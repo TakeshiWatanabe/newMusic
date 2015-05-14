@@ -207,11 +207,11 @@
     
     //条件で_genreか_countryのpickerViewを出す
     if (_genreFlag == YES) {
-        int cnt = [_genre count];
-        return cnt;
+        int count = [_genre count];
+        return count;
     } else {
-        int cnt = [_country count];
-        return cnt;
+        int count = [_country count];
+        return count;
     }
 }
 
@@ -268,6 +268,36 @@
 }
 
 - (IBAction)okButton:(id)sender {
+    //api接続
+    //NSString * urlString = [NSString stringWithFormat:@"http://localhost:8888/GourRepoM2/ApiMovies/returnMoviesJson.json"];
+    
+    NSString *name = self.nameText.text;
+    //NSString *country = self._countryimage.image@[count]@[count];
+    NSString *genre = self.genreText.text;
+    
+    //エンコード
+    NSString* info = [name,genre
+                           stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    NSString *server = [NSString stringWithFormat:@"My Name is %@",self.nameText.text,_country,_genreText.text];
+    
+    NSString *phpUrl = @"http://192.168.33.200/GC5Team/newMusicOnlyServer/serverTomysql.php?name=%@&country=%d&genre=%d&signup=%d";
+    NSString *url = [NSString stringWithFormat:@"%@mention=%@",server,info];
+    
+    // requestを作成
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+    
+    // サーバーとの通信を行う
+    NSData *json = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    
+    // JSONをパース
+    NSArray *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
+    
+    //デコード
+    NSString* reply = [[array valueForKeyPath:@"reply"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    //NSURL * url = [NSURL URLWithString:phpUrl];
+    NSData * data = [NSData dataWithContentsOfURL:phpUrl];
 }
 
 - (void)didReceiveMemoryWarning {
