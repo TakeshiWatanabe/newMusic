@@ -16,7 +16,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    //ジャンルの配列
+    _genre = @[@{@"name":@"総合",@"image":@""},
+               @{@"name":@"クラシック",@"image":@""},
+               @{@"name":@"ジャズ",@"image":@""},
+               @{@"name":@"トランス・ハウス",@"image":@""},
+               @{@"name":@"EDM・ダンス",@"image":@""},
+               @{@"name":@"ロック",@"image":@""},
+               @{@"name":@"ポップ",@"image":@""},
+               @{@"name":@"R&B",@"image":@""},
+               @{@"name":@"ヒップホップ",@"image":@""},
+               @{@"name":@"年代別",@"image":@""},
+               @{@"name":@"レゲエ",@"image":@""},
+               @{@"name":@"ハワイアン",@"image":@""},
+               @{@"name":@"K-pop",@"image":@""},
+               @{@"name":@"アニメ・アニソン",@"image":@""},
+               @{@"name":@"J-pop",@"image":@""},
+               @{@"name":@"歌謡曲",@"image":@""}
+               ];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,4 +52,56 @@
 }
 */
 
+- (IBAction)genreButton:(id)sender {
+}
+
+- (IBAction)artistButton:(id)sender {
+}
+
+- (IBAction)allButton:(id)sender {
+}
+
+- (IBAction)classicButton:(id)sender {
+}
+
+- (IBAction)jazzButton:(id)sender {
+}
+
+- (IBAction)tranceHouseButton:(id)sender {
+}
+- (IBAction)EDMDanceButton:(id)sender {
+}
+
+- (IBAction)rockButton:(id)sender {
+}
+
+- (IBAction)popButton:(id)sender {
+}
+
+- (IBAction)RBButton:(id)sender {
+}
+
+- (IBAction)hiphopButton:(id)sender {
+}
+
+- (IBAction)generationDistinctionButton:(id)sender {
+}
+
+- (IBAction)reggaeButton:(id)sender {
+}
+
+- (IBAction)hawaiianButton:(id)sender {
+}
+
+- (IBAction)kPopButton:(id)sender {
+}
+
+- (IBAction)animeButton:(id)sender {
+}
+
+- (IBAction)jPopButton:(id)sender {
+}
+
+- (IBAction)popularSongButton:(id)sender {
+}
 @end

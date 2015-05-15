@@ -234,6 +234,7 @@
         _genreText.text = [NSString stringWithFormat:@"%@",[_genre objectAtIndex:row]];
     } else {
         NSLog(@"%@",[_country objectAtIndex:selectedRow]);
+        _countryClearLabel.text = [NSString stringWithFormat:[_country objectAtIndex:row][@"name"]];
         _countryImage.image = [UIImage imageNamed:[_country objectAtIndex:row][@"image"]];
     }
 }
@@ -272,14 +273,15 @@
     //NSString * urlString = [NSString stringWithFormat:@"http://localhost:8888/GourRepoM2/ApiMovies/returnMoviesJson.json"];
     
     NSString *name = self.nameText.text;
-    //NSString *country = self._countryimage.image@[count]@[count];
+    NSString *country = self.countryClearLabel.text;
     NSString *genre = self.genreText.text;
     
     //エンコード
-    NSString* info = [name,genre
+    NSString* info = [name,country,genre
                            stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
-    NSString *server = [NSString stringWithFormat:@"My Name is %@",self.nameText.text,_country,_genreText.text];
+    //サーバー接続
+    NSString *server = [NSString stringWithFormat:self.nameText.text,_country,_genreText.text];
     
     NSString *phpUrl = @"http://192.168.33.200/GC5Team/newMusicOnlyServer/serverTomysql.php?name=%@&country=%d&genre=%d&signup=%d";
     NSString *url = [NSString stringWithFormat:@"%@mention=%@",server,info];
@@ -293,11 +295,15 @@
     // JSONをパース
     NSArray *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
     
-    //デコード
+    //デコード  
     NSString* reply = [[array valueForKeyPath:@"reply"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     //NSURL * url = [NSURL URLWithString:phpUrl];
     NSData * data = [NSData dataWithContentsOfURL:phpUrl];
+}
+
+- (IBAction)noButton:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

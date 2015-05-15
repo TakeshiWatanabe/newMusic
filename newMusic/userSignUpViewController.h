@@ -45,6 +45,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *picButton;
 @property (weak, nonatomic) IBOutlet UIView *moveGenreView;
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
+@property (weak, nonatomic) IBOutlet UILabel *countryClearLabel;
 @property (weak, nonatomic) IBOutlet UILabel *countryLabel;
 - (IBAction)done:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *btnCountry;
