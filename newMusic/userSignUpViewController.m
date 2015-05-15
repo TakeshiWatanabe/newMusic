@@ -34,73 +34,89 @@
     [[picButton layer] setBorderWidth:1.0];
     
     //ジャンルの配列
-    _genre = @[@"総合",@"クラシック",@"ジャズ",@"トランス・ハウス",@"EDM・ダンス",@"ロック",@"ポップ",@"R&B",@"ヒップホップ",@"年代別",@"レゲエ",@"ハワイアン",@"K-pop",@"アニメ・アニソン",@"J-pop",@"歌謡曲"];
+    _genre = @[@{@"name":@"総合",@"code":@"all"},
+               @{@"name":@"クラシック",@"code":@"Classic"},
+               @{@"name":@"ジャズ",@"code":@"jazz"},
+               @{@"name":@"トランス・ハウス",@"code":@"tranceHouse"},
+               @{@"name":@"EDM・ダンス",@"code":@"EDMDance"},
+               @{@"name":@"ロック",@"code":@"rock"},
+               @{@"name":@"ポップ",@"code":@"pop"},
+               @{@"name":@"R&B",@"code":@"rb"},
+               @{@"name":@"ヒップホップ",@"code":@"hiphop"},
+               @{@"name":@"年代別",@"code":@"generationDistinction"},
+               @{@"name":@"レゲエ",@"code":@"reggae"},
+               @{@"name":@"ハワイアン",@"code":@"hawaiian"},
+               @{@"naem":@"K-pop",@"code":@"kPop"},
+               @{@"name":@"アニメ・アニソン",@"code":@"anime"},
+               @{@"naem":@"J-pop",@"code":@"jPop"},
+               @{@"name":@"歌謡曲",@"code":@"popularSong"}
+               ];
     
     //国名と国旗の配列
-    _country = @[@{@"name":@"アイスランド",@"image":@"アイスランド国旗.gif"},
-                 @{@"name":@"アイルランド",@"image":@"al.gif"},
-                 @{@"name":@"アメリカ",@"image":@"アメリカ国旗.gif"},
-                 @{@"name":@"アルゼンチン",@"image":@"アルゼンチン国旗.gif"},
-                 @{@"name":@"イギリス",@"image":@"イギリス国旗.gif"},
-                 @{@"name":@"イタリア",@"image":@"イタリア国旗.gif"},
-                 @{@"name":@"インドネシア",@"image":@"インドネシア国旗.gif"},
-                 @{@"name":@"オーストラリア",@"image":@"オーストラリア国旗.gif"},
-                 @{@"name":@"オーストリア",@"image":@"オーストリア国旗.gif"},
-                 @{@"name":@"オマーン",@"image":@"オマーン国旗.gif"},
-                 @{@"name":@"オランダ",@"image":@"オランダ国旗.gif"},
-                 @{@"name":@"ガーナ",@"image":@"ガーナ国旗.gif"},
-                 @{@"name":@"カタール",@"image":@"カタール国旗.gif"},
-                 @{@"name":@"カナダ",@"image":@"カナダ国旗.gif"},
-                 @{@"name":@"カメルーン",@"image":@"カメルーン国旗.gif"},
-                 @{@"name":@"ギニア",@"image":@"ギニア国旗.gif"},
-                 @{@"name":@"キューバ",@"image":@"キューバ国旗.gif"},
-                 @{@"name":@"ギリシャ",@"image":@"ギリシャ国旗.gif"},
-                 @{@"name":@"クウェート",@"image":@"クウェート国旗.gif"},
-                 @{@"name":@"コロンビア",@"image":@"コロンビア国旗.gif"},
-                 @{@"name":@"サモア",@"image":@"サモア国旗.gif"},
-                 @{@"name":@"ジャマイカ",@"image":@"ジャマイカ国旗.gif"},
-                 @{@"name":@"シンガポール",@"image":@"シンガポール国旗.gif"},
-                 @{@"name":@"スイス",@"image":@"スイス国旗.gif"},
-                 @{@"name":@"スウェーデン",@"image":@"スウェーデン国旗.gif"},
-                 @{@"name":@"スペイン",@"image":@"スペイン国旗.gif"},
-                 @{@"name":@"セルビア",@"image":@"セルビア国旗.gif"},
-                 @{@"name":@"タイ",@"image":@"タイ国旗.gif"},
-                 @{@"name":@"韓国",@"image":@"韓国国旗.gif"},
-                 @{@"name":@"チェコ",@"image":@"チェコ国旗.gif"},
-                 @{@"name":@"中央アフリカ",@"image":@"中央アフリカ国旗.gif"},
-                 @{@"name":@"中国",@"image":@"中国国旗.gif"},
-                 @{@"name":@"チュニジア",@"image":@"チュニジア国旗.gif"},
-                 @{@"name":@"チリ",@"image":@"チリ国旗.gif"},
-                 @{@"name":@"デンマーク",@"image":@"デンマーク国旗.gif"},
-                 @{@"name":@"ドイツ",@"image":@"ドイツ国旗.gif"},
-                 @{@"name":@"ドミニカ",@"image":@"ドミニカ国旗.gif"},
-                 @{@"name":@"トルコ",@"image":@"トルコ国旗.gif"},
-                 @{@"name":@"トンガ",@"image":@"トンガ国旗.gif"},
-                 @{@"name":@"日本",@"image":@"日本国旗.gif"},
-                 @{@"name":@"ニュージーランド",@"image":@"ニュージーランド国旗.gif"},
-                 @{@"name":@"ノルウェー",@"image":@"ノルウェー国旗.gif"},
-                 @{@"name":@"パナマ",@"image":@"パナマ国旗.gif"},
-                 @{@"name":@"パラグアイ",@"image":@"パラグアイ国旗.gif"},
-                 @{@"name":@"バルバドス",@"image":@"バルバドス国旗.gif"},
-                 @{@"name":@"ハンガリー",@"image":@"ハンガリー国旗.gif"},
-                 @{@"name":@"フィジー",@"image":@"フィジー国旗.gif"},
-                 @{@"name":@"フィリピン",@"image":@"フィリピン国旗.gif"},
-                 @{@"name":@"フィンランド",@"image":@"フィンランド国旗.gif"},
-                 @{@"name":@"ブラジル",@"image":@"ブラジル国旗.gif"},
-                 @{@"name":@"フランス",@"image":@"フランス国旗.gif"},
-                 @{@"name":@"ベトナム",@"image":@"ベトナム国旗.gif"},
-                 @{@"name":@"ベネズエラ",@"image":@"ベネズエラ国旗.gif"},
-                 @{@"name":@"ベリーズ",@"image":@"ベリーズ国旗.gif"},
-                 @{@"name":@"ペルー",@"image":@"ペルー国旗.gif"},
-                 @{@"name":@"ベルギー",@"image":@"ペルー国旗.gif"},
-                 @{@"name":@"ポーランド",@"image":@"ポーランド国旗.gif"},
-                 @{@"name":@"ポルトガル",@"image":@"ポルトガル国旗.gif"},
-                 @{@"name":@"ホンジュラス",@"image":@"ホンジュラス国旗.gif"},
-                 @{@"name":@"メキシコ",@"image":@"メキシコ国旗.gif"},
-                 @{@"name":@"モナコ",@"image":@"モナコ国旗.gif"},
-                 @{@"name":@"モンゴル",@"image":@"モンゴル国旗.gif"},
-                 @{@"name":@"ルクセンブルク",@"image":@"ルクセンブルク国旗.gif"},
-                 @{@"name":@"ロシア",@"image":@"ロシア国旗.gif"}
+    _country = @[@{@"name":@"アイスランド",@"code":@"Iceland",@"image":@"Iceland.gif"},
+                 @{@"name":@"アイルランド",@"code":@"Ireland",@"image":@"Ireland.gif"},
+                 @{@"name":@"アメリカ",@"code":@"USA",@"image":@"USA.gif"},
+                 @{@"name":@"アルゼンチン",@"code":@"Argentina",@"image":@"Argentina.gif   "},
+                 @{@"name":@"イギリス",@"code":@"UnitedKingdom",@"image":@"UnitedKingdom.gif"},
+                 @{@"name":@"イタリア",@"code":@"Italy",@"image":@"Italy.gif"},
+                 @{@"name":@"インドネシア",@"code":@"Indonesia",@"image":@"Indonesia.gif"},
+                 @{@"name":@"オーストラリア",@"code":@"Australia",@"image":@"Australia.gif"},
+                 @{@"name":@"オーストリア",@"code":@"Austria",@"image":@"Austria.gif"},
+                 @{@"name":@"オマーン",@"code":@"Oman",@"image":@"Oman.gif"},
+                 @{@"name":@"オランダ",@"code":@"Netherlands",@"image":@"Netherlands.gif"},
+                 @{@"name":@"ガーナ",@"code":@"Ghana",@"image":@"Ghana.gif"},
+                 @{@"name":@"カタール",@"code":@"Qatar",@"image":@"Qatar.gif"},
+                 @{@"name":@"カナダ",@"code":@"Canada",@"image":@"Canada.gif"},
+                 @{@"name":@"カメルーン",@"code":@"Cameroon",@"image":@"Cameroon.gif"},
+                 @{@"name":@"ギニア",@"code":@"Guinea",@"image":@"Guinea.gif"},
+                 @{@"name":@"キューバ",@"code":@"Cuba",@"image":@"Cuba.gif"},
+                 @{@"name":@"ギリシャ",@"code":@"Greece",@"image":@"Greece.gif"},
+                 @{@"name":@"クウェート",@"code":@"Kuwait",@"image":@"Kuwait.gif"},
+                 @{@"name":@"コロンビア",@"code":@"Colombia",@"image":@"Colombia.gif"},
+                 @{@"name":@"サモア",@"code":@"Samoa",@"image":@"Samoa.gif"},
+                 @{@"name":@"ジャマイカ",@"code":@"Jamaica",@"image":@"Jamaica.gif"},
+                 @{@"name":@"シンガポール",@"code":@"Singapore",@"image":@"Singapore.gif"},
+                 @{@"name":@"スイス",@"code":@"Switzerland",@"image":@"Switzerland.gif"},
+                 @{@"name":@"スウェーデン",@"code":@"Sweden",@"image":@"Sweden.gif"},
+                 @{@"name":@"スペイン",@"code":@"Spain",@"image":@"Spain.gif"},
+                 @{@"name":@"セルビア",@"code":@"Serbia",@"image":@"Serbia.gif"},
+                 @{@"name":@"タイ",@"code":@"Thailand",@"image":@"Thailand.gif"},
+                 @{@"name":@"韓国",@"code":@"Korea",@"image":@"Korea.gif"},
+                 @{@"name":@"チェコ",@"code":@"Czech",@"image":@"Czech.gif"},
+                 @{@"name":@"中央アフリカ",@"code":@"CentralAfrica",@"image":@"CentralAfrica.gif"},
+                 @{@"name":@"中国",@"code":@"China",@"image":@"China.gif"},
+                 @{@"name":@"チュニジア",@"code":@"Tunisiagif",@"image":@"Tunisiagif.gif"},
+                 @{@"name":@"チリ",@"code":@"Chile",@"image":@"Chile.gif"},
+                 @{@"name":@"デンマーク",@"code":@"Denmark",@"image":@"Denmark.gif"},
+                 @{@"name":@"ドイツ",@"code":@"Germany",@"image":@"Germany.gif"},
+                 @{@"name":@"ドミニカ",@"code":@"Dominica",@"image":@"Dominica.gif"},
+                 @{@"name":@"トルコ",@"code":@"Turkey",@"image":@"Turkey.gif"},
+                 @{@"name":@"トンガ",@"code":@"Tonga",@"image":@"Tonga.gif"},
+                 @{@"name":@"日本",@"code":@"Japan",@"image":@"Japan.gif"},
+                 @{@"name":@"ニュージーランド",@"code":@"NewZealand",@"image":@"NewZealand.gif"},
+                 @{@"name":@"ノルウェー",@"code":@"Norway",@"image":@"Norway.gif"},
+                 @{@"name":@"パナマ",@"code":@"Panama",@"image":@"Panama.gif"},
+                 @{@"name":@"パラグアイ",@"code":@"Paraguay",@"image":@"Paraguay.gif"},
+                 @{@"name":@"バルバドス",@"code":@"Barbados",@"image":@"Barbados.gif"},
+                 @{@"name":@"ハンガリー",@"code":@"Hungary",@"image":@"Hungary.gif"},
+                 @{@"name":@"フィジー",@"code":@"Fiji",@"image":@"Fiji.gif"},
+                 @{@"name":@"フィリピン",@"code":@"Philippines",@"image":@"Philippines.gif"},
+                 @{@"name":@"フィンランド",@"code":@"Finland",@"image":@"Finland.gif"},
+                 @{@"name":@"ブラジル",@"code":@"Brazil",@"image":@"Brazil.gif"},
+                 @{@"name":@"フランス",@"code":@"France",@"image":@"France.gif"},
+                 @{@"name":@"ベトナム",@"code":@"Vietnam",@"image":@"Vietnam.gif"},
+                 @{@"name":@"ベネズエラ",@"code":@"Venezuela",@"image":@"Venezuela.gif"},
+                 @{@"name":@"ベリーズ",@"code":@"Belize",@"image":@"Belize.gif"},
+                 @{@"name":@"ペルー",@"code":@"Peru",@"image":@"Peru.gif"},
+                 @{@"name":@"ベルギー",@"code":@"Belgium",@"image":@"Belgium.gif"},
+                 @{@"name":@"ポーランド",@"code":@"Poland",@"image":@"Poland.gif"},
+                 @{@"name":@"ポルトガル",@"code":@"Portugal",@"image":@"Portugal.gif"},
+                 @{@"name":@"ホンジュラス",@"code":@"Honduras",@"image":@"Honduras.gif"},
+                 @{@"name":@"メキシコ",@"code":@"Mexico",@"image":@"Mexico.gif"},
+                 @{@"name":@"モナコ",@"code":@"Monaco",@"image":@"Monaco.gif"},
+                 @{@"name":@"モンゴル",@"code":@"Mongolia",@"image":@"Mongolia.gif"},
+                 @{@"name":@"ルクセンブルク",@"code":@"Luxembourg",@"image":@"Luxembourg.gif"},
+                 @{@"name":@"ロシア",@"code":@"Russia",@"image":@"Russia.gif"}
                  ];
     
     //viewContorrerから画面遷移
@@ -218,7 +234,7 @@
 //ピッカービューの行のタイトルを返す
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     if (_genreFlag == YES) {
-        return [_genre objectAtIndex:row];
+        return [_genre objectAtIndex:row][@"name"];
     } else {
         //配列の国名指定
         return [_country objectAtIndex:row][@"name"];
@@ -231,10 +247,11 @@
     NSLog(@"%d",selectedRow);
     if (_genreFlag == YES) {
         NSLog(@"%@",[_genre objectAtIndex:selectedRow]);
-        _genreText.text = [NSString stringWithFormat:@"%@",[_genre objectAtIndex:row]];
+        _genreText.text = [NSString stringWithFormat:[_genre objectAtIndex:row][@"name"]];
+        _genreClearLabel.text = [NSString stringWithFormat:[_genre objectAtIndex:row][@"code"]];
     } else {
         NSLog(@"%@",[_country objectAtIndex:selectedRow]);
-        _countryClearLabel.text = [NSString stringWithFormat:[_country objectAtIndex:row][@"name"]];
+        _countryClearLabel.text = [NSString stringWithFormat:[_country objectAtIndex:row][@"code"]];
         _countryImage.image = [UIImage imageNamed:[_country objectAtIndex:row][@"image"]];
     }
 }
@@ -280,14 +297,16 @@
     NSString* info = [name,country,genre
                            stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
-    //サーバー接続
-    NSString *server = [NSString stringWithFormat:self.nameText.text,_country,_genreText.text];
+    //サーバーに情報を送る
+    //NSString *server = [NSString stringWithFormat:self.nameText.text,self.countryClearLabel.text,self.genreText.text];
     
-    NSString *phpUrl = @"http://192.168.33.200/GC5Team/newMusicOnlyServer/serverTomysql.php?name=%@&country=%d&genre=%d&signup=%d";
-    NSString *url = [NSString stringWithFormat:@"%@mention=%@",server,info];
+    NSString *phpUrl = [NSString stringWithFormat:@"http://192.168.33.200/GC5Team/newMusicOnlyServer/serverTomysql.php?name=%@&country=%@&genre=%@",self.nameText.text,self.countryClearLabel.text,self.genreClearLabel.text];
+    
+    
+    //NSString *url = [NSString stringWithFormat:@"%@mention=%@",server,info];
     
     // requestを作成
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:phpUrl]];
     
     // サーバーとの通信を行う
     NSData *json = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];

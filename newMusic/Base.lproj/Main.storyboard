@@ -148,7 +148,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kuQ-tn-UVk">
                                 <rect key="frame" x="136" y="231" width="36" height="35"/>
                                 <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="No Image" image="クリックボタン.jpeg">
+                                <state key="normal" title="No Image" image="ClickButton.jpeg">
                                     <color key="titleColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -164,6 +164,12 @@
                                 <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="shadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Acr-0C-7ha">
+                                <rect key="frame" x="221" y="138" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -176,6 +182,7 @@
                         <outlet property="countryImage" destination="5Zn-IJ-IHf" id="i53-P7-3Ar"/>
                         <outlet property="countryLabel" destination="2Xr-f2-ps8" id="zjW-X2-voW"/>
                         <outlet property="doneButton" destination="kbx-j6-WJs" id="gFH-eg-EaH"/>
+                        <outlet property="genreClearLabel" destination="Acr-0C-7ha" id="Qsv-Ki-Spk"/>
                         <outlet property="genreText" destination="HSz-1y-F43" id="uMs-Yp-lEc"/>
                         <outlet property="genrelabel" destination="gqS-At-Jbh" id="iqF-Dp-Ssj"/>
                         <outlet property="moveGenreView" destination="teZ-5P-1Q8" id="d3y-U4-l5b"/>
@@ -273,7 +280,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZpC-Kh-9Z7">
                                 <rect key="frame" x="34" y="445" width="40" height="34"/>
-                                <state key="normal" title="Good" image="いいねボタン.jpeg">
+                                <state key="normal" title="Good" image="goodbutton.jpeg">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -282,7 +289,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fiI-5B-hun">
                                 <rect key="frame" x="131" y="434" width="59" height="51"/>
-                                <state key="normal" title="試聴" image="再生ボタン.jpg">
+                                <state key="normal" title="試聴" image="PlaybackButton.jpg">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -291,7 +298,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tiZ-hx-yMn">
                                 <rect key="frame" x="243" y="445" width="41" height="29"/>
-                                <state key="normal" title="コメント" image="コメント.png">
+                                <state key="normal" title="コメント" image="comentButtoun.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -540,9 +547,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="いいねボタン.jpeg" width="231" height="218"/>
-        <image name="クリックボタン.jpeg" width="134" height="134"/>
-        <image name="コメント.png" width="160" height="76"/>
-        <image name="再生ボタン.jpg" width="256" height="256"/>
+        <image name="ClickButton.jpeg" width="134" height="134"/>
+        <image name="PlaybackButton.jpg" width="256" height="256"/>
+        <image name="comentButtoun.png" width="160" height="76"/>
+        <image name="goodbutton.jpeg" width="231" height="218"/>
     </resources>
 </document>

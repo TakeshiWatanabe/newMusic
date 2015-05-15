@@ -8,76 +8,76 @@
 
 /* Begin PBXBuildFile section */
 		B02594731AF9E7DF00F68C95 /* IMG_1592.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B02594711AF9E7DF00F68C95 /* IMG_1592.MOV */; };
-		B041C7981B01EB0500DAF891 /* al.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7551B01EB0400DAF891 /* al.gif */; };
-		B041C79A1B01EB0500DAF891 /* アイスランド国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7571B01EB0400DAF891 /* アイスランド国旗.gif */; };
-		B041C79B1B01EB0500DAF891 /* アメリカ国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7581B01EB0400DAF891 /* アメリカ国旗.gif */; };
-		B041C79C1B01EB0500DAF891 /* アルゼンチン国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7591B01EB0400DAF891 /* アルゼンチン国旗.gif */; };
-		B041C79D1B01EB0500DAF891 /* イギリス国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C75A1B01EB0400DAF891 /* イギリス国旗.gif */; };
-		B041C79E1B01EB0500DAF891 /* イタリア国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C75B1B01EB0400DAF891 /* イタリア国旗.gif */; };
-		B041C79F1B01EB0500DAF891 /* インドネシア国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C75C1B01EB0400DAF891 /* インドネシア国旗.gif */; };
-		B041C7A01B01EB0500DAF891 /* オマーン国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C75D1B01EB0400DAF891 /* オマーン国旗.gif */; };
-		B041C7A11B01EB0500DAF891 /* オランダ国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C75E1B01EB0400DAF891 /* オランダ国旗.gif */; };
-		B041C7A21B01EB0500DAF891 /* オーストラリア国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C75F1B01EB0400DAF891 /* オーストラリア国旗.gif */; };
-		B041C7A31B01EB0500DAF891 /* オーストリア国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7601B01EB0400DAF891 /* オーストリア国旗.gif */; };
-		B041C7A41B01EB0500DAF891 /* ガーナ国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7611B01EB0400DAF891 /* ガーナ国旗.gif */; };
-		B041C7A51B01EB0500DAF891 /* カタール国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7621B01EB0400DAF891 /* カタール国旗.gif */; };
-		B041C7A61B01EB0500DAF891 /* カナダ国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7631B01EB0400DAF891 /* カナダ国旗.gif */; };
-		B041C7A71B01EB0500DAF891 /* カメルーン国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7641B01EB0400DAF891 /* カメルーン国旗.gif */; };
-		B041C7A81B01EB0500DAF891 /* ギニア国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7651B01EB0400DAF891 /* ギニア国旗.gif */; };
-		B041C7A91B01EB0500DAF891 /* ギリシャ国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7661B01EB0400DAF891 /* ギリシャ国旗.gif */; };
-		B041C7AA1B01EB0500DAF891 /* キューバ国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7671B01EB0400DAF891 /* キューバ国旗.gif */; };
-		B041C7AB1B01EB0500DAF891 /* クウェート国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7681B01EB0400DAF891 /* クウェート国旗.gif */; };
-		B041C7AD1B01EB0500DAF891 /* コロンビア国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C76A1B01EB0400DAF891 /* コロンビア国旗.gif */; };
-		B041C7AE1B01EB0500DAF891 /* サモア国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C76B1B01EB0400DAF891 /* サモア国旗.gif */; };
-		B041C7AF1B01EB0500DAF891 /* ジャマイカ国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C76C1B01EB0400DAF891 /* ジャマイカ国旗.gif */; };
-		B041C7B01B01EB0500DAF891 /* シンガポール国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C76D1B01EB0400DAF891 /* シンガポール国旗.gif */; };
-		B041C7B11B01EB0500DAF891 /* スイス国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C76E1B01EB0500DAF891 /* スイス国旗.gif */; };
-		B041C7B21B01EB0500DAF891 /* スウェーデン国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C76F1B01EB0500DAF891 /* スウェーデン国旗.gif */; };
-		B041C7B31B01EB0500DAF891 /* スペイン国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7701B01EB0500DAF891 /* スペイン国旗.gif */; };
-		B041C7B41B01EB0500DAF891 /* セルビア国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7711B01EB0500DAF891 /* セルビア国旗.gif */; };
-		B041C7B51B01EB0500DAF891 /* タイ国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7721B01EB0500DAF891 /* タイ国旗.gif */; };
-		B041C7B61B01EB0500DAF891 /* チェコ国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7731B01EB0500DAF891 /* チェコ国旗.gif */; };
-		B041C7B71B01EB0500DAF891 /* チュニジア国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7741B01EB0500DAF891 /* チュニジア国旗.gif */; };
-		B041C7B81B01EB0500DAF891 /* チリ国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7751B01EB0500DAF891 /* チリ国旗.gif */; };
-		B041C7B91B01EB0500DAF891 /* デンマーク国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7761B01EB0500DAF891 /* デンマーク国旗.gif */; };
-		B041C7BA1B01EB0500DAF891 /* ドイツ国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7771B01EB0500DAF891 /* ドイツ国旗.gif */; };
-		B041C7BB1B01EB0500DAF891 /* ドミニカ国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7781B01EB0500DAF891 /* ドミニカ国旗.gif */; };
-		B041C7BC1B01EB0500DAF891 /* トルコ国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7791B01EB0500DAF891 /* トルコ国旗.gif */; };
-		B041C7BD1B01EB0500DAF891 /* トンガ国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C77A1B01EB0500DAF891 /* トンガ国旗.gif */; };
-		B041C7BE1B01EB0500DAF891 /* ニュージーランド国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C77B1B01EB0500DAF891 /* ニュージーランド国旗.gif */; };
-		B041C7BF1B01EB0500DAF891 /* ノルウェー国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C77C1B01EB0500DAF891 /* ノルウェー国旗.gif */; };
-		B041C7C01B01EB0500DAF891 /* バルバドス国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C77D1B01EB0500DAF891 /* バルバドス国旗.gif */; };
-		B041C7C11B01EB0500DAF891 /* パナマ国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C77E1B01EB0500DAF891 /* パナマ国旗.gif */; };
-		B041C7C21B01EB0500DAF891 /* パラグアイ国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C77F1B01EB0500DAF891 /* パラグアイ国旗.gif */; };
-		B041C7C31B01EB0500DAF891 /* ハンガリー国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7801B01EB0500DAF891 /* ハンガリー国旗.gif */; };
-		B041C7C41B01EB0500DAF891 /* ブラジル国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7811B01EB0500DAF891 /* ブラジル国旗.gif */; };
-		B041C7C51B01EB0500DAF891 /* フィジー国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7821B01EB0500DAF891 /* フィジー国旗.gif */; };
-		B041C7C61B01EB0500DAF891 /* フィリピン国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7831B01EB0500DAF891 /* フィリピン国旗.gif */; };
-		B041C7C71B01EB0500DAF891 /* フィンランド国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7841B01EB0500DAF891 /* フィンランド国旗.gif */; };
-		B041C7C81B01EB0500DAF891 /* フランス国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7851B01EB0500DAF891 /* フランス国旗.gif */; };
-		B041C7C91B01EB0500DAF891 /* ベトナム国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7861B01EB0500DAF891 /* ベトナム国旗.gif */; };
-		B041C7CA1B01EB0500DAF891 /* ベネズエラ国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7871B01EB0500DAF891 /* ベネズエラ国旗.gif */; };
-		B041C7CB1B01EB0500DAF891 /* ベリーズ国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7881B01EB0500DAF891 /* ベリーズ国旗.gif */; };
-		B041C7CC1B01EB0500DAF891 /* ベルギー国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7891B01EB0500DAF891 /* ベルギー国旗.gif */; };
-		B041C7CD1B01EB0500DAF891 /* ペルー国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C78A1B01EB0500DAF891 /* ペルー国旗.gif */; };
-		B041C7CE1B01EB0500DAF891 /* ポルトガル国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C78B1B01EB0500DAF891 /* ポルトガル国旗.gif */; };
-		B041C7CF1B01EB0500DAF891 /* ポーランド国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C78C1B01EB0500DAF891 /* ポーランド国旗.gif */; };
-		B041C7D01B01EB0500DAF891 /* ホンジュラス国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C78D1B01EB0500DAF891 /* ホンジュラス国旗.gif */; };
-		B041C7D11B01EB0500DAF891 /* メキシコ国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C78E1B01EB0500DAF891 /* メキシコ国旗.gif */; };
-		B041C7D21B01EB0500DAF891 /* モナコ国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C78F1B01EB0500DAF891 /* モナコ国旗.gif */; };
-		B041C7D31B01EB0500DAF891 /* モンゴル国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7901B01EB0500DAF891 /* モンゴル国旗.gif */; };
-		B041C7D41B01EB0500DAF891 /* ルクセンブルク国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7911B01EB0500DAF891 /* ルクセンブルク国旗.gif */; };
-		B041C7D51B01EB0500DAF891 /* ロシア国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7921B01EB0500DAF891 /* ロシア国旗.gif */; };
-		B041C7D61B01EB0500DAF891 /* 中国国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7931B01EB0500DAF891 /* 中国国旗.gif */; };
-		B041C7D71B01EB0500DAF891 /* 中央アフリカ国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7941B01EB0500DAF891 /* 中央アフリカ国旗.gif */; };
-		B041C7D91B01EB0500DAF891 /* 日本国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7961B01EB0500DAF891 /* 日本国旗.gif */; };
-		B041C7DA1B01EB0500DAF891 /* 韓国国旗.gif in Resources */ = {isa = PBXBuildFile; fileRef = B041C7971B01EB0500DAF891 /* 韓国国旗.gif */; };
-		B041C7E61B01ECCE00DAF891 /* いいねボタン.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B041C7E31B01ECCE00DAF891 /* いいねボタン.jpeg */; };
-		B041C7E71B01ECCE00DAF891 /* コメント.png in Resources */ = {isa = PBXBuildFile; fileRef = B041C7E41B01ECCE00DAF891 /* コメント.png */; };
-		B041C7E81B01ECCE00DAF891 /* 再生ボタン.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B041C7E51B01ECCE00DAF891 /* 再生ボタン.jpg */; };
 		B041C7EB1B01EEE500DAF891 /* searchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B041C7EA1B01EEE500DAF891 /* searchViewController.m */; };
-		B041C7EF1B02504200DAF891 /* クリックボタン.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B041C7EE1B02504200DAF891 /* クリックボタン.jpeg */; };
 		B09B2EA41B04CC7300F28BA7 /* IMG_0282.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EA21B04CC7300F28BA7 /* IMG_0282.MOV */; };
+		B09B2EEB1B05931700F28BA7 /* ClickButton.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EA61B05931700F28BA7 /* ClickButton.jpeg */; };
+		B09B2EEC1B05931700F28BA7 /* comentButtoun.png in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EA71B05931700F28BA7 /* comentButtoun.png */; };
+		B09B2EED1B05931700F28BA7 /* goodbutton.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EA81B05931700F28BA7 /* goodbutton.jpeg */; };
+		B09B2EEE1B05931700F28BA7 /* PlaybackButton.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EA91B05931700F28BA7 /* PlaybackButton.jpg */; };
+		B09B2EEF1B05931700F28BA7 /* Argentina.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EAB1B05931700F28BA7 /* Argentina.gif */; };
+		B09B2EF01B05931700F28BA7 /* Australia.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EAC1B05931700F28BA7 /* Australia.gif */; };
+		B09B2EF11B05931700F28BA7 /* Austria.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EAD1B05931700F28BA7 /* Austria.gif */; };
+		B09B2EF21B05931700F28BA7 /* Barbados.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EAE1B05931700F28BA7 /* Barbados.gif */; };
+		B09B2EF31B05931700F28BA7 /* Belgium.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EAF1B05931700F28BA7 /* Belgium.gif */; };
+		B09B2EF41B05931700F28BA7 /* Belize.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EB01B05931700F28BA7 /* Belize.gif */; };
+		B09B2EF51B05931700F28BA7 /* Brazil.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EB11B05931700F28BA7 /* Brazil.gif */; };
+		B09B2EF61B05931700F28BA7 /* Cameroon.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EB21B05931700F28BA7 /* Cameroon.gif */; };
+		B09B2EF71B05931700F28BA7 /* Canada.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EB31B05931700F28BA7 /* Canada.gif */; };
+		B09B2EF81B05931700F28BA7 /* CentralAfrica.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EB41B05931700F28BA7 /* CentralAfrica.gif */; };
+		B09B2EF91B05931700F28BA7 /* Chile.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EB51B05931700F28BA7 /* Chile.gif */; };
+		B09B2EFA1B05931700F28BA7 /* China.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EB61B05931700F28BA7 /* China.gif */; };
+		B09B2EFB1B05931700F28BA7 /* Colombia.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EB71B05931700F28BA7 /* Colombia.gif */; };
+		B09B2EFC1B05931700F28BA7 /* Cuba.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EB81B05931700F28BA7 /* Cuba.gif */; };
+		B09B2EFD1B05931700F28BA7 /* Czech.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EB91B05931700F28BA7 /* Czech.gif */; };
+		B09B2EFE1B05931700F28BA7 /* Denmark.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EBA1B05931700F28BA7 /* Denmark.gif */; };
+		B09B2EFF1B05931700F28BA7 /* Dominica.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EBB1B05931700F28BA7 /* Dominica.gif */; };
+		B09B2F001B05931700F28BA7 /* Fiji.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EBC1B05931700F28BA7 /* Fiji.gif */; };
+		B09B2F011B05931700F28BA7 /* Finland.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EBD1B05931700F28BA7 /* Finland.gif */; };
+		B09B2F021B05931700F28BA7 /* France.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EBE1B05931700F28BA7 /* France.gif */; };
+		B09B2F031B05931700F28BA7 /* Germany.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EBF1B05931700F28BA7 /* Germany.gif */; };
+		B09B2F041B05931700F28BA7 /* Ghana.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EC01B05931700F28BA7 /* Ghana.gif */; };
+		B09B2F051B05931700F28BA7 /* Greece.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EC11B05931700F28BA7 /* Greece.gif */; };
+		B09B2F061B05931700F28BA7 /* Guinea.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EC21B05931700F28BA7 /* Guinea.gif */; };
+		B09B2F071B05931700F28BA7 /* Honduras.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EC31B05931700F28BA7 /* Honduras.gif */; };
+		B09B2F081B05931700F28BA7 /* Hungary.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EC41B05931700F28BA7 /* Hungary.gif */; };
+		B09B2F091B05931700F28BA7 /* Iceland.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EC51B05931700F28BA7 /* Iceland.gif */; };
+		B09B2F0A1B05931700F28BA7 /* Indonesia.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EC61B05931700F28BA7 /* Indonesia.gif */; };
+		B09B2F0B1B05931700F28BA7 /* Ireland.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EC71B05931700F28BA7 /* Ireland.gif */; };
+		B09B2F0C1B05931700F28BA7 /* Italy.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EC81B05931700F28BA7 /* Italy.gif */; };
+		B09B2F0D1B05931700F28BA7 /* Jamaica.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EC91B05931700F28BA7 /* Jamaica.gif */; };
+		B09B2F0E1B05931700F28BA7 /* Japan.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2ECA1B05931700F28BA7 /* Japan.gif */; };
+		B09B2F0F1B05931700F28BA7 /* Korea.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2ECB1B05931700F28BA7 /* Korea.gif */; };
+		B09B2F101B05931700F28BA7 /* Kuwait.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2ECC1B05931700F28BA7 /* Kuwait.gif */; };
+		B09B2F111B05931700F28BA7 /* Luxembourg.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2ECD1B05931700F28BA7 /* Luxembourg.gif */; };
+		B09B2F121B05931700F28BA7 /* Mexico.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2ECE1B05931700F28BA7 /* Mexico.gif */; };
+		B09B2F131B05931700F28BA7 /* Monaco.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2ECF1B05931700F28BA7 /* Monaco.gif */; };
+		B09B2F141B05931700F28BA7 /* Mongolia.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2ED01B05931700F28BA7 /* Mongolia.gif */; };
+		B09B2F151B05931700F28BA7 /* Netherlands.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2ED11B05931700F28BA7 /* Netherlands.gif */; };
+		B09B2F161B05931700F28BA7 /* NewZealand.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2ED21B05931700F28BA7 /* NewZealand.gif */; };
+		B09B2F171B05931700F28BA7 /* Norway.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2ED31B05931700F28BA7 /* Norway.gif */; };
+		B09B2F181B05931700F28BA7 /* Oman.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2ED41B05931700F28BA7 /* Oman.gif */; };
+		B09B2F191B05931700F28BA7 /* Panama.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2ED51B05931700F28BA7 /* Panama.gif */; };
+		B09B2F1A1B05931700F28BA7 /* Paraguay.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2ED61B05931700F28BA7 /* Paraguay.gif */; };
+		B09B2F1B1B05931700F28BA7 /* Peru.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2ED71B05931700F28BA7 /* Peru.gif */; };
+		B09B2F1C1B05931700F28BA7 /* Philippines.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2ED81B05931700F28BA7 /* Philippines.gif */; };
+		B09B2F1D1B05931700F28BA7 /* Poland.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2ED91B05931700F28BA7 /* Poland.gif */; };
+		B09B2F1E1B05931700F28BA7 /* Portugal.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EDA1B05931700F28BA7 /* Portugal.gif */; };
+		B09B2F1F1B05931700F28BA7 /* Qatar.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EDB1B05931700F28BA7 /* Qatar.gif */; };
+		B09B2F201B05931700F28BA7 /* Russia.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EDC1B05931700F28BA7 /* Russia.gif */; };
+		B09B2F211B05931700F28BA7 /* Samoa.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EDD1B05931700F28BA7 /* Samoa.gif */; };
+		B09B2F221B05931700F28BA7 /* Serbia.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EDE1B05931700F28BA7 /* Serbia.gif */; };
+		B09B2F231B05931700F28BA7 /* Singapore.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EDF1B05931700F28BA7 /* Singapore.gif */; };
+		B09B2F241B05931700F28BA7 /* Spain.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EE01B05931700F28BA7 /* Spain.gif */; };
+		B09B2F251B05931700F28BA7 /* Sweden.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EE11B05931700F28BA7 /* Sweden.gif */; };
+		B09B2F261B05931700F28BA7 /* Switzerland.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EE21B05931700F28BA7 /* Switzerland.gif */; };
+		B09B2F271B05931700F28BA7 /* Thailand.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EE31B05931700F28BA7 /* Thailand.gif */; };
+		B09B2F281B05931700F28BA7 /* Tonga.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EE41B05931700F28BA7 /* Tonga.gif */; };
+		B09B2F291B05931700F28BA7 /* Tunisiagif.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EE51B05931700F28BA7 /* Tunisiagif.gif */; };
+		B09B2F2A1B05931800F28BA7 /* Turkey.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EE61B05931700F28BA7 /* Turkey.gif */; };
+		B09B2F2B1B05931800F28BA7 /* UnitedKingdom.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EE71B05931700F28BA7 /* UnitedKingdom.gif */; };
+		B09B2F2C1B05931800F28BA7 /* USA.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EE81B05931700F28BA7 /* USA.gif */; };
+		B09B2F2D1B05931800F28BA7 /* Venezuela.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EE91B05931700F28BA7 /* Venezuela.gif */; };
+		B09B2F2E1B05931800F28BA7 /* Vietnam.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EEA1B05931700F28BA7 /* Vietnam.gif */; };
 		B0C283F61AF9B4F500C38707 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C283F51AF9B4F500C38707 /* main.m */; };
 		B0C283F91AF9B4F500C38707 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C283F81AF9B4F500C38707 /* AppDelegate.m */; };
 		B0C283FC1AF9B4F500C38707 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C283FB1AF9B4F500C38707 /* ViewController.m */; };
@@ -103,77 +103,77 @@
 
 /* Begin PBXFileReference section */
 		B02594721AF9E7DF00F68C95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Base; path = Base.lproj/IMG_1592.MOV; sourceTree = "<group>"; };
-		B041C7551B01EB0400DAF891 /* al.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = al.gif; sourceTree = "<group>"; };
-		B041C7571B01EB0400DAF891 /* アイスランド国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "アイスランド国旗.gif"; sourceTree = "<group>"; };
-		B041C7581B01EB0400DAF891 /* アメリカ国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "アメリカ国旗.gif"; sourceTree = "<group>"; };
-		B041C7591B01EB0400DAF891 /* アルゼンチン国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "アルゼンチン国旗.gif"; sourceTree = "<group>"; };
-		B041C75A1B01EB0400DAF891 /* イギリス国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "イギリス国旗.gif"; sourceTree = "<group>"; };
-		B041C75B1B01EB0400DAF891 /* イタリア国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "イタリア国旗.gif"; sourceTree = "<group>"; };
-		B041C75C1B01EB0400DAF891 /* インドネシア国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "インドネシア国旗.gif"; sourceTree = "<group>"; };
-		B041C75D1B01EB0400DAF891 /* オマーン国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "オマーン国旗.gif"; sourceTree = "<group>"; };
-		B041C75E1B01EB0400DAF891 /* オランダ国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "オランダ国旗.gif"; sourceTree = "<group>"; };
-		B041C75F1B01EB0400DAF891 /* オーストラリア国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "オーストラリア国旗.gif"; sourceTree = "<group>"; };
-		B041C7601B01EB0400DAF891 /* オーストリア国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "オーストリア国旗.gif"; sourceTree = "<group>"; };
-		B041C7611B01EB0400DAF891 /* ガーナ国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ガーナ国旗.gif"; sourceTree = "<group>"; };
-		B041C7621B01EB0400DAF891 /* カタール国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "カタール国旗.gif"; sourceTree = "<group>"; };
-		B041C7631B01EB0400DAF891 /* カナダ国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "カナダ国旗.gif"; sourceTree = "<group>"; };
-		B041C7641B01EB0400DAF891 /* カメルーン国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "カメルーン国旗.gif"; sourceTree = "<group>"; };
-		B041C7651B01EB0400DAF891 /* ギニア国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ギニア国旗.gif"; sourceTree = "<group>"; };
-		B041C7661B01EB0400DAF891 /* ギリシャ国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ギリシャ国旗.gif"; sourceTree = "<group>"; };
-		B041C7671B01EB0400DAF891 /* キューバ国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "キューバ国旗.gif"; sourceTree = "<group>"; };
-		B041C7681B01EB0400DAF891 /* クウェート国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "クウェート国旗.gif"; sourceTree = "<group>"; };
-		B041C76A1B01EB0400DAF891 /* コロンビア国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "コロンビア国旗.gif"; sourceTree = "<group>"; };
-		B041C76B1B01EB0400DAF891 /* サモア国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "サモア国旗.gif"; sourceTree = "<group>"; };
-		B041C76C1B01EB0400DAF891 /* ジャマイカ国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ジャマイカ国旗.gif"; sourceTree = "<group>"; };
-		B041C76D1B01EB0400DAF891 /* シンガポール国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "シンガポール国旗.gif"; sourceTree = "<group>"; };
-		B041C76E1B01EB0500DAF891 /* スイス国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "スイス国旗.gif"; sourceTree = "<group>"; };
-		B041C76F1B01EB0500DAF891 /* スウェーデン国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "スウェーデン国旗.gif"; sourceTree = "<group>"; };
-		B041C7701B01EB0500DAF891 /* スペイン国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "スペイン国旗.gif"; sourceTree = "<group>"; };
-		B041C7711B01EB0500DAF891 /* セルビア国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "セルビア国旗.gif"; sourceTree = "<group>"; };
-		B041C7721B01EB0500DAF891 /* タイ国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "タイ国旗.gif"; sourceTree = "<group>"; };
-		B041C7731B01EB0500DAF891 /* チェコ国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "チェコ国旗.gif"; sourceTree = "<group>"; };
-		B041C7741B01EB0500DAF891 /* チュニジア国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "チュニジア国旗.gif"; sourceTree = "<group>"; };
-		B041C7751B01EB0500DAF891 /* チリ国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "チリ国旗.gif"; sourceTree = "<group>"; };
-		B041C7761B01EB0500DAF891 /* デンマーク国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "デンマーク国旗.gif"; sourceTree = "<group>"; };
-		B041C7771B01EB0500DAF891 /* ドイツ国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ドイツ国旗.gif"; sourceTree = "<group>"; };
-		B041C7781B01EB0500DAF891 /* ドミニカ国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ドミニカ国旗.gif"; sourceTree = "<group>"; };
-		B041C7791B01EB0500DAF891 /* トルコ国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "トルコ国旗.gif"; sourceTree = "<group>"; };
-		B041C77A1B01EB0500DAF891 /* トンガ国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "トンガ国旗.gif"; sourceTree = "<group>"; };
-		B041C77B1B01EB0500DAF891 /* ニュージーランド国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ニュージーランド国旗.gif"; sourceTree = "<group>"; };
-		B041C77C1B01EB0500DAF891 /* ノルウェー国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ノルウェー国旗.gif"; sourceTree = "<group>"; };
-		B041C77D1B01EB0500DAF891 /* バルバドス国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "バルバドス国旗.gif"; sourceTree = "<group>"; };
-		B041C77E1B01EB0500DAF891 /* パナマ国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "パナマ国旗.gif"; sourceTree = "<group>"; };
-		B041C77F1B01EB0500DAF891 /* パラグアイ国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "パラグアイ国旗.gif"; sourceTree = "<group>"; };
-		B041C7801B01EB0500DAF891 /* ハンガリー国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ハンガリー国旗.gif"; sourceTree = "<group>"; };
-		B041C7811B01EB0500DAF891 /* ブラジル国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ブラジル国旗.gif"; sourceTree = "<group>"; };
-		B041C7821B01EB0500DAF891 /* フィジー国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "フィジー国旗.gif"; sourceTree = "<group>"; };
-		B041C7831B01EB0500DAF891 /* フィリピン国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "フィリピン国旗.gif"; sourceTree = "<group>"; };
-		B041C7841B01EB0500DAF891 /* フィンランド国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "フィンランド国旗.gif"; sourceTree = "<group>"; };
-		B041C7851B01EB0500DAF891 /* フランス国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "フランス国旗.gif"; sourceTree = "<group>"; };
-		B041C7861B01EB0500DAF891 /* ベトナム国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ベトナム国旗.gif"; sourceTree = "<group>"; };
-		B041C7871B01EB0500DAF891 /* ベネズエラ国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ベネズエラ国旗.gif"; sourceTree = "<group>"; };
-		B041C7881B01EB0500DAF891 /* ベリーズ国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ベリーズ国旗.gif"; sourceTree = "<group>"; };
-		B041C7891B01EB0500DAF891 /* ベルギー国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ベルギー国旗.gif"; sourceTree = "<group>"; };
-		B041C78A1B01EB0500DAF891 /* ペルー国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ペルー国旗.gif"; sourceTree = "<group>"; };
-		B041C78B1B01EB0500DAF891 /* ポルトガル国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ポルトガル国旗.gif"; sourceTree = "<group>"; };
-		B041C78C1B01EB0500DAF891 /* ポーランド国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ポーランド国旗.gif"; sourceTree = "<group>"; };
-		B041C78D1B01EB0500DAF891 /* ホンジュラス国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ホンジュラス国旗.gif"; sourceTree = "<group>"; };
-		B041C78E1B01EB0500DAF891 /* メキシコ国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "メキシコ国旗.gif"; sourceTree = "<group>"; };
-		B041C78F1B01EB0500DAF891 /* モナコ国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "モナコ国旗.gif"; sourceTree = "<group>"; };
-		B041C7901B01EB0500DAF891 /* モンゴル国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "モンゴル国旗.gif"; sourceTree = "<group>"; };
-		B041C7911B01EB0500DAF891 /* ルクセンブルク国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ルクセンブルク国旗.gif"; sourceTree = "<group>"; };
-		B041C7921B01EB0500DAF891 /* ロシア国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ロシア国旗.gif"; sourceTree = "<group>"; };
-		B041C7931B01EB0500DAF891 /* 中国国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "中国国旗.gif"; sourceTree = "<group>"; };
-		B041C7941B01EB0500DAF891 /* 中央アフリカ国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "中央アフリカ国旗.gif"; sourceTree = "<group>"; };
-		B041C7961B01EB0500DAF891 /* 日本国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "日本国旗.gif"; sourceTree = "<group>"; };
-		B041C7971B01EB0500DAF891 /* 韓国国旗.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "韓国国旗.gif"; sourceTree = "<group>"; };
-		B041C7E31B01ECCE00DAF891 /* いいねボタン.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "いいねボタン.jpeg"; sourceTree = "<group>"; };
-		B041C7E41B01ECCE00DAF891 /* コメント.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "コメント.png"; sourceTree = "<group>"; };
-		B041C7E51B01ECCE00DAF891 /* 再生ボタン.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "再生ボタン.jpg"; sourceTree = "<group>"; };
 		B041C7E91B01EEE500DAF891 /* searchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = searchViewController.h; path = ../searchViewController.h; sourceTree = "<group>"; };
 		B041C7EA1B01EEE500DAF891 /* searchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = searchViewController.m; path = ../searchViewController.m; sourceTree = "<group>"; };
-		B041C7EE1B02504200DAF891 /* クリックボタン.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "クリックボタン.jpeg"; sourceTree = "<group>"; };
 		B09B2EA31B04CC7300F28BA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Base; path = Base.lproj/IMG_0282.MOV; sourceTree = "<group>"; };
+		B09B2EA61B05931700F28BA7 /* ClickButton.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ClickButton.jpeg; sourceTree = "<group>"; };
+		B09B2EA71B05931700F28BA7 /* comentButtoun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comentButtoun.png; sourceTree = "<group>"; };
+		B09B2EA81B05931700F28BA7 /* goodbutton.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = goodbutton.jpeg; sourceTree = "<group>"; };
+		B09B2EA91B05931700F28BA7 /* PlaybackButton.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PlaybackButton.jpg; sourceTree = "<group>"; };
+		B09B2EAB1B05931700F28BA7 /* Argentina.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Argentina.gif; sourceTree = "<group>"; };
+		B09B2EAC1B05931700F28BA7 /* Australia.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Australia.gif; sourceTree = "<group>"; };
+		B09B2EAD1B05931700F28BA7 /* Austria.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Austria.gif; sourceTree = "<group>"; };
+		B09B2EAE1B05931700F28BA7 /* Barbados.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Barbados.gif; sourceTree = "<group>"; };
+		B09B2EAF1B05931700F28BA7 /* Belgium.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Belgium.gif; sourceTree = "<group>"; };
+		B09B2EB01B05931700F28BA7 /* Belize.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Belize.gif; sourceTree = "<group>"; };
+		B09B2EB11B05931700F28BA7 /* Brazil.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Brazil.gif; sourceTree = "<group>"; };
+		B09B2EB21B05931700F28BA7 /* Cameroon.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Cameroon.gif; sourceTree = "<group>"; };
+		B09B2EB31B05931700F28BA7 /* Canada.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Canada.gif; sourceTree = "<group>"; };
+		B09B2EB41B05931700F28BA7 /* CentralAfrica.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = CentralAfrica.gif; sourceTree = "<group>"; };
+		B09B2EB51B05931700F28BA7 /* Chile.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Chile.gif; sourceTree = "<group>"; };
+		B09B2EB61B05931700F28BA7 /* China.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = China.gif; sourceTree = "<group>"; };
+		B09B2EB71B05931700F28BA7 /* Colombia.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Colombia.gif; sourceTree = "<group>"; };
+		B09B2EB81B05931700F28BA7 /* Cuba.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Cuba.gif; sourceTree = "<group>"; };
+		B09B2EB91B05931700F28BA7 /* Czech.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Czech.gif; sourceTree = "<group>"; };
+		B09B2EBA1B05931700F28BA7 /* Denmark.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Denmark.gif; sourceTree = "<group>"; };
+		B09B2EBB1B05931700F28BA7 /* Dominica.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Dominica.gif; sourceTree = "<group>"; };
+		B09B2EBC1B05931700F28BA7 /* Fiji.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Fiji.gif; sourceTree = "<group>"; };
+		B09B2EBD1B05931700F28BA7 /* Finland.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Finland.gif; sourceTree = "<group>"; };
+		B09B2EBE1B05931700F28BA7 /* France.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = France.gif; sourceTree = "<group>"; };
+		B09B2EBF1B05931700F28BA7 /* Germany.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Germany.gif; sourceTree = "<group>"; };
+		B09B2EC01B05931700F28BA7 /* Ghana.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Ghana.gif; sourceTree = "<group>"; };
+		B09B2EC11B05931700F28BA7 /* Greece.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Greece.gif; sourceTree = "<group>"; };
+		B09B2EC21B05931700F28BA7 /* Guinea.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Guinea.gif; sourceTree = "<group>"; };
+		B09B2EC31B05931700F28BA7 /* Honduras.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Honduras.gif; sourceTree = "<group>"; };
+		B09B2EC41B05931700F28BA7 /* Hungary.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Hungary.gif; sourceTree = "<group>"; };
+		B09B2EC51B05931700F28BA7 /* Iceland.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Iceland.gif; sourceTree = "<group>"; };
+		B09B2EC61B05931700F28BA7 /* Indonesia.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Indonesia.gif; sourceTree = "<group>"; };
+		B09B2EC71B05931700F28BA7 /* Ireland.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Ireland.gif; sourceTree = "<group>"; };
+		B09B2EC81B05931700F28BA7 /* Italy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Italy.gif; sourceTree = "<group>"; };
+		B09B2EC91B05931700F28BA7 /* Jamaica.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Jamaica.gif; sourceTree = "<group>"; };
+		B09B2ECA1B05931700F28BA7 /* Japan.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Japan.gif; sourceTree = "<group>"; };
+		B09B2ECB1B05931700F28BA7 /* Korea.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Korea.gif; sourceTree = "<group>"; };
+		B09B2ECC1B05931700F28BA7 /* Kuwait.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Kuwait.gif; sourceTree = "<group>"; };
+		B09B2ECD1B05931700F28BA7 /* Luxembourg.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Luxembourg.gif; sourceTree = "<group>"; };
+		B09B2ECE1B05931700F28BA7 /* Mexico.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Mexico.gif; sourceTree = "<group>"; };
+		B09B2ECF1B05931700F28BA7 /* Monaco.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Monaco.gif; sourceTree = "<group>"; };
+		B09B2ED01B05931700F28BA7 /* Mongolia.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Mongolia.gif; sourceTree = "<group>"; };
+		B09B2ED11B05931700F28BA7 /* Netherlands.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Netherlands.gif; sourceTree = "<group>"; };
+		B09B2ED21B05931700F28BA7 /* NewZealand.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = NewZealand.gif; sourceTree = "<group>"; };
+		B09B2ED31B05931700F28BA7 /* Norway.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Norway.gif; sourceTree = "<group>"; };
+		B09B2ED41B05931700F28BA7 /* Oman.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Oman.gif; sourceTree = "<group>"; };
+		B09B2ED51B05931700F28BA7 /* Panama.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Panama.gif; sourceTree = "<group>"; };
+		B09B2ED61B05931700F28BA7 /* Paraguay.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Paraguay.gif; sourceTree = "<group>"; };
+		B09B2ED71B05931700F28BA7 /* Peru.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Peru.gif; sourceTree = "<group>"; };
+		B09B2ED81B05931700F28BA7 /* Philippines.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Philippines.gif; sourceTree = "<group>"; };
+		B09B2ED91B05931700F28BA7 /* Poland.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Poland.gif; sourceTree = "<group>"; };
+		B09B2EDA1B05931700F28BA7 /* Portugal.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Portugal.gif; sourceTree = "<group>"; };
+		B09B2EDB1B05931700F28BA7 /* Qatar.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Qatar.gif; sourceTree = "<group>"; };
+		B09B2EDC1B05931700F28BA7 /* Russia.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Russia.gif; sourceTree = "<group>"; };
+		B09B2EDD1B05931700F28BA7 /* Samoa.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Samoa.gif; sourceTree = "<group>"; };
+		B09B2EDE1B05931700F28BA7 /* Serbia.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Serbia.gif; sourceTree = "<group>"; };
+		B09B2EDF1B05931700F28BA7 /* Singapore.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Singapore.gif; sourceTree = "<group>"; };
+		B09B2EE01B05931700F28BA7 /* Spain.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Spain.gif; sourceTree = "<group>"; };
+		B09B2EE11B05931700F28BA7 /* Sweden.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Sweden.gif; sourceTree = "<group>"; };
+		B09B2EE21B05931700F28BA7 /* Switzerland.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Switzerland.gif; sourceTree = "<group>"; };
+		B09B2EE31B05931700F28BA7 /* Thailand.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Thailand.gif; sourceTree = "<group>"; };
+		B09B2EE41B05931700F28BA7 /* Tonga.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Tonga.gif; sourceTree = "<group>"; };
+		B09B2EE51B05931700F28BA7 /* Tunisiagif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Tunisiagif.gif; sourceTree = "<group>"; };
+		B09B2EE61B05931700F28BA7 /* Turkey.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Turkey.gif; sourceTree = "<group>"; };
+		B09B2EE71B05931700F28BA7 /* UnitedKingdom.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = UnitedKingdom.gif; sourceTree = "<group>"; };
+		B09B2EE81B05931700F28BA7 /* USA.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = USA.gif; sourceTree = "<group>"; };
+		B09B2EE91B05931700F28BA7 /* Venezuela.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Venezuela.gif; sourceTree = "<group>"; };
+		B09B2EEA1B05931700F28BA7 /* Vietnam.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Vietnam.gif; sourceTree = "<group>"; };
 		B0C283F01AF9B4F500C38707 /* newMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C283F41AF9B4F500C38707 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0C283F51AF9B4F500C38707 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -214,86 +214,86 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B041C7541B01EB0400DAF891 /* 世界国旗 */ = {
+		B09B2EA51B05931700F28BA7 /* 各種ボタン */ = {
 			isa = PBXGroup;
 			children = (
-				B041C7551B01EB0400DAF891 /* al.gif */,
-				B041C7571B01EB0400DAF891 /* アイスランド国旗.gif */,
-				B041C7581B01EB0400DAF891 /* アメリカ国旗.gif */,
-				B041C7591B01EB0400DAF891 /* アルゼンチン国旗.gif */,
-				B041C75A1B01EB0400DAF891 /* イギリス国旗.gif */,
-				B041C75B1B01EB0400DAF891 /* イタリア国旗.gif */,
-				B041C75C1B01EB0400DAF891 /* インドネシア国旗.gif */,
-				B041C75D1B01EB0400DAF891 /* オマーン国旗.gif */,
-				B041C75E1B01EB0400DAF891 /* オランダ国旗.gif */,
-				B041C75F1B01EB0400DAF891 /* オーストラリア国旗.gif */,
-				B041C7601B01EB0400DAF891 /* オーストリア国旗.gif */,
-				B041C7611B01EB0400DAF891 /* ガーナ国旗.gif */,
-				B041C7621B01EB0400DAF891 /* カタール国旗.gif */,
-				B041C7631B01EB0400DAF891 /* カナダ国旗.gif */,
-				B041C7641B01EB0400DAF891 /* カメルーン国旗.gif */,
-				B041C7651B01EB0400DAF891 /* ギニア国旗.gif */,
-				B041C7661B01EB0400DAF891 /* ギリシャ国旗.gif */,
-				B041C7671B01EB0400DAF891 /* キューバ国旗.gif */,
-				B041C7681B01EB0400DAF891 /* クウェート国旗.gif */,
-				B041C76A1B01EB0400DAF891 /* コロンビア国旗.gif */,
-				B041C76B1B01EB0400DAF891 /* サモア国旗.gif */,
-				B041C76C1B01EB0400DAF891 /* ジャマイカ国旗.gif */,
-				B041C76D1B01EB0400DAF891 /* シンガポール国旗.gif */,
-				B041C76E1B01EB0500DAF891 /* スイス国旗.gif */,
-				B041C76F1B01EB0500DAF891 /* スウェーデン国旗.gif */,
-				B041C7701B01EB0500DAF891 /* スペイン国旗.gif */,
-				B041C7711B01EB0500DAF891 /* セルビア国旗.gif */,
-				B041C7721B01EB0500DAF891 /* タイ国旗.gif */,
-				B041C7731B01EB0500DAF891 /* チェコ国旗.gif */,
-				B041C7741B01EB0500DAF891 /* チュニジア国旗.gif */,
-				B041C7751B01EB0500DAF891 /* チリ国旗.gif */,
-				B041C7761B01EB0500DAF891 /* デンマーク国旗.gif */,
-				B041C7771B01EB0500DAF891 /* ドイツ国旗.gif */,
-				B041C7781B01EB0500DAF891 /* ドミニカ国旗.gif */,
-				B041C7791B01EB0500DAF891 /* トルコ国旗.gif */,
-				B041C77A1B01EB0500DAF891 /* トンガ国旗.gif */,
-				B041C77B1B01EB0500DAF891 /* ニュージーランド国旗.gif */,
-				B041C77C1B01EB0500DAF891 /* ノルウェー国旗.gif */,
-				B041C77D1B01EB0500DAF891 /* バルバドス国旗.gif */,
-				B041C77E1B01EB0500DAF891 /* パナマ国旗.gif */,
-				B041C77F1B01EB0500DAF891 /* パラグアイ国旗.gif */,
-				B041C7801B01EB0500DAF891 /* ハンガリー国旗.gif */,
-				B041C7811B01EB0500DAF891 /* ブラジル国旗.gif */,
-				B041C7821B01EB0500DAF891 /* フィジー国旗.gif */,
-				B041C7831B01EB0500DAF891 /* フィリピン国旗.gif */,
-				B041C7841B01EB0500DAF891 /* フィンランド国旗.gif */,
-				B041C7851B01EB0500DAF891 /* フランス国旗.gif */,
-				B041C7861B01EB0500DAF891 /* ベトナム国旗.gif */,
-				B041C7871B01EB0500DAF891 /* ベネズエラ国旗.gif */,
-				B041C7881B01EB0500DAF891 /* ベリーズ国旗.gif */,
-				B041C7891B01EB0500DAF891 /* ベルギー国旗.gif */,
-				B041C78A1B01EB0500DAF891 /* ペルー国旗.gif */,
-				B041C78B1B01EB0500DAF891 /* ポルトガル国旗.gif */,
-				B041C78C1B01EB0500DAF891 /* ポーランド国旗.gif */,
-				B041C78D1B01EB0500DAF891 /* ホンジュラス国旗.gif */,
-				B041C78E1B01EB0500DAF891 /* メキシコ国旗.gif */,
-				B041C78F1B01EB0500DAF891 /* モナコ国旗.gif */,
-				B041C7901B01EB0500DAF891 /* モンゴル国旗.gif */,
-				B041C7911B01EB0500DAF891 /* ルクセンブルク国旗.gif */,
-				B041C7921B01EB0500DAF891 /* ロシア国旗.gif */,
-				B041C7931B01EB0500DAF891 /* 中国国旗.gif */,
-				B041C7941B01EB0500DAF891 /* 中央アフリカ国旗.gif */,
-				B041C7961B01EB0500DAF891 /* 日本国旗.gif */,
-				B041C7971B01EB0500DAF891 /* 韓国国旗.gif */,
-			);
-			path = "世界国旗";
-			sourceTree = "<group>";
-		};
-		B041C7E21B01ECCE00DAF891 /* 各種ボタン */ = {
-			isa = PBXGroup;
-			children = (
-				B041C7EE1B02504200DAF891 /* クリックボタン.jpeg */,
-				B041C7E31B01ECCE00DAF891 /* いいねボタン.jpeg */,
-				B041C7E41B01ECCE00DAF891 /* コメント.png */,
-				B041C7E51B01ECCE00DAF891 /* 再生ボタン.jpg */,
+				B09B2EA61B05931700F28BA7 /* ClickButton.jpeg */,
+				B09B2EA71B05931700F28BA7 /* comentButtoun.png */,
+				B09B2EA81B05931700F28BA7 /* goodbutton.jpeg */,
+				B09B2EA91B05931700F28BA7 /* PlaybackButton.jpg */,
 			);
 			path = "各種ボタン";
+			sourceTree = "<group>";
+		};
+		B09B2EAA1B05931700F28BA7 /* 世界国旗 */ = {
+			isa = PBXGroup;
+			children = (
+				B09B2EAB1B05931700F28BA7 /* Argentina.gif */,
+				B09B2EAC1B05931700F28BA7 /* Australia.gif */,
+				B09B2EAD1B05931700F28BA7 /* Austria.gif */,
+				B09B2EAE1B05931700F28BA7 /* Barbados.gif */,
+				B09B2EAF1B05931700F28BA7 /* Belgium.gif */,
+				B09B2EB01B05931700F28BA7 /* Belize.gif */,
+				B09B2EB11B05931700F28BA7 /* Brazil.gif */,
+				B09B2EB21B05931700F28BA7 /* Cameroon.gif */,
+				B09B2EB31B05931700F28BA7 /* Canada.gif */,
+				B09B2EB41B05931700F28BA7 /* CentralAfrica.gif */,
+				B09B2EB51B05931700F28BA7 /* Chile.gif */,
+				B09B2EB61B05931700F28BA7 /* China.gif */,
+				B09B2EB71B05931700F28BA7 /* Colombia.gif */,
+				B09B2EB81B05931700F28BA7 /* Cuba.gif */,
+				B09B2EB91B05931700F28BA7 /* Czech.gif */,
+				B09B2EBA1B05931700F28BA7 /* Denmark.gif */,
+				B09B2EBB1B05931700F28BA7 /* Dominica.gif */,
+				B09B2EBC1B05931700F28BA7 /* Fiji.gif */,
+				B09B2EBD1B05931700F28BA7 /* Finland.gif */,
+				B09B2EBE1B05931700F28BA7 /* France.gif */,
+				B09B2EBF1B05931700F28BA7 /* Germany.gif */,
+				B09B2EC01B05931700F28BA7 /* Ghana.gif */,
+				B09B2EC11B05931700F28BA7 /* Greece.gif */,
+				B09B2EC21B05931700F28BA7 /* Guinea.gif */,
+				B09B2EC31B05931700F28BA7 /* Honduras.gif */,
+				B09B2EC41B05931700F28BA7 /* Hungary.gif */,
+				B09B2EC51B05931700F28BA7 /* Iceland.gif */,
+				B09B2EC61B05931700F28BA7 /* Indonesia.gif */,
+				B09B2EC71B05931700F28BA7 /* Ireland.gif */,
+				B09B2EC81B05931700F28BA7 /* Italy.gif */,
+				B09B2EC91B05931700F28BA7 /* Jamaica.gif */,
+				B09B2ECA1B05931700F28BA7 /* Japan.gif */,
+				B09B2ECB1B05931700F28BA7 /* Korea.gif */,
+				B09B2ECC1B05931700F28BA7 /* Kuwait.gif */,
+				B09B2ECD1B05931700F28BA7 /* Luxembourg.gif */,
+				B09B2ECE1B05931700F28BA7 /* Mexico.gif */,
+				B09B2ECF1B05931700F28BA7 /* Monaco.gif */,
+				B09B2ED01B05931700F28BA7 /* Mongolia.gif */,
+				B09B2ED11B05931700F28BA7 /* Netherlands.gif */,
+				B09B2ED21B05931700F28BA7 /* NewZealand.gif */,
+				B09B2ED31B05931700F28BA7 /* Norway.gif */,
+				B09B2ED41B05931700F28BA7 /* Oman.gif */,
+				B09B2ED51B05931700F28BA7 /* Panama.gif */,
+				B09B2ED61B05931700F28BA7 /* Paraguay.gif */,
+				B09B2ED71B05931700F28BA7 /* Peru.gif */,
+				B09B2ED81B05931700F28BA7 /* Philippines.gif */,
+				B09B2ED91B05931700F28BA7 /* Poland.gif */,
+				B09B2EDA1B05931700F28BA7 /* Portugal.gif */,
+				B09B2EDB1B05931700F28BA7 /* Qatar.gif */,
+				B09B2EDC1B05931700F28BA7 /* Russia.gif */,
+				B09B2EDD1B05931700F28BA7 /* Samoa.gif */,
+				B09B2EDE1B05931700F28BA7 /* Serbia.gif */,
+				B09B2EDF1B05931700F28BA7 /* Singapore.gif */,
+				B09B2EE01B05931700F28BA7 /* Spain.gif */,
+				B09B2EE11B05931700F28BA7 /* Sweden.gif */,
+				B09B2EE21B05931700F28BA7 /* Switzerland.gif */,
+				B09B2EE31B05931700F28BA7 /* Thailand.gif */,
+				B09B2EE41B05931700F28BA7 /* Tonga.gif */,
+				B09B2EE51B05931700F28BA7 /* Tunisiagif.gif */,
+				B09B2EE61B05931700F28BA7 /* Turkey.gif */,
+				B09B2EE71B05931700F28BA7 /* UnitedKingdom.gif */,
+				B09B2EE81B05931700F28BA7 /* USA.gif */,
+				B09B2EE91B05931700F28BA7 /* Venezuela.gif */,
+				B09B2EEA1B05931700F28BA7 /* Vietnam.gif */,
+			);
+			path = "世界国旗";
 			sourceTree = "<group>";
 		};
 		B0C283E71AF9B4F500C38707 = {
@@ -341,9 +341,9 @@
 		B0C283F31AF9B4F500C38707 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B09B2EA51B05931700F28BA7 /* 各種ボタン */,
+				B09B2EAA1B05931700F28BA7 /* 世界国旗 */,
 				B09B2EA21B04CC7300F28BA7 /* IMG_0282.MOV */,
-				B041C7E21B01ECCE00DAF891 /* 各種ボタン */,
-				B041C7541B01EB0400DAF891 /* 世界国旗 */,
 				B02594711AF9E7DF00F68C95 /* IMG_1592.MOV */,
 				B0C283F41AF9B4F500C38707 /* Info.plist */,
 				B0C283F51AF9B4F500C38707 /* main.m */,
@@ -448,79 +448,79 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B041C7C51B01EB0500DAF891 /* フィジー国旗.gif in Resources */,
-				B041C7A21B01EB0500DAF891 /* オーストラリア国旗.gif in Resources */,
-				B041C7AE1B01EB0500DAF891 /* サモア国旗.gif in Resources */,
-				B041C7C71B01EB0500DAF891 /* フィンランド国旗.gif in Resources */,
-				B041C7B11B01EB0500DAF891 /* スイス国旗.gif in Resources */,
-				B041C7D51B01EB0500DAF891 /* ロシア国旗.gif in Resources */,
-				B041C7C81B01EB0500DAF891 /* フランス国旗.gif in Resources */,
-				B041C7D11B01EB0500DAF891 /* メキシコ国旗.gif in Resources */,
-				B041C7C11B01EB0500DAF891 /* パナマ国旗.gif in Resources */,
-				B041C7D71B01EB0500DAF891 /* 中央アフリカ国旗.gif in Resources */,
-				B041C7EF1B02504200DAF891 /* クリックボタン.jpeg in Resources */,
-				B041C7B91B01EB0500DAF891 /* デンマーク国旗.gif in Resources */,
-				B041C7B61B01EB0500DAF891 /* チェコ国旗.gif in Resources */,
-				B041C79E1B01EB0500DAF891 /* イタリア国旗.gif in Resources */,
-				B041C79A1B01EB0500DAF891 /* アイスランド国旗.gif in Resources */,
-				B041C7CA1B01EB0500DAF891 /* ベネズエラ国旗.gif in Resources */,
-				B041C7A31B01EB0500DAF891 /* オーストリア国旗.gif in Resources */,
-				B041C7E81B01ECCE00DAF891 /* 再生ボタン.jpg in Resources */,
-				B041C7C01B01EB0500DAF891 /* バルバドス国旗.gif in Resources */,
-				B041C7BA1B01EB0500DAF891 /* ドイツ国旗.gif in Resources */,
-				B041C79C1B01EB0500DAF891 /* アルゼンチン国旗.gif in Resources */,
-				B041C7A11B01EB0500DAF891 /* オランダ国旗.gif in Resources */,
-				B041C7C61B01EB0500DAF891 /* フィリピン国旗.gif in Resources */,
-				B041C7CF1B01EB0500DAF891 /* ポーランド国旗.gif in Resources */,
-				B041C7BF1B01EB0500DAF891 /* ノルウェー国旗.gif in Resources */,
-				B041C7BB1B01EB0500DAF891 /* ドミニカ国旗.gif in Resources */,
-				B041C7E61B01ECCE00DAF891 /* いいねボタン.jpeg in Resources */,
-				B041C7A51B01EB0500DAF891 /* カタール国旗.gif in Resources */,
-				B041C7C91B01EB0500DAF891 /* ベトナム国旗.gif in Resources */,
-				B041C7AA1B01EB0500DAF891 /* キューバ国旗.gif in Resources */,
-				B041C7A41B01EB0500DAF891 /* ガーナ国旗.gif in Resources */,
-				B041C7C31B01EB0500DAF891 /* ハンガリー国旗.gif in Resources */,
-				B041C7AD1B01EB0500DAF891 /* コロンビア国旗.gif in Resources */,
-				B041C7E71B01ECCE00DAF891 /* コメント.png in Resources */,
-				B041C7B01B01EB0500DAF891 /* シンガポール国旗.gif in Resources */,
-				B041C7D21B01EB0500DAF891 /* モナコ国旗.gif in Resources */,
-				B041C7D31B01EB0500DAF891 /* モンゴル国旗.gif in Resources */,
-				B041C7D41B01EB0500DAF891 /* ルクセンブルク国旗.gif in Resources */,
-				B041C7A01B01EB0500DAF891 /* オマーン国旗.gif in Resources */,
-				B041C7AB1B01EB0500DAF891 /* クウェート国旗.gif in Resources */,
-				B041C7D61B01EB0500DAF891 /* 中国国旗.gif in Resources */,
-				B041C7CE1B01EB0500DAF891 /* ポルトガル国旗.gif in Resources */,
-				B041C7A71B01EB0500DAF891 /* カメルーン国旗.gif in Resources */,
-				B041C7BC1B01EB0500DAF891 /* トルコ国旗.gif in Resources */,
-				B041C7C41B01EB0500DAF891 /* ブラジル国旗.gif in Resources */,
-				B041C7B31B01EB0500DAF891 /* スペイン国旗.gif in Resources */,
-				B041C7BE1B01EB0500DAF891 /* ニュージーランド国旗.gif in Resources */,
+				B09B2F191B05931700F28BA7 /* Panama.gif in Resources */,
+				B09B2EF11B05931700F28BA7 /* Austria.gif in Resources */,
+				B09B2EEF1B05931700F28BA7 /* Argentina.gif in Resources */,
+				B09B2F0B1B05931700F28BA7 /* Ireland.gif in Resources */,
+				B09B2EF61B05931700F28BA7 /* Cameroon.gif in Resources */,
+				B09B2F101B05931700F28BA7 /* Kuwait.gif in Resources */,
+				B09B2EF51B05931700F28BA7 /* Brazil.gif in Resources */,
+				B09B2F141B05931700F28BA7 /* Mongolia.gif in Resources */,
+				B09B2F281B05931700F28BA7 /* Tonga.gif in Resources */,
+				B09B2F081B05931700F28BA7 /* Hungary.gif in Resources */,
+				B09B2EFF1B05931700F28BA7 /* Dominica.gif in Resources */,
+				B09B2F261B05931700F28BA7 /* Switzerland.gif in Resources */,
+				B09B2F111B05931700F28BA7 /* Luxembourg.gif in Resources */,
+				B09B2F171B05931700F28BA7 /* Norway.gif in Resources */,
+				B09B2EF71B05931700F28BA7 /* Canada.gif in Resources */,
+				B09B2F021B05931700F28BA7 /* France.gif in Resources */,
+				B09B2F1B1B05931700F28BA7 /* Peru.gif in Resources */,
+				B09B2EED1B05931700F28BA7 /* goodbutton.jpeg in Resources */,
+				B09B2EFE1B05931700F28BA7 /* Denmark.gif in Resources */,
 				B09B2EA41B04CC7300F28BA7 /* IMG_0282.MOV in Resources */,
-				B041C7B81B01EB0500DAF891 /* チリ国旗.gif in Resources */,
-				B041C7A61B01EB0500DAF891 /* カナダ国旗.gif in Resources */,
-				B041C7CB1B01EB0500DAF891 /* ベリーズ国旗.gif in Resources */,
-				B041C7D91B01EB0500DAF891 /* 日本国旗.gif in Resources */,
-				B041C7981B01EB0500DAF891 /* al.gif in Resources */,
+				B09B2F071B05931700F28BA7 /* Honduras.gif in Resources */,
+				B09B2F0D1B05931700F28BA7 /* Jamaica.gif in Resources */,
+				B09B2F251B05931700F28BA7 /* Sweden.gif in Resources */,
+				B09B2F1D1B05931700F28BA7 /* Poland.gif in Resources */,
+				B09B2EF31B05931700F28BA7 /* Belgium.gif in Resources */,
 				B0C283FF1AF9B4F500C38707 /* Main.storyboard in Resources */,
-				B041C79D1B01EB0500DAF891 /* イギリス国旗.gif in Resources */,
-				B041C7B71B01EB0500DAF891 /* チュニジア国旗.gif in Resources */,
-				B041C7CC1B01EB0500DAF891 /* ベルギー国旗.gif in Resources */,
-				B041C7DA1B01EB0500DAF891 /* 韓国国旗.gif in Resources */,
-				B041C79F1B01EB0500DAF891 /* インドネシア国旗.gif in Resources */,
-				B041C7AF1B01EB0500DAF891 /* ジャマイカ国旗.gif in Resources */,
-				B041C7C21B01EB0500DAF891 /* パラグアイ国旗.gif in Resources */,
-				B041C7B21B01EB0500DAF891 /* スウェーデン国旗.gif in Resources */,
-				B041C7B51B01EB0500DAF891 /* タイ国旗.gif in Resources */,
+				B09B2EEE1B05931700F28BA7 /* PlaybackButton.jpg in Resources */,
+				B09B2F1E1B05931700F28BA7 /* Portugal.gif in Resources */,
+				B09B2F131B05931700F28BA7 /* Monaco.gif in Resources */,
+				B09B2EFD1B05931700F28BA7 /* Czech.gif in Resources */,
+				B09B2F181B05931700F28BA7 /* Oman.gif in Resources */,
+				B09B2F201B05931700F28BA7 /* Russia.gif in Resources */,
+				B09B2F1F1B05931700F28BA7 /* Qatar.gif in Resources */,
+				B09B2F041B05931700F28BA7 /* Ghana.gif in Resources */,
+				B09B2F0C1B05931700F28BA7 /* Italy.gif in Resources */,
+				B09B2F2A1B05931800F28BA7 /* Turkey.gif in Resources */,
+				B09B2EF81B05931700F28BA7 /* CentralAfrica.gif in Resources */,
+				B09B2F1A1B05931700F28BA7 /* Paraguay.gif in Resources */,
+				B09B2F001B05931700F28BA7 /* Fiji.gif in Resources */,
+				B09B2F0E1B05931700F28BA7 /* Japan.gif in Resources */,
+				B09B2F151B05931700F28BA7 /* Netherlands.gif in Resources */,
+				B09B2EF41B05931700F28BA7 /* Belize.gif in Resources */,
+				B09B2F291B05931700F28BA7 /* Tunisiagif.gif in Resources */,
+				B09B2F221B05931700F28BA7 /* Serbia.gif in Resources */,
+				B09B2EEB1B05931700F28BA7 /* ClickButton.jpeg in Resources */,
+				B09B2F2C1B05931800F28BA7 /* USA.gif in Resources */,
+				B09B2EF01B05931700F28BA7 /* Australia.gif in Resources */,
+				B09B2EF91B05931700F28BA7 /* Chile.gif in Resources */,
+				B09B2F011B05931700F28BA7 /* Finland.gif in Resources */,
+				B09B2F271B05931700F28BA7 /* Thailand.gif in Resources */,
+				B09B2F211B05931700F28BA7 /* Samoa.gif in Resources */,
+				B09B2EEC1B05931700F28BA7 /* comentButtoun.png in Resources */,
+				B09B2F0F1B05931700F28BA7 /* Korea.gif in Resources */,
+				B09B2EFC1B05931700F28BA7 /* Cuba.gif in Resources */,
+				B09B2F2B1B05931800F28BA7 /* UnitedKingdom.gif in Resources */,
+				B09B2EFB1B05931700F28BA7 /* Colombia.gif in Resources */,
+				B09B2F091B05931700F28BA7 /* Iceland.gif in Resources */,
+				B09B2F161B05931700F28BA7 /* NewZealand.gif in Resources */,
+				B09B2F1C1B05931700F28BA7 /* Philippines.gif in Resources */,
+				B09B2F051B05931700F28BA7 /* Greece.gif in Resources */,
 				B0C284041AF9B4F500C38707 /* LaunchScreen.xib in Resources */,
-				B041C7CD1B01EB0500DAF891 /* ペルー国旗.gif in Resources */,
-				B041C7BD1B01EB0500DAF891 /* トンガ国旗.gif in Resources */,
-				B041C7B41B01EB0500DAF891 /* セルビア国旗.gif in Resources */,
+				B09B2F241B05931700F28BA7 /* Spain.gif in Resources */,
+				B09B2F0A1B05931700F28BA7 /* Indonesia.gif in Resources */,
+				B09B2F121B05931700F28BA7 /* Mexico.gif in Resources */,
+				B09B2F2D1B05931800F28BA7 /* Venezuela.gif in Resources */,
+				B09B2EF21B05931700F28BA7 /* Barbados.gif in Resources */,
+				B09B2F2E1B05931800F28BA7 /* Vietnam.gif in Resources */,
+				B09B2F031B05931700F28BA7 /* Germany.gif in Resources */,
 				B0C284011AF9B4F500C38707 /* Images.xcassets in Resources */,
-				B041C7A81B01EB0500DAF891 /* ギニア国旗.gif in Resources */,
-				B041C79B1B01EB0500DAF891 /* アメリカ国旗.gif in Resources */,
-				B041C7A91B01EB0500DAF891 /* ギリシャ国旗.gif in Resources */,
-				B041C7D01B01EB0500DAF891 /* ホンジュラス国旗.gif in Resources */,
+				B09B2EFA1B05931700F28BA7 /* China.gif in Resources */,
 				B02594731AF9E7DF00F68C95 /* IMG_1592.MOV in Resources */,
+				B09B2F061B05931700F28BA7 /* Guinea.gif in Resources */,
+				B09B2F231B05931700F28BA7 /* Singapore.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
