@@ -314,7 +314,7 @@
     // JSONをパース
     NSArray *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
     
-    //デコード  
+    //デコード
     NSString* reply = [[array valueForKeyPath:@"reply"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     //NSURL * url = [NSURL URLWithString:phpUrl];
