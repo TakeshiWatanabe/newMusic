@@ -22,6 +22,7 @@
     //配列の宣言
     NSArray *_genre;
     NSArray *_country;
+    //UIImage *userImageView;
     
     //ボタンを押された時にPickerViewをだす
     BOOL _genreFlag;        //true or folesで判断させる

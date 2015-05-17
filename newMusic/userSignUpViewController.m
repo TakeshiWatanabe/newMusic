@@ -46,9 +46,9 @@
                @{@"name":@"年代別",@"code":@"generationDistinction"},
                @{@"name":@"レゲエ",@"code":@"reggae"},
                @{@"name":@"ハワイアン",@"code":@"hawaiian"},
-               @{@"naem":@"K-pop",@"code":@"kPop"},
+               @{@"name":@"K-pop",@"code":@"kPop"},
                @{@"name":@"アニメ・アニソン",@"code":@"anime"},
-               @{@"naem":@"J-pop",@"code":@"jPop"},
+               @{@"name":@"J-pop",@"code":@"jPop"},
                @{@"name":@"歌謡曲",@"code":@"popularSong"}
                ];
     
@@ -56,7 +56,7 @@
     _country = @[@{@"name":@"アイスランド",@"code":@"Iceland",@"image":@"Iceland.gif"},
                  @{@"name":@"アイルランド",@"code":@"Ireland",@"image":@"Ireland.gif"},
                  @{@"name":@"アメリカ",@"code":@"USA",@"image":@"USA.gif"},
-                 @{@"name":@"アルゼンチン",@"code":@"Argentina",@"image":@"Argentina.gif   "},
+                 @{@"name":@"アルゼンチン",@"code":@"Argentina",@"image":@"Argentina.gif"},
                  @{@"name":@"イギリス",@"code":@"UnitedKingdom",@"image":@"UnitedKingdom.gif"},
                  @{@"name":@"イタリア",@"code":@"Italy",@"image":@"Italy.gif"},
                  @{@"name":@"インドネシア",@"code":@"Indonesia",@"image":@"Indonesia.gif"},
@@ -286,27 +286,28 @@
 }
 
 - (IBAction)okButton:(id)sender {
-    //api接続
-    //NSString * urlString = [NSString stringWithFormat:@"http://localhost:8888/GourRepoM2/ApiMovies/returnMoviesJson.json"];
     
+    //変数宣言
     NSString *name = self.nameText.text;
     NSString *country = self.countryClearLabel.text;
     NSString *genre = self.genreText.text;
     
     //エンコード
-    NSString* info = [name,country,genre
-                           stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    name = [name
+            stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
-    //サーバーに情報を送る
-    //NSString *server = [NSString stringWithFormat:self.nameText.text,self.countryClearLabel.text,self.genreText.text];
+    NSString *phpUrl = [NSString stringWithFormat:@"http://192.168.33.200/GC5Team/newMusicOnlyServer/serverTomysql.php?name=%@&country=%@&genre=%@",name,self.countryClearLabel.text,self.genreClearLabel.text];
     
-    NSString *phpUrl = [NSString stringWithFormat:@"http://192.168.33.200/GC5Team/newMusicOnlyServer/serverTomysql.php?name=%@&country=%@&genre=%@",self.nameText.text,self.countryClearLabel.text,self.genreClearLabel.text];
-    
-    
-    //NSString *url = [NSString stringWithFormat:@"%@mention=%@",server,info];
-    
-    // requestを作成
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:phpUrl]];
+    // リクエストを生成
+    NSMutableURLRequest *request;
+    request = [[NSMutableURLRequest alloc] init];
+    [request setHTTPMethod:@"POST"];
+    [request setURL:[NSURL URLWithString:phpUrl]];
+    [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+    [request setTimeoutInterval:30];
+    [request setHTTPShouldHandleCookies:FALSE];
+    [request setHTTPBody:[phpUrl dataUsingEncoding:NSUTF8StringEncoding]];
+    //NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:phpUrl]];
     
     // サーバーとの通信を行う
     NSData *json = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
@@ -314,11 +315,36 @@
     // JSONをパース
     NSArray *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
     
-    //デコード
-    NSString* reply = [[array valueForKeyPath:@"reply"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    //画像を送る
+    //NSImage *userImg = [[NSImage alloc]initWithContentsOfFile:@"画像ファイル"];
+    //NSData *imgdata = [userImg TIFFRepresentation];
     
-    //NSURL * url = [NSURL URLWithString:phpUrl];
-    NSData * data = [NSData dataWithContentsOfURL:phpUrl];
+    //ここからPOSTDATAの作成
+    NSString *urlString = @"post先のurl"; //←phpとかで
+    NSMutableURLRequest *imageRequest = [[NSMutableURLRequest alloc] init] ;
+    [imageRequest setURL:[NSURL URLWithString:urlString]];
+    [imageRequest   setHTTPMethod:@"POST"];
+    
+    NSMutableData *body = [NSMutableData data];
+    
+    NSString *boundary = @"---------------------------168072824752491622650073";
+    NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
+    [request addValue:contentType forHTTPHeaderField:@"Content-Type"];
+    
+    [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[@"Content-Disposition: form-data; name=\"upfile\"; filename=\"user.png\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[@"Content-Type: image/png\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    //[body appendData:[NSData dataWithData:imgdata]];
+    [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [body appendData:[[NSString stringWithFormat:@"--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [request setHTTPBody:body];
+    
+    NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+    
+    NSLog(@"%@", returnString);
 }
 
 - (IBAction)noButton:(id)sender {
