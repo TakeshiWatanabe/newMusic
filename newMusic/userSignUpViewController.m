@@ -291,6 +291,7 @@
     NSString *name = self.nameText.text;
     NSString *country = self.countryClearLabel.text;
     NSString *genre = self.genreText.text;
+    NSString *userImg = self.userImageView.image;
     
     //エンコード
     name = [name
@@ -307,7 +308,6 @@
     [request setTimeoutInterval:30];
     [request setHTTPShouldHandleCookies:FALSE];
     [request setHTTPBody:[phpUrl dataUsingEncoding:NSUTF8StringEncoding]];
-    //NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:phpUrl]];
     
     // サーバーとの通信を行う
     NSData *json = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
@@ -315,29 +315,34 @@
     // JSONをパース
     NSArray *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
     
-    //画像を送る
-    //NSImage *userImg = [[NSImage alloc]initWithContentsOfFile:@"画像ファイル"];
-    //NSData *imgdata = [userImg TIFFRepresentation];
+    //initWithContentsOfFileは画像ファイルを指定するときに使う
+    
+    // 画像の指定
+    UIImage *img = self.userImageView.image;
+    
+    NSData *imgdata = UIImagePNGRepresentation(img);
     
     //ここからPOSTDATAの作成
-    NSString *urlString = @"post先のurl"; //←phpとかで
-    NSMutableURLRequest *imageRequest = [[NSMutableURLRequest alloc] init] ;
+    NSString *urlString = @"http://192.168.33.200/GC5Team/newMusicOnlyServer/serverTomysql.php?userImg=%@";
+    NSMutableURLRequest *imageRequest = [[NSMutableURLRequest alloc] init];
     [imageRequest setURL:[NSURL URLWithString:urlString]];
-    [imageRequest   setHTTPMethod:@"POST"];
+    [imageRequest setHTTPMethod:@"POST"];
     
     NSMutableData *body = [NSMutableData data];
     
-    NSString *boundary = @"---------------------------168072824752491622650073";
-    NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
+    //NSString *boundary = @"---------------------------168072824752491622650073";
+    
+    //文字を変換
+    NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=imag"];
     [request addValue:contentType forHTTPHeaderField:@"Content-Type"];
     
-    [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"--image\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
     [body appendData:[@"Content-Disposition: form-data; name=\"upfile\"; filename=\"user.png\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     [body appendData:[@"Content-Type: image/png\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-    //[body appendData:[NSData dataWithData:imgdata]];
+    [body appendData:[NSData dataWithData:imgdata]];
     [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     
-    [body appendData:[[NSString stringWithFormat:@"--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"--image  --\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
     
     [request setHTTPBody:body];
     

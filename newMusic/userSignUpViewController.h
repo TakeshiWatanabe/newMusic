@@ -22,11 +22,12 @@
     //配列の宣言
     NSArray *_genre;
     NSArray *_country;
-    //UIImage *userImageView;
+    UIImage *userImageView;
     
     //ボタンを押された時にPickerViewをだす
     BOOL _genreFlag;        //true or folesで判断させる
     BOOL _isVisibleFlag;    //true or folesで判断させる
+    BOOL _userImageFlag;    //true or folesで判断させる
     UIView *_backView;      //backViewの指定
     UILabel *_myLabelInput; //入力された文字を表示
     UITextField *_myText;   //テキストフィールド
