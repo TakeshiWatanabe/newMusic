@@ -354,12 +354,17 @@
     NSLog(@"%@", returnString);
     
     // mainViewController.mに画面遷移
+    // インスタンス化
     mainViewController *secondVC = [[mainViewController alloc] init];
-    [self presentViewController: secondVC animated:YES completion: nil];
+    
+    //ナビゲーションコントローラーの機能で画面遷移
+    [[self navigationController] pushViewController:secondVC animated:YES];
 }
 
 - (IBAction)noButton:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    
+    // 一つ前の画面に戻す
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

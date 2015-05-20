@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-//userSignUpViewControllerを継承
+//宣言
+#import "ViewController.h"
 #import "userSignUpViewController.h"
 
 @interface mainViewController : UIViewController
