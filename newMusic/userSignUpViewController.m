@@ -355,7 +355,7 @@
     
     // mainViewController.mに画面遷移
     // インスタンス化
-    mainViewController *secondVC = [[mainViewController alloc] init];
+    mainViewController *secondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"mainViewController"];
     
     //ナビゲーションコントローラーの機能で画面遷移
     [[self navigationController] pushViewController:secondVC animated:YES];
@@ -363,8 +363,9 @@
 
 - (IBAction)noButton:(id)sender {
     
+    //[self dismissViewControllerAnimated:YES completion:nil];
     // 一つ前の画面に戻す
-    [self dismissViewControllerAnimated:YES completion:nil];
+     [[self navigationController] popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -102,7 +102,7 @@
     //インスタンス化
     secondVC1 = [self.storyboard instantiateViewControllerWithIdentifier:@"userSignUp"];
     
-    [self presentViewController:secondVC1 animated:YES completion: nil];
+     [[self navigationController] pushViewController:secondVC1 animated:YES];
 }
 
 //SignIpボタンを押されたら、mainViewControllerに画面遷移
@@ -115,7 +115,7 @@
     //インスタンス化
     secondVC2 = [self.storyboard instantiateViewControllerWithIdentifier:@"userSignIp"];
     
-    [self presentViewController:secondVC2 animated:YES completion: nil];
+     [[self navigationController] pushViewController:secondVC2 animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

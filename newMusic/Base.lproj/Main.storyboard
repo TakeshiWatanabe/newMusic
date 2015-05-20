@@ -257,7 +257,7 @@
         <!--mainViewController-->
         <scene sceneID="BVN-Dc-F5r">
             <objects>
-                <viewController title="mainViewController" id="9d9-WO-Ysy" customClass="mainViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainViewController" title="mainViewController" id="9d9-WO-Ysy" customClass="mainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zyI-ku-kqp"/>
                         <viewControllerLayoutGuide type="bottom" id="nwV-2I-pqj"/>
