@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-//ViewControllerを継承
-#import "ViewController.h"
+//userSignUpViewControllerを継承
+#import "userSignUpViewController.h"
 
 @interface mainViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *userImageView;

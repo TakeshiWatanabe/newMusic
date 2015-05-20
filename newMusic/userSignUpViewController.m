@@ -288,10 +288,11 @@
 - (IBAction)okButton:(id)sender {
     
     //変数宣言
+    int userId = 0;
     NSString *name = self.nameText.text;
     NSString *country = self.countryClearLabel.text;
     NSString *genre = self.genreText.text;
-    NSString *userImg = self.userImageView.image;
+    UIImage *userImg = self.userImageView.image;
     
     //エンコード
     name = [name
@@ -313,43 +314,48 @@
     NSData *json = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     
     // JSONをパース
-    NSArray *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
+    NSDictionary *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
+    
+    //idの取得
+    userId = [array[@"id"] intValue];
     
     //initWithContentsOfFileは画像ファイルを指定するときに使う
-    
     // 画像の指定
-    UIImage *img = self.userImageView.image;
+    //UIImageをpngに変換
+    NSData* pngData = UIImagePNGRepresentation(userImg);
     
-    NSData *imgdata = UIImagePNGRepresentation(img);
     
     //ここからPOSTDATAの作成
-    NSString *urlString = @"http://192.168.33.200/GC5Team/newMusicOnlyServer/serverTomysql.php?userImg=%@";
-    NSMutableURLRequest *imageRequest = [[NSMutableURLRequest alloc] init];
-    [imageRequest setURL:[NSURL URLWithString:urlString]];
-    [imageRequest setHTTPMethod:@"POST"];
+    NSString *urlString = @"http://192.168.33.200/GC5Team/newMusicOnlyServer/sumple.php";
+    NSMutableURLRequest *userRequest = [[NSMutableURLRequest alloc] init] ;
+    [userRequest setURL:[NSURL URLWithString:urlString]];
+    [userRequest setHTTPMethod:@"POST"];
     
     NSMutableData *body = [NSMutableData data];
     
-    //NSString *boundary = @"---------------------------168072824752491622650073";
+    NSString *boundary = @"---------------------------168072824752491622650073";
     
-    //文字を変換
-    NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=imag"];
-    [request addValue:contentType forHTTPHeaderField:@"Content-Type"];
+    NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
+    [userRequest addValue:contentType forHTTPHeaderField:@"Content-Type"];
     
-    [body appendData:[[NSString stringWithFormat:@"--image\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
-    [body appendData:[@"Content-Disposition: form-data; name=\"upfile\"; filename=\"user.png\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"file\"; filename=\"prof%d.png\"\r\n",userId] dataUsingEncoding:NSUTF8StringEncoding]];
     [body appendData:[@"Content-Type: image/png\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-    [body appendData:[NSData dataWithData:imgdata]];
+    [body appendData:[NSData dataWithData:pngData]];
     [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     
-    [body appendData:[[NSString stringWithFormat:@"--image  --\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     
-    [request setHTTPBody:body];
+    [userRequest setHTTPBody:body];
     
-    NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSData *returnData = [NSURLConnection sendSynchronousRequest:userRequest returningResponse:nil error:nil];
     NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
     
     NSLog(@"%@", returnString);
+    
+    // mainViewController.mに画面遷移
+    mainViewController *secondVC = [[mainViewController alloc] init];
+    [self presentViewController: secondVC animated:YES completion: nil];
 }
 
 - (IBAction)noButton:(id)sender {
