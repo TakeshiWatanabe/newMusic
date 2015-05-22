@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B02594731AF9E7DF00F68C95 /* IMG_1592.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B02594711AF9E7DF00F68C95 /* IMG_1592.MOV */; };
 		B041C7EB1B01EEE500DAF891 /* searchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B041C7EA1B01EEE500DAF891 /* searchViewController.m */; };
+		B07CCC0B1B0D72480052101A /* mainTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B07CCC0A1B0D72480052101A /* mainTableView.xib */; };
+		B07CCC191B0DBFC40052101A /* newMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B07CCC181B0DBFC40052101A /* newMainTableViewCell.m */; };
 		B09B2EA41B04CC7300F28BA7 /* IMG_0282.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EA21B04CC7300F28BA7 /* IMG_0282.MOV */; };
 		B09B2EEB1B05931700F28BA7 /* ClickButton.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EA61B05931700F28BA7 /* ClickButton.jpeg */; };
 		B09B2EEC1B05931700F28BA7 /* comentButtoun.png in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EA71B05931700F28BA7 /* comentButtoun.png */; };
@@ -87,7 +89,6 @@
 		B0C284101AF9B4F500C38707 /* newMusicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C2840F1AF9B4F500C38707 /* newMusicTests.m */; };
 		B0C284251AF9B7B000C38707 /* detailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C2841A1AF9B7B000C38707 /* detailViewController.m */; };
 		B0C284281AF9B7B000C38707 /* mainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C2841F1AF9B7B000C38707 /* mainViewController.m */; };
-		B0C284291AF9B7B000C38707 /* myPage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B0C284201AF9B7B000C38707 /* myPage.xcdatamodeld */; };
 		B0C2842A1AF9B7B000C38707 /* userSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C284231AF9B7B000C38707 /* userSignUpViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +106,9 @@
 		B02594721AF9E7DF00F68C95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Base; path = Base.lproj/IMG_1592.MOV; sourceTree = "<group>"; };
 		B041C7E91B01EEE500DAF891 /* searchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = searchViewController.h; path = ../searchViewController.h; sourceTree = "<group>"; };
 		B041C7EA1B01EEE500DAF891 /* searchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = searchViewController.m; path = ../searchViewController.m; sourceTree = "<group>"; };
+		B07CCC0A1B0D72480052101A /* mainTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = mainTableView.xib; path = newMusic.xcodeproj/../mainTableView.xib; sourceTree = SOURCE_ROOT; };
+		B07CCC171B0DBFC40052101A /* newMainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = newMainTableViewCell.h; path = newMusic.xcodeproj/../newMainTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		B07CCC181B0DBFC40052101A /* newMainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = newMainTableViewCell.m; path = newMusic.xcodeproj/../newMainTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		B09B2EA31B04CC7300F28BA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Base; path = Base.lproj/IMG_0282.MOV; sourceTree = "<group>"; };
 		B09B2EA61B05931700F28BA7 /* ClickButton.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ClickButton.jpeg; sourceTree = "<group>"; };
 		B09B2EA71B05931700F28BA7 /* comentButtoun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comentButtoun.png; sourceTree = "<group>"; };
@@ -191,7 +195,6 @@
 		B0C2841A1AF9B7B000C38707 /* detailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailViewController.m; sourceTree = "<group>"; };
 		B0C2841E1AF9B7B000C38707 /* mainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mainViewController.h; sourceTree = "<group>"; };
 		B0C2841F1AF9B7B000C38707 /* mainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainViewController.m; sourceTree = "<group>"; };
-		B0C284211AF9B7B000C38707 /* myPage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myPage.xcdatamodel; sourceTree = "<group>"; };
 		B0C284221AF9B7B000C38707 /* userSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userSignUpViewController.h; sourceTree = "<group>"; };
 		B0C284231AF9B7B000C38707 /* userSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userSignUpViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -330,10 +333,12 @@
 				B041C7E91B01EEE500DAF891 /* searchViewController.h */,
 				B041C7EA1B01EEE500DAF891 /* searchViewController.m */,
 				B0C283FD1AF9B4F500C38707 /* Main.storyboard */,
-				B0C284201AF9B7B000C38707 /* myPage.xcdatamodeld */,
 				B0C284001AF9B4F500C38707 /* Images.xcassets */,
 				B0C284021AF9B4F500C38707 /* LaunchScreen.xib */,
 				B0C283F31AF9B4F500C38707 /* Supporting Files */,
+				B07CCC0A1B0D72480052101A /* mainTableView.xib */,
+				B07CCC171B0DBFC40052101A /* newMainTableViewCell.h */,
+				B07CCC181B0DBFC40052101A /* newMainTableViewCell.m */,
 			);
 			path = newMusic;
 			sourceTree = "<group>";
@@ -494,6 +499,7 @@
 				B09B2F221B05931700F28BA7 /* Serbia.gif in Resources */,
 				B09B2EEB1B05931700F28BA7 /* ClickButton.jpeg in Resources */,
 				B09B2F2C1B05931800F28BA7 /* USA.gif in Resources */,
+				B07CCC0B1B0D72480052101A /* mainTableView.xib in Resources */,
 				B09B2EF01B05931700F28BA7 /* Australia.gif in Resources */,
 				B09B2EF91B05931700F28BA7 /* Chile.gif in Resources */,
 				B09B2F011B05931700F28BA7 /* Finland.gif in Resources */,
@@ -541,8 +547,8 @@
 				B0C283FC1AF9B4F500C38707 /* ViewController.m in Sources */,
 				B0C2842A1AF9B7B000C38707 /* userSignUpViewController.m in Sources */,
 				B0C283F91AF9B4F500C38707 /* AppDelegate.m in Sources */,
+				B07CCC191B0DBFC40052101A /* newMainTableViewCell.m in Sources */,
 				B0C283F61AF9B4F500C38707 /* main.m in Sources */,
-				B0C284291AF9B7B000C38707 /* myPage.xcdatamodeld in Sources */,
 				B0C284281AF9B7B000C38707 /* mainViewController.m in Sources */,
 				B041C7EB1B01EEE500DAF891 /* searchViewController.m in Sources */,
 				B0C284251AF9B7B000C38707 /* detailViewController.m in Sources */,
@@ -770,19 +776,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		B0C284201AF9B7B000C38707 /* myPage.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				B0C284211AF9B7B000C38707 /* myPage.xcdatamodel */,
-			);
-			currentVersion = B0C284211AF9B7B000C38707 /* myPage.xcdatamodel */;
-			path = myPage.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = B0C283E81AF9B4F500C38707 /* Project object */;
 }

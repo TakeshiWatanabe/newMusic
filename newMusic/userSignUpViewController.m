@@ -7,6 +7,7 @@
 //
 
 #import "userSignUpViewController.h"
+#import "mainViewController.h"
 
 @interface userSignUpViewController ()
 
