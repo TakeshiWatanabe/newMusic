@@ -19,43 +19,66 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //userViewControllerから画面遷移
-    [self dismissViewControllerAnimated:YES completion:nil];
+    _coffeeArray = @[@"ブルーマウンテン",@"キリマンジャロ",@"ブラジル",@"コロンビア"];
+    
+    // NSLog(@"配列の中身の数:%d",_coffeeArray.count);
     
     _mainViewController.delegate = self;
     _mainViewController.dataSource = self;
     
-    _coffeeArray = @[@"ブルーマウンテン",@"キリマンジャロ",@"ブラジル",@"コロンビア"];
-    
-    //カスタマイズしたセルをテーブルビューにセット
-    UINib *nib = [UINib nibWithNibName:@"mainTableView" bundle:nil];
-    
-    //カスタムセルを使用しているTableViewに登録
-    [self.mainViewController registerNib:nib forCellReuseIdentifier:@"Cell"];
+//    //カスタマイズしたセルをテーブルビューにセット
+//    UINib *nib = [UINib nibWithNibName:@"mainTableView" bundle:nil];
+//    
+//    
+//    //カスタムセルを使用しているTableViewに登録
+//    [self.mainViewController registerNib:nib forCellReuseIdentifier:@"Cell"];
     
 }
 
 //行数を返す
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return _coffeeArray.count;
 }
 
 //セルに文字を表示する
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     
     //定数を宣言（static = 静的)
     static NSString *CellIdentifer = @"Cell";
     
     //セルの再利用
-    newMainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
+//    newMainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
     
-    cell.tittleLabel.text = _coffeeArray[indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
+    if(cell == nil){
+        //セルの初期化とスタイルの決定
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
+    }
+
+    
+//    cell.userNameLabel.text = _coffeeArray[indexPath.row];
+    
+    // image,button,labelをタグで管理する
+    UIImageView *userImageView = (UIImageView *)[cell viewWithTag:1];
+    UIImageView *musicImageView = (UIImageView *)[cell viewWithTag:2];
+    UILabel *userNameLabel = (UILabel *)[cell viewWithTag:3];
+    UILabel *tittleLabel = (UILabel *)[cell viewWithTag:4];
+    UILabel *commentLabel = (UILabel *)[cell viewWithTag:5];
+    UIButton *goodButton = (UIButton *)[cell viewWithTag:6];
+    UIButton *playButton = (UIButton *)[cell viewWithTag:7];
+    UIButton *commentButton = (UIButton *)[cell viewWithTag:8];
+    
+    userImageView.image = [UIImage imageNamed:@"Tomorrowland26.jpg"];
+    musicImageView.image = [UIImage imageNamed:@"10408703_807424855935242_5076302992490742974_n.jpg"];
+    userNameLabel.text = @"ジェシー";
+    tittleLabel.text = @"かわいい　やばい　欲しい　付き合いたい　結婚したい　早くアメリカ行きたい";
+    commentLabel.text = @"I want you I want you I want you I want you I want youI want you";
+    //[myBtn setTitle:@"ふが" forState:UIControlStateNormal];
     
     return cell;
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -72,12 +95,4 @@
 }
 */
 
-- (IBAction)goodButton:(id)sender {
-}
-
-- (IBAction)listenButton:(id)sender {
-}
-
-- (IBAction)commentButton:(id)sender {
-}
 @end

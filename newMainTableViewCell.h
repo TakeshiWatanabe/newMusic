@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *musicImage;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *tittleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *commntoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *commentLabel;
 - (IBAction)commentoButton:(id)sender;
 - (IBAction)playButton:(id)sender;
 - (IBAction)goodButton:(id)sender;

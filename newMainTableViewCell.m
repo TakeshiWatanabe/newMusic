@@ -20,12 +20,4 @@
     // Configure the view for the selected state
 }
 
-- (IBAction)commentoButton:(id)sender {
-}
-
-- (IBAction)playButton:(id)sender {
-}
-
-- (IBAction)goodButton:(id)sender {
-}
 @end

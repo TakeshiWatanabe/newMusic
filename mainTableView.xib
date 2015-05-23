@@ -68,11 +68,9 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
-                <outlet property="commentLabel" destination="qRq-YF-2j5" id="w80-P4-a5S"/>
-                <outlet property="commntoLabel" destination="qRq-YF-2j5" id="eAB-xY-xFo"/>
+                <outlet property="commentLabel" destination="qRq-YF-2j5" id="Brw-MR-1AN"/>
                 <outlet property="musicImage" destination="YLM-cF-qH6" id="MIp-UY-11O"/>
-                <outlet property="musicNameLabel" destination="DSk-Zr-1LB" id="YID-7D-V2v"/>
-                <outlet property="tittleLabel" destination="DSk-Zr-1LB" id="c4l-6u-Yf7"/>
+                <outlet property="tittleLabel" destination="DSk-Zr-1LB" id="9Cl-0b-DZp"/>
                 <outlet property="userImage" destination="lyv-Z1-ybK" id="ato-v2-6gt"/>
                 <outlet property="userNameLabel" destination="BzY-ae-JkT" id="uX8-eV-qF3"/>
             </connections>
