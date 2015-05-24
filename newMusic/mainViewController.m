@@ -60,6 +60,8 @@
     
 //    cell.userNameLabel.text = _coffeeArray[indexPath.row];
     
+    int count = _coffeeArray.count;
+    
     // image,button,labelをタグで管理する
     UIImageView *userImageView = (UIImageView *)[cell viewWithTag:1];
     UIImageView *musicImageView = (UIImageView *)[cell viewWithTag:2];
@@ -70,12 +72,43 @@
     UIButton *playButton = (UIButton *)[cell viewWithTag:7];
     UIButton *commentButton = (UIButton *)[cell viewWithTag:8];
     
-    userImageView.image = [UIImage imageNamed:@"Tomorrowland26.jpg"];
-    musicImageView.image = [UIImage imageNamed:@"10408703_807424855935242_5076302992490742974_n.jpg"];
-    userNameLabel.text = @"ジェシー";
-    tittleLabel.text = @"かわいい　やばい　欲しい　付き合いたい　結婚したい　早くアメリカ行きたい";
-    commentLabel.text = @"I want you I want you I want you I want you I want youI want you";
-    //[myBtn setTitle:@"ふが" forState:UIControlStateNormal];
+    if (count == 0) {
+        userImageView.image = [UIImage imageNamed:@"Tomorrowland26.jpg"];
+        musicImageView.image = [UIImage imageNamed:@"10408703_807424855935242_5076302992490742974_n.jpg"];
+        userNameLabel.text = _coffeeArray[indexPath.row];
+        tittleLabel.text = @"かわいい　やばい　欲しい";
+        commentLabel.text = @"I want you I want you I want you I want you I want youI want you";
+        [goodButton setTitle:nil forState:UIControlStateNormal];
+        [playButton setTitle:nil forState:UIControlStateNormal];
+        [commentButton setTitle:nil forState:UIControlStateNormal];
+    } else if (count == 1) {
+        userImageView.image = [UIImage imageNamed:@"kp-12803-600x337.jpg"];
+        musicImageView.image = [UIImage imageNamed:@"N0011525_l.jpg"];
+        userNameLabel.text = _coffeeArray[indexPath.row];
+        tittleLabel.text = @"かわいい　やばい";
+        commentLabel.text = @"I want you I want you I want you I want you I want youI want you";
+        [goodButton setTitle:nil forState:UIControlStateNormal];
+        [playButton setTitle:nil forState:UIControlStateNormal];
+        [commentButton setTitle:nil forState:UIControlStateNormal];
+    } else if (count == 2) {
+        userImageView.image = [UIImage imageNamed:@"Tomorrowland21.jpg"];
+        musicImageView.image = [UIImage imageNamed:@"Tomorrowland23.jpg"];
+        userNameLabel.text = _coffeeArray[indexPath.row];
+        tittleLabel.text = @"かわいい";
+        commentLabel.text = @"I want you I want you I want you I want you I want youI want you";
+        [goodButton setTitle:nil forState:UIControlStateNormal];
+        [playButton setTitle:nil forState:UIControlStateNormal];
+        [commentButton setTitle:nil forState:UIControlStateNormal];
+    } else {
+        userImageView.image = [UIImage imageNamed:@"tmw_2014-6.jpg"];
+        musicImageView.image = [UIImage imageNamed:@"tmw_2014-7.jpg"];
+        userNameLabel.text = _coffeeArray[indexPath.row];
+        tittleLabel.text = @"やばい　欲しい";
+        commentLabel.text = @"I want you I want you I want you I want you I want youI want you";
+        [goodButton setTitle:nil forState:UIControlStateNormal];
+        [playButton setTitle:nil forState:UIControlStateNormal];
+        [commentButton setTitle:nil forState:UIControlStateNormal];
+    }
     
     return cell;
 }
