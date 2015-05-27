@@ -34,7 +34,7 @@
     NSData *json = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     
     // JSONをパース
-    //最新の音楽を取ってきた分配列に格納
+    // 最新の音楽を取ってきた分配列に格納
     NSArray *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
     
     _musicCell = array;
@@ -43,7 +43,7 @@
 
 
 
-//行数を返す
+// 行数を返す
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return _musicCell.count;
@@ -51,16 +51,16 @@
 
 
 
-//セルに文字を表示する
+// セルに文字を表示する
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    //定数を宣言（static = 静的)
+    // 定数を宣言（static = 静的)
     static NSString *CellIdentifer = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
     if(cell == nil){
-        //セルの初期化とスタイルの決定
+        // セルの初期化とスタイルの決定
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
     }
 
@@ -79,16 +79,16 @@
     
     
     
-    //cellに表示
+    // cellに表示
     NSURL *jurl =[NSURL URLWithString:_musicCell[indexPath.row][@"jacketUrl"]];
-    //urlを画像データに変更
+    // urlを画像データに変更
     NSData *imageData = [NSData dataWithContentsOfURL:jurl];
-    //画像データを表示する
+    // 画像データを表示する
     musicImageView.image = [UIImage imageWithData:imageData];
     
     
     
-    //cell内に各表示
+    // cell内に各表示
     userImageView.image = [UIImage imageNamed:@"Tomorrowland23.jpg"];
     userNameLabel.text = _musicCell[indexPath.row][@"userName"];
     artistNameLabel.text = _musicCell[indexPath.row][@"artistName"];

@@ -15,7 +15,7 @@
 
 @implementation userSignUpViewController
 
-//ボタンに枠を付ける処理
+// ボタンに枠を付ける処理
 @synthesize okButton;
 @synthesize noButton;
 @synthesize picButton;
@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //ボタンに枠を付ける処理
+    // ボタンに枠を付ける処理
     okButton.layer.cornerRadius = 10;
     [[okButton layer] setBorderColor:[[UIColor blackColor]CGColor]];
     [[okButton layer] setBorderWidth:1.0];
@@ -36,7 +36,7 @@
     
     
     
-    //ジャンルの配列
+    // ジャンルの配列
     _genre = @[@{@"name":@"総合",@"code":@"all"},
                @{@"name":@"クラシック",@"code":@"Classic"},
                @{@"name":@"ジャズ",@"code":@"jazz"},
@@ -55,7 +55,7 @@
                @{@"name":@"歌謡曲",@"code":@"popularSong"}
                ];
     
-    //国名と国旗の配列
+    // 国名と国旗の配列
     _country = @[@{@"name":@"アイスランド",@"code":@"Iceland",@"image":@"Iceland.gif"},
                  @{@"name":@"アイルランド",@"code":@"Ireland",@"image":@"Ireland.gif"},
                  @{@"name":@"アメリカ",@"code":@"USA",@"image":@"USA.gif"},
@@ -124,12 +124,12 @@
     
     
     
-    //viewContorrerから画面遷移
+    // viewContorrerから画面遷移
     [self dismissViewControllerAnimated:YES completion:nil];
     
     
     
-    //Delegate通知を受け取る
+    // Delegate通知を受け取る
     self.nameText.delegate = self;
     self.genreText.delegate = self;
     self.commentTextView.delegate = self;
@@ -137,61 +137,92 @@
     
     
     
-    //nameとgenreの記入欄に薄く文字を表示する
+    // nameとgenreの記入欄に薄く文字を表示する
     self.nameText.placeholder = @"ここをタップ";
     self.genreText.placeholder = @"ここをタップ";
     
     
     
-    //最初は非表示なのでNO
+    // 最初は非表示なのでNO
     _isVisibleFlag = NO;
     _genreFlag = NO;
     
     
     
-    //ジャンルpickerViewのスタート位置
+    // ジャンルpickerViewのスタート位置
     self.moveGenreView.center = CGPointMake(160, 800);
     
     
     
-    //[「改行（Return）」キーの設定]
+    // [「改行（Return）」キーの設定]
     self.commentTextView.returnKeyType = UIReturnKeyDone;
+    
 }
 
 
 
-//name
-//エンターキーでキーボードを隠す
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+//    // キーボードが表示：消す
+//    if (_genreText.isFirstResponder) {
+//        [_genreText resignFirstResponder];
+//        //[self.view endEditing:YES];   // こちらでもOK
+//    }
+//    // キーボードが非表示：表示する
+//    else {
+//        [_genreText becomeFirstResponder];
+//    }
+}
+
+
+
+
+// name
+// エンターキーでキーボードを隠す
 - (BOOL)textFieldShouldReturn1:(UITextField *)nameText; {
+    
+    // エンターキー以外でキーボードを隠す
+    if (_genreText.resignFirstResponder) {
+        [_genreText resignFirstResponder];
+        //[self.view endEditing:YES];   // こちらでもOK
+    }
+    // キーボードが非表示：表示する
+    else {
+        [_genreText becomeFirstResponder];
+    }
+    
+    // エンターキーでキーボードを隠す
     [nameText resignFirstResponder];
     return YES;
+    
 }
 
 
 
-//comment
-//エンターキーでキーボードを隠す
+// comment
+// エンターキーでキーボードを隠す
 - (BOOL)textFieldShouldReturn2:(UITextField *)textField {
     [textField resignFirstResponder];
     return YES;
+    
 }
 
 
 
-//genre
-//キーボードを出さない処理
+// genre
+// キーボードを出さない処理
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     NSLog(@"%d",textField.tag);
     if (textField.tag == 0){
-        //name
+        // name
         return YES;
     } else {
-        //genre
+        // genre
         _genreFlag = YES;
         [self.viewPickerView reloadComponent:0];
         [self showPicker];
         return NO;
     }
+    
 }
 
 
@@ -210,6 +241,7 @@
         [self.navigationItem setRightBarButtonItem:doneButton animated:YES];
         [doneButton class];
     }
+    
 }
 
 
@@ -224,6 +256,7 @@
     
     // doneボタンを消す
     [self.navigationItem setRightBarButtonItem:nil animated:YES];
+    
 }
 
 
@@ -231,6 +264,7 @@
 // ピッカーしまう
 - (void)done:(id)sender {
     [self hidePicker];
+    
 }
 
 
@@ -239,21 +273,23 @@
 - (BOOL)genreText:(UITextField *)textField {
     [self showPicker];
     return NO;
+    
 }
 
 
 
-//pickerViewの横方向の個数を指定
+// pickerViewの横方向の個数を指定
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 1;
+    
 }
 
 
 
-//pickerViewの縦の長さを決める
+// pickerViewの縦の長さを決める
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     
-    //条件で_genreか_countryのpickerViewを出す
+    // 条件で_genreか_countryのpickerViewを出す
     if (_genreFlag == YES) {
         int count = [_genre count];
         return count;
@@ -261,18 +297,20 @@
         int count = [_country count];
         return count;
     }
+    
 }
 
 
 
-//ピッカービューの行のタイトルを返す
+// ピッカービューの行のタイトルを返す
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     if (_genreFlag == YES) {
         return [_genre objectAtIndex:row][@"name"];
     } else {
-        //配列の国名指定
+        // 配列の国名指定
         return [_country objectAtIndex:row][@"name"];
     }
+    
 }
 
 
@@ -292,29 +330,32 @@
         _countryClearLabel.text = [_country objectAtIndex:row][@"code"];
         _countryImage.image = [UIImage imageNamed:[_country objectAtIndex:row][@"image"]];
     }
+    
 }
 
 
 
 - (IBAction)countryButton:(id)sender {
-    //国旗を表示する
+    // 国旗を表示する
     _genreFlag = NO;
     UIImage *flagImage = [UIImage imageNamed:@"image"];
     [self.countryImage setImage:flagImage];
     
-    //pickerViewの中身を再設定
+    // pickerViewの中身を再設定
     [self.viewPickerView reloadComponent:0];
     [self showPicker];
+    
 }
 
 
 
-//カメラロールの起動と画像選択処理
+// カメラロールの起動と画像選択処理
 - (IBAction)picButton:(id)sender {
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
     imagePicker.delegate = self;
     [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
     [self presentViewController:imagePicker animated:YES completion:nil];
+    
 }
 
 
@@ -324,6 +365,7 @@
     NSLog(@"selected");
     [self.userImageView setImage:image];
     [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 
@@ -335,7 +377,7 @@
 
 - (IBAction)okButton:(id)sender {
     
-    //変数宣言
+    // 変数宣言
     int userId = 0;
     NSString *name = self.nameText.text;
     NSString *country = self.countryClearLabel.text;
@@ -344,7 +386,7 @@
     
     
     
-    //エンコード
+    // エンコード
     name = [name
             stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
@@ -368,16 +410,16 @@
     // JSONをパース
     NSDictionary *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
     
-    //idの取得
+    // idの取得
     userId = [array[@"id"] intValue];
     
     
     //initWithContentsOfFileは画像ファイルを指定するときに使う
     // 画像の指定
-    //UIImageをpngに変換
+    // UIImageをpngに変換
     NSData* pngData = UIImagePNGRepresentation(userImg);
     
-    //ここからPOSTDATAの作成
+    // ここからPOSTDATAの作成
     NSString *urlString = @"http://192.168.33.200/GC5Team/newMusicOnlyServer/sumple.php";
     NSMutableURLRequest *userRequest = [[NSMutableURLRequest alloc] init] ;
     [userRequest setURL:[NSURL URLWithString:urlString]];
@@ -405,21 +447,38 @@
     
     NSLog(@"%@", returnString);
     
-    // mainViewController.mに画面遷移
-    // インスタンス化
-    mainViewController *secondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"mainViewController"];
     
-    //ナビゲーションコントローラーの機能で画面遷移
-    [[self navigationController] pushViewController:secondVC animated:YES];
+    
+    // 記入欄が埋まってるか確認
+    // 空欄がある場合アラートを出す
+    if (name == nil || country == nil || genre == nil || userImg == nil) {
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"空欄があります"
+                                   message:@"名前・写真・ジャンル・国籍を選んでください！"
+                                  delegate:self
+                         cancelButtonTitle:@"OK"
+                         otherButtonTitles:nil];
+        [alert show];
+        
+    } else {
+        
+        // mainViewController.mに画面遷移
+        // インスタンス化
+        mainViewController *secondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"mainViewController"];
+    
+        // ナビゲーションコントローラーの機能で画面遷移
+        [[self navigationController] pushViewController:secondVC animated:YES];
+    }
+    
 }
 
 
 
 - (IBAction)noButton:(id)sender {
     
-    //[self dismissViewControllerAnimated:YES completion:nil];
     // 一つ前の画面に戻す
      [[self navigationController] popViewControllerAnimated:YES];
+    
 }
 
 

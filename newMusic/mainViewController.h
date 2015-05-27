@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-//宣言
+// 宣言
 #import "ViewController.h"
 #import "userSignUpViewController.h"
 #import "newMainTableViewCell.h"

@@ -172,6 +172,10 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="N6U-d9-ksz" appends="YES" id="JlD-bs-uty"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="eNU-Ux-4dB"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -196,6 +200,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bg5-zn-w3V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="N6U-d9-ksz" customClass="tapScreen"/>
             </objects>
             <point key="canvasLocation" x="3064" y="-402"/>
         </scene>

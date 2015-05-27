@@ -8,29 +8,29 @@
 
 #import <UIKit/UIKit.h>
 
-//ボタンに枠を付ける
+// ボタンに枠を付ける
 #import <QuartzCore/QuartzCore.h>
 
-//ViewControllerを継承
+// ViewControllerを継承
 #import "ViewController.h"
 
 @interface userSignUpViewController : UIViewController
 
-//宣言
+// 宣言
 <UIPageViewControllerDelegate,UIPickerViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIAlertViewDelegate,UITextFieldDelegate,UITextViewDelegate> {
     
-    //配列の宣言
+    // 配列の宣言
     NSArray *_genre;
     NSArray *_country;
     UIImage *userImageView;
     
-    //ボタンを押された時にPickerViewをだす
-    BOOL _genreFlag;        //true or folesで判断させる
-    BOOL _isVisibleFlag;    //true or folesで判断させる
-    BOOL _userImageFlag;    //true or folesで判断させる
-    UIView *_backView;      //backViewの指定
-    UILabel *_myLabelInput; //入力された文字を表示
-    UITextField *_myText;   //テキストフィールド
+    // ボタンを押された時にPickerViewをだす
+    BOOL _genreFlag;        // true or folesで判断させる
+    BOOL _isVisibleFlag;    // true or folesで判断させる
+    BOOL _userImageFlag;    // true or folesで判断させる
+    UIView *_backView;      // backViewの指定
+    UILabel *_myLabelInput; // 入力された文字を表示
+    UITextField *_myText;   // テキストフィールド
 }
 
 @property (nonatomic,assign) int select_num;
