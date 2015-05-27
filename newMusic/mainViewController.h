@@ -15,7 +15,7 @@
 
 
 @interface mainViewController : UIViewController<UITableViewDataSource,UITableViewDelegate> {
-    NSArray *_coffeeArray;
+    NSArray *_musicCell;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *mainViewController;

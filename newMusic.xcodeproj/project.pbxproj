@@ -15,6 +15,8 @@
 		B01C21B11B108AE000DC5330 /* Tomorrowland23.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B01C21AA1B108AE000DC5330 /* Tomorrowland23.jpg */; };
 		B01C21B21B108AE000DC5330 /* Tomorrowworld3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B01C21AB1B108AE000DC5330 /* Tomorrowworld3.jpg */; };
 		B02594731AF9E7DF00F68C95 /* IMG_1592.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B02594711AF9E7DF00F68C95 /* IMG_1592.MOV */; };
+		B02655DF1B15AA9E0069F7CE /* singer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B02655DD1B15AA9E0069F7CE /* singer.jpg */; };
+		B02655E01B15AA9E0069F7CE /* Sound.gif in Resources */ = {isa = PBXBuildFile; fileRef = B02655DE1B15AA9E0069F7CE /* Sound.gif */; };
 		B041C7EB1B01EEE500DAF891 /* searchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B041C7EA1B01EEE500DAF891 /* searchViewController.m */; };
 		B07CCC0B1B0D72480052101A /* mainTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B07CCC0A1B0D72480052101A /* mainTableView.xib */; };
 		B07CCC191B0DBFC40052101A /* newMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B07CCC181B0DBFC40052101A /* newMainTableViewCell.m */; };
@@ -120,6 +122,8 @@
 		B01C21AA1B108AE000DC5330 /* Tomorrowland23.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Tomorrowland23.jpg; sourceTree = "<group>"; };
 		B01C21AB1B108AE000DC5330 /* Tomorrowworld3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Tomorrowworld3.jpg; sourceTree = "<group>"; };
 		B02594721AF9E7DF00F68C95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Base; path = Base.lproj/IMG_1592.MOV; sourceTree = "<group>"; };
+		B02655DD1B15AA9E0069F7CE /* singer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = singer.jpg; sourceTree = "<group>"; };
+		B02655DE1B15AA9E0069F7CE /* Sound.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Sound.gif; sourceTree = "<group>"; };
 		B041C7E91B01EEE500DAF891 /* searchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = searchViewController.h; path = ../searchViewController.h; sourceTree = "<group>"; };
 		B041C7EA1B01EEE500DAF891 /* searchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = searchViewController.m; path = ../searchViewController.m; sourceTree = "<group>"; };
 		B07CCC0A1B0D72480052101A /* mainTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = mainTableView.xib; path = newMusic.xcodeproj/../mainTableView.xib; sourceTree = SOURCE_ROOT; };
@@ -238,6 +242,8 @@
 		B07CCC1A1B0F21F20052101A /* 各種画像 */ = {
 			isa = PBXGroup;
 			children = (
+				B02655DD1B15AA9E0069F7CE /* singer.jpg */,
+				B02655DE1B15AA9E0069F7CE /* Sound.gif */,
 				B01C21A51B108AE000DC5330 /* kp-12803-600x337.jpg */,
 				B01C21A61B108AE000DC5330 /* N0011525_l.jpg */,
 				B01C21A71B108AE000DC5330 /* tmw_2014-6.jpg */,
@@ -525,6 +531,7 @@
 				B09B2F001B05931700F28BA7 /* Fiji.gif in Resources */,
 				B09B2F0E1B05931700F28BA7 /* Japan.gif in Resources */,
 				B09B2F151B05931700F28BA7 /* Netherlands.gif in Resources */,
+				B02655DF1B15AA9E0069F7CE /* singer.jpg in Resources */,
 				B09B2EF41B05931700F28BA7 /* Belize.gif in Resources */,
 				B09B2F291B05931700F28BA7 /* Tunisiagif.gif in Resources */,
 				B07CCC251B0F21F30052101A /* PlaybackButton.jpg in Resources */,
@@ -554,6 +561,7 @@
 				B09B2F121B05931700F28BA7 /* Mexico.gif in Resources */,
 				B09B2F2D1B05931800F28BA7 /* Venezuela.gif in Resources */,
 				B09B2EF21B05931700F28BA7 /* Barbados.gif in Resources */,
+				B02655E01B15AA9E0069F7CE /* Sound.gif in Resources */,
 				B09B2F2E1B05931800F28BA7 /* Vietnam.gif in Resources */,
 				B09B2F031B05931700F28BA7 /* Germany.gif in Resources */,
 				B0C284011AF9B4F500C38707 /* Images.xcassets in Resources */,

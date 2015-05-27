@@ -34,6 +34,8 @@
     [[picButton layer] setBorderColor:[[UIColor blackColor]CGColor]];
     [[picButton layer] setBorderWidth:1.0];
     
+    
+    
     //ジャンルの配列
     _genre = @[@{@"name":@"総合",@"code":@"all"},
                @{@"name":@"クラシック",@"code":@"Classic"},
@@ -120,8 +122,12 @@
                  @{@"name":@"ロシア",@"code":@"Russia",@"image":@"Russia.gif"}
                  ];
     
+    
+    
     //viewContorrerから画面遷移
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+    
     
     //Delegate通知を受け取る
     self.nameText.delegate = self;
@@ -129,20 +135,29 @@
     self.commentTextView.delegate = self;
     self.viewPickerView.delegate = self;
     
+    
+    
     //nameとgenreの記入欄に薄く文字を表示する
     self.nameText.placeholder = @"ここをタップ";
     self.genreText.placeholder = @"ここをタップ";
+    
+    
     
     //最初は非表示なのでNO
     _isVisibleFlag = NO;
     _genreFlag = NO;
     
+    
+    
     //ジャンルpickerViewのスタート位置
     self.moveGenreView.center = CGPointMake(160, 800);
+    
+    
     
     //[「改行（Return）」キーの設定]
     self.commentTextView.returnKeyType = UIReturnKeyDone;
 }
+
 
 
 //name
@@ -152,12 +167,16 @@
     return YES;
 }
 
+
+
 //comment
 //エンターキーでキーボードを隠す
 - (BOOL)textFieldShouldReturn2:(UITextField *)textField {
     [textField resignFirstResponder];
     return YES;
 }
+
+
 
 //genre
 //キーボードを出さない処理
@@ -175,6 +194,8 @@
     }
 }
 
+
+
 // ピッカーが下から出るアニメーション
 - (void)showPicker {
     [UIView beginAnimations:nil context:NULL];
@@ -191,6 +212,8 @@
     }
 }
 
+
+
 // ピッカーが下に隠れるアニメーション
 - (void)hidePicker {
     [UIView beginAnimations:nil context:NULL];
@@ -203,10 +226,14 @@
     [self.navigationItem setRightBarButtonItem:nil animated:YES];
 }
 
+
+
 // ピッカーしまう
 - (void)done:(id)sender {
     [self hidePicker];
 }
+
+
 
 // ピッカー表示開始
 - (BOOL)genreText:(UITextField *)textField {
@@ -214,10 +241,14 @@
     return NO;
 }
 
+
+
 //pickerViewの横方向の個数を指定
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 1;
 }
+
+
 
 //pickerViewの縦の長さを決める
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
@@ -232,6 +263,8 @@
     }
 }
 
+
+
 //ピッカービューの行のタイトルを返す
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     if (_genreFlag == YES) {
@@ -242,20 +275,26 @@
     }
 }
 
+
+
 // 配列から要素を取得する
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     NSInteger selectedRow = [pickerView selectedRowInComponent:0];
     NSLog(@"%d",selectedRow);
     if (_genreFlag == YES) {
         NSLog(@"%@",[_genre objectAtIndex:selectedRow]);
-        _genreText.text = [NSString stringWithFormat:[_genre objectAtIndex:row][@"name"]];
-        _genreClearLabel.text = [NSString stringWithFormat:[_genre objectAtIndex:row][@"code"]];
+        _genreText.text = [_genre objectAtIndex:row][@"name"];
+        _genreClearLabel.text = [_genre objectAtIndex:row][@"code"];
+        
     } else {
+        
         NSLog(@"%@",[_country objectAtIndex:selectedRow]);
-        _countryClearLabel.text = [NSString stringWithFormat:[_country objectAtIndex:row][@"code"]];
+        _countryClearLabel.text = [_country objectAtIndex:row][@"code"];
         _countryImage.image = [UIImage imageNamed:[_country objectAtIndex:row][@"image"]];
     }
 }
+
+
 
 - (IBAction)countryButton:(id)sender {
     //国旗を表示する
@@ -268,6 +307,8 @@
     [self showPicker];
 }
 
+
+
 //カメラロールの起動と画像選択処理
 - (IBAction)picButton:(id)sender {
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
@@ -276,6 +317,8 @@
     [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
+
+
 - (void)imagePickerController :(UIImagePickerController *)picker
         didFinishPickingImage :(UIImage *)image editingInfo :(NSDictionary *)editingInfo {
     NSLog(@"selected");
@@ -283,8 +326,12 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+
+
 - (IBAction)nameText:(id)sender {
 }
+
+
 
 - (IBAction)okButton:(id)sender {
     
@@ -295,11 +342,15 @@
     NSString *genre = self.genreText.text;
     UIImage *userImg = self.userImageView.image;
     
+    
+    
     //エンコード
     name = [name
             stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     NSString *phpUrl = [NSString stringWithFormat:@"http://192.168.33.200/GC5Team/newMusicOnlyServer/serverTomysql.php?name=%@&country=%@&genre=%@",name,self.countryClearLabel.text,self.genreClearLabel.text];
+    
+    
     
     // リクエストを生成
     NSMutableURLRequest *request;
@@ -320,11 +371,11 @@
     //idの取得
     userId = [array[@"id"] intValue];
     
+    
     //initWithContentsOfFileは画像ファイルを指定するときに使う
     // 画像の指定
     //UIImageをpngに変換
     NSData* pngData = UIImagePNGRepresentation(userImg);
-    
     
     //ここからPOSTDATAの作成
     NSString *urlString = @"http://192.168.33.200/GC5Team/newMusicOnlyServer/sumple.php";
@@ -362,12 +413,16 @@
     [[self navigationController] pushViewController:secondVC animated:YES];
 }
 
+
+
 - (IBAction)noButton:(id)sender {
     
     //[self dismissViewControllerAnimated:YES completion:nil];
     // 一つ前の画面に戻す
      [[self navigationController] popViewControllerAnimated:YES];
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
