@@ -49,6 +49,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
 @property (weak, nonatomic) IBOutlet UILabel *countryClearLabel;
 @property (weak, nonatomic) IBOutlet UILabel *genreClearLabel;
+@property (weak, nonatomic) IBOutlet UILabel *passwordClearLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *countryLabel;
 - (IBAction)done:(id)sender;

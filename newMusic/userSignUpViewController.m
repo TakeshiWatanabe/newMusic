@@ -386,11 +386,34 @@
     
     
     
+    // パスワード作成
+    // NsDate => NSString変換用のフォーマッタを作成
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"ja_JP"]]; // Localeの指定
+    [df setDateFormat:@"yyyy/MM/dd HH:mm:ss"];
+    
+    // 日付(NSDate) => 文字列(NSString)に変換
+    NSDate *now = [NSDate date];
+    NSString *strNow = [df stringFromDate:now];
+    
+    // 文字列連結してpassword作成
+    NSString *str1 = name;
+    NSString *str2 = country;
+    NSString *str3 = [str1 stringByAppendingString:str2];
+    NSString *str4 = strNow;
+    NSString *defaultPassword = [str3 stringByAppendingString:str4];
+    //NSLog(@"%@",defaultPassword);
+    
+    
+    
     // エンコード
     name = [name
             stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    defaultPassword = [defaultPassword stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
-    NSString *phpUrl = [NSString stringWithFormat:@"http://192.168.33.200/GC5Team/newMusicOnlyServer/serverTomysql.php?name=%@&country=%@&genre=%@",name,self.countryClearLabel.text,self.genreClearLabel.text];
+    
+    
+    NSString *phpUrl = [NSString stringWithFormat:@"http://192.168.33.200/GC5Team/newMusicOnlyServer/serverTomysql.php?name=%@&country=%@&genre=%@&password=%@",name,self.countryClearLabel.text,self.genreClearLabel.text,defaultPassword];
     
     
     
@@ -414,13 +437,14 @@
     userId = [array[@"id"] intValue];
     
     
-    //initWithContentsOfFileは画像ファイルを指定するときに使う
+    
+    // initWithContentsOfFileは画像ファイルを指定するときに使う
     // 画像の指定
     // UIImageをpngに変換
     NSData* pngData = UIImagePNGRepresentation(userImg);
     
     // ここからPOSTDATAの作成
-    NSString *urlString = @"http://192.168.33.200/GC5Team/newMusicOnlyServer/sumple.php";
+    NSString *urlString = @"http://192.168.33.200/GC5Team/newMusicOnlyServer/image.php";
     NSMutableURLRequest *userRequest = [[NSMutableURLRequest alloc] init] ;
     [userRequest setURL:[NSURL URLWithString:urlString]];
     [userRequest setHTTPMethod:@"POST"];
@@ -446,6 +470,23 @@
     NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
     
     NSLog(@"%@", returnString);
+    
+    
+    
+    // UserDefaultにデータを保存
+    // keyNameという名前でuserNameを保存する
+    NSString *defaultName = self.nameText.text;
+    
+    [[NSUserDefaults standardUserDefaults] setObject:defaultName forKey:@"keyName"];
+    
+    // すぐに保存する
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    // keyPassという名前でpasswordを保存する
+    [[NSUserDefaults standardUserDefaults] setObject:defaultPassword forKey:@"keyPass"];
+    
+    // すぐに保存する
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
     
     

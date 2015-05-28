@@ -126,7 +126,59 @@
 // SignInボタンを押されたら、mainViewControllerに画面遷移
 -(void)tapBtn2:(UIButton*)button2{
     
-//    //userデータがあるか確認する
+    // ユーザ名格納配列　初期化
+    userArr = [[NSMutableArray alloc] init];
+    
+    // 配列番号
+    xml_index = 0;
+    
+    // phpにアクセス
+    NSString *userConfirmation = [NSString stringWithFormat:@"http://192.168.33.200/GC5Team/newMusicOnlyServer/serverTomysql.php"];
+    
+    
+    // Requestを作成
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:userConfirmation]];
+    // サーバーとの通信を行う
+    NSData *json = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    // JSONをパース
+    _array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
+    
+    //NSLogで表示
+    NSLog(@"イベントname:%@ 場所:%@ 日時:%@",[_array valueForKeyPath:@"name"],[_array valueForKeyPath:@"id"],[_array valueForKeyPath:@"password"]);
+    
+//    // Requestを作成
+//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:userConfirmation]];
+//    
+//    // サーバーとの通信を行う
+//    NSData *json = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+//    
+//    // JSONをパース
+//    // データを格納
+//    NSString *userData = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
+//    
+//    
+//    NSLog(@"%@",userData);
+    
+    // Loadingを表示するView(通信中にぐるぐる回るやつ)
+    //[self LoadingView];
+    
+    
+    
+    // iPhoneのデータを呼び出す
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    // userの名前取得
+    NSString *name = [userDefaults stringForKey:@"keyName"];
+    NSLog(@"%@", name);
+    
+    // userのパスワード取得
+    NSString *password = [userDefaults stringForKey:@"keyPass"];
+    NSLog(@"%@", password);
+    
+    
+    
+    
+    // userの名前とパスワードを、iPhoneデータとサーバーデータを比較
 //    if (name == nil || country == nil || genre == nil || userImg == nil) {
 //        UIAlertView *alert =
 //        [[UIAlertView alloc] initWithTitle:@"登録されていません"
@@ -151,6 +203,113 @@
     
 }
 
+
+
+// XMLの解析
+- (void)parserDidStartDocument:(NSXMLParser *)parser {
+    // 解析中タグの初期化
+    nowTagStr = @"";
+    
+}
+
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
+    
+    // 開始タグが user の場合
+    if ([elementName isEqualToString:@"user"]) {
+        // 解析中タグに設定
+        nowTagStr = [NSString stringWithString:elementName];
+        
+        // テキストバッファの初期化
+        txtBuffer = @"";
+        
+    }
+}
+
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+    
+    // 解析中のタグが user の場合
+    if ([nowTagStr isEqualToString:@"user"]){
+        // テキストバッファに文字を追加する
+        txtBuffer = [txtBuffer stringByAppendingString:string];
+        
+    }
+}
+
+- (void)parser:(NSXMLParser *) parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+    
+    // 終了タグが user の場合
+    if ([elementName isEqualToString:@"user"]) {
+        NSString *xml_name =txtBuffer;
+        
+        // userArrにユーザ名を格納
+        [userArr insertObject:xml_name atIndex:xml_index];
+        
+        xml_index++;
+        
+    }
+}
+
+
+
+// 非同期通信メソッド
+- (void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+    // 接続成功し、レスポンスが返ってきた時
+    // 受信データ格納変数　初期化
+    data = [[NSMutableData alloc] init];
+    
+}
+
+
+- (void)connection:(NSURLConnection *)conn didReceiveData:(NSData *)receivedData {
+    // サーバからデータが送られた時
+    // データを結合
+    [data appendData:receivedData];
+    
+}
+
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection{
+    // データ受信が完了した時
+    // 受信データを文字列として確認
+    NSString *respons_str = [[NSString alloc]initWithData:data
+                                                 encoding:NSUTF8StringEncoding];
+    NSLog(@"res=%@", respons_str);
+    
+    // xmlパーサー生成
+    NSXMLParser *myParser = [[NSXMLParser alloc] initWithData:data];
+    myParser.delegate = self;
+    
+    // xml解析開始
+    [myParser parse];
+    
+    // Loading非表示
+    uv_load.hidden = true;
+    
+}
+
+
+
+
+// Loadingを表示するView(通信中にぐるぐる回るやつ) 設定
+- (void)LoadingView{
+    
+    UIScreen *sc = [UIScreen mainScreen];
+    uv_load = [[UIView alloc] initWithFrame:CGRectMake(0,0,sc.applicationFrame.size.width, sc.applicationFrame.size.height)];
+    uv_load.backgroundColor = [UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:0.7];
+    
+    // ぐるぐる回る
+    UIActivityIndicatorView *aci_loading;
+    aci_loading = [[UIActivityIndicatorView alloc] init];
+    aci_loading.frame = CGRectMake(0,0,sc.applicationFrame.size.width, sc.applicationFrame.size.height);
+    aci_loading.center = uv_load.center;
+    aci_loading.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
+    [aci_loading startAnimating];
+    
+    // Loading表示
+    [uv_load addSubview:aci_loading];
+    [self.view addSubview:uv_load];
+    
+}
 
 
 - (void)didReceiveMemoryWarning {

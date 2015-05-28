@@ -14,6 +14,17 @@
     UIButton *_mySignUpButton; // SignUpButtonを宣言
     UIButton *_mySignInButton; // SignInButtonを宣言
     bool _is_playing;          // ムービーが再生中である事を示す
+    
+    // データベースに接続で使用
+    NSString *nowTagStr;
+    NSString *txtBuffer;       // xml解析で使用
+    NSMutableArray *userArr;   // ユーザ名を格納する配列
+    NSInteger xml_index;       // xmlの数を入れる数値
+    NSURLConnection *conect;   // 通信コネクト
+    NSMutableData *data;       // 受信データ
+    UIView *uv_load;           // LoadingView(通信中にぐるぐる回るやつ)
+    NSArray *_array;
+    
 }
 // リピート再生するか
 @property (nonatomic,assign) BOOL repeat;
