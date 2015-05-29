@@ -389,7 +389,9 @@
     // パスワード作成
     // NsDate => NSString変換用のフォーマッタを作成
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"ja_JP"]]; // Localeの指定
+    
+    // Localeの指定
+    [df setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"ja_JP"]];
     [df setDateFormat:@"yyyy/MM/dd HH:mm:ss"];
     
     // 日付(NSDate) => 文字列(NSString)に変換
@@ -404,11 +406,28 @@
     NSString *defaultPassword = [str3 stringByAppendingString:str4];
     //NSLog(@"%@",defaultPassword);
     
+    // keyPassという名前でpasswordを保存する
+    [[NSUserDefaults standardUserDefaults] setObject:defaultPassword forKey:@"keyPass"];
+    
+    // すぐに保存する
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    
+    
+    // UserDefaultにデータを保存
+    // keyNameという名前でuserNameを保存する
+    NSString *defaultName = name;
+    
+    [[NSUserDefaults standardUserDefaults] setObject:defaultName forKey:@"keyName"];
+    
+    // すぐに保存する
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     
     
     // エンコード
-    name = [name
-            stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    name = [name stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    //defaultName = [defaultName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     defaultPassword = [defaultPassword stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     
@@ -470,23 +489,6 @@
     NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
     
     NSLog(@"%@", returnString);
-    
-    
-    
-    // UserDefaultにデータを保存
-    // keyNameという名前でuserNameを保存する
-    NSString *defaultName = self.nameText.text;
-    
-    [[NSUserDefaults standardUserDefaults] setObject:defaultName forKey:@"keyName"];
-    
-    // すぐに保存する
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    // keyPassという名前でpasswordを保存する
-    [[NSUserDefaults standardUserDefaults] setObject:defaultPassword forKey:@"keyPass"];
-    
-    // すぐに保存する
-    [[NSUserDefaults standardUserDefaults] synchronize];
     
     
     

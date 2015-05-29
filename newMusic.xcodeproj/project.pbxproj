@@ -101,6 +101,7 @@
 		B0C284251AF9B7B000C38707 /* detailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C2841A1AF9B7B000C38707 /* detailViewController.m */; };
 		B0C284281AF9B7B000C38707 /* mainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C2841F1AF9B7B000C38707 /* mainViewController.m */; };
 		B0C2842A1AF9B7B000C38707 /* userSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C284231AF9B7B000C38707 /* userSignUpViewController.m */; };
+		B0F0A5031B1854DA0012B8F0 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F0A5021B1854DA0012B8F0 /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,6 +220,7 @@
 		B0C2841F1AF9B7B000C38707 /* mainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainViewController.m; sourceTree = "<group>"; };
 		B0C284221AF9B7B000C38707 /* userSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userSignUpViewController.h; sourceTree = "<group>"; };
 		B0C284231AF9B7B000C38707 /* userSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userSignUpViewController.m; sourceTree = "<group>"; };
+		B0F0A5021B1854DA0012B8F0 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0F0A5031B1854DA0012B8F0 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +338,7 @@
 		B0C283E71AF9B4F500C38707 = {
 			isa = PBXGroup;
 			children = (
+				B0F0A5021B1854DA0012B8F0 /* MediaPlayer.framework */,
 				B0C283F21AF9B4F500C38707 /* newMusic */,
 				B0C2840C1AF9B4F500C38707 /* newMusicTests */,
 				B0C283F11AF9B4F500C38707 /* Products */,

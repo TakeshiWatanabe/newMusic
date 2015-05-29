@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 #import "mainViewController.h"
 
-@interface searchViewController : UIViewController {
+@interface searchViewController : UIViewController
+<MPMediaPickerControllerDelegate> {
     //配列の宣言
     NSArray *_genre;
 }

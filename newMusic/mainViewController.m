@@ -24,7 +24,7 @@
     
     
     
-    // phpにアクセス
+    // phpにアクセス(mainImage,musicTittle,artistName)
     NSString *phpMainViewUrl = [NSString stringWithFormat:@"http://192.168.33.200/GC5Team/newMusicOnlyServer/json.php"];
     
     // Requestを作成
@@ -47,21 +47,23 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return _musicCell.count;
+    
 }
 
 
 
 // セルに文字を表示する
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     // 定数を宣言（static = 静的)
     static NSString *CellIdentifer = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
+    
     if(cell == nil){
         // セルの初期化とスタイルの決定
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
+        
     }
 
     
@@ -76,7 +78,7 @@
     UIButton *goodButton = (UIButton *)[cell viewWithTag:7];
     UIButton *playButton = (UIButton *)[cell viewWithTag:8];
     UIButton *commentButton = (UIButton *)[cell viewWithTag:9];
-    
+    UILabel *goodCountLabel = (UILabel *)[cell viewWithTag:10];
     
     
     // cellに表示
@@ -97,8 +99,19 @@
     [goodButton setTitle:nil forState:UIControlStateNormal];
     [playButton setTitle:nil forState:UIControlStateNormal];
     [commentButton setTitle:nil forState:UIControlStateNormal];
+    goodCountLabel.text = _musicCell[indexPath.row][@"goodCount"];
     
     return cell;
+    
+    
+    
+//    //goodボタンの回数カウント
+//    NSInteger num1 = 1;
+//    self.goodButton = self.goodButton + 1;
+//    NSLog(@"%@",goodButton);
+//    NSString *print = [[NSString alloc] initWithFormat:@"%d!", num1];
+//    self.goodCountLabel.text = print;
+    
 }
 
 

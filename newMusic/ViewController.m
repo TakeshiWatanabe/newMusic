@@ -110,6 +110,36 @@
 // SignUpボタンを押されたら、userSignUpViewControllerに画面遷移
 -(void)tapBtn1:(UIButton*)button1{
     
+    // iPhoneのデータを呼び出す
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    // userの名前取得
+    NSString *defaultName = [userDefaults stringForKey:@"keyName"];
+    NSLog(@"%@", defaultName);
+    
+    // userのパスワード取得
+    NSString *password = [userDefaults stringForKey:@"keyPass"];
+    NSLog(@"%@", password);
+    
+    
+    
+    //アカウンントを持っているか確認
+    if (defaultName == defaultName && password == password) {
+        
+        // アラート表示
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"登録されています"
+                                   message:@"Sign In ボタンを押してください"
+                                  delegate:self
+                         cancelButtonTitle:@"OK"
+                         otherButtonTitles:nil];
+        [alert show];
+        return;
+        
+    }
+    
+    
+    
     // ボタンを押されたら動画を停止する
     [MPMPlayerController.moviePlayer stop];
     userSignUpViewController *secondVC1 = [[userSignUpViewController alloc] init];
@@ -126,38 +156,10 @@
 // SignInボタンを押されたら、mainViewControllerに画面遷移
 -(void)tapBtn2:(UIButton*)button2{
     
-    // ユーザ名格納配列　初期化
-    userArr = [[NSMutableArray alloc] init];
-    
-    // 配列番号
-    xml_index = 0;
-    
-    // phpにアクセス
-    NSString *userConfirmation = [NSString stringWithFormat:@"http://192.168.33.200/GC5Team/newMusicOnlyServer/serverTomysql.php"];
+    // 初期化
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc]init];
     
     
-    // Requestを作成
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:userConfirmation]];
-    // サーバーとの通信を行う
-    NSData *json = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    // JSONをパース
-    _array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
-    
-    //NSLogで表示
-    NSLog(@"イベントname:%@ 場所:%@ 日時:%@",[_array valueForKeyPath:@"name"],[_array valueForKeyPath:@"id"],[_array valueForKeyPath:@"password"]);
-    
-//    // Requestを作成
-//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:userConfirmation]];
-//    
-//    // サーバーとの通信を行う
-//    NSData *json = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-//    
-//    // JSONをパース
-//    // データを格納
-//    NSString *userData = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
-//    
-//    
-//    NSLog(@"%@",userData);
     
     // Loadingを表示するView(通信中にぐるぐる回るやつ)
     //[self LoadingView];
@@ -165,11 +167,11 @@
     
     
     // iPhoneのデータを呼び出す
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    userDefaults = [NSUserDefaults standardUserDefaults];
     
     // userの名前取得
-    NSString *name = [userDefaults stringForKey:@"keyName"];
-    NSLog(@"%@", name);
+    NSString *defaultName = [userDefaults stringForKey:@"keyName"];
+    NSLog(@"%@", defaultName);
     
     // userのパスワード取得
     NSString *password = [userDefaults stringForKey:@"keyPass"];
@@ -177,116 +179,71 @@
     
     
     
-    
-    // userの名前とパスワードを、iPhoneデータとサーバーデータを比較
-//    if (name == nil || country == nil || genre == nil || userImg == nil) {
-//        UIAlertView *alert =
-//        [[UIAlertView alloc] initWithTitle:@"登録されていません"
-//                                   message:@"Sign Up ボタンを押してください"
-//                                  delegate:self
-//                         cancelButtonTitle:@"OK"
-//                         otherButtonTitles:nil];
-//        [alert show];
-//        
-//    } else {
-//        
-//        //mainViewControllerに画面遷移
-//        //ボタンを押されたら動画を停止する
-//        [MPMPlayerController.moviePlayer stop];
-//        mainViewController *secondVC2 = [[mainViewController alloc] init];
-//        
-//        //インスタンス化し画面遷移
-//        secondVC2 = [self.storyboard instantiateViewControllerWithIdentifier:@"mainViewController"];
-//        
-//        [[self navigationController] pushViewController:secondVC2 animated:YES];
-//    }
-    
-}
-
-
-
-// XMLの解析
-- (void)parserDidStartDocument:(NSXMLParser *)parser {
-    // 解析中タグの初期化
-    nowTagStr = @"";
-    
-}
-
-- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
-    
-    // 開始タグが user の場合
-    if ([elementName isEqualToString:@"user"]) {
-        // 解析中タグに設定
-        nowTagStr = [NSString stringWithString:elementName];
+    // userデータがあるか確認
+    if (defaultName == nil && password == nil) {
         
-        // テキストバッファの初期化
-        txtBuffer = @"";
+        // アラート表示
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"登録されていません"
+                                   message:@"Sign Up ボタンを押してください"
+                                  delegate:self
+                         cancelButtonTitle:@"OK"
+                         otherButtonTitles:nil];
+        [alert show];
+        return;
+        
+    } else {
+        
+        // エンコード
+        defaultName = [defaultName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        password = [password stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         
     }
-}
-
-- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
     
-    // 解析中のタグが user の場合
-    if ([nowTagStr isEqualToString:@"user"]){
-        // テキストバッファに文字を追加する
-        txtBuffer = [txtBuffer stringByAppendingString:string];
+    
+    
+    // phpにアクセス
+    NSString *userConfirmation = [NSString stringWithFormat:@"http://192.168.33.200/GC5Team/newMusicOnlyServer/Check.php?name=%@&password=%@",defaultName,password];
+    
+    // リクエストを生成
+    NSMutableURLRequest *phpRequest;
+    phpRequest = [[NSMutableURLRequest alloc] init];
+    [phpRequest setHTTPMethod:@"POST"];
+    [phpRequest setURL:[NSURL URLWithString:userConfirmation]];
+    [phpRequest setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+    [phpRequest setTimeoutInterval:30];
+    [phpRequest setHTTPShouldHandleCookies:FALSE];
+    [phpRequest setHTTPBody:[userConfirmation dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    // サーバーとの通信を行う
+    NSData *json = [NSURLConnection sendSynchronousRequest:phpRequest returningResponse:nil error:nil];
+    
+    // JSONをパース
+    NSDictionary *userData = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
+    
+    
+    
+    // NSLogで表示
+    NSLog(@"username:%@ pass:%@",[userData valueForKeyPath:@"name"],[userData valueForKeyPath:@"password"]);
+    
+    
         
-    }
-}
-
-- (void)parser:(NSXMLParser *) parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-    
-    // 終了タグが user の場合
-    if ([elementName isEqualToString:@"user"]) {
-        NSString *xml_name =txtBuffer;
+        // mainViewControllerに画面遷移
+        // ボタンを押されたら動画を停止する
+        [MPMPlayerController.moviePlayer stop];
+        mainViewController *secondVC2 = [[mainViewController alloc] init];
         
-        // userArrにユーザ名を格納
-        [userArr insertObject:xml_name atIndex:xml_index];
+        // インスタンス化し画面遷移
+        secondVC2 = [self.storyboard instantiateViewControllerWithIdentifier:@"mainViewController"];
         
-        xml_index++;
-        
-    }
-}
-
-
-
-// 非同期通信メソッド
-- (void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    // 接続成功し、レスポンスが返ってきた時
-    // 受信データ格納変数　初期化
-    data = [[NSMutableData alloc] init];
+        [[self navigationController] pushViewController:secondVC2 animated:YES];
+    
+    
+//    // userDefaultsインスタンス化と初期化
+//    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+//    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
     
 }
-
-
-- (void)connection:(NSURLConnection *)conn didReceiveData:(NSData *)receivedData {
-    // サーバからデータが送られた時
-    // データを結合
-    [data appendData:receivedData];
-    
-}
-
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection{
-    // データ受信が完了した時
-    // 受信データを文字列として確認
-    NSString *respons_str = [[NSString alloc]initWithData:data
-                                                 encoding:NSUTF8StringEncoding];
-    NSLog(@"res=%@", respons_str);
-    
-    // xmlパーサー生成
-    NSXMLParser *myParser = [[NSXMLParser alloc] initWithData:data];
-    myParser.delegate = self;
-    
-    // xml解析開始
-    [myParser parse];
-    
-    // Loading非表示
-    uv_load.hidden = true;
-    
-}
-
 
 
 

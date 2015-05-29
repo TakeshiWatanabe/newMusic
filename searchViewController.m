@@ -9,35 +9,65 @@
 #import "searchViewController.h"
 
 @interface searchViewController ()
+@property MPMusicPlayerController *player;
 
 @end
 
 @implementation searchViewController
 
+NSURLConnection *connection;
+NSMutableData *dataAsync;
+float totalbytes;
+float loadedbytes;
+UIProgressView *progressView_;
+
 - (void)viewDidLoad {
-    [super viewDidLoad];
     
-    //ジャンルの配列
-    _genre = @[@{@"name":@"総合",@"image":@""},
-               @{@"name":@"クラシック",@"image":@""},
-               @{@"name":@"ジャズ",@"image":@""},
-               @{@"name":@"トランス・ハウス",@"image":@""},
-               @{@"name":@"EDM・ダンス",@"image":@""},
-               @{@"name":@"ロック",@"image":@""},
-               @{@"name":@"ポップ",@"image":@""},
-               @{@"name":@"R&B",@"image":@""},
-               @{@"name":@"ヒップホップ",@"image":@""},
-               @{@"name":@"年代別",@"image":@""},
-               @{@"name":@"レゲエ",@"image":@""},
-               @{@"name":@"ハワイアン",@"image":@""},
-               @{@"name":@"K-pop",@"image":@""},
-               @{@"name":@"アニメ・アニソン",@"image":@""},
-               @{@"name":@"J-pop",@"image":@""},
-               @{@"name":@"歌謡曲",@"image":@""}
-               ];
+    // プレイヤーのインスタンス化を作成
+    self.player = [MPMusicPlayerController applicationMusicPlayer];
+    
 }
 
-- (void)didReceiveMemoryWarning {
+- (IBAction)classicButton:(id)sender {
+    // MPMediaPickerControllerのインスタンスを作成
+    MPMediaPickerController *picker = [[MPMediaPickerController alloc]init];
+    // ピッカーのデリゲートを設定
+    picker.delegate = self;
+    // 複数選択を不可にする。（YESにすると、複数選択できる）
+    picker.allowsPickingMultipleItems = NO;
+    // ピッカーを表示する
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+// メディアアイテムピッカーでアイテムを選択完了したときに呼び出される
+- (void)mediaPicker:(MPMediaPickerController *)mediaPicker didPickMediaItems:(MPMediaItemCollection *)mediaItemCollection
+{
+    // 選択した曲情報がmediaItemCollectionに入っているので、これをplayerにセット。
+    [self.player setQueueWithItemCollection:mediaItemCollection];
+    // 再生開始
+    [self.player play];
+    // ピッカーを閉じ、破棄する
+    [mediaPicker dismissViewControllerAnimated:YES completion:nil];
+}
+
+//選択がキャンセルされた場合に呼ばれる
+- (void)mediaPickerDidCancel:(MPMediaPickerController *)mediaPicker{
+    // ピッカーを閉じ、破棄する
+    [mediaPicker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)genreButton:(id)sender {
+    [self.player play];
+}
+- (IBAction)artistButton:(id)sender {
+    [self.player pause];
+}
+- (IBAction)allButton:(id)sender {
+    [self.player stop];
+}
+
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -52,17 +82,17 @@
 }
 */
 
-- (IBAction)genreButton:(id)sender {
-}
+//- (IBAction)genreButton:(id)sender {
+//}
 
-- (IBAction)artistButton:(id)sender {
-}
+//- (IBAction)artistButton:(id)sender {
+//}
 
-- (IBAction)allButton:(id)sender {
-}
+//- (IBAction)allButton:(id)sender {
+//}
 
-- (IBAction)classicButton:(id)sender {
-}
+//- (IBAction)classicButton:(id)sender {
+//}
 
 - (IBAction)jazzButton:(id)sender {
 }
@@ -78,7 +108,7 @@
 - (IBAction)popButton:(id)sender {
 }
 
-- (IBAction)RBButton:(id)sender {
+- (IBAction)rbButton:(id)sender {
 }
 
 - (IBAction)hiphopButton:(id)sender {
