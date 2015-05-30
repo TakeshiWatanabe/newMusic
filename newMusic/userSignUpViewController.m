@@ -175,7 +175,6 @@
 
 
 
-
 // name
 // エンターキーでキーボードを隠す
 - (BOOL)textFieldShouldReturn1:(UITextField *)nameText; {
@@ -432,9 +431,8 @@
     
     
     
+    // phpに接続
     NSString *phpUrl = [NSString stringWithFormat:@"http://192.168.33.200/GC5Team/newMusicOnlyServer/serverTomysql.php?name=%@&country=%@&genre=%@&password=%@",name,self.countryClearLabel.text,self.genreClearLabel.text,defaultPassword];
-    
-    
     
     // リクエストを生成
     NSMutableURLRequest *request;
@@ -464,6 +462,8 @@
     
     // ここからPOSTDATAの作成
     NSString *urlString = @"http://192.168.33.200/GC5Team/newMusicOnlyServer/image.php";
+    
+    // 初期化
     NSMutableURLRequest *userRequest = [[NSMutableURLRequest alloc] init] ;
     [userRequest setURL:[NSURL URLWithString:urlString]];
     [userRequest setHTTPMethod:@"POST"];

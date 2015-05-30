@@ -123,17 +123,30 @@
     
     
     
-    //アカウンントを持っているか確認
-    if (defaultName == defaultName && password == password) {
+    //アカウンントを持っている場合
+    if ([defaultName  isEqual: defaultName] && [password  isEqual: password]) {
         
         // アラート表示
         UIAlertView *alert =
         [[UIAlertView alloc] initWithTitle:@"登録されています"
-                                   message:@"Sign In ボタンを押してください"
+                                   message:@""
                                   delegate:self
                          cancelButtonTitle:@"OK"
                          otherButtonTitles:nil];
         [alert show];
+        
+        
+        
+        // mainViewControllerに画面遷移
+        // ボタンを押されたら動画を停止する
+        [MPMPlayerController.moviePlayer stop];
+        mainViewController *secondVC2 = [[mainViewController alloc] init];
+        
+        // インスタンス化し画面遷移
+        secondVC2 = [self.storyboard instantiateViewControllerWithIdentifier:@"mainViewController"];
+        
+        [[self navigationController] pushViewController:secondVC2 animated:YES];
+        
         return;
         
     }
@@ -180,8 +193,9 @@
     
     
     // userデータがあるか確認
-    if (defaultName == nil && password == nil) {
+    if ([defaultName  isEqual: @""] && [password  isEqual: @""]) {
         
+        // 登録されていない場合
         // アラート表示
         UIAlertView *alert =
         [[UIAlertView alloc] initWithTitle:@"登録されていません"
@@ -239,9 +253,9 @@
         [[self navigationController] pushViewController:secondVC2 animated:YES];
     
     
-//    // userDefaultsインスタンス化と初期化
-//    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
-//    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+    // userDefaultsインスタンス化と初期化
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
     
 }
 
