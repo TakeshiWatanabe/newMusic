@@ -138,7 +138,7 @@
         
         
         // mainViewControllerに画面遷移
-        // ボタンを押されたら動画を停止する
+        // 動画を停止する
         [MPMPlayerController.moviePlayer stop];
         mainViewController *secondVC2 = [[mainViewController alloc] init];
         
@@ -151,13 +151,11 @@
         
     }
     
-    
-    
-    // ボタンを押されたら動画を停止する
+    // 動画を停止する
     [MPMPlayerController.moviePlayer stop];
     userSignUpViewController *secondVC1 = [[userSignUpViewController alloc] init];
     
-    // インスタンス化
+    // インスタンス化し画面遷移
     secondVC1 = [self.storyboard instantiateViewControllerWithIdentifier:@"userSignUp"];
     
      [[self navigationController] pushViewController:secondVC1 animated:YES];
@@ -199,11 +197,23 @@
         // アラート表示
         UIAlertView *alert =
         [[UIAlertView alloc] initWithTitle:@"登録されていません"
-                                   message:@"Sign Up ボタンを押してください"
+                                   message:@""
                                   delegate:self
                          cancelButtonTitle:@"OK"
                          otherButtonTitles:nil];
         [alert show];
+        
+        
+        
+        // 動画を停止する
+        [MPMPlayerController.moviePlayer stop];
+        userSignUpViewController *secondVC1 = [[userSignUpViewController alloc] init];
+        
+        // インスタンス化し画面遷移
+        secondVC1 = [self.storyboard instantiateViewControllerWithIdentifier:@"userSignUp"];
+        
+        [[self navigationController] pushViewController:secondVC1 animated:YES];
+        
         return;
         
     } else {
@@ -243,7 +253,7 @@
     
         
         // mainViewControllerに画面遷移
-        // ボタンを押されたら動画を停止する
+        // 動画を停止する
         [MPMPlayerController.moviePlayer stop];
         mainViewController *secondVC2 = [[mainViewController alloc] init];
         

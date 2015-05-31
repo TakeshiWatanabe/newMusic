@@ -35,7 +35,7 @@
 
 @property (nonatomic,assign) int select_num;
 @property (weak, nonatomic) IBOutlet UIImageView *userImageView;
-@property (weak, nonatomic) IBOutlet UITextView *commentTextView;
+//@property (weak, nonatomic) IBOutlet UITextView *commentTextView;
 @property (weak, nonatomic) IBOutlet UIPickerView *viewPickerView;
 @property (weak, nonatomic) IBOutlet UITextField *nameText;
 @property (weak, nonatomic) IBOutlet UITextField *genreText;

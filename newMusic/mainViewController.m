@@ -74,7 +74,7 @@
     UILabel *userNameLabel = (UILabel *)[cell viewWithTag:3];
     UILabel *musicTittleLabel = (UILabel *)[cell viewWithTag:4];
     UILabel *artistNameLabel = (UILabel *)[cell viewWithTag:5];
-    UILabel *commentLabel = (UILabel *)[cell viewWithTag:6];
+    //UILabel *commentLabel = (UILabel *)[cell viewWithTag:6];
     UIButton *goodButton = (UIButton *)[cell viewWithTag:7];
     UIButton *playButton = (UIButton *)[cell viewWithTag:8];
     UIButton *commentButton = (UIButton *)[cell viewWithTag:9];
@@ -90,7 +90,7 @@
     
     
     
-    // cell内に各表示
+    // cell内にそれぞれ表示
     userImageView.image = [UIImage imageNamed:@"Tomorrowland23.jpg"];
     userNameLabel.text = _musicCell[indexPath.row][@"userName"];
     artistNameLabel.text = _musicCell[indexPath.row][@"artistName"];

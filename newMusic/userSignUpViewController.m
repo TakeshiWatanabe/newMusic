@@ -8,6 +8,7 @@
 
 #import "userSignUpViewController.h"
 #import "mainViewController.h"
+#import "ViewController.h"
 
 @interface userSignUpViewController ()
 
@@ -132,7 +133,7 @@
     // Delegate通知を受け取る
     self.nameText.delegate = self;
     self.genreText.delegate = self;
-    self.commentTextView.delegate = self;
+    //self.commentTextView.delegate = self;
     self.viewPickerView.delegate = self;
     
     
@@ -155,7 +156,7 @@
     
     
     // [「改行（Return）」キーの設定]
-    self.commentTextView.returnKeyType = UIReturnKeyDone;
+    //self.commentTextView.returnKeyType = UIReturnKeyDone;
     
 }
 

@@ -8,6 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
-@interface detailViewController : UIViewController
+@interface detailViewController : UIViewController <NSURLConnectionDelegate,UISearchBarDelegate> {
+    
+    NSURLConnection *connection;
+    NSMutableData *dataAsync;
+    float totalbytes;
+    float loadedbytes;
+    UIProgressView *progressView_;
+    
+    NSString *searchSongArtist;
+    NSDictionary *_str;
+}
+@property (weak, nonatomic) IBOutlet UISearchBar *searchDetail;
+@property (weak, nonatomic) IBOutlet UIImageView *artistImage;
+@property (weak, nonatomic) IBOutlet UILabel *artistname;
+@property (weak, nonatomic) IBOutlet UILabel *songTittle;
+
 
 @end
