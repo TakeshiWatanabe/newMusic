@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface detailViewController : UIViewController <NSURLConnectionDelegate,UISearchBarDelegate> {
+@interface detailViewController : UIViewController <NSURLConnectionDelegate,UISearchBarDelegate,UITextFieldDelegate> {
     
     NSURLConnection *connection;
     NSMutableData *dataAsync;
@@ -23,6 +23,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *artistImage;
 @property (weak, nonatomic) IBOutlet UILabel *artistname;
 @property (weak, nonatomic) IBOutlet UILabel *songTittle;
-
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end

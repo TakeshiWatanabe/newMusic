@@ -70,8 +70,8 @@
     // エンコード
     searchSongArtist = [searchSongArtist stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
-    // 表示
-    //NSLog(@"%@",searchSongArtist);
+    // キーボード消す
+    [searchBar resignFirstResponder];
     
     [self loadAsync];
     
@@ -97,12 +97,6 @@
     } else {
         
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-        
-        // Requestを作成
-        //NSURLRequest *request3 = [NSURLRequest requestWithURL:[NSURL URLWithString:request]];
-        
-        // jsonに変更
-        //NSData *json = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
         
     }
 }
@@ -184,20 +178,20 @@
     
     
     
-    
     // 最新の音楽を取ってきた分配列に格納
     NSArray *artist = [json2 objectForKey:@"results"];
     NSLog(@"%@",artist);
     
-    // sample
-    // 配列の１個目を取得
     
+    
+    // 配列の１個目を取得(10個)
     for (NSInteger i = 0; i < 10; i++) {
         // 配列から要素を取得する
         _str = [artist objectAtIndex:i];
         NSLog(@"%@", _str);
         
     }
+    
     
 
     // 取りたい情報を配列に格納
@@ -215,66 +209,31 @@
     NSLog(@"%@",_musicListTrackViewUrl);
     //NSLog(@"%lu",_musicListTrackViewUrl.count);
     
+    
+    
     // 表示
     //self.artistImage.image = _musicList;
+    //self.artistImage.image= [UIImage image:_musicListTrackViewUrl];
     self.artistname.text = _musicListArtistName;
     self.songTittle.text = _musicListTrackName;
     
-    // 画像表示
-    
-//    NSURL *jurl =[NSURL URLWithString:_musicListTrackViewUrl];
+//    // 表示
+//    NSURL *imageUrl =[NSURL URLWithString:_musicListTrackViewUrl];
 //    // urlを画像データに変更
-//    NSData *imageData = [NSData dataWithContentsOfURL:jurl];
+//    NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
+    
+//    NSURL *myURL = [NSURL URLWithString:_musicListTrackViewUrl];
+//    
+//    NSURLRequest *myURLReq = [NSURLRequest requestWithURL:myURL];
+    
+    NSURL *myURL = [NSURL URLWithString:@"https://itunes.apple.com/us/album/get-myself-back/id383290105?i=383290120&uo=4"];
+    
+    NSURLRequest *myURLReq = [NSURLRequest requestWithURL:myURL];
+    
+    [_webView loadRequest:myURLReq];
     // 画像データを表示する
-    //self.artistImage.image = [NSURL URLWithString:_musicListTrackViewUrl];
-    self.artistImage.image= _musicListTrackViewUrl;
+    //self.webView = [UIImage imageWithData:myURLReq];
     
 }
-
-
-
-//- (NSRange)lineRangeForRange:(NSRange)aRange
-//    
-//    
-//    // 複数行を保持するNSStringオブジェクト
-//    // \nのところで改行されています
-//    NSString *multiLineString = _str;
-//    NSString *line;
-//    NSRange range, subRange;
-//    
-//    // 最初に文字列全範囲を示すRangeを作成する
-//    range = NSMakeRange(0, multiLineString.length);
-//    
-//    
-//    // １行ずつ読み出す
-//    while (range.length > 0) {
-//        // １行分を示すRangeを取得します。
-//        subRange = [multiLineString lineRangeForRange:NSMakeRange(range.location, 0)];
-//        // 1行分を示すRangeを用いて、文字列から１行抜き出す
-//        line = [multiLineString substringWithRange:subRange];
-//        NSLog(@"line = %@", line);
-//        
-//        // 1行分を示すRangeの最終位置を、
-//        // 次の探索に使うRangeの最初として設定する
-//        range.location = NSMaxRange(subRange);
-//        // 文字列の終端を、次の探索に使うRangeの最終位置に登録します
-//        range.length -= subRange.length;
-//    }
-//}
-
-    
-    // Jacket表示
-    //self.artistImage.image = str[@"trackViewUrl"];
-    
-//    // cellに表示
-//    NSString *jurl =[NSDictionary URLWithString:[str][@"trackViewUrl"]];
-//    // urlを画像データに変更
-//    NSData *imageData = [NSData dataWithContentsOfURL:jurl];
-//    // 画像データを表示する
-//    musicImageView.image = [UIImage imageWithData:imageData];
-    
-
-
-
 
 @end

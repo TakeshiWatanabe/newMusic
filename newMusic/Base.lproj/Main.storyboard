@@ -241,7 +241,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qtp-uh-qf8">
-                                <rect key="frame" x="129" y="228" width="63" height="60"/>
+                                <rect key="frame" x="129" y="228" width="144" height="134"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWz-2O-tEq">
                                 <rect key="frame" x="16" y="199" width="288" height="21"/>
@@ -255,6 +255,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ih0-8n-Otp">
+                                <rect key="frame" x="25" y="379" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -266,6 +270,7 @@
                         <outlet property="artistname" destination="xWz-2O-tEq" id="8dv-7u-DBr"/>
                         <outlet property="searchDetail" destination="t47-LY-WZG" id="xFO-z6-Qfy"/>
                         <outlet property="songTittle" destination="57M-CJ-c5c" id="efQ-eo-rCm"/>
+                        <outlet property="webView" destination="Ih0-8n-Otp" id="TdZ-nf-zaq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1M-y6-RZt" userLabel="First Responder" sceneMemberID="firstResponder"/>
