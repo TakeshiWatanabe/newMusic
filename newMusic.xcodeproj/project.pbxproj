@@ -26,6 +26,9 @@
 		B07CCC241B0F21F30052101A /* goodbutton.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B07CCC1E1B0F21F30052101A /* goodbutton.jpeg */; };
 		B07CCC251B0F21F30052101A /* PlaybackButton.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B07CCC1F1B0F21F30052101A /* PlaybackButton.jpg */; };
 		B07CCC261B0F21F30052101A /* Tomorrowland26.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B07CCC201B0F21F30052101A /* Tomorrowland26.jpg */; };
+		B0956D441B1BF40200C08E88 /* soundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0956D431B1BF40200C08E88 /* soundViewController.m */; };
+		B0956D461B1BFFDF00C08E88 /* sound.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0956D451B1BFFDF00C08E88 /* sound.jpg */; };
+		B0956D4C1B1C2FC000C08E88 /* searchArtistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0956D4B1B1C2FC000C08E88 /* searchArtistViewController.m */; };
 		B09B2EA41B04CC7300F28BA7 /* IMG_0282.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EA21B04CC7300F28BA7 /* IMG_0282.MOV */; };
 		B09B2EEF1B05931700F28BA7 /* Argentina.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EAB1B05931700F28BA7 /* Argentina.gif */; };
 		B09B2EF01B05931700F28BA7 /* Australia.gif in Resources */ = {isa = PBXBuildFile; fileRef = B09B2EAC1B05931700F28BA7 /* Australia.gif */; };
@@ -136,6 +139,11 @@
 		B07CCC1E1B0F21F30052101A /* goodbutton.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = goodbutton.jpeg; sourceTree = "<group>"; };
 		B07CCC1F1B0F21F30052101A /* PlaybackButton.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PlaybackButton.jpg; sourceTree = "<group>"; };
 		B07CCC201B0F21F30052101A /* Tomorrowland26.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Tomorrowland26.jpg; sourceTree = "<group>"; };
+		B0956D421B1BF40200C08E88 /* soundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = soundViewController.h; sourceTree = "<group>"; };
+		B0956D431B1BF40200C08E88 /* soundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = soundViewController.m; sourceTree = "<group>"; };
+		B0956D451B1BFFDF00C08E88 /* sound.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sound.jpg; sourceTree = "<group>"; };
+		B0956D4A1B1C2FC000C08E88 /* searchArtistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchArtistViewController.h; sourceTree = "<group>"; };
+		B0956D4B1B1C2FC000C08E88 /* searchArtistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchArtistViewController.m; sourceTree = "<group>"; };
 		B09B2EA31B04CC7300F28BA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Base; path = Base.lproj/IMG_0282.MOV; sourceTree = "<group>"; };
 		B09B2EAB1B05931700F28BA7 /* Argentina.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Argentina.gif; sourceTree = "<group>"; };
 		B09B2EAC1B05931700F28BA7 /* Australia.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Australia.gif; sourceTree = "<group>"; };
@@ -245,6 +253,7 @@
 		B07CCC1A1B0F21F20052101A /* 各種画像 */ = {
 			isa = PBXGroup;
 			children = (
+				B0956D451B1BFFDF00C08E88 /* sound.jpg */,
 				B02655DD1B15AA9E0069F7CE /* singer.jpg */,
 				B02655DE1B15AA9E0069F7CE /* Sound.gif */,
 				B01C21A51B108AE000DC5330 /* kp-12803-600x337.jpg */,
@@ -367,8 +376,12 @@
 				B0C2841F1AF9B7B000C38707 /* mainViewController.m */,
 				B0C284191AF9B7B000C38707 /* detailViewController.h */,
 				B0C2841A1AF9B7B000C38707 /* detailViewController.m */,
+				B0956D421B1BF40200C08E88 /* soundViewController.h */,
+				B0956D431B1BF40200C08E88 /* soundViewController.m */,
 				B041C7E91B01EEE500DAF891 /* searchViewController.h */,
 				B041C7EA1B01EEE500DAF891 /* searchViewController.m */,
+				B0956D4A1B1C2FC000C08E88 /* searchArtistViewController.h */,
+				B0956D4B1B1C2FC000C08E88 /* searchArtistViewController.m */,
 				B0C283FD1AF9B4F500C38707 /* Main.storyboard */,
 				B0C284001AF9B4F500C38707 /* Images.xcassets */,
 				B0C284021AF9B4F500C38707 /* LaunchScreen.xib */,
@@ -569,6 +582,7 @@
 				B09B2F2E1B05931800F28BA7 /* Vietnam.gif in Resources */,
 				B09B2F031B05931700F28BA7 /* Germany.gif in Resources */,
 				B0C284011AF9B4F500C38707 /* Images.xcassets in Resources */,
+				B0956D461B1BFFDF00C08E88 /* sound.jpg in Resources */,
 				B01C21AE1B108AE000DC5330 /* tmw_2014-6.jpg in Resources */,
 				B09B2EFA1B05931700F28BA7 /* China.gif in Resources */,
 				B02594731AF9E7DF00F68C95 /* IMG_1592.MOV in Resources */,
@@ -593,10 +607,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0C283FC1AF9B4F500C38707 /* ViewController.m in Sources */,
+				B0956D441B1BF40200C08E88 /* soundViewController.m in Sources */,
 				B0C2842A1AF9B7B000C38707 /* userSignUpViewController.m in Sources */,
 				B0C283F91AF9B4F500C38707 /* AppDelegate.m in Sources */,
 				B07CCC191B0DBFC40052101A /* newMainTableViewCell.m in Sources */,
 				B0C283F61AF9B4F500C38707 /* main.m in Sources */,
+				B0956D4C1B1C2FC000C08E88 /* searchArtistViewController.m in Sources */,
 				B0C284281AF9B7B000C38707 /* mainViewController.m in Sources */,
 				B041C7EB1B01EEE500DAF891 /* searchViewController.m in Sources */,
 				B0C284251AF9B7B000C38707 /* detailViewController.m in Sources */,

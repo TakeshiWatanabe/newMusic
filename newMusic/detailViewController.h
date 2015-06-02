@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface detailViewController : UIViewController <NSURLConnectionDelegate,UISearchBarDelegate,UITextFieldDelegate> {
+@interface detailViewController : UIViewController <NSURLConnectionDelegate,UISearchBarDelegate,UITextFieldDelegate,AVAudioPlayerDelegate> {
     
     NSURLConnection *connection;
     NSMutableData *dataAsync;
@@ -18,11 +19,15 @@
     
     NSString *searchSongArtist;
     NSDictionary *_str;
+    NSArray *_musicImg;
 }
 @property (weak, nonatomic) IBOutlet UISearchBar *searchDetail;
 @property (weak, nonatomic) IBOutlet UIImageView *artistImage;
 @property (weak, nonatomic) IBOutlet UILabel *artistname;
 @property (weak, nonatomic) IBOutlet UILabel *songTittle;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
+- (IBAction)soundbutton:(id)sender;
+@property(nonatomic) AVAudioPlayer *audioPlayer;
+
 
 @end

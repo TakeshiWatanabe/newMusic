@@ -11,7 +11,6 @@
 // 宣言
 #import "ViewController.h"
 #import "userSignUpViewController.h"
-#import "newMainTableViewCell.h"
 
 
 @interface mainViewController : UIViewController<UITableViewDataSource,UITableViewDelegate> {
@@ -19,6 +18,5 @@
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *mainViewController;
-//@property (weak, nonatomic) IBOutlet UITableViewCell *tableView;
 
 @end

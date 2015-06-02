@@ -20,6 +20,8 @@
 
 - (IBAction)genreButton:(id)sender;
 - (IBAction)artistButton:(id)sender;
+
+
 - (IBAction)allButton:(id)sender;
 - (IBAction)classicButton:(id)sender;
 - (IBAction)jazzButton:(id)sender;

@@ -272,7 +272,7 @@
 
 
 // Loadingを表示するView(通信中にぐるぐる回るやつ) 設定
-- (void)LoadingView{
+- (void)LoadingView {
     
     UIScreen *sc = [UIScreen mainScreen];
     uv_load = [[UIView alloc] initWithFrame:CGRectMake(0,0,sc.applicationFrame.size.width, sc.applicationFrame.size.height)];

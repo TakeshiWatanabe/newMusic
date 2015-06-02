@@ -8,6 +8,8 @@
 
 #import "searchViewController.h"
 
+#import "searchArtistViewController.h"
+
 @interface searchViewController ()
 @property MPMusicPlayerController *player;
 
@@ -22,77 +24,35 @@ float loadedbytes;
 UIProgressView *progressView_;
 
 - (void)viewDidLoad {
-    
-    // プレイヤーのインスタンス化を作成
-    self.player = [MPMusicPlayerController applicationMusicPlayer];
+    [super viewDidLoad];
     
 }
 
-- (IBAction)classicButton:(id)sender {
-    // MPMediaPickerControllerのインスタンスを作成
-    MPMediaPickerController *picker = [[MPMediaPickerController alloc]init];
-    // ピッカーのデリゲートを設定
-    picker.delegate = self;
-    // 複数選択を不可にする。（YESにすると、複数選択できる）
-    picker.allowsPickingMultipleItems = NO;
-    // ピッカーを表示する
-    [self presentViewController:picker animated:YES completion:nil];
-}
 
-// メディアアイテムピッカーでアイテムを選択完了したときに呼び出される
-- (void)mediaPicker:(MPMediaPickerController *)mediaPicker didPickMediaItems:(MPMediaItemCollection *)mediaItemCollection
-{
-    // 選択した曲情報がmediaItemCollectionに入っているので、これをplayerにセット。
-    [self.player setQueueWithItemCollection:mediaItemCollection];
-    // 再生開始
-    [self.player play];
-    // ピッカーを閉じ、破棄する
-    [mediaPicker dismissViewControllerAnimated:YES completion:nil];
-}
-
-//選択がキャンセルされた場合に呼ばれる
-- (void)mediaPickerDidCancel:(MPMediaPickerController *)mediaPicker{
-    // ピッカーを閉じ、破棄する
-    [mediaPicker dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)genreButton:(id)sender {
-    [self.player play];
-}
-- (IBAction)artistButton:(id)sender {
-    [self.player pause];
-}
-- (IBAction)allButton:(id)sender {
-    [self.player stop];
-}
-
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)genreButton:(id)sender {
 }
-*/
 
-//- (IBAction)genreButton:(id)sender {
-//}
+- (IBAction)artistButton:(id)sender {
+    // searchArtistViewControllerに画面遷移
+    // インスタンス化
+    mainViewController *secondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"searchArtistViewController"];
+    
+    // ナビゲーションコントローラーの機能で画面遷移
+    [[self navigationController] pushViewController:secondVC animated:YES];
+    
+}
 
-//- (IBAction)artistButton:(id)sender {
-//}
+- (IBAction)allButton:(id)sender {
+}
 
-//- (IBAction)allButton:(id)sender {
-//}
-
-//- (IBAction)classicButton:(id)sender {
-//}
+- (IBAction)classicButton:(id)sender {
+}
 
 - (IBAction)jazzButton:(id)sender {
 }
