@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
+#import "playBackViewController.h"
+
 @interface soundViewController : UIViewController <UITableViewDelegate,UITableViewDataSource,AVAudioPlayerDelegate> {
     
     NSString *searchSongArtist;

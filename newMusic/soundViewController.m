@@ -29,7 +29,7 @@
     
     _musicList = jsonObject[@"results"];
     NSLog(@"%@",_musicList);
-    NSLog(@"%lu",_musicList.count);
+    NSLog(@"%lu",(unsigned long)_musicList.count);
     
     self.myTableView.dataSource = self;
     self.myTableView.delegate = self;

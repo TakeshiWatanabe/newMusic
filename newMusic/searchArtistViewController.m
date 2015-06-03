@@ -8,7 +8,6 @@
 
 #import "searchArtistViewController.h"
 
-#import "searchViewController.h"
 
 @interface searchArtistViewController ()
 
@@ -23,6 +22,7 @@
     
     _artistTableView.delegate = self;
     _artistTableView.dataSource = self;
+    
 }
 
 
@@ -138,7 +138,6 @@
     // Available in iOS 5.0 and later.
     NSError *error;
     NSDictionary *json2 = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:encode] options:kNilOptions error:&error];
-    //NSLog(@"%@", [json2 description]);
     
     
     
@@ -148,13 +147,9 @@
     
     
     
-    // 配列の１個目を取得(10個)
-    //for (NSInteger i = 0; i < 1; i++) {
         // 配列から要素を取得する
     _str = (NSDictionary *)artist[0];
         NSLog(@"%@", _str);
-        
-    //}
     
     
     
@@ -164,27 +159,11 @@
     //NSLog(@"%lu",_musicListArtistName.count);
     
     // 取りたい情報を配列に格納()
-    _musicListViewUrl = _str[@"artworkUrl60"];
+    _musicListViewUrl = _str[@"artworkUrl100"];
     NSLog(@"%@",_musicListViewUrl);
     // NSLog(@"%lu",_musicListTrackViewUrl.count);
+ 
     
-    // 取りたい情報を配列に格納()
-    _musicListSound = _str[@"previewUrl"];
-    NSLog(@"%@",_musicListSound);
-    
-    
-    
-    // urlを画像データに変更
-//    NSURL *imageUrl =[NSURL URLWithString:(NSString *)_musicListViewUrl];
-//    
-//    NSURLRequest *myURLReq = [NSURLRequest requestWithURL:imageUrl];
-//
-//    // サーバーとの通信を行う
-//    NSData *json = [NSURLConnection sendSynchronousRequest:myURLReq returningResponse:nil error:nil];
-    
-//    // JSONをパース
-//    // 最新の音楽を取ってきた分配列に格納
-    //_artistCell = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
 
     _artistCell = artist;
     
@@ -220,56 +199,29 @@
     
     // image,labelをタグで管理する
     UIImageView *artistImage1 = (UIImageView *)[cell viewWithTag:1];
-//    UIImageView *artistImage2 = (UIImageView *)[cell viewWithTag:2];
-//    UIImageView *artistImage3 = (UIImageView *)[cell viewWithTag:3];
-//    UIImageView *artistImage4 = (UIImageView *)[cell viewWithTag:4];
-    
-    UILabel *artistNameLabel = (UILabel *)[cell viewWithTag:5];
-//    UILabel *artistNameLabel2 = (UILabel *)[cell viewWithTag:6];
-//    UILabel *artistNameLabel3 = (UILabel *)[cell viewWithTag:7];
-//    UILabel *artistNameLabel4 = (UILabel *)[cell viewWithTag:8];
-    
-//    UILabel *userNameLabel = (UILabel *)[cell viewWithTag:3];
-//    UILabel *musicTittleLabel = (UILabel *)[cell viewWithTag:4];
-//    UILabel *artistNameLabel = (UILabel *)[cell viewWithTag:5];
-//    //UILabel *commentLabel = (UILabel *)[cell viewWithTag:6];
-//    UIButton *goodButton = (UIButton *)[cell viewWithTag:7];
-//    UIButton *playButton = (UIButton *)[cell viewWithTag:8];
-//    UIButton *commentButton = (UIButton *)[cell viewWithTag:9];
-//    UILabel *goodCountLabel = (UILabel *)[cell viewWithTag:10];
-    
-    
-    
+    UIImageView *artistImage2 = (UIImageView *)[cell viewWithTag:2];
+    UIImageView *artistImage3 = (UIImageView *)[cell viewWithTag:3];
+    UIImageView *artistImage4 = (UIImageView *)[cell viewWithTag:4];
     
     // cellに表示
-    NSURL *jurl =[NSURL URLWithString:_artistCell[indexPath.row][@"artworkUrl60"]];
+    NSURL *jurl =[NSURL URLWithString:_artistCell[indexPath.row*3][@"artworkUrl100"]];
+    NSURL *jurl2 =[NSURL URLWithString:_artistCell[indexPath.row*3+1][@"artworkUrl100"]];
+    NSURL *jurl3 =[NSURL URLWithString:_artistCell[indexPath.row*3+2][@"artworkUrl100"]];
+    NSURL *jurl4 =[NSURL URLWithString:_artistCell[indexPath.row*3+3][@"artworkUrl100"]];
+    //NSLog(@"%@",jurl);
+    
     // urlを画像データに変更
     NSData *imageData = [NSData dataWithContentsOfURL:jurl];
+    NSData *imageData2 = [NSData dataWithContentsOfURL:jurl2];
+    NSData *imageData3 = [NSData dataWithContentsOfURL:jurl3];
+    NSData *imageData4 = [NSData dataWithContentsOfURL:jurl4];
+    
     // 画像データを表示する
-    artistImage1.image = [UIImage imageWithData:imageData];
-    
-    
-    
     // cell内にそれぞれ表示
-    //artistImage1.image = [UIImage imageNamed:@"artworkUrl100"];
-//    artistImage2.image = [UIImage imageNamed:@"artworkUrl100"];
-//    artistImage3.image = [UIImage imageNamed:@"artworkUrl100"];
-//    artistImage4.image = [UIImage imageNamed:@"artworkUrl100"];
-    
-    
-    
-    artistNameLabel.text = _artistCell[indexPath.row][@"artistName"];
-//    artistNameLabel2.text = _artistCell[indexPath.row][@"artistName"];
-//    artistNameLabel3.text = _artistCell[indexPath.row][@"artistName"];
-//    artistNameLabel4.text = _artistCell[indexPath.row][@"artistName"];
-    
-    
-//    musicTittleLabel.text = _musicCell[indexPath.row][@"musicTittle"];
-//    //commentLabel.text = _musicCell[indexPath.row][@"comment"];
-//    [goodButton setTitle:nil forState:UIControlStateNormal];
-//    [playButton setTitle:nil forState:UIControlStateNormal];
-//    [commentButton setTitle:nil forState:UIControlStateNormal];
-//    goodCountLabel.text = _musicCell[indexPath.row][@"goodCount"];
+    artistImage1.image = [UIImage imageWithData:imageData];
+    artistImage2.image = [UIImage imageWithData:imageData2];
+    artistImage3.image = [UIImage imageWithData:imageData3];
+    artistImage4.image = [UIImage imageWithData:imageData4];
     
     return cell;
     

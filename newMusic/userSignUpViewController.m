@@ -38,22 +38,23 @@
     
     
     // ジャンルの配列
-    _genre = @[@{@"name":@"総合",@"code":@"all"},
+    _genre = @[@{@"name":@"ニューアーティト",@"code":@"newArtist"},
                @{@"name":@"クラシック",@"code":@"Classic"},
                @{@"name":@"ジャズ",@"code":@"jazz"},
-               @{@"name":@"トランス・ハウス",@"code":@"tranceHouse"},
-               @{@"name":@"EDM・ダンス",@"code":@"EDMDance"},
+               @{@"name":@"サウンドトラック",@"code":@"soundTrack"},
+               @{@"name":@"オルタナティブ",@"code":@"alternative"},
+               @{@"name":@"ダンス",@"code":@"Dance"},
+               @{@"name":@"EDM",@"code":@"EDM"},
                @{@"name":@"ロック",@"code":@"rock"},
                @{@"name":@"ポップ",@"code":@"pop"},
                @{@"name":@"R&B",@"code":@"rb"},
                @{@"name":@"ヒップホップ",@"code":@"hiphop"},
-               @{@"name":@"年代別",@"code":@"generationDistinction"},
+               @{@"name":@"ブルース",@"code":@"blues"},
                @{@"name":@"レゲエ",@"code":@"reggae"},
-               @{@"name":@"ハワイアン",@"code":@"hawaiian"},
-               @{@"name":@"K-pop",@"code":@"kPop"},
+               @{@"name":@"フィットネス/エクササイズ",@"code":@"fitness"},
+               @{@"name":@"グレイティスヒッツ",@"code":@"hitSong"},
                @{@"name":@"アニメ・アニソン",@"code":@"anime"},
-               @{@"name":@"J-pop",@"code":@"jPop"},
-               @{@"name":@"歌謡曲",@"code":@"popularSong"}
+               @{@"name":@"J-pop",@"code":@"jPop"}
                ];
     
     // 国名と国旗の配列
@@ -427,7 +428,7 @@
     
     // エンコード
     name = [name stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    //defaultName = [defaultName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+
     defaultPassword = [defaultPassword stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     

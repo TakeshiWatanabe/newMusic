@@ -11,6 +11,7 @@
 
 #import "searchViewController.h"
 #import "mainViewController.h"
+#import "playBackViewController.h"
 
 
 @interface searchArtistViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,NSURLConnectionDelegate,UISearchBarDelegate,UITextFieldDelegate,AVAudioPlayerDelegate> {

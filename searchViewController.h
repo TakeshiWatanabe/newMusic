@@ -10,6 +10,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 
 #import "mainViewController.h"
+#import "playBackViewController.h"
 
 @interface searchViewController : UIViewController
 <MPMediaPickerControllerDelegate> {
@@ -21,23 +22,23 @@
 - (IBAction)genreButton:(id)sender;
 - (IBAction)artistButton:(id)sender;
 
-
-- (IBAction)allButton:(id)sender;
-- (IBAction)classicButton:(id)sender;
-- (IBAction)jazzButton:(id)sender;
-- (IBAction)tranceHouseButton:(id)sender;
-- (IBAction)EDMDanceButton:(id)sender;
-- (IBAction)rockButton:(id)sender;
-- (IBAction)popButton:(id)sender;
-- (IBAction)rbButton:(id)sender;
-- (IBAction)hiphopButton:(id)sender;
-- (IBAction)generationDistinctionButton:(id)sender;
-- (IBAction)reggaeButton:(id)sender;
-- (IBAction)hawaiianButton:(id)sender;
-- (IBAction)kPopButton:(id)sender;
-- (IBAction)animeButton:(id)sender;
-- (IBAction)jPopButton:(id)sender;
-- (IBAction)popularSongButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *allImg;
+@property (weak, nonatomic) IBOutlet UIImageView *classicImg;
+@property (weak, nonatomic) IBOutlet UIImageView *jazzImg;
+@property (weak, nonatomic) IBOutlet UIImageView *HouseImg;
+@property (weak, nonatomic) IBOutlet UIImageView *edmImg;
+@property (weak, nonatomic) IBOutlet UIImageView *rockImg;
+@property (weak, nonatomic) IBOutlet UIImageView *popImg;
+@property (weak, nonatomic) IBOutlet UIImageView *rbImg;
+@property (weak, nonatomic) IBOutlet UIImageView *hiphopImg;
+@property (weak, nonatomic) IBOutlet UIImageView *generationDistinctionImg;
+@property (weak, nonatomic) IBOutlet UIImageView *reggaeImg;
+@property (weak, nonatomic) IBOutlet UIImageView *hawaiianImg;
+@property (weak, nonatomic) IBOutlet UIImageView *kpopImg;
+@property (weak, nonatomic) IBOutlet UIImageView *jpopImg;
+@property (weak, nonatomic) IBOutlet UIImageView *animeImg;
+@property (weak, nonatomic) IBOutlet UIImageView *tranceImg;
+@property (weak, nonatomic) IBOutlet UIImageView *danceImg;
 
 
 @end

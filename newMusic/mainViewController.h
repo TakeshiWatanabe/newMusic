@@ -11,6 +11,7 @@
 // 宣言
 #import "ViewController.h"
 #import "userSignUpViewController.h"
+#import "playBackViewController.h"
 
 
 @interface mainViewController : UIViewController<UITableViewDataSource,UITableViewDelegate> {
