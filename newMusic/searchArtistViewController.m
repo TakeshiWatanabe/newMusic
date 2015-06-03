@@ -181,9 +181,9 @@
 }
 
 
+
 // セルに文字を表示する
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     // 定数を宣言（static = 静的)
     static NSString *CellIdentifer = @"Cell";
     

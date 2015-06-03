@@ -17,7 +17,7 @@
 @end
 
 @implementation playBackViewController {
-    NSArray *_musicList;
+    
     NSArray *_musicListArtistName;
     NSArray *_musicListTrackName;
     NSArray *_musicListViewUrl;
@@ -42,6 +42,57 @@
     self.searchDetail.delegate=self;
     
 }
+
+
+
+
+// 行数を返す
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _artistCell.count;
+    
+}
+
+
+// セルに文字を表示する
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // 定数を宣言（static = 静的)
+    static NSString *CellIdentifer = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
+    
+    if(cell == nil){
+        // セルの初期化とスタイルの決定
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
+        
+    }
+    
+    
+    
+    // image,labelをタグで管理する
+    UIImageView *artistImage1 = (UIImageView *)[cell viewWithTag:1];
+    
+    // cellに表示
+    NSURL *jurl =[NSURL URLWithString:_artistCell[indexPath.row][@"artworkUrl100"]];
+   
+    //NSLog(@"%@",jurl);
+    
+    // urlを画像データに変更
+    NSData *imageData = [NSData dataWithContentsOfURL:jurl];
+    
+    // 画像データを表示する
+    // cell内にそれぞれ表示
+    artistImage1.image = [UIImage imageWithData:imageData];
+
+    return cell;
+    
+}
+
+
+
+
+
 
 - (void)buttonWasTapped:(UIButton *)button {
 }

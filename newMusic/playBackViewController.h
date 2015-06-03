@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface playBackViewController : UIViewController <NSURLConnectionDelegate,UISearchBarDelegate,UITextFieldDelegate,AVAudioPlayerDelegate> {
+@interface playBackViewController : UIViewController <NSURLConnectionDelegate,UISearchBarDelegate,UITextFieldDelegate,AVAudioPlayerDelegate,UITableViewDataSource,UITableViewDelegate> {
     
     NSURLConnection *connection;
     NSMutableData *dataAsync;
@@ -20,6 +20,8 @@
     NSString *searchSongArtist;
     NSDictionary *_str;
     NSArray *_musicImg;
+    NSArray *_artistCell;
+    NSArray *_musicList;
 }
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchDetail;

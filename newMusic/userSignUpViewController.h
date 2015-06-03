@@ -11,7 +11,6 @@
 // ボタンに枠を付ける
 #import <QuartzCore/QuartzCore.h>
 
-// ViewControllerを継承
 #import "ViewController.h"
 
 @interface userSignUpViewController : UIViewController

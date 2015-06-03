@@ -22,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //　iTunseに接続
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://itunes.apple.com/search?term=Pop&limit=10"]];
     NSData *json_data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     NSError *error = nil;
@@ -35,9 +36,6 @@
     self.myTableView.delegate = self;
     
     _audioPlayer = nil;
-    
-    
-    
     
 }
 

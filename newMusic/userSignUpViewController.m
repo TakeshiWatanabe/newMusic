@@ -49,7 +49,7 @@
                @{@"name":@"ポップ",@"code":@"pop"},
                @{@"name":@"R&B",@"code":@"rb"},
                @{@"name":@"ヒップホップ",@"code":@"hiphop"},
-               @{@"name":@"ブルース",@"code":@"blues"},
+               //@{@"name":@"ブルース",@"code":@"blues"},
                @{@"name":@"レゲエ",@"code":@"reggae"},
                @{@"name":@"フィットネス/エクササイズ",@"code":@"fitness"},
                @{@"name":@"グレイティスヒッツ",@"code":@"hitSong"},

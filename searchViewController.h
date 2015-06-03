@@ -10,35 +10,42 @@
 #import <MediaPlayer/MediaPlayer.h>
 
 #import "mainViewController.h"
+#import "searchGenreViewController.h"
 #import "playBackViewController.h"
 
 @interface searchViewController : UIViewController
-<MPMediaPickerControllerDelegate> {
+<UITableViewDelegate,UITableViewDataSource,AVAudioPlayerDelegate> {
+    
     //配列の宣言
+    NSArray *_musicList;
+    NSMutableArray *_musicPlay;
     NSArray *_genre;
+    NSString *searchSongArtist;
+    
 }
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBer;
 
 - (IBAction)genreButton:(id)sender;
 - (IBAction)artistButton:(id)sender;
 
-@property (weak, nonatomic) IBOutlet UIImageView *allImg;
+@property (weak, nonatomic) IBOutlet UIImageView *NewArtistImg;
 @property (weak, nonatomic) IBOutlet UIImageView *classicImg;
 @property (weak, nonatomic) IBOutlet UIImageView *jazzImg;
-@property (weak, nonatomic) IBOutlet UIImageView *HouseImg;
+@property (weak, nonatomic) IBOutlet UIImageView *soundTrackImg;
 @property (weak, nonatomic) IBOutlet UIImageView *edmImg;
 @property (weak, nonatomic) IBOutlet UIImageView *rockImg;
 @property (weak, nonatomic) IBOutlet UIImageView *popImg;
 @property (weak, nonatomic) IBOutlet UIImageView *rbImg;
 @property (weak, nonatomic) IBOutlet UIImageView *hiphopImg;
-@property (weak, nonatomic) IBOutlet UIImageView *generationDistinctionImg;
+@property (weak, nonatomic) IBOutlet UIImageView *hitSongImg;
 @property (weak, nonatomic) IBOutlet UIImageView *reggaeImg;
-@property (weak, nonatomic) IBOutlet UIImageView *hawaiianImg;
-@property (weak, nonatomic) IBOutlet UIImageView *kpopImg;
+//@property (weak, nonatomic) IBOutlet UIImageView *bluesImg;
+@property (weak, nonatomic) IBOutlet UIImageView *alternativeImg;
 @property (weak, nonatomic) IBOutlet UIImageView *jpopImg;
 @property (weak, nonatomic) IBOutlet UIImageView *animeImg;
-@property (weak, nonatomic) IBOutlet UIImageView *tranceImg;
+@property (weak, nonatomic) IBOutlet UIImageView *fitnessImg;
 @property (weak, nonatomic) IBOutlet UIImageView *danceImg;
+- (IBAction)sampleButton:(id)sender;
 
 
 @end
