@@ -17,16 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // iTunseに接続
-//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://itunes.apple.com/search?term=Pop&limit=1"]];
-//    NSData *json_data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-//    NSError *error = nil;
-//    NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:json_data options:NSJSONReadingAllowFragments error:&error];
-//    
-//    _musicList = jsonObject[@"results"];
-//    NSLog(@"%@",_musicList);
-//    NSLog(@"%lu",(unsigned long)_musicList.count);
-    
     self.artistTableView.dataSource = self;
     self.artistTableView.delegate = self;
     NSLog(@"%@",_artistTableView);
@@ -195,11 +185,6 @@
     }
     
     
-    // エンコード
-//    musicTittle = [musicTittle stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//    artistName = [artistName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-
-    
     
     // image,labelをタグで管理する
     UIImageView *artistImage1 = (UIImageView *)[cell viewWithTag:1];
@@ -233,7 +218,6 @@
 
 
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -250,8 +234,22 @@
 */
 
 - (IBAction)artistButton:(id)sender {
+    // searchViewControllerに画面遷移
+    // インスタンス化
+    searchArtistViewController *secondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"searchArtistViewController"];
+    
+    // ナビゲーションコントローラーの機能で画面遷移
+    [[self navigationController] pushViewController:secondVC animated:YES];
+    
 }
 
 - (IBAction)genreButton:(id)sender {
+    // searchViewControllerに画面遷移
+    // インスタンス化
+    searchViewController *secondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"searchViewController"];
+    
+    // ナビゲーションコントローラーの機能で画面遷移
+    [[self navigationController] pushViewController:secondVC animated:YES];
+    
 }
 @end

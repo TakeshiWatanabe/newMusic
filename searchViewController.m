@@ -10,7 +10,6 @@
 
 
 @interface searchViewController ()
-@property MPMusicPlayerController *player;
 
 @end
 
@@ -116,6 +115,13 @@
 -(IBAction)clickclassicImg:(id)sender
 {
     NSLog(@"in clickclassicImg");
+    
+    // searchArtistViewControllerに画面遷移
+    // インスタンス化
+    searchGenreViewController *secondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"searchGenreViewController"];
+    
+    // ナビゲーションコントローラーの機能で画面遷移
+    [[self navigationController] pushViewController:secondVC animated:YES];
     
 }
 

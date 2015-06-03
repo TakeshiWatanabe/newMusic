@@ -236,7 +236,7 @@
 - (IBAction)genreButton:(id)sender {
     // searchViewControllerに画面遷移
     // インスタンス化
-    mainViewController *secondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"searchViewController"];
+    searchViewController *secondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"searchViewController"];
     
     // ナビゲーションコントローラーの機能で画面遷移
     [[self navigationController] pushViewController:secondVC animated:YES];

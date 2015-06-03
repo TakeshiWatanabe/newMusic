@@ -625,53 +625,149 @@
                                 <rect key="frame" x="-1" y="35" width="320" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <imageView tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="waK-g5-7hI">
-                                <rect key="frame" x="86" y="155" width="70" height="70"/>
+                            <imageView tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="classicImg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="waK-g5-7hI">
+                                <rect key="frame" x="86" y="135" width="70" height="70"/>
                             </imageView>
-                            <imageView tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x4s-5M-UUw">
-                                <rect key="frame" x="243" y="155" width="70" height="70"/>
+                            <imageView tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="soundTrackImg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="x4s-5M-UUw">
+                                <rect key="frame" x="243" y="135" width="70" height="70"/>
                             </imageView>
-                            <imageView tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dXh-py-lJs">
-                                <rect key="frame" x="164" y="155" width="70" height="70"/>
+                            <imageView tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jazzImg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="dXh-py-lJs">
+                                <rect key="frame" x="164" y="135" width="70" height="70"/>
                             </imageView>
-                            <imageView tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D8V-vo-YQC">
-                                <rect key="frame" x="7" y="244" width="70" height="70"/>
+                            <imageView tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="edmImg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="D8V-vo-YQC">
+                                <rect key="frame" x="7" y="230" width="70" height="70"/>
                             </imageView>
-                            <imageView tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Xc-LI-fV6">
-                                <rect key="frame" x="86" y="244" width="70" height="70"/>
+                            <imageView tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rockImg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="4Xc-LI-fV6">
+                                <rect key="frame" x="86" y="230" width="70" height="70"/>
                             </imageView>
-                            <imageView tag="8" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NPE-LQ-p5S">
-                                <rect key="frame" x="243" y="244" width="70" height="70"/>
+                            <imageView tag="8" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rbImg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="NPE-LQ-p5S">
+                                <rect key="frame" x="243" y="230" width="70" height="70"/>
                             </imageView>
-                            <imageView tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tU3-Ck-Gj5">
-                                <rect key="frame" x="164" y="244" width="70" height="70"/>
+                            <imageView tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="popImg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="tU3-Ck-Gj5">
+                                <rect key="frame" x="164" y="230" width="70" height="70"/>
                             </imageView>
-                            <imageView tag="9" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tnb-kO-6bY">
-                                <rect key="frame" x="7" y="334" width="70" height="70"/>
+                            <imageView tag="9" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hipHopImg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="tnb-kO-6bY">
+                                <rect key="frame" x="7" y="323" width="70" height="70"/>
                             </imageView>
-                            <imageView tag="10" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6EP-eN-eE1">
-                                <rect key="frame" x="86" y="334" width="70" height="70"/>
+                            <imageView tag="10" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hitSongImg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="6EP-eN-eE1">
+                                <rect key="frame" x="86" y="323" width="70" height="70"/>
                             </imageView>
-                            <imageView tag="12" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sCE-A4-wcv">
-                                <rect key="frame" x="243" y="334" width="70" height="70"/>
+                            <imageView tag="12" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="alternativeImg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="sCE-A4-wcv">
+                                <rect key="frame" x="243" y="323" width="70" height="70"/>
                             </imageView>
-                            <imageView tag="11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8ar-Vw-prq">
-                                <rect key="frame" x="164" y="334" width="70" height="70"/>
+                            <imageView tag="11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="reggaeImg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8ar-Vw-prq">
+                                <rect key="frame" x="164" y="323" width="70" height="70"/>
                             </imageView>
-                            <imageView tag="13" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pAF-vJ-U4S">
-                                <rect key="frame" x="7" y="425" width="70" height="70"/>
+                            <imageView tag="13" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jPopImg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="pAF-vJ-U4S">
+                                <rect key="frame" x="7" y="416" width="70" height="70"/>
                             </imageView>
-                            <imageView tag="14" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5df-Oz-q92">
-                                <rect key="frame" x="86" y="425" width="70" height="70"/>
+                            <imageView tag="14" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="animeImg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="5df-Oz-q92">
+                                <rect key="frame" x="86" y="416" width="70" height="70"/>
                             </imageView>
-                            <imageView tag="16" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BTQ-Dc-i4Q">
-                                <rect key="frame" x="243" y="425" width="70" height="70"/>
+                            <imageView tag="16" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="danceImg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="BTQ-Dc-i4Q">
+                                <rect key="frame" x="243" y="416" width="70" height="70"/>
                             </imageView>
-                            <imageView tag="15" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4GT-x1-bY8">
-                                <rect key="frame" x="164" y="425" width="70" height="70"/>
+                            <imageView tag="15" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fitnessImg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="4GT-x1-bY8">
+                                <rect key="frame" x="164" y="416" width="70" height="70"/>
                             </imageView>
-                            <imageView tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tomorrowland21.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="FfH-ll-ufi">
-                                <rect key="frame" x="7" y="155" width="70" height="70"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YP-s6-icq">
+                                <rect key="frame" x="21" y="205" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heN-Gp-8Of">
+                                <rect key="frame" x="178" y="205" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2L-ct-omT">
+                                <rect key="frame" x="100" y="205" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBx-iO-xex">
+                                <rect key="frame" x="257" y="205" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dwy-RW-Axi">
+                                <rect key="frame" x="21" y="304" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpf-TQ-DIe">
+                                <rect key="frame" x="178" y="304" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JpU-oa-VAV">
+                                <rect key="frame" x="100" y="304" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJc-6E-xLJ">
+                                <rect key="frame" x="257" y="304" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgW-ex-MVv">
+                                <rect key="frame" x="21" y="387" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqh-mS-uIk">
+                                <rect key="frame" x="178" y="387" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Gi-Z7-4rt">
+                                <rect key="frame" x="100" y="387" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NvQ-ec-PlH">
+                                <rect key="frame" x="257" y="387" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwN-yr-0hg">
+                                <rect key="frame" x="21" y="489" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuS-j2-uDj">
+                                <rect key="frame" x="178" y="489" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5FQ-6H-XKQ">
+                                <rect key="frame" x="100" y="489" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5iz-Ct-19z">
+                                <rect key="frame" x="257" y="489" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NewArtistImg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="FfH-ll-ufi">
+                                <rect key="frame" x="7" y="135" width="70" height="70"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -724,11 +820,26 @@
     </scenes>
     <resources>
         <image name="ClickButton.jpeg" width="134" height="134"/>
+        <image name="NewArtistImg.jpg" width="86" height="86"/>
         <image name="PlaybackButton.jpg" width="256" height="256"/>
         <image name="Sound.gif" width="678" height="848"/>
-        <image name="Tomorrowland21.jpg" width="960" height="639"/>
+        <image name="alternativeImg.jpg" width="86" height="86"/>
+        <image name="animeImg.jpg" width="86" height="86"/>
+        <image name="classicImg.jpg" width="86" height="86"/>
         <image name="comentButtoun.png" width="160" height="76"/>
+        <image name="danceImg.jpg" width="85" height="86"/>
+        <image name="edmImg.jpg" width="86" height="86"/>
+        <image name="fitnessImg.jpg" width="86" height="86"/>
         <image name="goodbutton.jpeg" width="231" height="218"/>
+        <image name="hipHopImg.jpg" width="86" height="86"/>
+        <image name="hitSongImg.jpg" width="86" height="86"/>
+        <image name="jPopImg.jpg" width="86" height="86"/>
+        <image name="jazzImg.jpg" width="86" height="86"/>
+        <image name="popImg.jpg" width="86" height="86"/>
+        <image name="rbImg.jpg" width="86" height="86"/>
+        <image name="reggaeImg.jpg" width="86" height="86"/>
+        <image name="rockImg.jpg" width="86" height="86"/>
         <image name="singer.jpg" width="75" height="110"/>
+        <image name="soundTrackImg.jpg" width="60" height="86"/>
     </resources>
 </document>

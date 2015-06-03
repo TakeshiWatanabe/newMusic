@@ -16,6 +16,22 @@
 		B01C21B11B108AE000DC5330 /* Tomorrowland23.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B01C21AA1B108AE000DC5330 /* Tomorrowland23.jpg */; };
 		B01C21B21B108AE000DC5330 /* Tomorrowworld3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B01C21AB1B108AE000DC5330 /* Tomorrowworld3.jpg */; };
 		B0246B161B1EA84900C7A09A /* searchGenreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0246B151B1EA84900C7A09A /* searchGenreViewController.m */; };
+		B0246B681B1F358F00C7A09A /* alternativeImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0246B581B1F358F00C7A09A /* alternativeImg.jpg */; };
+		B0246B691B1F358F00C7A09A /* animeImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0246B591B1F358F00C7A09A /* animeImg.jpg */; };
+		B0246B6A1B1F358F00C7A09A /* classicImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0246B5A1B1F358F00C7A09A /* classicImg.jpg */; };
+		B0246B6B1B1F358F00C7A09A /* danceImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0246B5B1B1F358F00C7A09A /* danceImg.jpg */; };
+		B0246B6C1B1F358F00C7A09A /* edmImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0246B5C1B1F358F00C7A09A /* edmImg.jpg */; };
+		B0246B6D1B1F358F00C7A09A /* fitnessImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0246B5D1B1F358F00C7A09A /* fitnessImg.jpg */; };
+		B0246B6E1B1F358F00C7A09A /* hipHopImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0246B5E1B1F358F00C7A09A /* hipHopImg.jpg */; };
+		B0246B6F1B1F358F00C7A09A /* hitSongImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0246B5F1B1F358F00C7A09A /* hitSongImg.jpg */; };
+		B0246B701B1F358F00C7A09A /* jazzImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0246B601B1F358F00C7A09A /* jazzImg.jpg */; };
+		B0246B711B1F358F00C7A09A /* jPopImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0246B611B1F358F00C7A09A /* jPopImg.jpg */; };
+		B0246B721B1F358F00C7A09A /* NewArtistImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0246B621B1F358F00C7A09A /* NewArtistImg.jpg */; };
+		B0246B731B1F358F00C7A09A /* popImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0246B631B1F358F00C7A09A /* popImg.jpg */; };
+		B0246B741B1F358F00C7A09A /* rbImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0246B641B1F358F00C7A09A /* rbImg.jpg */; };
+		B0246B751B1F358F00C7A09A /* reggaeImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0246B651B1F358F00C7A09A /* reggaeImg.jpg */; };
+		B0246B761B1F358F00C7A09A /* rockImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0246B661B1F358F00C7A09A /* rockImg.jpg */; };
+		B0246B771B1F358F00C7A09A /* soundTrackImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0246B671B1F358F00C7A09A /* soundTrackImg.jpg */; };
 		B02594731AF9E7DF00F68C95 /* IMG_1592.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B02594711AF9E7DF00F68C95 /* IMG_1592.MOV */; };
 		B02655DF1B15AA9E0069F7CE /* singer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B02655DD1B15AA9E0069F7CE /* singer.jpg */; };
 		B02655E01B15AA9E0069F7CE /* Sound.gif in Resources */ = {isa = PBXBuildFile; fileRef = B02655DE1B15AA9E0069F7CE /* Sound.gif */; };
@@ -130,6 +146,22 @@
 		B01C21AB1B108AE000DC5330 /* Tomorrowworld3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Tomorrowworld3.jpg; sourceTree = "<group>"; };
 		B0246B141B1EA84900C7A09A /* searchGenreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchGenreViewController.h; sourceTree = "<group>"; };
 		B0246B151B1EA84900C7A09A /* searchGenreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchGenreViewController.m; sourceTree = "<group>"; };
+		B0246B581B1F358F00C7A09A /* alternativeImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = alternativeImg.jpg; sourceTree = "<group>"; };
+		B0246B591B1F358F00C7A09A /* animeImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = animeImg.jpg; sourceTree = "<group>"; };
+		B0246B5A1B1F358F00C7A09A /* classicImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = classicImg.jpg; sourceTree = "<group>"; };
+		B0246B5B1B1F358F00C7A09A /* danceImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = danceImg.jpg; sourceTree = "<group>"; };
+		B0246B5C1B1F358F00C7A09A /* edmImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = edmImg.jpg; sourceTree = "<group>"; };
+		B0246B5D1B1F358F00C7A09A /* fitnessImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fitnessImg.jpg; sourceTree = "<group>"; };
+		B0246B5E1B1F358F00C7A09A /* hipHopImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hipHopImg.jpg; sourceTree = "<group>"; };
+		B0246B5F1B1F358F00C7A09A /* hitSongImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hitSongImg.jpg; sourceTree = "<group>"; };
+		B0246B601B1F358F00C7A09A /* jazzImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jazzImg.jpg; sourceTree = "<group>"; };
+		B0246B611B1F358F00C7A09A /* jPopImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jPopImg.jpg; sourceTree = "<group>"; };
+		B0246B621B1F358F00C7A09A /* NewArtistImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NewArtistImg.jpg; sourceTree = "<group>"; };
+		B0246B631B1F358F00C7A09A /* popImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = popImg.jpg; sourceTree = "<group>"; };
+		B0246B641B1F358F00C7A09A /* rbImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rbImg.jpg; sourceTree = "<group>"; };
+		B0246B651B1F358F00C7A09A /* reggaeImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = reggaeImg.jpg; sourceTree = "<group>"; };
+		B0246B661B1F358F00C7A09A /* rockImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rockImg.jpg; sourceTree = "<group>"; };
+		B0246B671B1F358F00C7A09A /* soundTrackImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = soundTrackImg.jpg; sourceTree = "<group>"; };
 		B02594721AF9E7DF00F68C95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Base; path = Base.lproj/IMG_1592.MOV; sourceTree = "<group>"; };
 		B02655DD1B15AA9E0069F7CE /* singer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = singer.jpg; sourceTree = "<group>"; };
 		B02655DE1B15AA9E0069F7CE /* Sound.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Sound.gif; sourceTree = "<group>"; };
@@ -256,6 +288,22 @@
 		B07CCC1A1B0F21F20052101A /* 各種画像 */ = {
 			isa = PBXGroup;
 			children = (
+				B0246B581B1F358F00C7A09A /* alternativeImg.jpg */,
+				B0246B591B1F358F00C7A09A /* animeImg.jpg */,
+				B0246B5A1B1F358F00C7A09A /* classicImg.jpg */,
+				B0246B5B1B1F358F00C7A09A /* danceImg.jpg */,
+				B0246B5C1B1F358F00C7A09A /* edmImg.jpg */,
+				B0246B5D1B1F358F00C7A09A /* fitnessImg.jpg */,
+				B0246B5E1B1F358F00C7A09A /* hipHopImg.jpg */,
+				B0246B5F1B1F358F00C7A09A /* hitSongImg.jpg */,
+				B0246B601B1F358F00C7A09A /* jazzImg.jpg */,
+				B0246B611B1F358F00C7A09A /* jPopImg.jpg */,
+				B0246B621B1F358F00C7A09A /* NewArtistImg.jpg */,
+				B0246B631B1F358F00C7A09A /* popImg.jpg */,
+				B0246B641B1F358F00C7A09A /* rbImg.jpg */,
+				B0246B651B1F358F00C7A09A /* reggaeImg.jpg */,
+				B0246B661B1F358F00C7A09A /* rockImg.jpg */,
+				B0246B671B1F358F00C7A09A /* soundTrackImg.jpg */,
 				B0956D451B1BFFDF00C08E88 /* sound.jpg */,
 				B02655DD1B15AA9E0069F7CE /* singer.jpg */,
 				B02655DE1B15AA9E0069F7CE /* Sound.gif */,
@@ -508,24 +556,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0246B701B1F358F00C7A09A /* jazzImg.jpg in Resources */,
 				B09B2F191B05931700F28BA7 /* Panama.gif in Resources */,
 				B09B2EF11B05931700F28BA7 /* Austria.gif in Resources */,
 				B09B2EEF1B05931700F28BA7 /* Argentina.gif in Resources */,
 				B09B2F0B1B05931700F28BA7 /* Ireland.gif in Resources */,
 				B09B2EF61B05931700F28BA7 /* Cameroon.gif in Resources */,
+				B0246B6B1B1F358F00C7A09A /* danceImg.jpg in Resources */,
 				B09B2F101B05931700F28BA7 /* Kuwait.gif in Resources */,
 				B01C21B11B108AE000DC5330 /* Tomorrowland23.jpg in Resources */,
 				B07CCC221B0F21F30052101A /* ClickButton.jpeg in Resources */,
 				B09B2EF51B05931700F28BA7 /* Brazil.gif in Resources */,
+				B0246B6C1B1F358F00C7A09A /* edmImg.jpg in Resources */,
 				B09B2F141B05931700F28BA7 /* Mongolia.gif in Resources */,
+				B0246B721B1F358F00C7A09A /* NewArtistImg.jpg in Resources */,
 				B09B2F281B05931700F28BA7 /* Tonga.gif in Resources */,
 				B01C21AD1B108AE000DC5330 /* N0011525_l.jpg in Resources */,
 				B09B2F081B05931700F28BA7 /* Hungary.gif in Resources */,
+				B0246B711B1F358F00C7A09A /* jPopImg.jpg in Resources */,
 				B09B2EFF1B05931700F28BA7 /* Dominica.gif in Resources */,
 				B09B2F261B05931700F28BA7 /* Switzerland.gif in Resources */,
+				B0246B751B1F358F00C7A09A /* reggaeImg.jpg in Resources */,
 				B09B2F111B05931700F28BA7 /* Luxembourg.gif in Resources */,
 				B09B2F171B05931700F28BA7 /* Norway.gif in Resources */,
 				B09B2EF71B05931700F28BA7 /* Canada.gif in Resources */,
+				B0246B681B1F358F00C7A09A /* alternativeImg.jpg in Resources */,
 				B09B2F021B05931700F28BA7 /* France.gif in Resources */,
 				B07CCC261B0F21F30052101A /* Tomorrowland26.jpg in Resources */,
 				B09B2F1B1B05931700F28BA7 /* Peru.gif in Resources */,
@@ -538,7 +593,9 @@
 				B09B2F1D1B05931700F28BA7 /* Poland.gif in Resources */,
 				B09B2EF31B05931700F28BA7 /* Belgium.gif in Resources */,
 				B0C283FF1AF9B4F500C38707 /* Main.storyboard in Resources */,
+				B0246B771B1F358F00C7A09A /* soundTrackImg.jpg in Resources */,
 				B09B2F1E1B05931700F28BA7 /* Portugal.gif in Resources */,
+				B0246B6E1B1F358F00C7A09A /* hipHopImg.jpg in Resources */,
 				B09B2F131B05931700F28BA7 /* Monaco.gif in Resources */,
 				B07CCC241B0F21F30052101A /* goodbutton.jpeg in Resources */,
 				B09B2EFD1B05931700F28BA7 /* Czech.gif in Resources */,
@@ -551,6 +608,8 @@
 				B09B2EF81B05931700F28BA7 /* CentralAfrica.gif in Resources */,
 				B09B2F1A1B05931700F28BA7 /* Paraguay.gif in Resources */,
 				B09B2F001B05931700F28BA7 /* Fiji.gif in Resources */,
+				B0246B6D1B1F358F00C7A09A /* fitnessImg.jpg in Resources */,
+				B0246B6F1B1F358F00C7A09A /* hitSongImg.jpg in Resources */,
 				B09B2F0E1B05931700F28BA7 /* Japan.gif in Resources */,
 				B09B2F151B05931700F28BA7 /* Netherlands.gif in Resources */,
 				B02655DF1B15AA9E0069F7CE /* singer.jpg in Resources */,
@@ -572,14 +631,18 @@
 				B09B2F2B1B05931800F28BA7 /* UnitedKingdom.gif in Resources */,
 				B09B2EFB1B05931700F28BA7 /* Colombia.gif in Resources */,
 				B09B2F091B05931700F28BA7 /* Iceland.gif in Resources */,
+				B0246B741B1F358F00C7A09A /* rbImg.jpg in Resources */,
 				B09B2F161B05931700F28BA7 /* NewZealand.gif in Resources */,
+				B0246B691B1F358F00C7A09A /* animeImg.jpg in Resources */,
 				B09B2F1C1B05931700F28BA7 /* Philippines.gif in Resources */,
 				B09B2F051B05931700F28BA7 /* Greece.gif in Resources */,
+				B0246B761B1F358F00C7A09A /* rockImg.jpg in Resources */,
 				B0C284041AF9B4F500C38707 /* LaunchScreen.xib in Resources */,
 				B01C21B01B108AE000DC5330 /* Tomorrowland21.jpg in Resources */,
 				B09B2F241B05931700F28BA7 /* Spain.gif in Resources */,
 				B07CCC211B0F21F30052101A /* 10408703_807424855935242_5076302992490742974_n.jpg in Resources */,
 				B09B2F0A1B05931700F28BA7 /* Indonesia.gif in Resources */,
+				B0246B6A1B1F358F00C7A09A /* classicImg.jpg in Resources */,
 				B09B2F121B05931700F28BA7 /* Mexico.gif in Resources */,
 				B09B2F2D1B05931800F28BA7 /* Venezuela.gif in Resources */,
 				B09B2EF21B05931700F28BA7 /* Barbados.gif in Resources */,
@@ -594,6 +657,7 @@
 				B09B2F061B05931700F28BA7 /* Guinea.gif in Resources */,
 				B09B2F231B05931700F28BA7 /* Singapore.gif in Resources */,
 				B01C21AF1B108AE000DC5330 /* tmw_2014-7.jpg in Resources */,
+				B0246B731B1F358F00C7A09A /* popImg.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
