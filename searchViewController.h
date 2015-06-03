@@ -11,6 +11,7 @@
 
 #import "mainViewController.h"
 #import "searchGenreViewController.h"
+#import "searchArtistViewController.h"
 #import "playBackViewController.h"
 
 @interface searchViewController : UIViewController
@@ -22,7 +23,14 @@
     NSArray *_genre;
     NSString *searchSongArtist;
     
+    NSURLConnection *connection;
+    NSMutableData *dataAsync;
+    float totalbytes;
+    float loadedbytes;
+    UIProgressView *progressView_;
+    
 }
+
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBer;
 
 - (IBAction)genreButton:(id)sender;

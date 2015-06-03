@@ -22,6 +22,13 @@
     NSArray *_musicImg;
     NSArray *_artistCell;
     NSArray *_musicList;
+    
+    NSArray *_musicListArtistName;
+    NSArray *_musicListTrackName;
+    NSArray *_musicListViewUrl;
+    NSArray *_musicListSound;
+    NSMutableArray *_musicPlay;
+    NSData *imageData;
 }
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchDetail;

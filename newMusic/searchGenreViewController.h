@@ -10,13 +10,28 @@
 
 #import "searchViewController.h"
 #import "playBackViewController.h"
+#import "searchArtistViewController.h"
+#import "searchViewController.h"
 
 @interface searchGenreViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,NSURLConnectionDelegate,UISearchBarDelegate,UITextFieldDelegate,AVAudioPlayerDelegate> {
     
     //配列の宣言
+    NSURLConnection *connection;
+    NSMutableData *dataAsync;
+    float totalbytes;
+    float loadedbytes;
+    UIProgressView *progressView_;
+    
     NSArray *_musicList;
+    NSArray *_musicListArtistName;
+    NSArray *_musicListViewUrl;
+    NSArray *_musicListSound;
+    NSDictionary *_str;
+    NSArray *_artistCell;
     
 }
+
+@property (weak, nonatomic) IBOutlet UITableView *artistTableView;
 @property (weak, nonatomic) IBOutlet UILabel *genreLabel;
 - (IBAction)artistButton:(id)sender;
 - (IBAction)genreButton:(id)sender;

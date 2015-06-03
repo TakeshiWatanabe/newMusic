@@ -8,11 +8,7 @@
 
 #import "soundViewController.h"
 
-@interface soundViewController () {
-    NSArray *_musicList;
-    NSMutableArray *_musicPlay;
-    
-}
+@interface soundViewController () 
 
 @end
 

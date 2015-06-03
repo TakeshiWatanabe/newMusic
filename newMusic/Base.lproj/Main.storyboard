@@ -520,7 +520,7 @@
                                 <rect key="frame" x="0.0" y="125" width="320" height="443"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="88" id="bCE-IH-zMX">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="88" id="bCE-IH-zMX">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bCE-IH-zMX" id="qvJ-cM-PJn">
@@ -579,12 +579,13 @@
                     <tabBarItem key="tabBarItem" title="Item" id="Zaq-FP-u1G"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="artistTableView" destination="Bvy-Ff-MEf" id="4he-cS-gKl"/>
                         <outlet property="genreLabel" destination="fWd-rK-5J8" id="Yb2-6J-2t6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Az-Ew-kGb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2370" y="1024"/>
+            <point key="canvasLocation" x="2361" y="1140"/>
         </scene>
         <!--searchViewController-->
         <scene sceneID="4Pm-ir-Wib">
@@ -669,15 +670,9 @@
                             <imageView tag="15" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4GT-x1-bY8">
                                 <rect key="frame" x="164" y="425" width="70" height="70"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dP3-Um-KNh">
-                                <rect key="frame" x="23" y="175" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="sampleButton:" destination="ft2-kE-jbS" eventType="touchUpInside" id="xja-VF-QRf"/>
-                                </connections>
-                            </button>
+                            <imageView tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tomorrowland21.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="FfH-ll-ufi">
+                                <rect key="frame" x="7" y="155" width="70" height="70"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -718,7 +713,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="YoX-uX-WIW" kind="relationship" relationship="viewControllers" id="5PH-eT-IwF"/>
-                        <segue destination="CJA-ce-tpG" kind="relationship" relationship="viewControllers" id="bA6-e1-P52"/>
                         <segue destination="ft2-kE-jbS" kind="relationship" relationship="viewControllers" id="uZJ-n3-v6R"/>
                         <segue destination="ww2-g5-LRB" kind="relationship" relationship="viewControllers" id="PF6-fl-NwG"/>
                     </connections>
@@ -732,6 +726,7 @@
         <image name="ClickButton.jpeg" width="134" height="134"/>
         <image name="PlaybackButton.jpg" width="256" height="256"/>
         <image name="Sound.gif" width="678" height="848"/>
+        <image name="Tomorrowland21.jpg" width="960" height="639"/>
         <image name="comentButtoun.png" width="160" height="76"/>
         <image name="goodbutton.jpeg" width="231" height="218"/>
         <image name="singer.jpg" width="75" height="110"/>

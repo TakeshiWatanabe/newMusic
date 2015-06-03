@@ -14,6 +14,8 @@
 @interface soundViewController : UIViewController <UITableViewDelegate,UITableViewDataSource,AVAudioPlayerDelegate> {
     
     NSString *searchSongArtist;
+    NSArray *_musicList;
+    NSMutableArray *_musicPlay;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;

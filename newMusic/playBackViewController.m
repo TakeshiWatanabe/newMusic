@@ -16,15 +16,7 @@
 
 @end
 
-@implementation playBackViewController {
-    
-    NSArray *_musicListArtistName;
-    NSArray *_musicListTrackName;
-    NSArray *_musicListViewUrl;
-    NSArray *_musicListSound;
-    NSMutableArray *_musicPlay;
-    NSData *imageData;
-}
+@implementation playBackViewController 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,7 +34,6 @@
     self.searchDetail.delegate=self;
     
 }
-
 
 
 
@@ -75,8 +66,6 @@
     
     // cellに表示
     NSURL *jurl =[NSURL URLWithString:_artistCell[indexPath.row][@"artworkUrl100"]];
-   
-    //NSLog(@"%@",jurl);
     
     // urlを画像データに変更
     NSData *imageData = [NSData dataWithContentsOfURL:jurl];
