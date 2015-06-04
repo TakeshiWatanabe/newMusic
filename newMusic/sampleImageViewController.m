@@ -177,7 +177,8 @@
     _musicListSound = _str[@"previewUrl"];
     NSLog(@"%@",_musicListSound);
     
-    
+    _musicListTrackId = _str[@"trackId"];
+    NSLog(@"%@",_musicListTrackId);
     
     _musicCell = artist;
     
@@ -254,7 +255,9 @@
     UILabel *artistNameLabel = (UILabel *)[cell viewWithTag:2];
     UIImageView *artistImage1 = (UIImageView *)[cell viewWithTag:3];
     
-    
+    UIButton *favoriteBtn = (UIButton *)[cell viewWithTag:50];
+
+    favoriteBtn.tag = indexPath.row;
     
     // imageをタグで管理、表示
     // cellに表示
@@ -282,24 +285,25 @@
 
 
 - (IBAction)favouriteButton:(id)sender {
+    
+    UIButton *favoriteBtn = (UIButton *)sender;
+    
+    // cellの行数を取得
+    UITableViewCell *cell = (UITableViewCell *)[[favoriteBtn superview]superview];
+    
+    int row = [self.artistTableView indexPathForCell:cell].row;
+    NSLog(@"%d",row);
+    
+    
+    
     // 変数の宣言
     int userId = 0;
-    NSString *musicTittle = (NSString *)_musicListTrackName;
-    NSString *artistName = (NSString *)_musicListArtistName;
-    UIImage *musicImg = (UIImage *)_musicListViewUrl;
-    NSString *soundUrl = (NSString *)_musicListSound;
-    
+    NSString *musicTittle = _musicCell[row][@"trackName"];
+    NSString *artistName = _musicCell[row][@"artistName"];
+    UIImage *musicImg = _musicCell[row][@"artworkUrl100"];
+    NSString *soundUrl = _musicCell[row][@"previewUrl"];
+    NSString *trackId = _musicCell[row][@"trackId"];
     NSString *StrmusicImg = @"";
-    
-    
-    // アラート表示
-    UIAlertView *alert =
-    [[UIAlertView alloc] initWithTitle:@"お気に入りに"
-                               message:@"登録されました"
-                              delegate:@"Cancel"
-                     cancelButtonTitle:@"OK"
-                     otherButtonTitles:nil];
-    [alert show];
     
     
     
@@ -311,7 +315,7 @@
     
     
     // phpに接続
-    NSString *phpUrl = [NSString stringWithFormat:@"http://192.168.33.200/GC5Team/newMusicOnlyServer/musicData.php?musicTittle=%@&artistName=%@&jacketUrl=%@&previewUrl=%@",musicTittle,artistName,musicImg,soundUrl];
+    NSString *phpUrl = [NSString stringWithFormat:@"http://192.168.33.200/GC5Team/newMusicOnlyServer/musicData.php?musicTittle=%@&artistName=%@&jacketUrl=%@&previewUrl=%@&trackId=%@",musicTittle,artistName,musicImg,soundUrl,trackId];
     
     // リクエストを生成
     NSMutableURLRequest *request;
@@ -334,21 +338,16 @@
     StrmusicImg = array[@"jacketUrl"];
     
     
+    
     // 画像の指定
     // UIImageをpng.jpgに変換
     NSRange range = [StrmusicImg rangeOfString:@".png"];
     
-    NSData *jpgData = [[NSData alloc] init];
-    NSData *pngData = [[NSData alloc] init];
+    NSData *jaketImageData = [[NSData alloc] init];
     
-    if (range.location == NSNotFound) {
-        jpgData = UIImageJPEGRepresentation(musicImg, 0);
-        [imgData writeToFile:(NSString *)jpgData atomically:YES];
-        
-    } else {
-        pngData = UIImagePNGRepresentation(musicImg);
-        
-    }
+    jaketImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:StrmusicImg]];
+    
+    
     
     // ここからPOSTDATAの作成
     NSString *urlString = @"http://192.168.33.200/GC5Team/newMusicOnlyServer/image.php";
@@ -371,18 +370,16 @@
         //JPEG
         [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"file\"; filename=\"prof%d.jpg\"\r\n",userId] dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[@"Content-Type: image/jpg\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[NSData dataWithData:jpgData]];
+        [body appendData:[NSData dataWithData:jaketImageData]];
         [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
         
     } else {
         //PNG
         [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"file\"; filename=\"prof%d.png\"\r\n",userId] dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[@"Content-Type: image/png\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[NSData dataWithData:pngData]];
+        [body appendData:[NSData dataWithData:jaketImageData]];
         [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     }
-    
-    
     
     [body appendData:[[NSString stringWithFormat:@"--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     
@@ -391,6 +388,17 @@
     NSData *returnData = [NSURLConnection sendSynchronousRequest:userRequest returningResponse:nil error:nil];
     NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
     NSLog(@"%@", returnString);
+    
+    
+    
+    // アラート表示
+    UIAlertView *alert =
+    [[UIAlertView alloc] initWithTitle:@"お気に入りに"
+                               message:@"登録されました"
+                              delegate:@"Cancel"
+                     cancelButtonTitle:@"OK"
+                     otherButtonTitles:nil];
+    [alert show];
     
     
     

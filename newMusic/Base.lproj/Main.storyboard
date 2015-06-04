@@ -435,7 +435,7 @@
                                                         <action selector="soundbutton:" destination="p1f-BM-vHR" eventType="touchUpInside" id="Ccx-tX-8bj"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P31-pO-O60">
+                                                <button opaque="NO" tag="50" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P31-pO-O60">
                                                     <rect key="frame" x="102" y="305" width="39" height="39"/>
                                                     <state key="normal" title="Button" image="goodbutton.jpeg">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -880,8 +880,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="YoX-uX-WIW" kind="relationship" relationship="viewControllers" id="5PH-eT-IwF"/>
-                        <segue destination="ft2-kE-jbS" kind="relationship" relationship="viewControllers" id="uZJ-n3-v6R"/>
-                        <segue destination="ww2-g5-LRB" kind="relationship" relationship="viewControllers" id="PF6-fl-NwG"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bwn-y2-IAJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

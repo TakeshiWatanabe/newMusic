@@ -19,6 +19,7 @@
     NSArray *_musicListArtistName;
     NSArray *_musicListViewUrl;
     NSArray *_musicListSound;
+    NSArray *_musicListTrackId;
     NSArray *_musicCell;
     
     NSMutableArray *_musicPlay;
