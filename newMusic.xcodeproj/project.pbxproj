@@ -8,13 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B014F4AF1B1D965200B4D920 /* playBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B014F4AE1B1D965200B4D920 /* playBackViewController.m */; };
-		B01C21AC1B108AE000DC5330 /* kp-12803-600x337.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B01C21A51B108AE000DC5330 /* kp-12803-600x337.jpg */; };
-		B01C21AD1B108AE000DC5330 /* N0011525_l.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B01C21A61B108AE000DC5330 /* N0011525_l.jpg */; };
-		B01C21AE1B108AE000DC5330 /* tmw_2014-6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B01C21A71B108AE000DC5330 /* tmw_2014-6.jpg */; };
-		B01C21AF1B108AE000DC5330 /* tmw_2014-7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B01C21A81B108AE000DC5330 /* tmw_2014-7.jpg */; };
-		B01C21B01B108AE000DC5330 /* Tomorrowland21.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B01C21A91B108AE000DC5330 /* Tomorrowland21.jpg */; };
-		B01C21B11B108AE000DC5330 /* Tomorrowland23.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B01C21AA1B108AE000DC5330 /* Tomorrowland23.jpg */; };
-		B01C21B21B108AE000DC5330 /* Tomorrowworld3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B01C21AB1B108AE000DC5330 /* Tomorrowworld3.jpg */; };
+		B02377271B203E1A00FAEE7B /* sampleImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02377261B203E1A00FAEE7B /* sampleImageViewController.m */; };
 		B0246B161B1EA84900C7A09A /* searchGenreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0246B151B1EA84900C7A09A /* searchGenreViewController.m */; };
 		B0246B681B1F358F00C7A09A /* alternativeImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0246B581B1F358F00C7A09A /* alternativeImg.jpg */; };
 		B0246B691B1F358F00C7A09A /* animeImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0246B591B1F358F00C7A09A /* animeImg.jpg */; };
@@ -34,16 +28,14 @@
 		B0246B771B1F358F00C7A09A /* soundTrackImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0246B671B1F358F00C7A09A /* soundTrackImg.jpg */; };
 		B02594731AF9E7DF00F68C95 /* IMG_1592.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B02594711AF9E7DF00F68C95 /* IMG_1592.MOV */; };
 		B02655DF1B15AA9E0069F7CE /* singer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B02655DD1B15AA9E0069F7CE /* singer.jpg */; };
-		B02655E01B15AA9E0069F7CE /* Sound.gif in Resources */ = {isa = PBXBuildFile; fileRef = B02655DE1B15AA9E0069F7CE /* Sound.gif */; };
+		B02655E01B15AA9E0069F7CE /* Sound2.gif in Resources */ = {isa = PBXBuildFile; fileRef = B02655DE1B15AA9E0069F7CE /* Sound2.gif */; };
 		B041C7EB1B01EEE500DAF891 /* searchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B041C7EA1B01EEE500DAF891 /* searchViewController.m */; };
 		B07CCC0B1B0D72480052101A /* mainTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B07CCC0A1B0D72480052101A /* mainTableView.xib */; };
 		B07CCC191B0DBFC40052101A /* newMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B07CCC181B0DBFC40052101A /* newMainTableViewCell.m */; };
-		B07CCC211B0F21F30052101A /* 10408703_807424855935242_5076302992490742974_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B07CCC1B1B0F21F30052101A /* 10408703_807424855935242_5076302992490742974_n.jpg */; };
 		B07CCC221B0F21F30052101A /* ClickButton.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B07CCC1C1B0F21F30052101A /* ClickButton.jpeg */; };
 		B07CCC231B0F21F30052101A /* comentButtoun.png in Resources */ = {isa = PBXBuildFile; fileRef = B07CCC1D1B0F21F30052101A /* comentButtoun.png */; };
 		B07CCC241B0F21F30052101A /* goodbutton.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B07CCC1E1B0F21F30052101A /* goodbutton.jpeg */; };
 		B07CCC251B0F21F30052101A /* PlaybackButton.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B07CCC1F1B0F21F30052101A /* PlaybackButton.jpg */; };
-		B07CCC261B0F21F30052101A /* Tomorrowland26.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B07CCC201B0F21F30052101A /* Tomorrowland26.jpg */; };
 		B0956D441B1BF40200C08E88 /* soundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0956D431B1BF40200C08E88 /* soundViewController.m */; };
 		B0956D461B1BFFDF00C08E88 /* sound.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0956D451B1BFFDF00C08E88 /* sound.jpg */; };
 		B0956D4C1B1C2FC000C08E88 /* searchArtistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0956D4B1B1C2FC000C08E88 /* searchArtistViewController.m */; };
@@ -137,13 +129,8 @@
 /* Begin PBXFileReference section */
 		B014F4AD1B1D965100B4D920 /* playBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = playBackViewController.h; sourceTree = "<group>"; };
 		B014F4AE1B1D965200B4D920 /* playBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = playBackViewController.m; sourceTree = "<group>"; };
-		B01C21A51B108AE000DC5330 /* kp-12803-600x337.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "kp-12803-600x337.jpg"; sourceTree = "<group>"; };
-		B01C21A61B108AE000DC5330 /* N0011525_l.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = N0011525_l.jpg; sourceTree = "<group>"; };
-		B01C21A71B108AE000DC5330 /* tmw_2014-6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "tmw_2014-6.jpg"; sourceTree = "<group>"; };
-		B01C21A81B108AE000DC5330 /* tmw_2014-7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "tmw_2014-7.jpg"; sourceTree = "<group>"; };
-		B01C21A91B108AE000DC5330 /* Tomorrowland21.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Tomorrowland21.jpg; sourceTree = "<group>"; };
-		B01C21AA1B108AE000DC5330 /* Tomorrowland23.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Tomorrowland23.jpg; sourceTree = "<group>"; };
-		B01C21AB1B108AE000DC5330 /* Tomorrowworld3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Tomorrowworld3.jpg; sourceTree = "<group>"; };
+		B02377251B203E1A00FAEE7B /* sampleImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sampleImageViewController.h; sourceTree = "<group>"; };
+		B02377261B203E1A00FAEE7B /* sampleImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sampleImageViewController.m; sourceTree = "<group>"; };
 		B0246B141B1EA84900C7A09A /* searchGenreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchGenreViewController.h; sourceTree = "<group>"; };
 		B0246B151B1EA84900C7A09A /* searchGenreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchGenreViewController.m; sourceTree = "<group>"; };
 		B0246B581B1F358F00C7A09A /* alternativeImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = alternativeImg.jpg; sourceTree = "<group>"; };
@@ -164,18 +151,16 @@
 		B0246B671B1F358F00C7A09A /* soundTrackImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = soundTrackImg.jpg; sourceTree = "<group>"; };
 		B02594721AF9E7DF00F68C95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Base; path = Base.lproj/IMG_1592.MOV; sourceTree = "<group>"; };
 		B02655DD1B15AA9E0069F7CE /* singer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = singer.jpg; sourceTree = "<group>"; };
-		B02655DE1B15AA9E0069F7CE /* Sound.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Sound.gif; sourceTree = "<group>"; };
+		B02655DE1B15AA9E0069F7CE /* Sound2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Sound2.gif; sourceTree = "<group>"; };
 		B041C7E91B01EEE500DAF891 /* searchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = searchViewController.h; path = ../searchViewController.h; sourceTree = "<group>"; };
 		B041C7EA1B01EEE500DAF891 /* searchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = searchViewController.m; path = ../searchViewController.m; sourceTree = "<group>"; };
 		B07CCC0A1B0D72480052101A /* mainTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = mainTableView.xib; path = newMusic.xcodeproj/../mainTableView.xib; sourceTree = SOURCE_ROOT; };
 		B07CCC171B0DBFC40052101A /* newMainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = newMainTableViewCell.h; path = newMusic.xcodeproj/../newMainTableViewCell.h; sourceTree = SOURCE_ROOT; };
 		B07CCC181B0DBFC40052101A /* newMainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = newMainTableViewCell.m; path = newMusic.xcodeproj/../newMainTableViewCell.m; sourceTree = SOURCE_ROOT; };
-		B07CCC1B1B0F21F30052101A /* 10408703_807424855935242_5076302992490742974_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10408703_807424855935242_5076302992490742974_n.jpg; sourceTree = "<group>"; };
 		B07CCC1C1B0F21F30052101A /* ClickButton.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ClickButton.jpeg; sourceTree = "<group>"; };
 		B07CCC1D1B0F21F30052101A /* comentButtoun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comentButtoun.png; sourceTree = "<group>"; };
 		B07CCC1E1B0F21F30052101A /* goodbutton.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = goodbutton.jpeg; sourceTree = "<group>"; };
 		B07CCC1F1B0F21F30052101A /* PlaybackButton.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PlaybackButton.jpg; sourceTree = "<group>"; };
-		B07CCC201B0F21F30052101A /* Tomorrowland26.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Tomorrowland26.jpg; sourceTree = "<group>"; };
 		B0956D421B1BF40200C08E88 /* soundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = soundViewController.h; sourceTree = "<group>"; };
 		B0956D431B1BF40200C08E88 /* soundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = soundViewController.m; sourceTree = "<group>"; };
 		B0956D451B1BFFDF00C08E88 /* sound.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sound.jpg; sourceTree = "<group>"; };
@@ -306,20 +291,11 @@
 				B0246B671B1F358F00C7A09A /* soundTrackImg.jpg */,
 				B0956D451B1BFFDF00C08E88 /* sound.jpg */,
 				B02655DD1B15AA9E0069F7CE /* singer.jpg */,
-				B02655DE1B15AA9E0069F7CE /* Sound.gif */,
-				B01C21A51B108AE000DC5330 /* kp-12803-600x337.jpg */,
-				B01C21A61B108AE000DC5330 /* N0011525_l.jpg */,
-				B01C21A71B108AE000DC5330 /* tmw_2014-6.jpg */,
-				B01C21A81B108AE000DC5330 /* tmw_2014-7.jpg */,
-				B01C21A91B108AE000DC5330 /* Tomorrowland21.jpg */,
-				B01C21AA1B108AE000DC5330 /* Tomorrowland23.jpg */,
-				B01C21AB1B108AE000DC5330 /* Tomorrowworld3.jpg */,
-				B07CCC1B1B0F21F30052101A /* 10408703_807424855935242_5076302992490742974_n.jpg */,
+				B02655DE1B15AA9E0069F7CE /* Sound2.gif */,
 				B07CCC1C1B0F21F30052101A /* ClickButton.jpeg */,
 				B07CCC1D1B0F21F30052101A /* comentButtoun.png */,
 				B07CCC1E1B0F21F30052101A /* goodbutton.jpeg */,
 				B07CCC1F1B0F21F30052101A /* PlaybackButton.jpg */,
-				B07CCC201B0F21F30052101A /* Tomorrowland26.jpg */,
 			);
 			path = "各種画像";
 			sourceTree = "<group>";
@@ -425,6 +401,8 @@
 				B0C284231AF9B7B000C38707 /* userSignUpViewController.m */,
 				B0C2841E1AF9B7B000C38707 /* mainViewController.h */,
 				B0C2841F1AF9B7B000C38707 /* mainViewController.m */,
+				B02377251B203E1A00FAEE7B /* sampleImageViewController.h */,
+				B02377261B203E1A00FAEE7B /* sampleImageViewController.m */,
 				B014F4AD1B1D965100B4D920 /* playBackViewController.h */,
 				B014F4AE1B1D965200B4D920 /* playBackViewController.m */,
 				B041C7E91B01EEE500DAF891 /* searchViewController.h */,
@@ -564,14 +542,12 @@
 				B09B2EF61B05931700F28BA7 /* Cameroon.gif in Resources */,
 				B0246B6B1B1F358F00C7A09A /* danceImg.jpg in Resources */,
 				B09B2F101B05931700F28BA7 /* Kuwait.gif in Resources */,
-				B01C21B11B108AE000DC5330 /* Tomorrowland23.jpg in Resources */,
 				B07CCC221B0F21F30052101A /* ClickButton.jpeg in Resources */,
 				B09B2EF51B05931700F28BA7 /* Brazil.gif in Resources */,
 				B0246B6C1B1F358F00C7A09A /* edmImg.jpg in Resources */,
 				B09B2F141B05931700F28BA7 /* Mongolia.gif in Resources */,
 				B0246B721B1F358F00C7A09A /* NewArtistImg.jpg in Resources */,
 				B09B2F281B05931700F28BA7 /* Tonga.gif in Resources */,
-				B01C21AD1B108AE000DC5330 /* N0011525_l.jpg in Resources */,
 				B09B2F081B05931700F28BA7 /* Hungary.gif in Resources */,
 				B0246B711B1F358F00C7A09A /* jPopImg.jpg in Resources */,
 				B09B2EFF1B05931700F28BA7 /* Dominica.gif in Resources */,
@@ -582,10 +558,8 @@
 				B09B2EF71B05931700F28BA7 /* Canada.gif in Resources */,
 				B0246B681B1F358F00C7A09A /* alternativeImg.jpg in Resources */,
 				B09B2F021B05931700F28BA7 /* France.gif in Resources */,
-				B07CCC261B0F21F30052101A /* Tomorrowland26.jpg in Resources */,
 				B09B2F1B1B05931700F28BA7 /* Peru.gif in Resources */,
 				B09B2EFE1B05931700F28BA7 /* Denmark.gif in Resources */,
-				B01C21AC1B108AE000DC5330 /* kp-12803-600x337.jpg in Resources */,
 				B09B2EA41B04CC7300F28BA7 /* IMG_0282.MOV in Resources */,
 				B09B2F071B05931700F28BA7 /* Honduras.gif in Resources */,
 				B09B2F0D1B05931700F28BA7 /* Jamaica.gif in Resources */,
@@ -626,7 +600,6 @@
 				B07CCC231B0F21F30052101A /* comentButtoun.png in Resources */,
 				B09B2F211B05931700F28BA7 /* Samoa.gif in Resources */,
 				B09B2F0F1B05931700F28BA7 /* Korea.gif in Resources */,
-				B01C21B21B108AE000DC5330 /* Tomorrowworld3.jpg in Resources */,
 				B09B2EFC1B05931700F28BA7 /* Cuba.gif in Resources */,
 				B09B2F2B1B05931800F28BA7 /* UnitedKingdom.gif in Resources */,
 				B09B2EFB1B05931700F28BA7 /* Colombia.gif in Resources */,
@@ -638,25 +611,21 @@
 				B09B2F051B05931700F28BA7 /* Greece.gif in Resources */,
 				B0246B761B1F358F00C7A09A /* rockImg.jpg in Resources */,
 				B0C284041AF9B4F500C38707 /* LaunchScreen.xib in Resources */,
-				B01C21B01B108AE000DC5330 /* Tomorrowland21.jpg in Resources */,
 				B09B2F241B05931700F28BA7 /* Spain.gif in Resources */,
-				B07CCC211B0F21F30052101A /* 10408703_807424855935242_5076302992490742974_n.jpg in Resources */,
 				B09B2F0A1B05931700F28BA7 /* Indonesia.gif in Resources */,
 				B0246B6A1B1F358F00C7A09A /* classicImg.jpg in Resources */,
 				B09B2F121B05931700F28BA7 /* Mexico.gif in Resources */,
 				B09B2F2D1B05931800F28BA7 /* Venezuela.gif in Resources */,
 				B09B2EF21B05931700F28BA7 /* Barbados.gif in Resources */,
-				B02655E01B15AA9E0069F7CE /* Sound.gif in Resources */,
+				B02655E01B15AA9E0069F7CE /* Sound2.gif in Resources */,
 				B09B2F2E1B05931800F28BA7 /* Vietnam.gif in Resources */,
 				B09B2F031B05931700F28BA7 /* Germany.gif in Resources */,
 				B0C284011AF9B4F500C38707 /* Images.xcassets in Resources */,
 				B0956D461B1BFFDF00C08E88 /* sound.jpg in Resources */,
-				B01C21AE1B108AE000DC5330 /* tmw_2014-6.jpg in Resources */,
 				B09B2EFA1B05931700F28BA7 /* China.gif in Resources */,
 				B02594731AF9E7DF00F68C95 /* IMG_1592.MOV in Resources */,
 				B09B2F061B05931700F28BA7 /* Guinea.gif in Resources */,
 				B09B2F231B05931700F28BA7 /* Singapore.gif in Resources */,
-				B01C21AF1B108AE000DC5330 /* tmw_2014-7.jpg in Resources */,
 				B0246B731B1F358F00C7A09A /* popImg.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -677,6 +646,7 @@
 			files = (
 				B0C283FC1AF9B4F500C38707 /* ViewController.m in Sources */,
 				B0956D441B1BF40200C08E88 /* soundViewController.m in Sources */,
+				B02377271B203E1A00FAEE7B /* sampleImageViewController.m in Sources */,
 				B014F4AF1B1D965200B4D920 /* playBackViewController.m in Sources */,
 				B0C2842A1AF9B7B000C38707 /* userSignUpViewController.m in Sources */,
 				B0C283F91AF9B4F500C38707 /* AppDelegate.m in Sources */,

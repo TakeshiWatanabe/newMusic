@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
+#import "mainViewController.h"
+#import "searchArtistViewController.h"
+#import "searchViewController.h"
+
 @interface playBackViewController : UIViewController <NSURLConnectionDelegate,UISearchBarDelegate,UITextFieldDelegate,AVAudioPlayerDelegate,UITableViewDataSource,UITableViewDelegate> {
     
     NSURLConnection *connection;
@@ -35,8 +39,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *artistImg;
 @property (weak, nonatomic) IBOutlet UILabel *tittleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *artistname;
-- (IBAction)goodButton:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *soundButton;
+//- (IBAction)goodButton:(id)sender;
+//@property (weak, nonatomic) IBOutlet UIButton *soundButton;
 - (IBAction)soundbutton:(id)sender;
 @property(nonatomic) AVAudioPlayer *audioPlayer;
 //- (IBAction)goodButton:(id)sender;

@@ -45,7 +45,7 @@
 
 
 - (void)loadAsync {
-    // request (jack johnson で検索)
+    // request
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@",searchSongArtist]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
@@ -204,10 +204,10 @@
     UIImageView *artistImage4 = (UIImageView *)[cell viewWithTag:4];
     
     // cellに表示
-    NSURL *jurl =[NSURL URLWithString:_artistCell[indexPath.row*3][@"artworkUrl100"]];
-    NSURL *jurl2 =[NSURL URLWithString:_artistCell[indexPath.row*3+1][@"artworkUrl100"]];
-    NSURL *jurl3 =[NSURL URLWithString:_artistCell[indexPath.row*3+2][@"artworkUrl100"]];
-    NSURL *jurl4 =[NSURL URLWithString:_artistCell[indexPath.row*3+3][@"artworkUrl100"]];
+    NSURL *jurl =[NSURL URLWithString:_artistCell[indexPath.row*4][@"artworkUrl100"]];
+    NSURL *jurl2 =[NSURL URLWithString:_artistCell[indexPath.row*4+1][@"artworkUrl100"]];
+    NSURL *jurl3 =[NSURL URLWithString:_artistCell[indexPath.row*4+2][@"artworkUrl100"]];
+    NSURL *jurl4 =[NSURL URLWithString:_artistCell[indexPath.row*4+3][@"artworkUrl100"]];
     //NSLog(@"%@",jurl);
     
     // urlを画像データに変更

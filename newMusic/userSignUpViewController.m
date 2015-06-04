@@ -428,7 +428,6 @@
     
     // エンコード
     name = [name stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-
     defaultPassword = [defaultPassword stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     
@@ -458,6 +457,8 @@
     
     
     // initWithContentsOfFileは画像ファイルを指定するときに使う
+    
+    
     // 画像の指定
     // UIImageをpngに変換
     NSData* pngData = UIImagePNGRepresentation(userImg);
@@ -489,7 +490,6 @@
     
     NSData *returnData = [NSURLConnection sendSynchronousRequest:userRequest returningResponse:nil error:nil];
     NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
-    
     NSLog(@"%@", returnString);
     
     

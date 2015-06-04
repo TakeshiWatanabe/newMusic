@@ -82,7 +82,7 @@
     UILabel *goodCountLabel = (UILabel *)[cell viewWithTag:10];
     
     
-    // cellに表示
+    // cellに画像表示
     NSURL *jurl =[NSURL URLWithString:_musicCell[indexPath.row][@"jacketUrl"]];
     // urlを画像データに変更
     NSData *imageData = [NSData dataWithContentsOfURL:jurl];

@@ -1,21 +1,30 @@
 //
-//  playBackViewController.m
+//  sampleImageViewController.m
 //  newMusic
 //
-//  Created by 渡邉　剛志 on 2015/06/02.
+//  Created by 渡邉　剛志 on 2015/06/04.
 //  Copyright (c) 2015年 渡邉　剛志. All rights reserved.
 //
 
-#import "playBackViewController.h"
+#import "sampleImageViewController.h"
 
-@interface playBackViewController ()
+@interface sampleImageViewController ()
 
 @end
 
-@implementation playBackViewController 
+@implementation sampleImageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // 検索された文字
+    self.searchDetail.delegate=self;
+    
+    _artistTableView.delegate = self;
+    _artistTableView.dataSource = self;
+    
+    
+    
+    // 検索中の動きのimage
     self.view.backgroundColor = [UIColor whiteColor];
     
     UIProgressView *progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleBar];
@@ -23,64 +32,10 @@
     [self.view addSubview:progressView];
     progressView_ = progressView;
     progressView_.progress = 0.0f;
-
-    
-    
-    // 検索された文字
-    self.searchDetail.delegate=self;
     
 }
 
 
-
-// 行数を返す
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return _artistCell.count;
-    
-}
-
-
-// セルに文字を表示する
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    // 定数を宣言（static = 静的)
-    static NSString *CellIdentifer = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
-    
-    if(cell == nil){
-        // セルの初期化とスタイルの決定
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
-        
-    }
-    
-    
-    
-    // image,labelをタグで管理する
-    UIImageView *artistImage1 = (UIImageView *)[cell viewWithTag:1];
-    
-    // cellに表示
-    NSURL *jurl =[NSURL URLWithString:_artistCell[indexPath.row][@"artworkUrl100"]];
-    
-    // urlを画像データに変更
-    NSData *imageData = [NSData dataWithContentsOfURL:jurl];
-    
-    // 画像データを表示する
-    // cell内にそれぞれ表示
-    artistImage1.image = [UIImage imageWithData:imageData];
-
-    return cell;
-    
-}
-
-
-
-
-
-
-- (void)buttonWasTapped:(UIButton *)button {
-}
 
 // 検索文字を取り出す
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
@@ -98,8 +53,9 @@
 }
 
 
+
 - (void)loadAsync {
-    // request (jack johnson で検索)
+    // request
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@",searchSongArtist]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
@@ -192,7 +148,6 @@
     // Available in iOS 5.0 and later.
     NSError *error;
     NSDictionary *json2 = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:encode] options:kNilOptions error:&error];
-    //NSLog(@"%@", [json2 description]);
     
     
     
@@ -202,17 +157,14 @@
     
     
     
-    // 配列の１個目を取得(10個)
-    //for (NSInteger i = 0; i < 1; i++) {
-        // 配列から要素を取得する
-        _str = (NSDictionary *)artist[0];
-        NSLog(@"%@", _str);
-        
-    //}
+    // 配列の１個目を取得
+    // 配列から要素を取得する
+    _str = (NSDictionary *)artist[0];
+    NSLog(@"%@", _str);
     
     
     
-    // 取りたい情報を配列に格納
+    // 配列から要素を取得する
     _musicListArtistName = _str[@"artistName"];
     NSLog(@"%@",_musicListArtistName);
     
@@ -227,27 +179,17 @@
     
     
     
-    // NSUrlに変更
-    NSURL *jurl =[NSURL URLWithString:(NSString *)_musicListViewUrl];
+    _musicCell = artist;
     
-    // NSDataに変更
-    imageData = [NSData dataWithContentsOfURL:jurl];
-    NSLog(@"%@",imageData);
-    
-    // 画像データを表示する
-    self.artistImg.image = [UIImage imageWithData:imageData];
-    
-    
-    
-    // 文字表示
-    self.artistname.text = (NSString *)_musicListArtistName;
-    self.tittleLabel.text = (NSString *)_musicListTrackName;
+    [self.artistTableView reloadData];
     
 }
 
+
+
+// 音を出す
 - (IBAction)soundbutton:(id)sender {
     
-    // 音を出す
     NSError *error = nil;
     
     // パスから再生プレイヤーを作成する
@@ -283,14 +225,61 @@
 }
 
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+// 行数を返す
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _musicCell.count;
+    
 }
 
-- (IBAction)goodButton:(id)sender {
+
+
+// セルに文字を表示する
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    // 定数を宣言（static = 静的)
+    static NSString *CellIdentifer = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
+    
+    if(cell == nil){
+        // セルの初期化とスタイルの決定
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
+        
+    }
+    
+    
+    
+    // 表示文字をタグで管理、表示
+    UILabel *musicTittleLabel = (UILabel *)[cell viewWithTag:1];
+    UILabel *artistNameLabel = (UILabel *)[cell viewWithTag:2];
+    UIImageView *artistImage1 = (UIImageView *)[cell viewWithTag:3];
+    
+    
+    
+    // imageをタグで管理、表示
+    // cellに表示
+    NSURL *jurl =[NSURL URLWithString:_musicCell[indexPath.row][@"artworkUrl100"]];
+    //NSLog(@"%@",jurl);
+    
+    // urlを画像データに変更
+    NSData *imageData = [NSData dataWithContentsOfURL:jurl];
+    
+    // cell内にそれぞれ表示
+    artistImage1.image = [UIImage imageWithData:imageData];
+    
+    
+    
+    // cellからデータを取得
+    musicTittleLabel.text = _musicCell[indexPath.row][@"trackName"];
+    NSLog(@"%@",musicTittleLabel);
+    artistNameLabel.text = _musicCell[indexPath.row][@"artistName"];
+    NSLog(@"%@",artistNameLabel);
+    
+    return cell;
+    
 }
+
+
 
 - (IBAction)favouriteButton:(id)sender {
     // 変数の宣言
@@ -353,9 +342,9 @@
     NSData *pngData = [[NSData alloc] init];
     
     if (range.location == NSNotFound) {
-        jpgData = UIImageJPEGRepresentation(musicImg, 0.9);
-        [imageData writeToFile:(NSString *)jpgData atomically:YES];
-    
+        jpgData = UIImageJPEGRepresentation(musicImg, 0);
+        [imgData writeToFile:(NSString *)jpgData atomically:YES];
+        
     } else {
         pngData = UIImagePNGRepresentation(musicImg);
         
@@ -414,5 +403,20 @@
 }
 
 
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

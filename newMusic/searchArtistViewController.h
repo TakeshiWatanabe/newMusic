@@ -15,7 +15,7 @@
 #import "searchGenreViewController.h"
 
 
-@interface searchArtistViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,NSURLConnectionDelegate,UISearchBarDelegate,UITextFieldDelegate,AVAudioPlayerDelegate> {
+@interface searchArtistViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,NSURLConnectionDelegate,UISearchBarDelegate,UITextFieldDelegate,AVAudioPlayerDelegate> {
     
     // 配列の宣言
     NSArray *_artistCell;
