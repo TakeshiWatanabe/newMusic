@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
 
+// 遷移先を宣言
+#import "userSignUpViewController.h"
+#import "mainViewController.h"
+#import "alertCanselViewController.h"
+
+
 @interface ViewController : UIViewController < UIAlertViewDelegate >{
     
     UIButton *_mySignUpButton; // SignUpButtonを宣言
@@ -24,6 +30,9 @@
     NSMutableData *data;       // 受信データ
     UIView *uv_load;           // LoadingView(通信中にぐるぐる回るやつ)
     NSArray *_array;
+    
+    UIAlertView *_alert;
+    NSString *second;
     
 }
 // リピート再生するか

@@ -8,10 +8,6 @@
 
 #import "ViewController.h"
 
-// 遷移先を宣言
-#import "userSignUpViewController.h"
-#import "mainViewController.h"
-
 @interface ViewController () {
     MPMoviePlayerViewController *MPMPlayerController;
 }
@@ -76,6 +72,46 @@
     // ボタンの位置、操作関数呼び出し
     [self newMyButton];
     
+    
+    
+    // アラート表示
+//    _alert =
+//    [[UIAlertView alloc] initWithTitle:@"soundUp end user license agreement(使用承諾契約)"
+//                               message:@"{Japanese(日本語}\n投稿者は発言、投稿に際して発せするすべての責任が投稿者に帰すことを承諾します。\n利用者は、以下の行為を行わないものとします。以下の行為を行った場合、当社は利用の停止、制限措置を講じることがあります。\n１．楽曲を複製、貸与、その他の方法により配布、販売する行為。\n２．演奏もしくは歌唱した映像又は音源をCD、DVD等の媒体に記憶させて販売すること、及びアプリ等においてデータをダウンロード販売又は有料で配信する行為。\n３．有償又は無償を問わず、ゲームコンテンツに利用する行為。\n４．法令及び公序良俗に反する行為。\n５．当社又は第三者の名誉、人格もしくは信用等を毀損する行為又は不利益を与える行為。\n６．本規約に反する行為。\nアプリ利用者はsoundUpの利用に際し生じた一切の事像についてを承諾します。"
+//                              delegate:@""
+//                     cancelButtonTitle:@"同意しない"
+//                     otherButtonTitles:@"同意する",nil];
+//    
+//    [_alert show];
+//    NSLog(@"%@",_alert);
+ 
+    
+
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:@"soundUp end user license agreement(使用承諾契約)"
+                                  message:@"[Japanese(日本語)]\n投稿者は発言、投稿に際して発せするすべての責任が投稿者に帰すことを承諾します。\n利用者は、以下の行為を行わないものとします。以下の行為を行った場合、当社は利用の停止、制限措置を講じることがあります。\n１．楽曲を複製、貸与、その他の方法により配布、販売する行為。\n２．演奏もしくは歌唱した映像又は音源をCD、DVD等の媒体に記憶させて販売すること、及びアプリ等においてデータをダウンロード販売又は有料で配信する行為。\n３．有償又は無償を問わず、ゲームコンテンツに利用する行為。\n４．法令及び公序良俗に反する行為。\n５．当社又は第三者の名誉、人格もしくは信用等を毀損する行為又は不利益を与える行為。\n６．本規約に反する行為。\nアプリ利用者はsoundUpの利用に際し生じた一切の事像についてを承諾します。"
+                                  delegate:self
+                                  cancelButtonTitle:@"同意しない"
+                                  otherButtonTitles:@"同意する", nil];
+        
+        [alertView show];
+    
+}
+
+
+
+// ボタンカウント
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        NSLog(@"%d",buttonIndex);
+        
+        //alertCansel *second = [self.storyboard instantiateViewControllerWithIdentifier:@"alertCansel"];
+        
+        // ナビゲーションコントローラーの機能で画面遷移
+        [[self navigationController] pushViewController:(NSString *)second animated:YES];
+        
+    }
 }
 
 
@@ -158,7 +194,7 @@
     // インスタンス化し画面遷移
     secondVC1 = [self.storyboard instantiateViewControllerWithIdentifier:@"userSignUp"];
     
-     [[self navigationController] pushViewController:secondVC1 animated:YES];
+    [[self navigationController] pushViewController:secondVC1 animated:YES];
     
 }
 
@@ -227,7 +263,7 @@
     
     
     // phpにアクセス
-    NSString *userConfirmation = [NSString stringWithFormat:@"http://192.168.33.200/GC5Team/newMusicOnlyServer/Check.php?name=%@&password=%@",defaultName,password];
+    NSString *userConfirmation = [NSString stringWithFormat:@" http://takeshi-w.sakura.ne.jp?name=%@&password=%@",defaultName,password];
     
     // リクエストを生成
     NSMutableURLRequest *phpRequest;

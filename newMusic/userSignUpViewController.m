@@ -233,7 +233,7 @@
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.1];
     [UIView setAnimationDelegate:self];
-    self.moveGenreView.center = CGPointMake(160, 430);
+    self.moveGenreView.center = CGPointMake(160, 250);
     [UIView commitAnimations];
     
     // 右上にdoneボタン
@@ -433,7 +433,7 @@
     
     
     // phpに接続
-    NSString *phpUrl = [NSString stringWithFormat:@"http://192.168.33.200/GC5Team/newMusicOnlyServer/serverTomysql.php?name=%@&country=%@&genre=%@&password=%@",name,self.countryClearLabel.text,self.genreClearLabel.text,defaultPassword];
+    NSString *phpUrl = [NSString stringWithFormat:@" http://takeshi-w.sakura.ne.jp?name=%@&country=%@&genre=%@&password=%@",name,self.countryClearLabel.text,self.genreClearLabel.text,defaultPassword];
     
     // リクエストを生成
     NSMutableURLRequest *request;
@@ -464,7 +464,7 @@
     NSData* pngData = UIImagePNGRepresentation(userImg);
     
     // ここからPOSTDATAの作成
-    NSString *urlString = @"http://192.168.33.200/GC5Team/newMusicOnlyServer/image.php";
+    NSString *urlString = @" http://takeshi-w.sakura.ne.jp";
     
     // 初期化
     NSMutableURLRequest *userRequest = [[NSMutableURLRequest alloc] init] ;

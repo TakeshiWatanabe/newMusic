@@ -26,7 +26,7 @@
     
     
     // phpにアクセス(mainImage,musicTittle,artistName)
-    NSString *phpMainViewUrl = [NSString stringWithFormat:@"http://192.168.33.200/GC5Team/newMusicOnlyServer/json.php"];
+    NSString *phpMainViewUrl = [NSString stringWithFormat:@"http://takeshi-w.sakura.ne.jp"];
     
     // Requestを作成
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:phpMainViewUrl]];

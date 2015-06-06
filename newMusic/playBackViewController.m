@@ -322,7 +322,7 @@
     
     
     // phpに接続
-    NSString *phpUrl = [NSString stringWithFormat:@"http://192.168.33.200/GC5Team/newMusicOnlyServer/musicData.php?musicTittle=%@&artistName=%@&jacketUrl=%@&previewUrl=%@",musicTittle,artistName,musicImg,soundUrl];
+    NSString *phpUrl = [NSString stringWithFormat:@"http://takeshi-w.sakura.ne.jp?musicTittle=%@&artistName=%@&jacketUrl=%@&previewUrl=%@",musicTittle,artistName,musicImg,soundUrl];
     
     // リクエストを生成
     NSMutableURLRequest *request;
@@ -362,7 +362,7 @@
     }
     
     // ここからPOSTDATAの作成
-    NSString *urlString = @"http://192.168.33.200/GC5Team/newMusicOnlyServer/image.php";
+    NSString *urlString = @"http://takeshi-w.sakura.ne.jp";
     
     // 初期化
     NSMutableURLRequest *userRequest = [[NSMutableURLRequest alloc] init] ;

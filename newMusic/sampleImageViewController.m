@@ -190,11 +190,31 @@
 
 // 音を出す
 - (IBAction)soundbutton:(id)sender {
+    // 初期化
+    //NSString *sound = (NSString *)_musicListSound;
+    //sound = [[(NSString *) NSUserDefaults alloc]init];
     
     NSError *error = nil;
     
+    UIButton *soundBtn = (UIButton *)sender;
+    
+    // cellの行数を取得
+    UITableViewCell *cell = (UITableViewCell *)[[soundBtn superview]superview];
+    
+    // 確認
+    int row = [self.artistTableView indexPathForCell:cell].row;
+    NSLog(@"%d",row);
+    
+    
+    
+    // 取得番号のURLを代入
+    NSString *soundNmber = _musicListSound[row][@"previewUrl"];
+    //NSString *str = [array componentsJoinedByString:nil];
+    NSLog(@"%@",soundNmber);
+    
+    
     // パスから再生プレイヤーを作成する
-    NSURL *sondUrl = [NSURL URLWithString:(NSString *)_musicListSound];
+    NSURL *sondUrl = [NSURL URLWithString:(NSString *)soundNmber];
     
     // audioを再生するプレイヤーを作成する
     NSData *data = [[NSData alloc] initWithContentsOfURL:sondUrl];
@@ -315,7 +335,7 @@
     
     
     // phpに接続
-    NSString *phpUrl = [NSString stringWithFormat:@"http://192.168.33.200/GC5Team/newMusicOnlyServer/musicData.php?musicTittle=%@&artistName=%@&jacketUrl=%@&previewUrl=%@&trackId=%@",musicTittle,artistName,musicImg,soundUrl,trackId];
+    NSString *phpUrl = [NSString stringWithFormat:@"http://takeshi-w.sakura.ne.jp?musicTittle=%@&artistName=%@&jacketUrl=%@&previewUrl=%@&trackId=%@",musicTittle,artistName,musicImg,soundUrl,trackId];
     
     // リクエストを生成
     NSMutableURLRequest *request;
@@ -350,7 +370,7 @@
     
     
     // ここからPOSTDATAの作成
-    NSString *urlString = @"http://192.168.33.200/GC5Team/newMusicOnlyServer/image.php";
+    NSString *urlString = @"http://takeshi-w.sakura.ne.jp";
     
     // 初期化
     NSMutableURLRequest *userRequest = [[NSMutableURLRequest alloc] init] ;
@@ -393,12 +413,15 @@
     
     // アラート表示
     UIAlertView *alert =
-    [[UIAlertView alloc] initWithTitle:@"お気に入りに"
-                               message:@"登録されました"
-                              delegate:@"Cancel"
-                     cancelButtonTitle:@"OK"
-                     otherButtonTitles:nil];
+    [[UIAlertView alloc] initWithTitle:@"シェアしますか？"
+                               message:@""
+                              delegate:@""
+                     cancelButtonTitle:@"Cancel"
+                     otherButtonTitles:@"OK",nil];
     [alert show];
+//    if () {
+//        
+//    }
     
     
     
