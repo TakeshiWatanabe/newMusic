@@ -55,4 +55,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnCountry;
 @property (weak, nonatomic) IBOutlet UIImageView *countryImage;
 
+// tabBer
+@property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UITabBarController *tabBarController;
+
+
 @end

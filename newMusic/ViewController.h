@@ -31,7 +31,7 @@
     UIView *uv_load;           // LoadingView(通信中にぐるぐる回るやつ)
     NSArray *_array;
     
-    UIAlertView *_alert;
+    UIAlertView *alertSignUp;
     NSString *second;
     
 }

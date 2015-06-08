@@ -12,6 +12,7 @@
 #import "ViewController.h"
 #import "userSignUpViewController.h"
 #import "playBackViewController.h"
+#import "sampleImageViewController.h"
 
 
 @interface mainViewController : UIViewController<UITableViewDataSource,UITableViewDelegate> {
@@ -19,5 +20,7 @@
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *mainViewController;
+- (IBAction)serchButton:(id)sender;
+- (IBAction)mainButton:(id)sender;
 
 @end

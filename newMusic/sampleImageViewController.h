@@ -22,7 +22,18 @@
     NSArray *_musicListTrackId;
     NSArray *_musicCell;
     
+    NSString *musicTittle;
+    NSString *artistName;
+    UIImage *musicImg;
+    NSString *soundUrl;
+    NSString *trackId;
+    int userId;
+    NSString *StrmusicImg;
+    
+    // 音楽
     NSMutableArray *_musicPlay;
+    NSArray *array;
+    NSString *soundCell;
     
     NSURLConnection *connection;
     NSMutableData *dataAsync;
@@ -35,11 +46,24 @@
     NSDictionary *_str;
     NSData *imgData;
     
+    UIButton *favouriteBtn;
+    
+    UIAlertView *alertfavourite;
+    NSString *favouriteData;
+    
+    
 }
 
 @property(nonatomic) AVAudioPlayer *audioPlayer;
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchDetail;
 @property (weak, nonatomic) IBOutlet UITableView *artistTableView;
+- (IBAction)searchButton:(id)sender;
+- (IBAction)mainButton:(id)sender;
+
+@property (retain,nonatomic) NSString *dictionary;
+@property (weak, nonatomic) NSString *eventId;
+
+@property (weak, nonatomic) NSString *SondUrl;
 
 @end

@@ -15,6 +15,18 @@
 @implementation AppDelegate
 
 
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Override point for customization after application launch.
+    
+    // 初期化
+    //NSUserDefaults *userDefaults = [[NSUserDefaults alloc]init];
+    
+    // userDefaultsインスタンス化と初期化
+    //NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    //[[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+    return YES;
+}
+
 - (BOOL)application:(UIApplication *)application {
     // Override point for customization after application launch.
     return YES;

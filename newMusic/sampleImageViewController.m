@@ -28,7 +28,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     UIProgressView *progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleBar];
-    progressView.frame = CGRectMake(50, 97, 220, 10);
+    progressView.frame = CGRectMake(50, 30, 220, 10);
     [self.view addSubview:progressView];
     progressView_ = progressView;
     progressView_.progress = 0.0f;
@@ -153,32 +153,32 @@
     
     // 最新の音楽を取ってきた分配列に格納
     NSArray *artist = [json2 objectForKey:@"results"];
-    NSLog(@"%@",artist);
+    //NSLog(@"%@",artist);
     
     
     
     // 配列の１個目を取得
     // 配列から要素を取得する
     _str = (NSDictionary *)artist[0];
-    NSLog(@"%@", _str);
+    //NSLog(@"%@", _str);
     
     
     
     // 配列から要素を取得する
     _musicListArtistName = _str[@"artistName"];
-    NSLog(@"%@",_musicListArtistName);
+    //NSLog(@"%@",_musicListArtistName);
     
     _musicListTrackName = _str[@"trackName"];
-    NSLog(@"%@",_musicListTrackName);
+    //NSLog(@"%@",_musicListTrackName);
     
     _musicListViewUrl = _str[@"artworkUrl100"];
-    NSLog(@"%@",_musicListViewUrl);
+    //NSLog(@"%@",_musicListViewUrl);
     
     _musicListSound = _str[@"previewUrl"];
-    NSLog(@"%@",_musicListSound);
+    //NSLog(@"%@",_musicListSound);
     
     _musicListTrackId = _str[@"trackId"];
-    NSLog(@"%@",_musicListTrackId);
+    //NSLog(@"%@",_musicListTrackId);
     
     _musicCell = artist;
     
@@ -190,40 +190,25 @@
 
 // 音を出す
 - (IBAction)soundbutton:(id)sender {
-    // 初期化
-    //NSString *sound = (NSString *)_musicListSound;
-    //sound = [[(NSString *) NSUserDefaults alloc]init];
     
     NSError *error = nil;
     
-    UIButton *soundBtn = (UIButton *)sender;
-    
     // cellの行数を取得
-    UITableViewCell *cell = (UITableViewCell *)[[soundBtn superview]superview];
+    UITableViewCell *cell = (UITableViewCell *)[[sender superview]superview];
     
-    // 確認
     int row = [self.artistTableView indexPathForCell:cell].row;
     NSLog(@"%d",row);
     
-    
-    
-    // 取得番号のURLを代入
-    NSString *soundNmber = _musicListSound[row][@"previewUrl"];
-    //NSString *str = [array componentsJoinedByString:nil];
-    NSLog(@"%@",soundNmber);
-    
-    
-    // パスから再生プレイヤーを作成する
-    NSURL *sondUrl = [NSURL URLWithString:(NSString *)soundNmber];
+    NSURL *SoundUrl = [NSURL URLWithString:_musicCell[row][@"previewUrl"]];
     
     // audioを再生するプレイヤーを作成する
-    NSData *data = [[NSData alloc] initWithContentsOfURL:sondUrl];
+    NSData *data = [[NSData alloc] initWithContentsOfURL:SoundUrl];
     if (_audioPlayer == nil) {
         _audioPlayer = [[AVAudioPlayer alloc] initWithData:data error:&error];
         
         // エラーが起きたとき
         if (error !=nil) {
-            NSLog(@"Error %@",[error localizedDescription]);
+            //NSLog(@"Error %@",[error localizedDescription]);
             
         }else{
             
@@ -250,6 +235,21 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return _musicCell.count;
+    
+}
+
+
+
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    //idを取り出す
+    self.dictionary = (NSString *)_musicCell[indexPath.row];
+    //NSLog(@"%@",dictionary);
+    
+    self.eventId = self.dictionary;
+    NSLog(@"%@", _eventId);
     
 }
 
@@ -294,9 +294,10 @@
     
     // cellからデータを取得
     musicTittleLabel.text = _musicCell[indexPath.row][@"trackName"];
-    NSLog(@"%@",musicTittleLabel);
+    //NSLog(@"%@",musicTittleLabel);
+    
     artistNameLabel.text = _musicCell[indexPath.row][@"artistName"];
-    NSLog(@"%@",artistNameLabel);
+    //NSLog(@"%@",artistNameLabel);
     
     return cell;
     
@@ -305,11 +306,9 @@
 
 
 - (IBAction)favouriteButton:(id)sender {
-    
-    UIButton *favoriteBtn = (UIButton *)sender;
-    
+
     // cellの行数を取得
-    UITableViewCell *cell = (UITableViewCell *)[[favoriteBtn superview]superview];
+    UITableViewCell *cell = (UITableViewCell *)[[sender superview]superview];
     
     int row = [self.artistTableView indexPathForCell:cell].row;
     NSLog(@"%d",row);
@@ -317,120 +316,142 @@
     
     
     // 変数の宣言
-    int userId = 0;
-    NSString *musicTittle = _musicCell[row][@"trackName"];
-    NSString *artistName = _musicCell[row][@"artistName"];
-    UIImage *musicImg = _musicCell[row][@"artworkUrl100"];
-    NSString *soundUrl = _musicCell[row][@"previewUrl"];
-    NSString *trackId = _musicCell[row][@"trackId"];
-    NSString *StrmusicImg = @"";
+    userId = 0;
+    musicTittle = _musicCell[row][@"trackName"];
+    artistName = _musicCell[row][@"artistName"];
+    musicImg = _musicCell[row][@"artworkUrl100"];
+    soundUrl = _musicCell[row][@"previewUrl"];
+    trackId = _musicCell[row][@"trackId"];
+    StrmusicImg = @"";
     
-    
-    
-    // エンコード
-    musicTittle = [musicTittle stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    artistName = [artistName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    soundUrl = [soundUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    
-    
-    
-    // phpに接続
-    NSString *phpUrl = [NSString stringWithFormat:@"http://takeshi-w.sakura.ne.jp?musicTittle=%@&artistName=%@&jacketUrl=%@&previewUrl=%@&trackId=%@",musicTittle,artistName,musicImg,soundUrl,trackId];
-    
-    // リクエストを生成
-    NSMutableURLRequest *request;
-    request = [[NSMutableURLRequest alloc] init];
-    [request setHTTPMethod:@"POST"];
-    [request setURL:[NSURL URLWithString:phpUrl]];
-    [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
-    [request setTimeoutInterval:30];
-    [request setHTTPShouldHandleCookies:FALSE];
-    [request setHTTPBody:[phpUrl dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    // サーバーとの通信を行う
-    NSData *json = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    
-    // JSONをパース
-    NSDictionary *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
-    
-    // idの取得
-    userId = [array[@"id"] intValue];
-    StrmusicImg = array[@"jacketUrl"];
-    
-    
-    
-    // 画像の指定
-    // UIImageをpng.jpgに変換
-    NSRange range = [StrmusicImg rangeOfString:@".png"];
-    
-    NSData *jaketImageData = [[NSData alloc] init];
-    
-    jaketImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:StrmusicImg]];
-    
-    
-    
-    // ここからPOSTDATAの作成
-    NSString *urlString = @"http://takeshi-w.sakura.ne.jp";
-    
-    // 初期化
-    NSMutableURLRequest *userRequest = [[NSMutableURLRequest alloc] init] ;
-    [userRequest setURL:[NSURL URLWithString:urlString]];
-    [userRequest setHTTPMethod:@"POST"];
-    
-    NSMutableData *body = [NSMutableData data];
-    
-    NSString *boundary = @"---------------------------168072824752491622650073";
-    
-    NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
-    [userRequest addValue:contentType forHTTPHeaderField:@"Content-Type"];
-    
-    [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    if (range.location == NSNotFound) {
-        //JPEG
-        [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"file\"; filename=\"prof%d.jpg\"\r\n",userId] dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[@"Content-Type: image/jpg\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[NSData dataWithData:jaketImageData]];
-        [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-        
-    } else {
-        //PNG
-        [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"file\"; filename=\"prof%d.png\"\r\n",userId] dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[@"Content-Type: image/png\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[NSData dataWithData:jaketImageData]];
-        [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-    }
-    
-    [body appendData:[[NSString stringWithFormat:@"--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    [userRequest setHTTPBody:body];
-    
-    NSData *returnData = [NSURLConnection sendSynchronousRequest:userRequest returningResponse:nil error:nil];
-    NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
-    NSLog(@"%@", returnString);
+    NSLog(@"%@", musicTittle);
     
     
     
     // アラート表示
-    UIAlertView *alert =
+    alertfavourite =
     [[UIAlertView alloc] initWithTitle:@"シェアしますか？"
                                message:@""
-                              delegate:@""
+                              delegate:self
                      cancelButtonTitle:@"Cancel"
                      otherButtonTitles:@"OK",nil];
-    [alert show];
-//    if () {
-//        
-//    }
     
+    // 識別のためのタグを設定
+    alertfavourite.tag = 1;
+
+    [alertfavourite show];
+
+}
+
+
+
+// アラートボタン処理
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     
-    
-    // mainViewController.mに画面遷移
-    // インスタンス化
-    mainViewController *secondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"mainViewController"];
-    
-    // ナビゲーションコントローラーの機能で画面遷移
-    [[self navigationController] pushViewController:secondVC animated:YES];
+    if(alertView.tag == 1) {
+        
+        if (buttonIndex == 1) {
+            
+            // エンコード
+            musicTittle = [musicTittle stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            artistName = [artistName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            soundUrl = [soundUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            
+            
+            
+            // phpに接続
+            NSString *phpUrl = [NSString stringWithFormat:@"http://takeshi-w.sakura.ne.jp/musicInfo.php?musicTittle=%@&artistName=%@&jacketUrl=%@&previewUrl=%@&trackId=%@",musicTittle,artistName,musicImg,soundUrl,trackId];
+            NSLog(@"%@",phpUrl);
+            
+            
+            // リクエストを生成
+            NSMutableURLRequest *request;
+            request = [[NSMutableURLRequest alloc] init];
+            [request setHTTPMethod:@"POST"];
+            [request setURL:[NSURL URLWithString:phpUrl]];
+            [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+            [request setTimeoutInterval:30];
+            [request setHTTPShouldHandleCookies:FALSE];
+            [request setHTTPBody:[phpUrl dataUsingEncoding:NSUTF8StringEncoding]];
+            
+            // サーバーとの通信を行う
+            NSData *json = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+            
+            // JSONをパース
+            NSDictionary *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
+            
+            // idの取得
+            userId = [array[@"id"] intValue];
+            StrmusicImg = array[@"jacketUrl"];
+            
+            
+            
+            // 画像の指定
+            // UIImageをpng.jpgに変換
+            NSRange range = [StrmusicImg rangeOfString:@".png"];
+            
+            NSData *jaketImageData = [[NSData alloc] init];
+            
+            jaketImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:StrmusicImg]];
+            
+            
+            
+            // ここからPOSTDATAの作成
+            NSString *urlString = @"http://takeshi-w.sakura.ne.jp/musicData.php";
+            NSLog(@"%@",urlString);
+            
+            // 初期化
+            NSMutableURLRequest *userRequest = [[NSMutableURLRequest alloc] init] ;
+            [userRequest setURL:[NSURL URLWithString:urlString]];
+            [userRequest setHTTPMethod:@"POST"];
+            
+            NSMutableData *body = [NSMutableData data];
+            
+            NSString *boundary = @"---------------------------168072824752491622650073";
+            
+            NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
+            [userRequest addValue:contentType forHTTPHeaderField:@"Content-Type"];
+            
+            [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+            
+            if (range.location == NSNotFound) {
+                
+                //JPEG
+                [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"file\"; filename=\"prof%d.jpg\"\r\n",userId] dataUsingEncoding:NSUTF8StringEncoding]];
+                [body appendData:[@"Content-Type: image/jpg\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+                [body appendData:[NSData dataWithData:jaketImageData]];
+                [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+                
+            } else {
+                
+                //PNG
+                [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"file\"; filename=\"prof%d.png\"\r\n",userId] dataUsingEncoding:NSUTF8StringEncoding]];
+                [body appendData:[@"Content-Type: image/png\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+                [body appendData:[NSData dataWithData:jaketImageData]];
+                [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+                
+            }
+            
+            [body appendData:[[NSString stringWithFormat:@"--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+            
+            [userRequest setHTTPBody:body];
+            
+            NSData *returnData = [NSURLConnection sendSynchronousRequest:userRequest returningResponse:nil error:nil];
+            NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+            NSLog(@"%@", returnString);
+            
+            
+            
+            // 画面遷移
+            mainViewController *second = [self.storyboard instantiateViewControllerWithIdentifier:@"mainViewController"];
+            
+            // ナビゲーションコントローラーの機能で画面遷移
+            [[self navigationController] pushViewController:second animated:YES];
+            
+        } else {
+            
+        }
+    }
 }
 
 
@@ -449,5 +470,21 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)searchButton:(id)sender {
+}
+
+- (IBAction)mainButton:(id)sender {
+    
+    //mainViewControllerに画面遷移
+    // インスタンス化
+    mainViewController *secondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"mainViewController"];
+    
+    // ナビゲーションコントローラーの機能で画面遷移
+    [[self navigationController] pushViewController:secondVC animated:YES];
+    
+    
+}
+
 
 @end

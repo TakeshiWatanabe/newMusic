@@ -74,19 +74,23 @@
     
     
     
-    // アラート表示
-//    _alert =
-//    [[UIAlertView alloc] initWithTitle:@"soundUp end user license agreement(使用承諾契約)"
-//                               message:@"{Japanese(日本語}\n投稿者は発言、投稿に際して発せするすべての責任が投稿者に帰すことを承諾します。\n利用者は、以下の行為を行わないものとします。以下の行為を行った場合、当社は利用の停止、制限措置を講じることがあります。\n１．楽曲を複製、貸与、その他の方法により配布、販売する行為。\n２．演奏もしくは歌唱した映像又は音源をCD、DVD等の媒体に記憶させて販売すること、及びアプリ等においてデータをダウンロード販売又は有料で配信する行為。\n３．有償又は無償を問わず、ゲームコンテンツに利用する行為。\n４．法令及び公序良俗に反する行為。\n５．当社又は第三者の名誉、人格もしくは信用等を毀損する行為又は不利益を与える行為。\n６．本規約に反する行為。\nアプリ利用者はsoundUpの利用に際し生じた一切の事像についてを承諾します。"
-//                              delegate:@""
-//                     cancelButtonTitle:@"同意しない"
-//                     otherButtonTitles:@"同意する",nil];
-//    
-//    [_alert show];
-//    NSLog(@"%@",_alert);
- 
+    // アカウントがあるか確認
+    // iPhoneのデータを呼び出す
+    // 初期化
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
-
+    // userの名前取得
+    NSString *defaultName = [userDefaults stringForKey:@"keyName"];
+    NSLog(@"%@", defaultName);
+    
+    // userのパスワード取得
+    NSString *password = [userDefaults stringForKey:@"keyPass"];
+    NSLog(@"%@", password);
+    
+    
+    if ((defaultName == nil) && (password == nil) ) {
+    
+        // アラート表示
         UIAlertView *alertView = [[UIAlertView alloc]
                                   initWithTitle:@"soundUp end user license agreement(使用承諾契約)"
                                   message:@"[Japanese(日本語)]\n投稿者は発言、投稿に際して発せするすべての責任が投稿者に帰すことを承諾します。\n利用者は、以下の行為を行わないものとします。以下の行為を行った場合、当社は利用の停止、制限措置を講じることがあります。\n１．楽曲を複製、貸与、その他の方法により配布、販売する行為。\n２．演奏もしくは歌唱した映像又は音源をCD、DVD等の媒体に記憶させて販売すること、及びアプリ等においてデータをダウンロード販売又は有料で配信する行為。\n３．有償又は無償を問わず、ゲームコンテンツに利用する行為。\n４．法令及び公序良俗に反する行為。\n５．当社又は第三者の名誉、人格もしくは信用等を毀損する行為又は不利益を与える行為。\n６．本規約に反する行為。\nアプリ利用者はsoundUpの利用に際し生じた一切の事像についてを承諾します。"
@@ -94,24 +98,65 @@
                                   cancelButtonTitle:@"同意しない"
                                   otherButtonTitles:@"同意する", nil];
         
+        // 識別のためのタグを設定
+        alertView.tag = 1;
+        
         [alertView show];
-    
+        
+    }
 }
 
 
 
 // ボタンカウント
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == 0) {
-        NSLog(@"%d",buttonIndex);
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if(alertView.tag == 1) {
         
-        //alertCansel *second = [self.storyboard instantiateViewControllerWithIdentifier:@"alertCansel"];
+        // 同意する、しない、のアラート
+        if (buttonIndex == 0) {
+            NSLog(@"%d",buttonIndex);
         
-        // ナビゲーションコントローラーの機能で画面遷移
-        [[self navigationController] pushViewController:(NSString *)second animated:YES];
+            alertCanselViewController *second = [self.storyboard instantiateViewControllerWithIdentifier:@"alertCansel"];
         
+            // ナビゲーションコントローラーの機能で画面遷移
+            [[self navigationController] pushViewController:second animated:YES];
+
+        }
+    
+    } else if (alertSignUp.tag == 2) {
+        
+        // signUpのアラート
+        if (buttonIndex == 0) {
+            // mainViewControllerに画面遷移
+            mainViewController *secondVC2 = [[mainViewController alloc] init];
+        
+            // インスタンス化し画面遷移
+            secondVC2 = [self.storyboard instantiateViewControllerWithIdentifier:@"mainViewController"];
+        
+            [[self navigationController] pushViewController:secondVC2 animated:YES];
+        
+        }
+    
+    } else if (alertView.tag == 3) {
+    
+        // signInのアラート
+        if (buttonIndex == 0) {
+            NSLog(@"%d",buttonIndex);
+            
+            // 動画を停止する
+            [MPMPlayerController.moviePlayer stop];
+            userSignUpViewController *secondVC3 = [[userSignUpViewController alloc] init];
+            
+            // インスタンス化し画面遷移
+            secondVC3 = [self.storyboard instantiateViewControllerWithIdentifier:@"userSignUp"];
+            
+            [[self navigationController] pushViewController:secondVC3 animated:YES];
+            
+        }
+            
     }
+    
 }
 
 
@@ -159,42 +204,45 @@
     
     
     
-    //アカウンントを持っている場合
-    if ([defaultName  isEqual: defaultName] && [password  isEqual: password]) {
+    // 動画を停止する
+    [MPMPlayerController.moviePlayer stop];
+    
+    
+    
+    if ((defaultName != nil) && (password != nil) ) {
         
         // アラート表示
-        UIAlertView *alert =
+        alertSignUp =
         [[UIAlertView alloc] initWithTitle:@"登録されています"
                                    message:@""
                                   delegate:self
                          cancelButtonTitle:@"OK"
                          otherButtonTitles:nil];
-        [alert show];
         
+        // 識別のためのタグを設定
+        alertSignUp.tag = 2;
         
-        
-        // mainViewControllerに画面遷移
-        // 動画を停止する
-        [MPMPlayerController.moviePlayer stop];
-        mainViewController *secondVC2 = [[mainViewController alloc] init];
-        
-        // インスタンス化し画面遷移
-        secondVC2 = [self.storyboard instantiateViewControllerWithIdentifier:@"mainViewController"];
-        
-        [[self navigationController] pushViewController:secondVC2 animated:YES];
+        [alertSignUp show];
         
         return;
+
+//        // mainViewControllerに画面遷移
+//        mainViewController *secondVC2 = [[mainViewController alloc] init];
+//        
+//        // インスタンス化し画面遷移
+//        secondVC2 = [self.storyboard instantiateViewControllerWithIdentifier:@"mainViewController"];
+//        
+//        [[self navigationController] pushViewController:secondVC2 animated:YES];
         
     }
-    
-    // 動画を停止する
-    [MPMPlayerController.moviePlayer stop];
-    userSignUpViewController *secondVC1 = [[userSignUpViewController alloc] init];
-    
-    // インスタンス化し画面遷移
-    secondVC1 = [self.storyboard instantiateViewControllerWithIdentifier:@"userSignUp"];
-    
-    [[self navigationController] pushViewController:secondVC1 animated:YES];
+        
+        // userSignUpViewControllerに画面遷移
+        userSignUpViewController *secondVC3 = [[userSignUpViewController alloc] init];
+        
+        // インスタンス化し画面遷移
+        secondVC3 = [self.storyboard instantiateViewControllerWithIdentifier:@"userSignUp"];
+        
+        [[self navigationController] pushViewController:secondVC3 animated:YES];
     
 }
 
@@ -227,43 +275,35 @@
     
     
     // userデータがあるか確認
-    if ([defaultName  isEqual: @""] && [password  isEqual: @""]) {
+    if ((defaultName == nil) && (password == nil) ) {
         
         // 登録されていない場合
         // アラート表示
-        UIAlertView *alert =
+        UIAlertView *alert3 =
         [[UIAlertView alloc] initWithTitle:@"登録されていません"
                                    message:@""
                                   delegate:self
                          cancelButtonTitle:@"OK"
                          otherButtonTitles:nil];
-        [alert show];
         
+        // 識別のためのタグを設定
+        alert3.tag = 3;
         
-        
-        // 動画を停止する
-        [MPMPlayerController.moviePlayer stop];
-        userSignUpViewController *secondVC1 = [[userSignUpViewController alloc] init];
-        
-        // インスタンス化し画面遷移
-        secondVC1 = [self.storyboard instantiateViewControllerWithIdentifier:@"userSignUp"];
-        
-        [[self navigationController] pushViewController:secondVC1 animated:YES];
+        [alert3 show];
         
         return;
-        
-    } else {
-        
-        // エンコード
-        defaultName = [defaultName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        password = [password stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        
     }
     
     
     
+    // エンコード
+    defaultName = [defaultName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    password = [password stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    
+    
     // phpにアクセス
-    NSString *userConfirmation = [NSString stringWithFormat:@" http://takeshi-w.sakura.ne.jp?name=%@&password=%@",defaultName,password];
+    NSString *userConfirmation = [NSString stringWithFormat:@"http://takeshi-w.sakura.ne.jp/Check.php?name=%@&password=%@",defaultName,password];
     
     // リクエストを生成
     NSMutableURLRequest *phpRequest;

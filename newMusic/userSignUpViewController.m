@@ -16,6 +16,11 @@
 
 @implementation userSignUpViewController
 
+
+// tabBer
+@synthesize window;
+@synthesize tabBarController;
+
 // ボタンに枠を付ける処理
 @synthesize okButton;
 @synthesize noButton;
@@ -58,7 +63,8 @@
                ];
     
     // 国名と国旗の配列
-    _country = @[@{@"name":@"アイスランド",@"code":@"Iceland",@"image":@"Iceland.gif"},
+    _country = @[@{@"name":@"日本",@"code":@"Japan",@"image":@"Japan.gif"},
+                @{@"name":@"アイスランド",@"code":@"Iceland",@"image":@"Iceland.gif"},
                  @{@"name":@"アイルランド",@"code":@"Ireland",@"image":@"Ireland.gif"},
                  @{@"name":@"アメリカ",@"code":@"USA",@"image":@"USA.gif"},
                  @{@"name":@"アルゼンチン",@"code":@"Argentina",@"image":@"Argentina.gif"},
@@ -97,7 +103,6 @@
                  @{@"name":@"ドミニカ",@"code":@"Dominica",@"image":@"Dominica.gif"},
                  @{@"name":@"トルコ",@"code":@"Turkey",@"image":@"Turkey.gif"},
                  @{@"name":@"トンガ",@"code":@"Tonga",@"image":@"Tonga.gif"},
-                 @{@"name":@"日本",@"code":@"Japan",@"image":@"Japan.gif"},
                  @{@"name":@"ニュージーランド",@"code":@"NewZealand",@"image":@"NewZealand.gif"},
                  @{@"name":@"ノルウェー",@"code":@"Norway",@"image":@"Norway.gif"},
                  @{@"name":@"パナマ",@"code":@"Panama",@"image":@"Panama.gif"},
@@ -387,6 +392,22 @@
     
     
     
+    // 記入欄が埋まってるか確認
+    // 空欄がある場合アラートを出す
+    if (name == nil || country == nil || genre == nil || userImg == nil) {
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"空欄があります"
+                                   message:@"名前・写真・ジャンル・国籍を選んでください！"
+                                  delegate:self
+                         cancelButtonTitle:@"OK"
+                         otherButtonTitles:nil];
+        [alert show];
+        return;
+        
+    }
+    
+    
+    
     // パスワード作成
     // NsDate => NSString変換用のフォーマッタを作成
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
@@ -433,7 +454,7 @@
     
     
     // phpに接続
-    NSString *phpUrl = [NSString stringWithFormat:@" http://takeshi-w.sakura.ne.jp?name=%@&country=%@&genre=%@&password=%@",name,self.countryClearLabel.text,self.genreClearLabel.text,defaultPassword];
+    NSString *phpUrl = [NSString stringWithFormat:@"http://takeshi-w.sakura.ne.jp/serverTomysql.php?name=%@&country=%@&genre=%@&password=%@",name,self.countryClearLabel.text,self.genreClearLabel.text,defaultPassword];
     
     // リクエストを生成
     NSMutableURLRequest *request;
@@ -464,7 +485,7 @@
     NSData* pngData = UIImagePNGRepresentation(userImg);
     
     // ここからPOSTDATAの作成
-    NSString *urlString = @" http://takeshi-w.sakura.ne.jp";
+    NSString *urlString = @"http://takeshi-w.sakura.ne.jp/image.php";
     
     // 初期化
     NSMutableURLRequest *userRequest = [[NSMutableURLRequest alloc] init] ;
@@ -494,26 +515,11 @@
     
     
     
-    // 記入欄が埋まってるか確認
-    // 空欄がある場合アラートを出す
-    if (name == nil || country == nil || genre == nil || userImg == nil) {
-        UIAlertView *alert =
-        [[UIAlertView alloc] initWithTitle:@"空欄があります"
-                                   message:@"名前・写真・ジャンル・国籍を選んでください！"
-                                  delegate:self
-                         cancelButtonTitle:@"OK"
-                         otherButtonTitles:nil];
-        [alert show];
-        
-    } else {
-        
-        // mainViewController.mに画面遷移
-        // インスタンス化
-        mainViewController *secondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"mainViewController"];
+    // インスタンス化
+    mainViewController *secondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"mainViewController"];
     
-        // ナビゲーションコントローラーの機能で画面遷移
-        [[self navigationController] pushViewController:secondVC animated:YES];
-    }
+    // ナビゲーションコントローラーの機能で画面遷移
+    [[self navigationController] pushViewController:secondVC animated:YES];
     
 }
 

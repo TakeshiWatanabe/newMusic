@@ -8,8 +8,6 @@
 
 #import "mainViewController.h"
 
-#import "searchViewController.h"
-#import "playBackViewController.h"
 
 @interface mainViewController ()
 
@@ -20,13 +18,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     _mainViewController.delegate = self;
     _mainViewController.dataSource = self;
     
     
     
     // phpにアクセス(mainImage,musicTittle,artistName)
-    NSString *phpMainViewUrl = [NSString stringWithFormat:@"http://takeshi-w.sakura.ne.jp"];
+    NSString *phpMainViewUrl = [NSString stringWithFormat:@"http://takeshi-w.sakura.ne.jp/musicData.php"];
     
     // Requestを作成
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:phpMainViewUrl]];
@@ -35,9 +34,10 @@
     NSData *json = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     
     // JSONをパース
-    // 最新の音楽を取ってきた分配列に格納
+    // 取ってきた分配列に格納
     NSArray *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
     
+    //_musicCell = [[NSArray alloc] init];
     _musicCell = array;
     
 }
@@ -62,6 +62,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
     
     if(cell == nil){
+        
         // セルの初期化とスタイルの決定
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
         
@@ -92,7 +93,7 @@
     
     
     // cell内にそれぞれ表示
-    userImageView.image = [UIImage imageNamed:@"Tomorrowland23.jpg"];
+    userImageView.image = [UIImage imageNamed:@"usewrImage"];
     userNameLabel.text = _musicCell[indexPath.row][@"userName"];
     artistNameLabel.text = _musicCell[indexPath.row][@"artistName"];
     musicTittleLabel.text = _musicCell[indexPath.row][@"musicTittle"];
@@ -113,6 +114,21 @@
 //    NSString *print = [[NSString alloc] initWithFormat:@"%d!", num1];
 //    self.goodCountLabel.text = print;
     
+}
+
+
+- (IBAction)serchButton:(id)sender {
+    
+    //sampleImageViewControllerに画面遷移
+    // インスタンス化
+    sampleImageViewController *secondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"sampleImageViewController"];
+    
+    // ナビゲーションコントローラーの機能で画面遷移
+    [[self navigationController] pushViewController:secondVC animated:YES];
+    
+}
+
+- (IBAction)mainButton:(id)sender {
 }
 
 
