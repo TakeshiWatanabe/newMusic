@@ -15,11 +15,28 @@
 #import "sampleImageViewController.h"
 
 
-@interface mainViewController : UIViewController<UITableViewDataSource,UITableViewDelegate> {
+@interface mainViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,AVAudioPlayerDelegate> {
+    
     NSArray *_musicCell;
+    
+    // 音楽
+    NSMutableArray *_musicPlay;
+    
+    // goodBotttun
+    NSInteger total;
+    //IBOutlet UILabel *number;
+    
+    
 }
 
+// テーブル 
 @property (weak, nonatomic) IBOutlet UITableView *mainViewController;
+
+// 音楽
+@property (nonatomic) AVAudioPlayer *audioPlayer;   
+
+@property (weak, nonatomic) IBOutlet UILabel *number;
+
 - (IBAction)serchButton:(id)sender;
 - (IBAction)mainButton:(id)sender;
 

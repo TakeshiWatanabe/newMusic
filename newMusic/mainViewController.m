@@ -101,20 +101,74 @@
     [goodButton setTitle:nil forState:UIControlStateNormal];
     [playButton setTitle:nil forState:UIControlStateNormal];
     [commentButton setTitle:nil forState:UIControlStateNormal];
-    goodCountLabel.text = _musicCell[indexPath.row][@"goodCount"];
+    //goodCountLabel.text = _musicCell[indexPath.row][@"goodCount"];
     
     return cell;
     
     
-    
-//    //goodボタンの回数カウント
-//    NSInteger num1 = 1;
-//    self.goodButton = self.goodButton + 1;
-//    NSLog(@"%@",goodButton);
-//    NSString *print = [[NSString alloc] initWithFormat:@"%d!", num1];
-//    self.goodCountLabel.text = print;
-    
 }
+
+
+
+// Goodをカウント
+- (IBAction)good:(id)sender {
+    
+//    total++;
+//    [self.number.text setText:[NSString stringWithFormat: @"%d:件", total]];
+    
+        //goodボタンの回数カウント
+//        NSInteger num1 = 1;
+//        total = self.goodButton + 1;
+//        NSLog(@"%@",goodButton);
+//        NSString *print = [[NSString alloc] initWithFormat:@"%d!", num1];
+//        self.goodCountLabel.text = print;
+//    
+}
+
+
+
+// 音を出す
+- (IBAction)playButton:(id)sender {
+    
+    NSError *error = nil;
+    
+    // cellの行数を取得
+    UITableViewCell *cell = (UITableViewCell *)[[sender superview]superview];
+    
+    int row = [self.mainViewController indexPathForCell:cell].row;
+    NSLog(@"%d",row);
+    
+    NSURL *SoundUrl = [NSURL URLWithString:_musicCell[row][@"previewUrl"]];
+    
+    // audioを再生するプレイヤーを作成する
+    NSData *data = [[NSData alloc] initWithContentsOfURL:SoundUrl];
+    if (_audioPlayer == nil) {
+        _audioPlayer = [[AVAudioPlayer alloc] initWithData:data error:&error];
+        
+        // エラーが起きたとき
+        if (error !=nil) {
+            //NSLog(@"Error %@",[error localizedDescription]);
+            
+        }else{
+            
+            // 自分自身をデリケートに設定
+            [_audioPlayer setDelegate:self];
+            [_musicPlay addObject:_audioPlayer];
+            
+        }
+    }
+    
+    if (_audioPlayer.playing) {
+        [_audioPlayer stop];
+        _audioPlayer = nil;
+        
+    }else{
+        
+        [_audioPlayer play];
+        
+    }
+}
+
 
 
 - (IBAction)serchButton:(id)sender {

@@ -162,22 +162,22 @@
     
     
     // [「改行（Return）」キーの設定]
-    //self.commentTextView.returnKeyType = UIReturnKeyDone;
+    //self.nameText.returnKeyType = UIReturnKeyDone;
     
 }
 
 
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-//    // キーボードが表示：消す
-//    if (_genreText.isFirstResponder) {
-//        [_genreText resignFirstResponder];
-//        //[self.view endEditing:YES];   // こちらでもOK
-//    }
-//    // キーボードが非表示：表示する
-//    else {
-//        [_genreText becomeFirstResponder];
-//    }
+    // キーボードが表示：消す
+    if (_genreText.isFirstResponder) {
+        //[_genreText resignFirstResponder];
+        //[self.view endEditing:YES];   // こちらでもOK
+    }
+    // キーボードが非表示：表示する
+    else {
+        [_genreText becomeFirstResponder];
+    }
 }
 
 
@@ -190,14 +190,16 @@
     if (_genreText.resignFirstResponder) {
         [_genreText resignFirstResponder];
         //[self.view endEditing:YES];   // こちらでもOK
-    }
-    // キーボードが非表示：表示する
-    else {
+        
+    } else {
+        
+        // キーボードが非表示：表示する
         [_genreText becomeFirstResponder];
     }
     
     // エンターキーでキーボードを隠す
     [nameText resignFirstResponder];
+    
     return YES;
     
 }
@@ -397,7 +399,7 @@
     if (name == nil || country == nil || genre == nil || userImg == nil) {
         UIAlertView *alert =
         [[UIAlertView alloc] initWithTitle:@"空欄があります"
-                                   message:@"名前・写真・ジャンル・国籍を選んでください！"
+                                   message:@"名前・写真・ジャンル・国籍を選んでください"
                                   delegate:self
                          cancelButtonTitle:@"OK"
                          otherButtonTitles:nil];
