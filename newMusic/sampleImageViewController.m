@@ -222,6 +222,7 @@
     if (_audioPlayer.playing) {
         [_audioPlayer stop];
         _audioPlayer = nil;
+        NSLog(@"%@",_audioPlayer);
         
     }else{
         
@@ -232,8 +233,7 @@
 
 
 // 行数を返す
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _musicCell.count;
     
 }

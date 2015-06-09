@@ -32,6 +32,7 @@
 		B0246B771B1F358F00C7A09A /* soundTrackImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0246B671B1F358F00C7A09A /* soundTrackImg.jpg */; };
 		B02594731AF9E7DF00F68C95 /* IMG_1592.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B02594711AF9E7DF00F68C95 /* IMG_1592.MOV */; };
 		B041C7EB1B01EEE500DAF891 /* searchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B041C7EA1B01EEE500DAF891 /* searchViewController.m */; };
+		B0428C8F1B275E75000DC9F1 /* newSound.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0428C8E1B275E75000DC9F1 /* newSound.jpg */; };
 		B07CCC0B1B0D72480052101A /* mainTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B07CCC0A1B0D72480052101A /* mainTableView.xib */; };
 		B07CCC191B0DBFC40052101A /* newMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B07CCC181B0DBFC40052101A /* newMainTableViewCell.m */; };
 		B07CCC231B0F21F30052101A /* comentButtoun.png in Resources */ = {isa = PBXBuildFile; fileRef = B07CCC1D1B0F21F30052101A /* comentButtoun.png */; };
@@ -195,6 +196,7 @@
 		B02594721AF9E7DF00F68C95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Base; path = Base.lproj/IMG_1592.MOV; sourceTree = "<group>"; };
 		B041C7E91B01EEE500DAF891 /* searchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = searchViewController.h; path = ../searchViewController.h; sourceTree = "<group>"; };
 		B041C7EA1B01EEE500DAF891 /* searchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = searchViewController.m; path = ../searchViewController.m; sourceTree = "<group>"; };
+		B0428C8E1B275E75000DC9F1 /* newSound.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newSound.jpg; sourceTree = "<group>"; };
 		B07CCC0A1B0D72480052101A /* mainTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = mainTableView.xib; path = newMusic.xcodeproj/../mainTableView.xib; sourceTree = SOURCE_ROOT; };
 		B07CCC171B0DBFC40052101A /* newMainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = newMainTableViewCell.h; path = newMusic.xcodeproj/../newMainTableViewCell.h; sourceTree = SOURCE_ROOT; };
 		B07CCC181B0DBFC40052101A /* newMainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = newMainTableViewCell.m; path = newMusic.xcodeproj/../newMainTableViewCell.m; sourceTree = SOURCE_ROOT; };
@@ -352,6 +354,7 @@
 		B07CCC1A1B0F21F20052101A /* 各種画像 */ = {
 			isa = PBXGroup;
 			children = (
+				B0428C8E1B275E75000DC9F1 /* newSound.jpg */,
 				B01737271B24B3A600AC18D3 /* newGood.jpg */,
 				B01737251B24B01400AC18D3 /* serch.jpg */,
 				B01737231B24AFFE00AC18D3 /* home.jpg */,
@@ -878,6 +881,7 @@
 				B02594731AF9E7DF00F68C95 /* IMG_1592.MOV in Resources */,
 				B09B2F061B05931700F28BA7 /* Guinea.gif in Resources */,
 				B09B2F231B05931700F28BA7 /* Singapore.gif in Resources */,
+				B0428C8F1B275E75000DC9F1 /* newSound.jpg in Resources */,
 				B0246B731B1F358F00C7A09A /* popImg.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

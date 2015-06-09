@@ -18,13 +18,15 @@
 @interface mainViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,AVAudioPlayerDelegate> {
     
     NSArray *_musicCell;
+    NSMutableArray *newMusicCell;
     
     // 音楽
     NSMutableArray *_musicPlay;
     
-    // goodBotttun
-    NSInteger total;
-    //IBOutlet UILabel *number;
+    // goodButton
+    int number;
+    NSString *kazuText;
+    IBOutlet UILabel *numberLabel;
     
     
 }
@@ -35,7 +37,8 @@
 // 音楽
 @property (nonatomic) AVAudioPlayer *audioPlayer;   
 
-@property (weak, nonatomic) IBOutlet UILabel *number;
+//@property (weak, nonatomic) IBOutlet UILabel *numberLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *kazuLabel;
 
 - (IBAction)serchButton:(id)sender;
 - (IBAction)mainButton:(id)sender;

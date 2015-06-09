@@ -18,13 +18,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     _mainViewController.delegate = self;
     _mainViewController.dataSource = self;
     
     
     
-    // phpにアクセス(mainImage,musicTittle,artistName)
+    // phpにアクセス(音楽系)
     NSString *phpMainViewUrl = [NSString stringWithFormat:@"http://takeshi-w.sakura.ne.jp/musicData.php"];
     
     // Requestを作成
@@ -37,8 +36,20 @@
     // 取ってきた分配列に格納
     NSArray *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
     
-    //_musicCell = [[NSArray alloc] init];
     _musicCell = array;
+    
+    
+    
+    // 配列の中身を最新順に並び変える
+    //NSArray *newMusicCell;
+    newMusicCell = [[NSMutableArray alloc] init];
+    
+    for(NSString *objData in [_musicCell reverseObjectEnumerator]){
+        
+        // newMusicCellの後ろにデータをどんどん格納
+        [newMusicCell addObject:objData];
+        
+    }
     
 }
 
@@ -47,7 +58,7 @@
 // 行数を返す
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _musicCell.count;
+    return newMusicCell.count;
     
 }
 
@@ -83,8 +94,9 @@
     UILabel *goodCountLabel = (UILabel *)[cell viewWithTag:10];
     
     
+    
     // cellに画像表示
-    NSURL *jurl =[NSURL URLWithString:_musicCell[indexPath.row][@"jacketUrl"]];
+    NSURL *jurl =[NSURL URLWithString:newMusicCell[indexPath.row][@"jacketUrl"]];
     // urlを画像データに変更
     NSData *imageData = [NSData dataWithContentsOfURL:jurl];
     // 画像データを表示する
@@ -94,14 +106,14 @@
     
     // cell内にそれぞれ表示
     userImageView.image = [UIImage imageNamed:@"usewrImage"];
-    userNameLabel.text = _musicCell[indexPath.row][@"userName"];
-    artistNameLabel.text = _musicCell[indexPath.row][@"artistName"];
-    musicTittleLabel.text = _musicCell[indexPath.row][@"musicTittle"];
+    userNameLabel.text = newMusicCell[indexPath.row][@"userName"];
+    artistNameLabel.text = newMusicCell[indexPath.row][@"artistName"];
+    musicTittleLabel.text = newMusicCell[indexPath.row][@"musicTittle"];
     //commentLabel.text = _musicCell[indexPath.row][@"comment"];
     [goodButton setTitle:nil forState:UIControlStateNormal];
     [playButton setTitle:nil forState:UIControlStateNormal];
     [commentButton setTitle:nil forState:UIControlStateNormal];
-    //goodCountLabel.text = _musicCell[indexPath.row][@"goodCount"];
+    goodCountLabel.text = newMusicCell[indexPath.row][@"goodCount"];
     
     return cell;
     
@@ -113,16 +125,55 @@
 // Goodをカウント
 - (IBAction)good:(id)sender {
     
-//    total++;
-//    [self.number.text setText:[NSString stringWithFormat: @"%d:件", total]];
+    //for (i = 0, i < count , i++){
+    //int count;
+    //number = count++;
     
-        //goodボタンの回数カウント
-//        NSInteger num1 = 1;
-//        total = self.goodButton + 1;
-//        NSLog(@"%@",goodButton);
-//        NSString *print = [[NSString alloc] initWithFormat:@"%d!", num1];
-//        self.goodCountLabel.text = print;
+    NSInteger i = number;
+    number++;
+    
+    // superviewは階層を表す（superview]superviewは親の親を指定している）
+    UITableViewCell *cell = (UITableViewCell *)[[sender superview]superview];
+    
+    // goodCountLabelに表示場所を指定
+    UILabel *goodCountLabel = (UILabel *)[cell viewWithTag:10];
+    
+    kazuText= [NSString stringWithFormat:@"good%d件",number];
+    [goodCountLabel setText:kazuText];
+    
+    
+
+    // 後の作業
+//    // カウント回数をサーバーに送る
+//    NSString *phpUrl = [NSString stringWithFormat:@"http://takeshi-w.sakura.ne.jp/GetGoodCount.php?goodCount=%@",goodCountLabel];
 //    
+//    // リクエストを生成
+//    NSMutableURLRequest *request;
+//    request = [[NSMutableURLRequest alloc] init];
+//    [request setHTTPMethod:@"POST"];
+//    [request setURL:[NSURL URLWithString:phpUrl]];
+//    [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+//    [request setTimeoutInterval:30];
+//    [request setHTTPShouldHandleCookies:FALSE];
+//    [request setHTTPBody:[phpUrl dataUsingEncoding:NSUTF8StringEncoding]];
+//    
+//    // サーバーとの通信を行う
+//    NSData *json = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+//    
+//    // JSONをパース
+//    NSDictionary *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
+//    
+//    // idの取得
+//    int count = [array[@"goodCount"] intValue];
+//
+//    
+//    
+//    // goodCountLabelに表示場所を指定
+//    goodCountLabel = (UILabel *)[cell viewWithTag:10];
+//    
+//    kazuText= [NSString stringWithFormat:@"good%d件",count];
+//    [goodCountLabel setText:kazuText];
+    
 }
 
 
@@ -138,7 +189,7 @@
     int row = [self.mainViewController indexPathForCell:cell].row;
     NSLog(@"%d",row);
     
-    NSURL *SoundUrl = [NSURL URLWithString:_musicCell[row][@"previewUrl"]];
+    NSURL *SoundUrl = [NSURL URLWithString:newMusicCell[row][@"previewUrl"]];
     
     // audioを再生するプレイヤーを作成する
     NSData *data = [[NSData alloc] initWithContentsOfURL:SoundUrl];
