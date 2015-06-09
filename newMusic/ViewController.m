@@ -88,7 +88,7 @@
     NSLog(@"%@", password);
     
     
-    if ((defaultName == nil) && (password == nil) ) {
+    if ((defaultName == nil) && (password == nil)) {
     
         // アラート表示
         UIAlertView *alertView = [[UIAlertView alloc]
@@ -226,14 +226,6 @@
         
         return;
 
-//        // mainViewControllerに画面遷移
-//        mainViewController *secondVC2 = [[mainViewController alloc] init];
-//        
-//        // インスタンス化し画面遷移
-//        secondVC2 = [self.storyboard instantiateViewControllerWithIdentifier:@"mainViewController"];
-//        
-//        [[self navigationController] pushViewController:secondVC2 animated:YES];
-        
     }
         
         // userSignUpViewControllerに画面遷移
@@ -328,15 +320,15 @@
     
     
         
-        // mainViewControllerに画面遷移
-        // 動画を停止する
-        [MPMPlayerController.moviePlayer stop];
-        mainViewController *secondVC2 = [[mainViewController alloc] init];
+    // mainViewControllerに画面遷移
+    // 動画を停止する
+    [MPMPlayerController.moviePlayer stop];
+    mainViewController *secondVC2 = [[mainViewController alloc] init];
         
-        // インスタンス化し画面遷移
-        secondVC2 = [self.storyboard instantiateViewControllerWithIdentifier:@"mainViewController"];
+    // インスタンス化し画面遷移
+    secondVC2 = [self.storyboard instantiateViewControllerWithIdentifier:@"mainViewController"];
         
-        [[self navigationController] pushViewController:secondVC2 animated:YES];
+    [[self navigationController] pushViewController:secondVC2 animated:YES];
     
     
     // userDefaultsインスタンス化と初期化

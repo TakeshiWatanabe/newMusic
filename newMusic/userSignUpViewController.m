@@ -392,11 +392,23 @@
     NSString *genre = self.genreText.text;
     UIImage *userImg = self.userImageView.image;
     
+    // 空の場合nilを代入
+    if ([name isEqualToString:@""]) {
+        name = nil;
+    } else if ([country isEqualToString:@"Label"]) {
+        country = nil;
+    } else if ([genre isEqualToString:@""]) {
+        genre = nil;
+    } else {
+        //userImg = nil;
+    }
+        
     
     
     // 記入欄が埋まってるか確認
-    // 空欄がある場合アラートを出す
-    if (name == nil || country == nil || genre == nil || userImg == nil) {
+    if ((name == nil) || (country == nil) || (genre == nil) || (userImg == nil)) {
+        
+        // 空欄がある場合アラートを出す
         UIAlertView *alert =
         [[UIAlertView alloc] initWithTitle:@"空欄があります"
                                    message:@"名前・写真・ジャンル・国籍を選んでください"
