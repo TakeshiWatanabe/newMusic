@@ -11,7 +11,7 @@
 
 #import "mainViewController.h"
 
-@interface sampleImageViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,NSURLConnectionDelegate,UISearchBarDelegate,UITextFieldDelegate,AVAudioPlayerDelegate> {
+@interface sampleImageViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,NSURLConnectionDelegate,UISearchBarDelegate,UITextFieldDelegate,AVAudioPlayerDelegate,NSURLConnectionDataDelegate> {
     
     // 配列の宣言
     NSArray *_musicList;
@@ -65,5 +65,10 @@
 @property (weak, nonatomic) NSString *eventId;
 
 @property (weak, nonatomic) NSString *SondUrl;
+
+////一度読み込んだ画像をキャッシュして、再び読み込まない(非同期)
+//@property (nonatomic, strong) NSMutableDictionary *imageCache;
+//@property (nonatomic, strong) NSMutableDictionary *downloaderManager;
+@property (strong, nonatomic) NSMutableData *receivedData;
 
 @end

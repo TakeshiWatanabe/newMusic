@@ -46,12 +46,42 @@
     
     for(NSString *objData in [_musicCell reverseObjectEnumerator]){
         
-        // newMusicCellの後ろにデータをどんどん格納
-        [newMusicCell addObject:objData];
+    // newMusicCellの後ろにデータをどんどん格納
+    [newMusicCell addObject:objData];
         
     }
     
 }
+
+
+
+//// 非同期
+//- (void)connection:(NSURLConnection *)connection
+//didReceiveResponse:(NSURLResponse *)response
+//{
+//    // データの長さを0で初期化
+//    [self.receivedData setLength:0];
+//}
+//
+//- (void)connection:(NSURLConnection *)connection
+//    didReceiveData:(NSData *)data
+//{
+//    // 受信したデータを追加していく
+//    [self.receivedData appendData:data];
+//}
+//
+////- (void)connection:(NSURLConnection *)connection
+////  didFailWithError:(NSError *error)
+////{
+////    NSLog(@"Error!");
+////}
+//
+//- (void)connectionDifFinishLoading:(NSURLConnection *)connection
+//{
+//    NSLog(@"Did finish loading!");
+//    
+//    NSLog(@"data: \n%@", [[NSString alloc] initWithData:self.receivedData encoding:NSUTF8StringEncoding]);
+//}
 
 
 
@@ -97,15 +127,20 @@
     
     // cellに画像表示
     NSURL *jurl =[NSURL URLWithString:newMusicCell[indexPath.row][@"jacketUrl"]];
+    NSURL *jurl2 =[NSURL URLWithString:newMusicCell[indexPath.row][@"userProfImage"]];
+    
     // urlを画像データに変更
     NSData *imageData = [NSData dataWithContentsOfURL:jurl];
+    NSData *imageData2 = [NSData dataWithContentsOfURL:jurl2];
+    
     // 画像データを表示する
     musicImageView.image = [UIImage imageWithData:imageData];
+    userImageView.image = [UIImage imageWithData:imageData2];
     
     
     
     // cell内にそれぞれ表示
-    userImageView.image = [UIImage imageNamed:@"usewrImage"];
+    //userImageView.image = [UIImage imageNamed:@"userProfImage"];
     userNameLabel.text = newMusicCell[indexPath.row][@"userName"];
     artistNameLabel.text = newMusicCell[indexPath.row][@"artistName"];
     musicTittleLabel.text = newMusicCell[indexPath.row][@"musicTittle"];
@@ -116,7 +151,6 @@
     goodCountLabel.text = newMusicCell[indexPath.row][@"goodCount"];
     
     return cell;
-    
     
 }
 
@@ -130,7 +164,7 @@
     //number = count++;
     
     NSInteger i = number;
-    number++;
+    i++;
     
     // superviewは階層を表す（superview]superviewは親の親を指定している）
     UITableViewCell *cell = (UITableViewCell *)[[sender superview]superview];
@@ -138,7 +172,7 @@
     // goodCountLabelに表示場所を指定
     UILabel *goodCountLabel = (UILabel *)[cell viewWithTag:10];
     
-    kazuText= [NSString stringWithFormat:@"good%d件",number];
+    kazuText= [NSString stringWithFormat:@"good%d件",i];
     [goodCountLabel setText:kazuText];
     
     

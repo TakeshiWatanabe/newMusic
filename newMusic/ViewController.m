@@ -284,6 +284,7 @@
         [alert3 show];
         
         return;
+        
     }
     
     
@@ -294,7 +295,7 @@
     
     
     
-    // phpにアクセス
+    // phpにアクセス自動ログイン
     NSString *userConfirmation = [NSString stringWithFormat:@"http://takeshi-w.sakura.ne.jp/Check.php?name=%@&password=%@",defaultName,password];
     
     // リクエストを生成
@@ -359,6 +360,7 @@
     [self.view addSubview:uv_load];
     
 }
+
 
 
 - (void)didReceiveMemoryWarning {

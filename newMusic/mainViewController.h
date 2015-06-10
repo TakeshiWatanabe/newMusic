@@ -15,7 +15,7 @@
 #import "sampleImageViewController.h"
 
 
-@interface mainViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,AVAudioPlayerDelegate> {
+@interface mainViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,AVAudioPlayerDelegate,NSURLConnectionDataDelegate> {
     
     NSArray *_musicCell;
     NSMutableArray *newMusicCell;
@@ -42,5 +42,8 @@
 
 - (IBAction)serchButton:(id)sender;
 - (IBAction)mainButton:(id)sender;
+
+// 非同期
+@property (strong, nonatomic) NSMutableData *receivedData;
 
 @end

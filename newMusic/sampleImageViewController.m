@@ -79,6 +79,12 @@
 
 // header data
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+    
+    // 非同期
+    // データの長さを0で初期化
+    [self.receivedData setLength:0];
+    
+    
     dataAsync = [[NSMutableData alloc] initWithData:0];
     totalbytes = [response expectedContentLength];
     loadedbytes = 0.0;
@@ -89,6 +95,12 @@
 
 // content downloading
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    
+    // 非同期
+    // 受信したデータを追加していく
+    [self.receivedData appendData:data];
+    
+    
     [dataAsync appendData:data];
     loadedbytes += [data length];
     progressView_.progress = (loadedbytes/totalbytes);
@@ -99,6 +111,11 @@
 
 // download error
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    
+    // 非同期
+    NSLog(@"Error!");
+    
+    
     NSString *errorMessage = [error localizedDescription];
     UIAlertView *alertView = [[UIAlertView alloc]
                               initWithTitle : @"RequestError"
@@ -115,6 +132,13 @@
 
 // download complete
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    
+    // 非同期
+    NSLog(@"Did finish loading!");
+    
+    NSLog(@"data: \n%@", [[NSString alloc] initWithData:self.receivedData encoding:NSUTF8StringEncoding]);
+    
+    
     // encode
     int encodes[] = {
         NSUTF8StringEncoding,			// UTF-8
@@ -232,13 +256,12 @@
 }
 
 
+
 // 行数を返す
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _musicCell.count;
     
 }
-
-
 
 
 
@@ -274,7 +297,6 @@
     UILabel *musicTittleLabel = (UILabel *)[cell viewWithTag:1];
     UILabel *artistNameLabel = (UILabel *)[cell viewWithTag:2];
     UIImageView *artistImage1 = (UIImageView *)[cell viewWithTag:3];
-    
     UIButton *favoriteBtn = (UIButton *)[cell viewWithTag:50];
 
     favoriteBtn.tag = indexPath.row;
@@ -282,7 +304,7 @@
     // imageをタグで管理、表示
     // cellに表示
     NSURL *jurl =[NSURL URLWithString:_musicCell[indexPath.row][@"artworkUrl100"]];
-    //NSLog(@"%@",jurl);
+    NSLog(@"%@",jurl);
     
     // urlを画像データに変更
     NSData *imageData = [NSData dataWithContentsOfURL:jurl];
@@ -294,10 +316,15 @@
     
     // cellからデータを取得
     musicTittleLabel.text = _musicCell[indexPath.row][@"trackName"];
-    //NSLog(@"%@",musicTittleLabel);
+    NSLog(@"%@",musicTittleLabel);
     
     artistNameLabel.text = _musicCell[indexPath.row][@"artistName"];
-    //NSLog(@"%@",artistNameLabel);
+    NSLog(@"%@",artistNameLabel);
+    
+    
+    
+    
+    
     
     return cell;
     
@@ -360,7 +387,7 @@
             
             
             // phpに接続
-            NSString *phpUrl = [NSString stringWithFormat:@"http://takeshi-w.sakura.ne.jp/musicInfo.php?musicTittle=%@&artistName=%@&jacketUrl=%@&previewUrl=%@&trackId=%@",musicTittle,artistName,musicImg,soundUrl,trackId];
+            NSString *phpUrl = [NSString stringWithFormat:@"http://takeshi-w.sakura.ne.jp/musicInfo.php?userId=%d&musicTittle=%@&artistName=%@&jacketUrl=%@&previewUrl=%@&trackId=%@",userId,musicTittle,artistName,musicImg,soundUrl,trackId];
             NSLog(@"%@",phpUrl);
             
             
