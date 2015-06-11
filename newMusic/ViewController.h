@@ -20,6 +20,7 @@
     UIButton *_mySignUpButton; // SignUpButtonを宣言
     UIButton *_mySignInButton; // SignInButtonを宣言
     bool _is_playing;          // ムービーが再生中である事を示す
+    UILabel *soundUp;          // タイトル表示
     
     // データベースに接続で使用
     NSString *nowTagStr;

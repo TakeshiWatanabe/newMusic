@@ -44,7 +44,7 @@
     [super viewDidLoad];
     
     // 動画を表示
-    NSURL *filePath = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"IMG_0282" ofType:@"MOV"]];
+    NSURL *filePath = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"MyEditor" ofType:@"mp4"]];
     
     MPMPlayerController = [[MPMoviePlayerViewController alloc]initWithContentURL:filePath];
     MPMPlayerController.moviePlayer.backgroundView.backgroundColor = [UIColor whiteColor];
@@ -180,9 +180,37 @@
     [_mySignUpButton addTarget:self action:@selector(tapBtn1:) forControlEvents:UIControlEventTouchUpInside];
     [_mySignInButton addTarget:self action:@selector(tapBtn2:) forControlEvents:UIControlEventTouchUpInside];
     
+    
+    
+    // タイトル位置指定
+    soundUp = [[UILabel alloc] initWithFrame:CGRectMake(120, 330, 200, 50)];
+    // 標準14pt
+    soundUp.font = [UIFont systemFontOfSize:30];
+    
+    // 太字14pt
+    soundUp.font = [UIFont boldSystemFontOfSize:30];
+    
+    // 斜体14pt
+    soundUp.font = [UIFont italicSystemFontOfSize:30];
+    
+    // ラベルのテキストの色を設定
+    soundUp.textColor = [UIColor whiteColor];
+    
+    // ラベルのテキストの影を設定
+    soundUp.shadowColor = [UIColor grayColor];
+    soundUp.shadowOffset = CGSizeMake(1, 1);
+    
+    // タイトル表示
+    soundUp.text = @"soundUp";
+    
+    // 文字色指定
+    //soundUp = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
+
+    
     // 画面上にボタンを追加（設置）
     [self.view addSubview:_mySignUpButton];
     [self.view addSubview:_mySignInButton];
+    [self.view addSubview:soundUp];
     
 }
 
