@@ -153,6 +153,7 @@
 		B0C284101AF9B4F500C38707 /* newMusicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C2840F1AF9B4F500C38707 /* newMusicTests.m */; };
 		B0C284281AF9B7B000C38707 /* mainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C2841F1AF9B7B000C38707 /* mainViewController.m */; };
 		B0C2842A1AF9B7B000C38707 /* userSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C284231AF9B7B000C38707 /* userSignUpViewController.m */; };
+		B0ED2B3A1B28A29B00F325C7 /* no_image.gif in Resources */ = {isa = PBXBuildFile; fileRef = B0ED2B391B28A29B00F325C7 /* no_image.gif */; };
 		B0F0A5031B1854DA0012B8F0 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F0A5021B1854DA0012B8F0 /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
@@ -329,6 +330,7 @@
 		B0C2841F1AF9B7B000C38707 /* mainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainViewController.m; sourceTree = "<group>"; };
 		B0C284221AF9B7B000C38707 /* userSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userSignUpViewController.h; sourceTree = "<group>"; };
 		B0C284231AF9B7B000C38707 /* userSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userSignUpViewController.m; sourceTree = "<group>"; };
+		B0ED2B391B28A29B00F325C7 /* no_image.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = no_image.gif; sourceTree = "<group>"; };
 		B0F0A5021B1854DA0012B8F0 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -354,6 +356,7 @@
 		B07CCC1A1B0F21F20052101A /* 各種画像 */ = {
 			isa = PBXGroup;
 			children = (
+				B0ED2B391B28A29B00F325C7 /* no_image.gif */,
 				B0428C8E1B275E75000DC9F1 /* newSound.jpg */,
 				B01737271B24B3A600AC18D3 /* newGood.jpg */,
 				B01737251B24B01400AC18D3 /* serch.jpg */,
@@ -827,6 +830,7 @@
 				B09B2F001B05931700F28BA7 /* Fiji.gif in Resources */,
 				B099E0BF1B228C1300524954 /* Icon-72.png in Resources */,
 				B0246B6D1B1F358F00C7A09A /* fitnessImg.jpg in Resources */,
+				B0ED2B3A1B28A29B00F325C7 /* no_image.gif in Resources */,
 				B099E0B61B228C1300524954 /* Icon-40@3x.png in Resources */,
 				B0246B6F1B1F358F00C7A09A /* hitSongImg.jpg in Resources */,
 				B099E0B31B228C1300524954 /* Contents.json in Resources */,

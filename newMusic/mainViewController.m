@@ -18,8 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _mainViewController.delegate = self;
-    _mainViewController.dataSource = self;
+    _musicTableView.delegate = self;
+    _musicTableView.dataSource = self;
     
     
     
@@ -140,7 +140,6 @@
     
     
     // cell内にそれぞれ表示
-    //userImageView.image = [UIImage imageNamed:@"userProfImage"];
     userNameLabel.text = newMusicCell[indexPath.row][@"userName"];
     artistNameLabel.text = newMusicCell[indexPath.row][@"artistName"];
     musicTittleLabel.text = newMusicCell[indexPath.row][@"musicTittle"];
@@ -220,7 +219,7 @@
     // cellの行数を取得
     UITableViewCell *cell = (UITableViewCell *)[[sender superview]superview];
     
-    int row = [self.mainViewController indexPathForCell:cell].row;
+    int row = [self.musicTableView indexPathForCell:cell].row;
     NSLog(@"%d",row);
     
     NSURL *SoundUrl = [NSURL URLWithString:newMusicCell[row][@"previewUrl"]];

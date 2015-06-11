@@ -240,7 +240,7 @@
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.1];
     [UIView setAnimationDelegate:self];
-    self.moveGenreView.center = CGPointMake(160, 250);
+    self.moveGenreView.center = CGPointMake(160, 330);
     [UIView commitAnimations];
     
     // 右上にdoneボタン

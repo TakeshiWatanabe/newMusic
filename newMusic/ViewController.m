@@ -319,6 +319,9 @@
     // NSLogで表示
     NSLog(@"username:%@ pass:%@",[userData valueForKeyPath:@"name"],[userData valueForKeyPath:@"password"]);
     
+    // idをuserdefoletに保存
+    [userDefaults setValue:[userData valueForKeyPath:@"id"] forKey:@"keyId"];
+    [userDefaults synchronize];
     
         
     // mainViewControllerに画面遷移
@@ -331,10 +334,10 @@
         
     [[self navigationController] pushViewController:secondVC2 animated:YES];
     
-    
-    // userDefaultsインスタンス化と初期化
-    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
-    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+//　テスト用
+//    // userDefaultsインスタンス化と初期化
+//    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+//    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
     
 }
 

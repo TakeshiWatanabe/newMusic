@@ -33,6 +33,10 @@
     progressView_ = progressView;
     progressView_.progress = 0.0f;
     
+    userId = 0;
+    
+    _audioPlayerRow = -1;
+    
 }
 
 
@@ -82,7 +86,7 @@
     
     // 非同期
     // データの長さを0で初期化
-    [self.receivedData setLength:0];
+    //[self.receivedData setLength:0];
     
     
     dataAsync = [[NSMutableData alloc] initWithData:0];
@@ -98,7 +102,7 @@
     
     // 非同期
     // 受信したデータを追加していく
-    [self.receivedData appendData:data];
+    //[self.receivedData appendData:data];
     
     
     [dataAsync appendData:data];
@@ -113,7 +117,7 @@
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     
     // 非同期
-    NSLog(@"Error!");
+    //NSLog(@"Error!");
     
     
     NSString *errorMessage = [error localizedDescription];
@@ -134,9 +138,9 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     
     // 非同期
-    NSLog(@"Did finish loading!");
-    
-    NSLog(@"data: \n%@", [[NSString alloc] initWithData:self.receivedData encoding:NSUTF8StringEncoding]);
+//    NSLog(@"Did finish loading!");
+//    
+//    NSLog(@"data: \n%@", [[NSString alloc] initWithData:self.receivedData encoding:NSUTF8StringEncoding]);
     
     
     // encode
@@ -183,30 +187,31 @@
     
     // 配列の１個目を取得
     // 配列から要素を取得する
-    _str = (NSDictionary *)artist[0];
-    //NSLog(@"%@", _str);
+    if (artist.count > 0) {
+        _str = (NSDictionary *)artist[0];
+        //NSLog(@"%@", _str);
     
+        // 配列から要素を取得する
+        _musicListArtistName = _str[@"artistName"];
+        //NSLog(@"%@",_musicListArtistName);
     
+        _musicListTrackName = _str[@"trackName"];
+        //NSLog(@"%@",_musicListTrackName);
     
-    // 配列から要素を取得する
-    _musicListArtistName = _str[@"artistName"];
-    //NSLog(@"%@",_musicListArtistName);
+        _musicListViewUrl = _str[@"artworkUrl100"];
+        //NSLog(@"%@",_musicListViewUrl);
     
-    _musicListTrackName = _str[@"trackName"];
-    //NSLog(@"%@",_musicListTrackName);
+        _musicListSound = _str[@"previewUrl"];
+        //NSLog(@"%@",_musicListSound);
     
-    _musicListViewUrl = _str[@"artworkUrl100"];
-    //NSLog(@"%@",_musicListViewUrl);
+        _musicListTrackId = _str[@"trackId"];
+        //NSLog(@"%@",_musicListTrackId);
     
-    _musicListSound = _str[@"previewUrl"];
-    //NSLog(@"%@",_musicListSound);
+        _musicCell = artist;
     
-    _musicListTrackId = _str[@"trackId"];
-    //NSLog(@"%@",_musicListTrackId);
-    
-    _musicCell = artist;
-    
-    [self.artistTableView reloadData];
+        [self.artistTableView reloadData];
+        
+    }
     
 }
 
@@ -222,6 +227,16 @@
     
     int row = [self.artistTableView indexPathForCell:cell].row;
     NSLog(@"%d",row);
+    
+    if (_audioPlayerRow != row) {
+        if (_audioPlayer != nil) {
+            //別な曲を再生した時、曲をストップする
+            [_audioPlayer stop];
+            _audioPlayer = nil;
+            _audioPlayerRow = row;
+        }
+    }
+    
     
     NSURL *SoundUrl = [NSURL URLWithString:_musicCell[row][@"previewUrl"]];
     
@@ -251,6 +266,7 @@
     }else{
         
         [_audioPlayer play];
+        _audioPlayerRow = row;
         
     }
 }
@@ -321,11 +337,6 @@
     artistNameLabel.text = _musicCell[indexPath.row][@"artistName"];
     NSLog(@"%@",artistNameLabel);
     
-    
-    
-    
-    
-    
     return cell;
     
 }
@@ -343,7 +354,6 @@
     
     
     // 変数の宣言
-    userId = 0;
     musicTittle = _musicCell[row][@"trackName"];
     artistName = _musicCell[row][@"artistName"];
     musicImg = _musicCell[row][@"artworkUrl100"];
@@ -384,6 +394,13 @@
             artistName = [artistName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
             soundUrl = [soundUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
             
+            
+            // userDefoletからuserIdを取り出す
+            NSUserDefaults *userDefaults = [[NSUserDefaults alloc]init];
+            userDefaults = [NSUserDefaults standardUserDefaults];
+            
+            // ID取得
+            userId = [[userDefaults stringForKey:@"keyId"] intValue];
             
             
             // phpに接続

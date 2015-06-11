@@ -51,6 +51,7 @@
     UIAlertView *alertfavourite;
     NSString *favouriteData;
     
+    int _audioPlayerRow;
     
 }
 

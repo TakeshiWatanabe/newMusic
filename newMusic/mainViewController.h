@@ -32,7 +32,7 @@
 }
 
 // テーブル 
-@property (weak, nonatomic) IBOutlet UITableView *mainViewController;
+@property (weak, nonatomic) IBOutlet UITableView *musicTableView;
 
 // 音楽
 @property (nonatomic) AVAudioPlayer *audioPlayer;   
