@@ -126,15 +126,15 @@
     
     
     // cellに画像表示
-    NSURL *jurl =[NSURL URLWithString:newMusicCell[indexPath.row][@"jacketUrl"]];
+//    NSURL *jurl =[NSURL URLWithString:newMusicCell[indexPath.row][@"jacketUrl"]];
     NSURL *jurl2 =[NSURL URLWithString:newMusicCell[indexPath.row][@"userProfImage"]];
     
     // urlを画像データに変更
-    NSData *imageData = [NSData dataWithContentsOfURL:jurl];
+//    NSData *imageData = [NSData dataWithContentsOfURL:jurl];
     NSData *imageData2 = [NSData dataWithContentsOfURL:jurl2];
     
     // 画像データを表示する
-    musicImageView.image = [UIImage imageWithData:imageData];
+//    musicImageView.image = [UIImage imageWithData:imageData];
     userImageView.image = [UIImage imageWithData:imageData2];
     
     
@@ -148,6 +148,35 @@
     [playButton setTitle:nil forState:UIControlStateNormal];
     [commentButton setTitle:nil forState:UIControlStateNormal];
     goodCountLabel.text = newMusicCell[indexPath.row][@"goodCount"];
+    
+    
+    
+    // 非同期処理
+    if ([_imageCache objectForKey:indexPath]) {
+        // すでにキャッシュしてある場合
+        [cell setImage:[_imageCache objectForKey:indexPath]];
+        
+    } else {
+        if (_musicTableView.dragging == NO && _musicTableView.decelerating == NO)
+        {
+            // URLから画像を表示
+            dispatch_queue_t q_global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+            dispatch_queue_t q_main = dispatch_get_main_queue();
+            
+            cell.imageView.image = nil;
+            
+            dispatch_async(q_global, ^{
+                NSURL *jurl =[NSURL URLWithString:newMusicCell[indexPath.row][@"jacketUrl"]];
+                NSData *imageData = [NSData dataWithContentsOfURL:jurl];
+                if(!imageData){
+                    musicImageView.image = [UIImage imageWithData:imageData];
+                }
+                dispatch_async(q_main, ^{
+                    [cell setImage:(NSData *)imageData];
+                });
+            });
+        }
+    }
     
     return cell;
     

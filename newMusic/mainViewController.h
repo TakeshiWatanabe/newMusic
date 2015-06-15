@@ -43,7 +43,7 @@
 - (IBAction)serchButton:(id)sender;
 - (IBAction)mainButton:(id)sender;
 
-// 非同期
-@property (strong, nonatomic) NSMutableData *receivedData;
+//一度読み込んだ画像をキャッシュして、再び読み込まない
+@property (nonatomic, strong) NSMutableDictionary *imageCache;
 
 @end

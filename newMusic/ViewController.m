@@ -183,15 +183,15 @@
     
     
     // タイトル位置指定
-    soundUp = [[UILabel alloc] initWithFrame:CGRectMake(120, 330, 200, 50)];
+    soundUp = [[UILabel alloc] initWithFrame:CGRectMake(80, 330, 200, 50)];
     // 標準14pt
-    soundUp.font = [UIFont systemFontOfSize:30];
+    soundUp.font = [UIFont systemFontOfSize:40];
     
     // 太字14pt
-    soundUp.font = [UIFont boldSystemFontOfSize:30];
+    soundUp.font = [UIFont boldSystemFontOfSize:40];
     
     // 斜体14pt
-    soundUp.font = [UIFont italicSystemFontOfSize:30];
+    soundUp.font = [UIFont italicSystemFontOfSize:40];
     
     // ラベルのテキストの色を設定
     soundUp.textColor = [UIColor whiteColor];
