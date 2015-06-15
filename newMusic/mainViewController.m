@@ -56,9 +56,8 @@
 
 
 //// 非同期
-//- (void)connection:(NSURLConnection *)connection
-//didReceiveResponse:(NSURLResponse *)response
-//{
+//- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+//    
 //    // データの長さを0で初期化
 //    [self.receivedData setLength:0];
 //}
@@ -153,8 +152,10 @@
     
     // 非同期処理
     if ([_imageCache objectForKey:indexPath]) {
+        
         // すでにキャッシュしてある場合
-        [cell setImage:[_imageCache objectForKey:indexPath]];
+        //cell.imageView.image = [UIImage imageNamed:newMusicCell[indexPath.row]];
+        [cell.imageView setImage:[_imageCache objectForKey:indexPath]];
         
     } else {
         if (_musicTableView.dragging == NO && _musicTableView.decelerating == NO)
@@ -172,7 +173,7 @@
                     musicImageView.image = [UIImage imageWithData:imageData];
                 }
                 dispatch_async(q_main, ^{
-                    [cell setImage:(NSData *)imageData];
+                    [cell.imageView setImage:(UIImage *)musicImageView.image];
                 });
             });
         }
