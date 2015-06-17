@@ -23,7 +23,7 @@
     
     
     
-    // phpにアクセス(音楽系)
+    //サーバーにアクセス
     NSString *phpMainViewUrl = [NSString stringWithFormat:@"http://takeshi-w.sakura.ne.jp/musicData.php"];
     
     // Requestを作成
@@ -55,35 +55,6 @@
 
 
 
-//// 非同期
-//- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-//    
-//    // データの長さを0で初期化
-//    [self.receivedData setLength:0];
-//}
-//
-//- (void)connection:(NSURLConnection *)connection
-//    didReceiveData:(NSData *)data
-//{
-//    // 受信したデータを追加していく
-//    [self.receivedData appendData:data];
-//}
-//
-////- (void)connection:(NSURLConnection *)connection
-////  didFailWithError:(NSError *error)
-////{
-////    NSLog(@"Error!");
-////}
-//
-//- (void)connectionDifFinishLoading:(NSURLConnection *)connection
-//{
-//    NSLog(@"Did finish loading!");
-//    
-//    NSLog(@"data: \n%@", [[NSString alloc] initWithData:self.receivedData encoding:NSUTF8StringEncoding]);
-//}
-
-
-
 // 行数を返す
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -111,8 +82,8 @@
     
     
     // image,button,labelをタグで管理する
-    UIImageView *userImageView = (UIImageView *)[cell viewWithTag:1];
-    UIImageView *musicImageView = (UIImageView *)[cell viewWithTag:2];
+    //UIImageView *userImageView = (UIImageView *)[cell viewWithTag:1];
+    //UIImageView *musicImageView = (UIImageView *)[cell viewWithTag:2];
     UILabel *userNameLabel = (UILabel *)[cell viewWithTag:3];
     UILabel *musicTittleLabel = (UILabel *)[cell viewWithTag:4];
     UILabel *artistNameLabel = (UILabel *)[cell viewWithTag:5];
@@ -121,20 +92,6 @@
     UIButton *playButton = (UIButton *)[cell viewWithTag:8];
     UIButton *commentButton = (UIButton *)[cell viewWithTag:9];
     UILabel *goodCountLabel = (UILabel *)[cell viewWithTag:10];
-    
-    
-    
-    // cellに画像表示
-//    NSURL *jurl =[NSURL URLWithString:newMusicCell[indexPath.row][@"jacketUrl"]];
-    NSURL *jurl2 =[NSURL URLWithString:newMusicCell[indexPath.row][@"userProfImage"]];
-    
-    // urlを画像データに変更
-//    NSData *imageData = [NSData dataWithContentsOfURL:jurl];
-    NSData *imageData2 = [NSData dataWithContentsOfURL:jurl2];
-    
-    // 画像データを表示する
-//    musicImageView.image = [UIImage imageWithData:imageData];
-    userImageView.image = [UIImage imageWithData:imageData2];
     
     
     
@@ -150,12 +107,12 @@
     
     
     
-    // 非同期処理
+    // 非同期処理(userImage)
     if ([_imageCache objectForKey:indexPath]) {
         
         // すでにキャッシュしてある場合
         //cell.imageView.image = [UIImage imageNamed:newMusicCell[indexPath.row]];
-        [cell.imageView setImage:[_imageCache objectForKey:indexPath]];
+        //[musicImageView setImage:[_imageCache2 objectForKey:indexPath]];
         
     } else {
         if (_musicTableView.dragging == NO && _musicTableView.decelerating == NO)
@@ -164,16 +121,60 @@
             dispatch_queue_t q_global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
             dispatch_queue_t q_main = dispatch_get_main_queue();
             
-            cell.imageView.image = nil;
+            //cell.imageView.image = nil;
+            dispatch_async(q_global, ^{
+                UIImageView *userImageView = (UIImageView *)[cell viewWithTag:1];
+                
+                // cellに画像表示
+                NSURL *jurl =[NSURL URLWithString:newMusicCell[indexPath.row][@"userProfImage"]];
+                
+                // urlを画像データに変更
+                NSData *imageData = [NSData dataWithContentsOfURL:jurl];
+                
+                dispatch_async(q_main, ^{
+                    //[cell.imageView setImage:(UIImage *)musicImageView.image];
+                    if(imageData !=nil){
+                        // 画像データを表示する
+                        userImageView.image = [UIImage imageWithData:imageData];
+                    }
+                    
+                });
+            });
+        }
+    }
+    
+    
+    
+    // 非同期処理(アーティスト画像)
+    if ([_imageCache2 objectForKey:indexPath]) {
+        
+        // すでにキャッシュしてある場合
+        //cell.imageView.image = [UIImage imageNamed:newMusicCell[indexPath.row]];
+        //[musicImageView setImage:[_imageCache2 objectForKey:indexPath]];
+        
+    } else {
+        if (_musicTableView.dragging == NO && _musicTableView.decelerating == NO)
+        {
+            // URLから画像を表示
+            dispatch_queue_t q_global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+            dispatch_queue_t q_main = dispatch_get_main_queue();
             
             dispatch_async(q_global, ^{
-                NSURL *jurl =[NSURL URLWithString:newMusicCell[indexPath.row][@"jacketUrl"]];
-                NSData *imageData = [NSData dataWithContentsOfURL:jurl];
-                if(!imageData){
-                    musicImageView.image = [UIImage imageWithData:imageData];
-                }
+                UIImageView *musicImageViewTmp = (UIImageView *)[cell viewWithTag:2];
+                
+                // cellに画像表示
+                NSURL *jurl2 =[NSURL URLWithString:newMusicCell[indexPath.row][@"jacketUrl"]];
+                
+                // urlを画像データに変更
+
+                NSData *imageData2 = [NSData dataWithContentsOfURL:jurl2];
+                
                 dispatch_async(q_main, ^{
-                    [cell.imageView setImage:(UIImage *)musicImageView.image];
+                    
+                    if(imageData2 !=nil){
+                        musicImageViewTmp.image = [UIImage imageWithData:imageData2];
+                    }
+
                 });
             });
         }
