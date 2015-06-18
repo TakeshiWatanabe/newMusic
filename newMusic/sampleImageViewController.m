@@ -228,15 +228,14 @@
     int row = [self.artistTableView indexPathForCell:cell].row;
     NSLog(@"%d",row);
     
+    //別な曲を再生した時、曲をストップする
     if (_audioPlayerRow != row) {
         if (_audioPlayer != nil) {
-            //別な曲を再生した時、曲をストップする
             [_audioPlayer stop];
             _audioPlayer = nil;
             _audioPlayerRow = row;
         }
     }
-    
     
     NSURL *SoundUrl = [NSURL URLWithString:_musicCell[row][@"previewUrl"]];
     
@@ -312,21 +311,61 @@
     // 表示文字をタグで管理、表示
     UILabel *musicTittleLabel = (UILabel *)[cell viewWithTag:1];
     UILabel *artistNameLabel = (UILabel *)[cell viewWithTag:2];
-    UIImageView *artistImage1 = (UIImageView *)[cell viewWithTag:3];
+    //UIImageView *artistImage1 = (UIImageView *)[cell viewWithTag:3];
     UIButton *favoriteBtn = (UIButton *)[cell viewWithTag:50];
 
     favoriteBtn.tag = indexPath.row;
     
     // imageをタグで管理、表示
     // cellに表示
-    NSURL *jurl =[NSURL URLWithString:_musicCell[indexPath.row][@"artworkUrl100"]];
-    NSLog(@"%@",jurl);
-    
-    // urlを画像データに変更
-    NSData *imageData = [NSData dataWithContentsOfURL:jurl];
+//    NSURL *jurl =[NSURL URLWithString:_musicCell[indexPath.row][@"artworkUrl100"]];
+//    NSLog(@"%@",jurl);
+//    
+//    // urlを画像データに変更
+//    NSData *imageData = [NSData dataWithContentsOfURL:jurl];
     
     // cell内にそれぞれ表示
-    artistImage1.image = [UIImage imageWithData:imageData];
+//    artistImage1.image = [UIImage imageWithData:imageData];
+    
+    
+    
+    // 非同期処理(アーティスト画像)
+    if ([_imageCache objectForKey:indexPath]) {
+        
+        // すでにキャッシュしてある場合
+        //cell.imageView.image = [UIImage imageNamed:newMusicCell[indexPath.row]];
+        //[musicImageView setImage:[_imageCache2 objectForKey:indexPath]];
+        
+    } else {
+        //if (_artistTableView.dragging == NO && _artistTableView.decelerating == NO)
+        {
+            
+            // URLから画像を表示
+            dispatch_queue_t q_global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+            dispatch_queue_t q_main = dispatch_get_main_queue();
+            
+            dispatch_async(q_global, ^{
+                UIImageView *artistImage1 = (UIImageView *)[cell viewWithTag:3];
+                
+                // どこに画像を表示するか指定
+                NSURL *jurl =[NSURL URLWithString:_musicCell[indexPath.row][@"artworkUrl100"]];
+                //NSLog(@"%@",jurl);
+                
+                // urlを画像データに変更
+                NSData *imageData = [NSData dataWithContentsOfURL:jurl];
+                
+                dispatch_async(q_main, ^{
+                    
+                    if(imageData !=nil){
+                        
+                        // 画像表示位置指定
+                        artistImage1.image = [UIImage imageWithData:imageData];
+                    }
+                    
+                });
+            });
+        }
+    }
     
     
     
