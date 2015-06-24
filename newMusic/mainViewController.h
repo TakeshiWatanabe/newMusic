@@ -13,6 +13,8 @@
 #import "userSignUpViewController.h"
 #import "playBackViewController.h"
 #import "sampleImageViewController.h"
+#import "searchArtistViewController.h"
+#import "searchViewController.h"
 
 
 @interface mainViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,AVAudioPlayerDelegate,NSURLConnectionDataDelegate> {
@@ -46,6 +48,8 @@
 
 - (IBAction)serchButton:(id)sender;
 - (IBAction)mainButton:(id)sender;
+- (IBAction)userInfoButton:(id)sender;
+- (IBAction)genretButton:(id)sender;
 
 //一度読み込んだ画像をキャッシュして、再び読み込まない
 @property (nonatomic, strong) NSMutableDictionary *imageCache;

@@ -198,6 +198,9 @@
 // Goodをカウント
 - (IBAction)good:(id)sender {
     
+    // 投稿userIdの取得＆初期化
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
     //for (i = 0, i < count , i++){
     //int count;
     //number = count++;
@@ -233,18 +236,18 @@
     // サーバーとの通信を行う
     NSData *json = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     
-    // JSONをパース
-    NSDictionary *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
-    
-    // idの取得
-    int count = [array[@"goodCount"] intValue];
+//    // JSONをパース
+//    NSDictionary *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
+//    
+//    // idの取得
+//    int count = [array[@"goodCount"] intValue];
 
     
     
 //    // goodCountLabelに表示場所を指定
 //    goodCountLabel = (UILabel *)[cell viewWithTag:10];
 //    
-    kazuText= [NSString stringWithFormat:@"good%d件",count];
+    kazuText= [NSString stringWithFormat:@"good %@ 件",json];
     [goodCountLabel setText:kazuText];
     
 }
@@ -320,6 +323,32 @@
 }
 
 - (IBAction)mainButton:(id)sender {
+}
+
+
+
+- (IBAction)userInfoButton:(id)sender{
+    
+    //userInfoに画面遷移
+    // インスタンス化
+    searchArtistViewController *secondUser = [self.storyboard instantiateViewControllerWithIdentifier:@"userInfo"];
+    
+    // ナビゲーションコントローラーの機能で画面遷移
+    [[self navigationController] pushViewController:secondUser animated:YES];
+    
+}
+
+
+
+- (IBAction)genretButton:(id)sender{
+    
+    //userInfoに画面遷移
+    // インスタンス化
+    searchViewController *secondGenre = [self.storyboard instantiateViewControllerWithIdentifier:@"searchViewController"];
+    
+    // ナビゲーションコントローラーの機能で画面遷移
+    [[self navigationController] pushViewController:secondGenre animated:YES];
+    
 }
 
 

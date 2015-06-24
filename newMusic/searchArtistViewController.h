@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-#import "searchViewController.h"
 #import "mainViewController.h"
 #import "playBackViewController.h"
-#import "searchGenreViewController.h"
+#import "sampleImageViewController.h"
+#import "searchArtistViewController.h"
+#import "searchViewController.h"
 
 
 @interface searchArtistViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,NSURLConnectionDelegate,UISearchBarDelegate,UITextFieldDelegate,AVAudioPlayerDelegate> {
@@ -37,10 +38,12 @@
     NSDictionary *_str;
 }
 
+- (IBAction)serchButton:(id)sender;
+- (IBAction)mainButton:(id)sender;
+- (IBAction)userInfoButton:(id)sender;
+- (IBAction)genreButton:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UITableView *artistTableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchDetail;
-
-- (IBAction)genreButton:(id)sender;
-- (IBAction)artistButton:(id)sender;
 
 @end

@@ -13,6 +13,7 @@
 #import "searchGenreViewController.h"
 #import "searchArtistViewController.h"
 #import "playBackViewController.h"
+#import "sampleImageViewController.h"
 
 @interface searchViewController : UIViewController
 <UITableViewDelegate,UITableViewDataSource,AVAudioPlayerDelegate> {
@@ -33,9 +34,6 @@
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBer;
 
-- (IBAction)genreButton:(id)sender;
-- (IBAction)artistButton:(id)sender;
-
 @property (weak, nonatomic) IBOutlet UIImageView *NewArtistImg;
 @property (weak, nonatomic) IBOutlet UIImageView *classicImg;
 @property (weak, nonatomic) IBOutlet UIImageView *jazzImg;
@@ -53,7 +51,11 @@
 @property (weak, nonatomic) IBOutlet UIImageView *animeImg;
 @property (weak, nonatomic) IBOutlet UIImageView *fitnessImg;
 @property (weak, nonatomic) IBOutlet UIImageView *danceImg;
-- (IBAction)sampleButton:(id)sender;
+
+- (IBAction)serchButton:(id)sender;
+- (IBAction)mainButton:(id)sender;
+- (IBAction)userInfoButton:(id)sender;
+
 
 
 @end

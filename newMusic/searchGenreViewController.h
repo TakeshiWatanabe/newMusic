@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+#import "mainViewController.h"
 #import "searchViewController.h"
 #import "playBackViewController.h"
 #import "searchArtistViewController.h"
@@ -33,8 +34,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *artistTableView;
 @property (weak, nonatomic) IBOutlet UILabel *genreLabel;
-- (IBAction)artistButton:(id)sender;
-- (IBAction)genreButton:(id)sender;
+
 
 
 @end

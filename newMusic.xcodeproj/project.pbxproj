@@ -30,6 +30,8 @@
 		B0246B751B1F358F00C7A09A /* reggaeImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0246B651B1F358F00C7A09A /* reggaeImg.jpg */; };
 		B0246B761B1F358F00C7A09A /* rockImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0246B661B1F358F00C7A09A /* rockImg.jpg */; };
 		B0246B771B1F358F00C7A09A /* soundTrackImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0246B671B1F358F00C7A09A /* soundTrackImg.jpg */; };
+		B02846611B3AA5E400DF2FA0 /* newSinger4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B02846601B3AA5E400DF2FA0 /* newSinger4.jpg */; };
+		B02846631B3AB3C300DF2FA0 /* スクリーンショット 2015-06-24 2.44.21.png in Resources */ = {isa = PBXBuildFile; fileRef = B02846621B3AB3C300DF2FA0 /* スクリーンショット 2015-06-24 2.44.21.png */; };
 		B041C7EB1B01EEE500DAF891 /* searchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B041C7EA1B01EEE500DAF891 /* searchViewController.m */; };
 		B0428C8F1B275E75000DC9F1 /* newSound.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0428C8E1B275E75000DC9F1 /* newSound.jpg */; };
 		B07CCC0B1B0D72480052101A /* mainTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B07CCC0A1B0D72480052101A /* mainTableView.xib */; };
@@ -193,6 +195,8 @@
 		B0246B651B1F358F00C7A09A /* reggaeImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = reggaeImg.jpg; sourceTree = "<group>"; };
 		B0246B661B1F358F00C7A09A /* rockImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rockImg.jpg; sourceTree = "<group>"; };
 		B0246B671B1F358F00C7A09A /* soundTrackImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = soundTrackImg.jpg; sourceTree = "<group>"; };
+		B02846601B3AA5E400DF2FA0 /* newSinger4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newSinger4.jpg; sourceTree = "<group>"; };
+		B02846621B3AB3C300DF2FA0 /* スクリーンショット 2015-06-24 2.44.21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "スクリーンショット 2015-06-24 2.44.21.png"; sourceTree = "<group>"; };
 		B041C7E91B01EEE500DAF891 /* searchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = searchViewController.h; path = ../searchViewController.h; sourceTree = "<group>"; };
 		B041C7EA1B01EEE500DAF891 /* searchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = searchViewController.m; path = ../searchViewController.m; sourceTree = "<group>"; };
 		B0428C8E1B275E75000DC9F1 /* newSound.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newSound.jpg; sourceTree = "<group>"; };
@@ -354,6 +358,8 @@
 		B07CCC1A1B0F21F20052101A /* 各種画像 */ = {
 			isa = PBXGroup;
 			children = (
+				B02846621B3AB3C300DF2FA0 /* スクリーンショット 2015-06-24 2.44.21.png */,
+				B02846601B3AA5E400DF2FA0 /* newSinger4.jpg */,
 				B0ED2B391B28A29B00F325C7 /* no_image.gif */,
 				B0428C8E1B275E75000DC9F1 /* newSound.jpg */,
 				B01737271B24B3A600AC18D3 /* newGood.jpg */,
@@ -755,6 +761,7 @@
 				B0246B701B1F358F00C7A09A /* jazzImg.jpg in Resources */,
 				B099E0C41B228C1300524954 /* Icon@2x.png in Resources */,
 				B09B2F191B05931700F28BA7 /* Panama.gif in Resources */,
+				B02846611B3AA5E400DF2FA0 /* newSinger4.jpg in Resources */,
 				B09B2EF11B05931700F28BA7 /* Austria.gif in Resources */,
 				B09B2EEF1B05931700F28BA7 /* Argentina.gif in Resources */,
 				B01737281B24B3A600AC18D3 /* newGood.jpg in Resources */,
@@ -830,6 +837,7 @@
 				B0ED2B3A1B28A29B00F325C7 /* no_image.gif in Resources */,
 				B099E0B61B228C1300524954 /* Icon-40@3x.png in Resources */,
 				B0246B6F1B1F358F00C7A09A /* hitSongImg.jpg in Resources */,
+				B02846631B3AB3C300DF2FA0 /* スクリーンショット 2015-06-24 2.44.21.png in Resources */,
 				B099E0B31B228C1300524954 /* Contents.json in Resources */,
 				B099E0CA1B228C1300524954 /* Icon-27.5@2x.png in Resources */,
 				B099E0CD1B228C1300524954 /* Icon-40@2x.png in Resources */,

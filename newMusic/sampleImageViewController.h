@@ -61,6 +61,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *artistTableView;
 - (IBAction)searchButton:(id)sender;
 - (IBAction)mainButton:(id)sender;
+- (IBAction)userInfoButton:(id)sender;
+- (IBAction)genretButton:(id)sender;
 
 @property (retain,nonatomic) NSString *dictionary;
 @property (weak, nonatomic) NSString *eventId;

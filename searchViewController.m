@@ -285,16 +285,38 @@
 }
 
 
-- (IBAction)genreButton:(id)sender {
-}
-
-- (IBAction)artistButton:(id)sender {
-    // searchArtistViewControllerに画面遷移
+- (IBAction)serchButton:(id)sender {
+    
+    //sampleImageViewControllerに画面遷移
     // インスタンス化
-    searchArtistViewController *secondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"searchArtistViewController"];
+    sampleImageViewController *secondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"sampleImageViewController"];
     
     // ナビゲーションコントローラーの機能で画面遷移
     [[self navigationController] pushViewController:secondVC animated:YES];
+    
+}
+
+- (IBAction)mainButton:(id)sender {
+    
+    //mainViewControllerに画面遷移
+    // インスタンス化
+    mainViewController *secondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"mainViewController"];
+    
+    // ナビゲーションコントローラーの機能で画面遷移
+    [[self navigationController] pushViewController:secondVC animated:YES];
+    
+}
+
+
+
+- (IBAction)userInfoButton:(id)sender{
+    
+    //userInfoに画面遷移
+    // インスタンス化
+    searchArtistViewController *secondUser = [self.storyboard instantiateViewControllerWithIdentifier:@"userInfo"];
+    
+    // ナビゲーションコントローラーの機能で画面遷移
+    [[self navigationController] pushViewController:secondUser animated:YES];
     
 }
 
