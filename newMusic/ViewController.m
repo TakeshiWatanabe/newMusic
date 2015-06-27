@@ -345,7 +345,7 @@
     
     
     // NSLogで表示
-    NSLog(@"username:%@ pass:%@",[userData valueForKeyPath:@"name"],[userData valueForKeyPath:@"password"]);
+    // NSLog(@"username:%@ pass:%@",[userData valueForKeyPath:@"name"],[userData valueForKeyPath:@"password"]);
     
     // idをuserdefoletに保存
     [userDefaults setValue:[userData valueForKeyPath:@"id"] forKey:@"keyId"];

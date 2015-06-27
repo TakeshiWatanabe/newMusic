@@ -23,160 +23,223 @@
     _artistTableView.delegate = self;
     _artistTableView.dataSource = self;
     
-}
-
-
-
-// 検索文字を取り出す
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    // 変数
-    searchSongArtist = self.searchDetail.text;
     
-    // エンコード
-    searchSongArtist = [searchSongArtist stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    // user情報取得
+    //サーバーにアクセス
+    NSString *phpMainViewUrl = [NSString stringWithFormat:@"http://takeshi-w.sakura.ne.jp/musicData.php"];
     
-    // キーボード消す
-    [searchBar resignFirstResponder];
+    // Requestを作成
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:phpMainViewUrl]];
     
-    [self loadAsync];
+    // サーバーとの通信を行う
+    NSData *json = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     
-}
-
-
-
-- (void)loadAsync {
-    // request
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@",searchSongArtist]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    if (connection==nil) {
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle : @"ConnectionError"
-                              message : @"ConnectionError"
-                              delegate : nil
-                              cancelButtonTitle : @"OK"
-                              otherButtonTitles : nil];
-        [alert show];
+    // JSONをパース
+    // 取ってきた分配列に格納
+    NSArray *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
+    
+    _userCell = array;
+    
+    
+    
+    // 配列の中身を最新順に並び変える
+    //NSArray *newMusicCell;
+    pastMusicCell = [[NSMutableArray alloc] init];
+    
+    for(NSString *objData in [_userCell reverseObjectEnumerator]){
         
-    } else {
-        
-        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+        // pastMusicCellの後ろにデータをどんどん格納
+        [pastMusicCell addObject:objData];
         
     }
-}
-
-
-
-// header data
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    dataAsync = [[NSMutableData alloc] initWithData:0];
-    totalbytes = [response expectedContentLength];
-    loadedbytes = 0.0;
+    
+    
+    
+    // userのデータ取得
+    // 初期化
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc]init];
+    
+    // iPhoneのデータを呼び出す
+    userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    // userの名前取得
+    NSString *defaultName = [userDefaults stringForKey:@"keyName"];
+    NSLog(@"%@", defaultName);
+    
+    // userの画像取得
+    UIImage *defaultImage = [userDefaults i:@"keyImage"];
+    NSLog(@"%@", defaultIamge);
+    
+    // userの名前表示
+    _userName.text = defaultName;
+    
+    
+    
+    
+//    NSURL *jurl5 =[NSURL URLWithString:_userCell[indexPath.row][@"userImage"]];
+//    userNameLabel.text = _userCell[indexPath.row][@"userName"];
+//    userImage5.image = [UIImage imageWithData:imageData5];
+//    NSData *imageData5 = [NSData dataWithContentsOfURL:jurl5];
     
 }
 
 
 
-// content downloading
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    [dataAsync appendData:data];
-    loadedbytes += [data length];
-    progressView_.progress = (loadedbytes/totalbytes);
-    
-}
 
 
 
-// download error
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    NSString *errorMessage = [error localizedDescription];
-    UIAlertView *alertView = [[UIAlertView alloc]
-                              initWithTitle : @"RequestError"
-                              message : errorMessage
-                              delegate : nil
-                              cancelButtonTitle : @"OK"
-                              otherButtonTitles : nil];
-    [alertView show];
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-    
-}
 
 
-
-// download complete
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    // encode
-    int encodes[] = {
-        NSUTF8StringEncoding,			// UTF-8
-        NSShiftJISStringEncoding,		// Shift_JIS
-        NSJapaneseEUCStringEncoding,	// EUC-JP
-        NSISO2022JPStringEncoding,		// JIS
-        NSUnicodeStringEncoding,		// Unicode
-        NSASCIIStringEncoding			// ASCII
-    };
-    
-    NSString *jsonString = nil;
-    int encodesCount = sizeof(encodes) / sizeof(encodes[0]);
-    int encode;
-    for (int i=0; i<encodesCount; i++) {
-        jsonString = [[NSString alloc]
-                      initWithData : dataAsync
-                      encoding : encodes[i]];
-        if (jsonString!=nil) {
-            encode = encodes[i];
-            break;
-            
-        }
-    }
-    
-    
-    
-    // complete
-    progressView_.progress = 1;
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-    
-    // Available in iOS 5.0 and later.
-    NSError *error;
-    NSDictionary *json2 = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:encode] options:kNilOptions error:&error];
-    
-    
-    
-    // 最新の音楽を取ってきた分配列に格納
-    NSArray *artist = [json2 objectForKey:@"results"];
-    NSLog(@"%@",artist);
-    
-    
-    
-        // 配列から要素を取得する
-    _str = (NSDictionary *)artist[0];
-        NSLog(@"%@", _str);
-    
-    
-    
-    // 取りたい情報を配列に格納
-    _musicListArtistName = _str[@"artistName"];
-    NSLog(@"%@",_musicListArtistName);
-    //NSLog(@"%lu",_musicListArtistName.count);
-    
-    // 取りたい情報を配列に格納()
-    _musicListViewUrl = _str[@"artworkUrl100"];
-    NSLog(@"%@",_musicListViewUrl);
-    // NSLog(@"%lu",_musicListTrackViewUrl.count);
- 
-    
-
-    _artistCell = artist;
-    
-    [self.artistTableView reloadData];
-    
-}
+//// 検索文字を取り出す
+//- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+//    // 変数
+//    searchSongArtist = self.searchDetail.text;
+//    
+//    // エンコード
+//    searchSongArtist = [searchSongArtist stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//    
+//    // キーボード消す
+//    [searchBar resignFirstResponder];
+//    
+//    [self loadAsync];
+//    
+//}
+//
+//
+//
+//- (void)loadAsync {
+//    // request
+//    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@",searchSongArtist]];
+//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+//    connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+//    if (connection==nil) {
+//        UIAlertView *alert = [[UIAlertView alloc]
+//                              initWithTitle : @"ConnectionError"
+//                              message : @"ConnectionError"
+//                              delegate : nil
+//                              cancelButtonTitle : @"OK"
+//                              otherButtonTitles : nil];
+//        [alert show];
+//        
+//    } else {
+//        
+//        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+//        
+//    }
+//}
+//
+//
+//
+//// header data
+//- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+//    dataAsync = [[NSMutableData alloc] initWithData:0];
+//    totalbytes = [response expectedContentLength];
+//    loadedbytes = 0.0;
+//    
+//}
+//
+//
+//
+//// content downloading
+//- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+//    [dataAsync appendData:data];
+//    loadedbytes += [data length];
+//    progressView_.progress = (loadedbytes/totalbytes);
+//    
+//}
+//
+//
+//
+//// download error
+//- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+//    NSString *errorMessage = [error localizedDescription];
+//    UIAlertView *alertView = [[UIAlertView alloc]
+//                              initWithTitle : @"RequestError"
+//                              message : errorMessage
+//                              delegate : nil
+//                              cancelButtonTitle : @"OK"
+//                              otherButtonTitles : nil];
+//    [alertView show];
+//    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+//    
+//}
+//
+//
+//
+//// download complete
+//- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+//    // encode
+//    int encodes[] = {
+//        NSUTF8StringEncoding,			// UTF-8
+//        NSShiftJISStringEncoding,		// Shift_JIS
+//        NSJapaneseEUCStringEncoding,	// EUC-JP
+//        NSISO2022JPStringEncoding,		// JIS
+//        NSUnicodeStringEncoding,		// Unicode
+//        NSASCIIStringEncoding			// ASCII
+//    };
+//    
+//    NSString *jsonString = nil;
+//    int encodesCount = sizeof(encodes) / sizeof(encodes[0]);
+//    int encode;
+//    for (int i=0; i<encodesCount; i++) {
+//        jsonString = [[NSString alloc]
+//                      initWithData : dataAsync
+//                      encoding : encodes[i]];
+//        if (jsonString!=nil) {
+//            encode = encodes[i];
+//            break;
+//            
+//        }
+//    }
+//    
+//    
+//    
+//    // complete
+//    progressView_.progress = 1;
+//    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+//    
+//    // Available in iOS 5.0 and later.
+//    NSError *error;
+//    NSDictionary *json2 = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:encode] options:kNilOptions error:&error];
+//    
+//    
+//    
+//    // 最新の音楽を取ってきた分配列に格納
+//    NSArray *artist = [json2 objectForKey:@"results"];
+//    NSLog(@"%@",artist);
+//    
+//    
+//    
+//        // 配列から要素を取得する
+//    _str = (NSDictionary *)artist[0];
+//        NSLog(@"%@", _str);
+//    
+//    
+//    
+//    // 取りたい情報を配列に格納
+//    _musicListArtistName = _str[@"artistName"];
+//    NSLog(@"%@",_musicListArtistName);
+//    //NSLog(@"%lu",_musicListArtistName.count);
+//    
+//    // 取りたい情報を配列に格納()
+//    _musicListViewUrl = _str[@"artworkUrl100"];
+//    NSLog(@"%@",_musicListViewUrl);
+//    // NSLog(@"%lu",_musicListTrackViewUrl.count);
+// 
+//    
+//
+//    _userCell = artist;
+//    
+//    [self.artistTableView reloadData];
+//    
+//}
 
 
 
 // 行数を返す
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _artistCell.count;
+    return _userCell.count;
     
 }
 
@@ -204,11 +267,11 @@
     UIImageView *artistImage4 = (UIImageView *)[cell viewWithTag:4];
     
     // cellに表示
-    NSURL *jurl =[NSURL URLWithString:_artistCell[indexPath.row*4][@"artworkUrl100"]];
-    NSURL *jurl2 =[NSURL URLWithString:_artistCell[indexPath.row*4+1][@"artworkUrl100"]];
-    NSURL *jurl3 =[NSURL URLWithString:_artistCell[indexPath.row*4+2][@"artworkUrl100"]];
-    NSURL *jurl4 =[NSURL URLWithString:_artistCell[indexPath.row*4+3][@"artworkUrl100"]];
-    //NSLog(@"%@",jurl);
+    NSURL *jurl =[NSURL URLWithString:_userCell[indexPath.row*4][@"artworkUrl100"]];
+    NSURL *jurl2 =[NSURL URLWithString:_userCell[indexPath.row*4+1][@"artworkUrl100"]];
+    NSURL *jurl3 =[NSURL URLWithString:_userCell[indexPath.row*4+2][@"artworkUrl100"]];
+    NSURL *jurl4 =[NSURL URLWithString:_userCell[indexPath.row*4+3][@"artworkUrl100"]];
+    NSLog(@"%@",jurl);
     
     // urlを画像データに変更
     NSData *imageData = [NSData dataWithContentsOfURL:jurl];
@@ -216,12 +279,15 @@
     NSData *imageData3 = [NSData dataWithContentsOfURL:jurl3];
     NSData *imageData4 = [NSData dataWithContentsOfURL:jurl4];
     
+    
     // 画像データを表示する
     // cell内にそれぞれ表示
     artistImage1.image = [UIImage imageWithData:imageData];
     artistImage2.image = [UIImage imageWithData:imageData2];
     artistImage3.image = [UIImage imageWithData:imageData3];
     artistImage4.image = [UIImage imageWithData:imageData4];
+    
+    
     
     return cell;
     

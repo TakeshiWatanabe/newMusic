@@ -19,7 +19,9 @@
 @interface searchArtistViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,NSURLConnectionDelegate,UISearchBarDelegate,UITextFieldDelegate,AVAudioPlayerDelegate> {
     
     // 配列の宣言
-    NSArray *_artistCell;
+    NSArray *_userCell;
+    NSMutableArray *pastMusicCell;
+    
     NSArray *_musicList;
     NSArray *_musicListArtistName;
     NSArray *_musicListViewUrl;
@@ -45,5 +47,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *artistTableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchDetail;
+@property (weak, nonatomic) IBOutlet UILabel *userName;
+@property (weak, nonatomic) IBOutlet UIImageView *userImage;
 
 @end
