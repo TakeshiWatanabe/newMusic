@@ -67,8 +67,8 @@
     NSLog(@"%@", defaultName);
     
     // userの画像取得
-    UIImage *defaultImage = [userDefaults i:@"keyImage"];
-    NSLog(@"%@", defaultIamge);
+//    UIImage *defaultImage = [userDefaults i:@"keyImage"];
+//    NSLog(@"%@", defaultIamge);
     
     // userの名前表示
     _userName.text = defaultName;

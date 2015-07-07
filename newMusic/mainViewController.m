@@ -198,31 +198,33 @@
 // Goodをカウント
 - (IBAction)good:(id)sender {
     
+    int count = 0;
+    
     // 投稿userIdの取得＆初期化
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    
-    //for (i = 0, i < count , i++){
-    //int count;
-    //number = count++;
-    
-    NSInteger i = number;
-    i++;
     
     // superviewは階層を表す（superview]superviewは親の親を指定している）
     UITableViewCell *cell = (UITableViewCell *)[[sender superview]superview];
 
-    // goodCountLabelに表示場所を指定
-    UILabel *goodCountLabel = (UILabel *)[cell viewWithTag:10];
-
-//    kazuText= [NSString stringWithFormat:@"good%d件",i];
-//    [goodCountLabel setText:kazuText];
     
     
+    // userとmusicの番号取得
+    int row = [self.musicTableView indexPathForCell:cell].row;
 
-    // 後の作業
+    // userのID取得(アプリ使ってるuser)
+    int userId = [[userDefaults stringForKey:@"keyId"] intValue];
+    
+    // musicID取得
+    int musicId = [newMusicCell[row][@"trackId"] intValue];
+    
+    //int userId = 9;
+    //int musicId = 237;
+    
+    
+    
     // カウント回数をサーバーに送る
-    NSString *phpUrl = [NSString stringWithFormat:@"http://takeshi-w.sakura.ne.jp/GetGoodCount.php?goodCount=%@",goodCountLabel];
-    
+    NSString *phpUrl = [NSString stringWithFormat:@"http://takeshi-w.sakura.ne.jp/GetGoodCount.php?userId=%d&musicId=%d",userId,musicId];
+                        
     // リクエストを生成
     NSMutableURLRequest *request;
     request = [[NSMutableURLRequest alloc] init];
@@ -236,17 +238,17 @@
     // サーバーとの通信を行う
     NSData *json = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     
-//    // JSONをパース
-//    NSDictionary *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
-//    
-//    // idの取得
-//    int count = [array[@"goodCount"] intValue];
+    // JSONをパース
+    NSDictionary *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
+    
+    // idの取得
+    count = [array[@"goodCount"] intValue];
 
     
     
-//    // goodCountLabelに表示場所を指定
-//    goodCountLabel = (UILabel *)[cell viewWithTag:10];
-//    
+    // goodCountLabelに表示場所を指定
+    UILabel *goodCountLabel = (UILabel *)[cell viewWithTag:10];
+
     kazuText= [NSString stringWithFormat:@"good %@ 件",json];
     [goodCountLabel setText:kazuText];
     
