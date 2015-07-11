@@ -246,10 +246,10 @@
 
     
     
-    // goodCountLabelに表示場所を指定
+    // goodCountLabelに表示
     UILabel *goodCountLabel = (UILabel *)[cell viewWithTag:10];
-
-    kazuText= [NSString stringWithFormat:@"good %@ 件",json];
+    
+    kazuText= [NSString stringWithFormat:@"good %d 件"];
     [goodCountLabel setText:kazuText];
     
 }

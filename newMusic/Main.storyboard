@@ -453,26 +453,26 @@
                                                     <rect key="frame" x="8" y="23" width="61" height="63"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLE-ct-Eww">
-                                                    <rect key="frame" x="36" y="350" width="262" height="20"/>
+                                                    <rect key="frame" x="36" y="313" width="262" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.83489188759999999" green="0.83489188759999999" blue="0.83489188759999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4m-Pl-YYp">
-                                                    <rect key="frame" x="36" y="321" width="167" height="17"/>
+                                                    <rect key="frame" x="36" y="386" width="167" height="12"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.83489188759999999" green="0.83489188759999999" blue="0.83489188759999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="newSound2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="jnf-Mc-Q70">
-                                                    <rect key="frame" x="8" y="349" width="20" height="22"/>
+                                                    <rect key="frame" x="8" y="312" width="20" height="22"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="newSinger.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="xzh-mh-F4B">
-                                                    <rect key="frame" x="7" y="382" width="20" height="24"/>
+                                                    <rect key="frame" x="7" y="345" width="20" height="24"/>
                                                 </imageView>
                                                 <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69N-KD-Xhh">
-                                                    <rect key="frame" x="10" y="321" width="16" height="17"/>
+                                                    <rect key="frame" x="10" y="386" width="16" height="17"/>
                                                     <state key="normal" title="Button" image="newGood.jpg">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -487,7 +487,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aT-Ki-wQC">
-                                                    <rect key="frame" x="36" y="386" width="261" height="20"/>
+                                                    <rect key="frame" x="36" y="349" width="261" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.83489188759999999" green="0.83489188759999999" blue="0.83489188759999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -722,7 +722,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ybb-gH-Xf6">
                                 <rect key="frame" x="80" y="41" width="161" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KhX-Br-Qfs">

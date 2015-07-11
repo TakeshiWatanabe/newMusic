@@ -30,7 +30,10 @@
     NSString *kazuText;
     IBOutlet UILabel *numberLabel;
     
-    UIView *uv_load;           // LoadingView(通信中にぐるぐる回るやつ)
+    
+    // LoadingView(通信中にぐるぐる回るやつ)
+    UIView *uv_load;
+    
 
     int _audioPlayerRow;
     

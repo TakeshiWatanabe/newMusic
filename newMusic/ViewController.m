@@ -183,7 +183,7 @@
     
     
     // タイトル位置指定
-    soundUp = [[UILabel alloc] initWithFrame:CGRectMake(80, 330, 200, 50)];
+    soundUp = [[UILabel alloc] initWithFrame:CGRectMake(80, 430, 200, 50)];
     // 標準14pt
     soundUp.font = [UIFont systemFontOfSize:40];
     
