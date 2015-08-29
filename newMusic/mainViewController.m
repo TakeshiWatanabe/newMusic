@@ -23,7 +23,7 @@
     
     
     
-    //サーバーにアクセス
+    // サーバーにアクセス
     NSString *phpMainViewUrl = [NSString stringWithFormat:@"http://takeshi-w.sakura.ne.jp/musicData.php"];
     
     // Requestを作成
@@ -242,14 +242,14 @@
     NSDictionary *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
     
     // idの取得
-    count = [array[@"goodCount"] intValue];
+    count = [array[@"count_number"] intValue];
 
     
     
     // goodCountLabelに表示
     UILabel *goodCountLabel = (UILabel *)[cell viewWithTag:10];
     
-    kazuText= [NSString stringWithFormat:@"good %d 件"];
+    kazuText= [NSString stringWithFormat:@"%d"];
     [goodCountLabel setText:kazuText];
     
 }
