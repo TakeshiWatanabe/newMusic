@@ -217,12 +217,13 @@
     // musicID取得
     int musicId = [newMusicCell[row][@"trackId"] intValue];
     
+    // samples
     //int userId = 9;
     //int musicId = 237;
     
     
     
-    // カウント回数をサーバーに送る
+    // カウントをサーバーに送る
     NSString *phpUrl = [NSString stringWithFormat:@"http://takeshi-w.sakura.ne.jp/GetGoodCount.php?userId=%d&musicId=%d",userId,musicId];
                         
     // リクエストを生成
@@ -242,16 +243,19 @@
     NSDictionary *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
     
     // idの取得
-    count = [array[@"count_number"] intValue];
+    count = [array[@"goodCount"] intValue];
+    
+//    // goodCountLabelに表示
+//    UILabel *goodCountLabel = (UILabel *)[cell viewWithTag:10];
+//   
+//    NSLog(@"%d", goodCountLabel);
+//    kazuText= [NSString stringWithFormat:@"%d"];
+//    
+//    [goodCountLabel setText:kazuText];
+    
+    
+    
 
-    
-    
-    // goodCountLabelに表示
-    UILabel *goodCountLabel = (UILabel *)[cell viewWithTag:10];
-    
-    kazuText= [NSString stringWithFormat:@"%d"];
-    [goodCountLabel setText:kazuText];
-    
 }
 
 
