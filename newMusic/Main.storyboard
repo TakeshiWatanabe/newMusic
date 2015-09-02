@@ -404,7 +404,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1M-y6-RZt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5145" y="-750"/>
+            <point key="canvasLocation" x="5433" y="-214"/>
         </scene>
         <!--mainViewController-->
         <scene sceneID="Be1-pb-OJs">
@@ -709,7 +709,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VQj-Qw-euw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4049" y="-35"/>
+            <point key="canvasLocation" x="4069" y="185"/>
         </scene>
         <!--searchArtistViewController-->
         <scene sceneID="YWM-5h-wKu">
@@ -814,12 +814,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jd4-9c-TPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4049" y="665"/>
+            <point key="canvasLocation" x="4547" y="509"/>
         </scene>
         <!--searchGenreViewController-->
         <scene sceneID="ai7-75-fUB">
             <objects>
-                <viewController title="searchGenreViewController" id="CJA-ce-tpG" customClass="searchGenreViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="genreView" title="searchGenreViewController" id="CJA-ce-tpG" customClass="searchGenreViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="reQ-6c-lrn"/>
                         <viewControllerLayoutGuide type="bottom" id="uNJ-d2-gbP"/>
@@ -856,15 +856,25 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWd-rK-5J8">
-                                <rect key="frame" x="97" y="36" width="127" height="31"/>
+                                <rect key="frame" x="16" y="28" width="127" height="31"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4w2-Et-WK3">
+                                <rect key="frame" x="143" y="520" width="35" height="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backBtn:" destination="CJA-ce-tpG" eventType="touchUpInside" id="TTZ-Fp-cqG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Zaq-FP-u1G"/>
+                    <navigationItem key="navigationItem" id="Tnb-mx-PRv"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="artistTableView" destination="Bvy-Ff-MEf" id="4he-cS-gKl"/>
@@ -873,7 +883,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Az-Ew-kGb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4595" y="-750"/>
+            <point key="canvasLocation" x="4991" y="-214"/>
         </scene>
         <!--searchViewController-->
         <scene sceneID="4Pm-ir-Wib">
@@ -936,7 +946,7 @@
                             <imageView tag="15" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fitnessImg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="4GT-x1-bY8">
                                 <rect key="frame" x="164" y="392" width="70" height="70"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YP-s6-icq">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="17" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YP-s6-icq">
                                 <rect key="frame" x="21" y="181" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1068,18 +1078,28 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seC-cN-B3D">
+                                <rect key="frame" x="188" y="79" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextgenre:" destination="ft2-kE-jbS" eventType="touchUpInside" id="JGc-MO-wmG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="iZ7-i9-YAm"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="NewArtistImg" destination="FfH-ll-ufi" id="Iem-Xy-6ft"/>
                         <outlet property="alternativeImg" destination="6EP-eN-eE1" id="aXN-dv-B7p"/>
                         <outlet property="animeImg" destination="5df-Oz-q92" id="ejO-Kn-1Nc"/>
                         <outlet property="classicImg" destination="waK-g5-7hI" id="ksh-HF-FkU"/>
-                        <outlet property="danceImg" destination="sCE-A4-wcv" id="AGs-Mh-bZi"/>
+                        <outlet property="danceImg" destination="BTQ-Dc-i4Q" id="tEX-af-CK5"/>
                         <outlet property="edmImg" destination="D8V-vo-YQC" id="Ebu-Zd-bBe"/>
-                        <outlet property="fitnessImg" destination="BTQ-Dc-i4Q" id="nRJ-6T-N2L"/>
+                        <outlet property="fitnessImg" destination="4GT-x1-bY8" id="g4F-nD-jII"/>
                         <outlet property="hiphopImg" destination="tnb-kO-6bY" id="1CV-Sv-3kw"/>
                         <outlet property="hitSongImg" destination="x4s-5M-UUw" id="QSO-Br-5BB"/>
                         <outlet property="jazzImg" destination="dXh-py-lJs" id="uvc-R0-7yI"/>
@@ -1089,12 +1109,13 @@
                         <outlet property="reggaeImg" destination="8ar-Vw-prq" id="lnN-QQ-o2q"/>
                         <outlet property="rockImg" destination="4Xc-LI-fV6" id="EoU-4d-xDi"/>
                         <outlet property="searchBer" destination="chZ-Eh-s1h" id="Muu-7L-DMa"/>
-                        <outlet property="soundTrackImg" destination="4GT-x1-bY8" id="bJ6-ZH-3SM"/>
+                        <outlet property="soundTrackImg" destination="sCE-A4-wcv" id="HGl-ZR-mfa"/>
+                        <segue destination="CJA-ce-tpG" kind="show" identifier="secondSegue" id="ez7-Ra-5Fe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EVL-0U-qkX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4049" y="-750"/>
+            <point key="canvasLocation" x="4539" y="-214"/>
         </scene>
     </scenes>
     <resources>

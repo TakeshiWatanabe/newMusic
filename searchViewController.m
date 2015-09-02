@@ -53,6 +53,10 @@
     self.fitnessImg.tag = 15;
     self.danceImg.userInteractionEnabled = YES;
     self.danceImg.tag = 16;
+    
+    
+    //次の画面へ渡す引数をセット
+    _btnGenre = @"arguments";
 
     
 }
@@ -98,18 +102,30 @@
 }
 
 
--(IBAction)clickNewArtistImg:(id)sender
-{
-    NSLog(@"in clickNewArtistImg");
-    // searchArtistViewControllerに画面遷移
+-(IBAction)clickNewArtistImg:(id)sender {
+    
+    //searchGenreiewControllerに画面遷移
     // インスタンス化
-    searchGenreViewController *secondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"searchGenreViewController"];
+    searchGenreViewController *secondGenre = [self.storyboard instantiateViewControllerWithIdentifier:@"genreView"];
     
     // ナビゲーションコントローラーの機能で画面遷移
-    [[self navigationController] pushViewController:secondVC animated:YES];
+    [[self navigationController] pushViewController:secondGenre animated:YES];
     
+    [self performSegueWithIdentifier:@"secondSegue" sender:self];
+    
+    NSLog(@"in clickNewArtistImg");
 }
 
+
+//画面遷移時に呼ばれるメソッド
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    //2つ目の画面にパラメータを渡して遷移する
+    if ([segue.identifier isEqualToString:@"secondSegue"]) {
+        //ここでパラメータを渡す
+        searchGenreViewController *searchGenreViewController = segue.destinationViewController;
+        searchGenreViewController.btnGenre = _btnGenre;
+    }
+}
 
 
 -(IBAction)clickclassicImg:(id)sender
@@ -127,6 +143,16 @@
 
 -(IBAction)clickjazzImg:(id)sender
 {
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://itunes.apple.com/search?term=jazz"]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    // 配列に格納
+    //NSArray *jazz =
+    
+    
+    //NSString *jazz = connection;
+    //NSLog(@"%@", jazz);
     NSLog(@"in clickjazzImg");
     
 }
@@ -320,16 +346,16 @@
     
 }
 
+- (IBAction)nextgenre:(id)sender {
+    
+    //sampleImageViewControllerに画面遷移
+    // インスタンス化
+    searchGenreViewController *secondGenre = [self.storyboard instantiateViewControllerWithIdentifier:@"genreView"];
+    
+    // ナビゲーションコントローラーの機能で画面遷移
+    [[self navigationController] pushViewController:secondGenre animated:YES];
+    
+    
+}
 
-
-//- (IBAction)sampleButton:(id)sender {
-//    // searchGenreViewControllerに画面遷移
-//    // インスタンス化
-//    searchGenreViewController *secondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"searchGenreViewController"];
-//    
-//    // ナビゲーションコントローラーの機能で画面遷移
-//    [[self navigationController] pushViewController:secondVC animated:YES];
-//    
-//    
-//}
 @end

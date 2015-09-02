@@ -30,7 +30,12 @@
     float loadedbytes;
     UIProgressView *progressView_;
     
+    NSString *_btnGenre;
+    
 }
+
+@property (nonatomic) NSString *btnGenre;
+@property (weak, nonatomic) IBOutlet UIButton *nextGenre;
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBer;
 
@@ -55,6 +60,7 @@
 - (IBAction)serchButton:(id)sender;
 - (IBAction)mainButton:(id)sender;
 - (IBAction)userInfoButton:(id)sender;
+- (IBAction)nextgenre:(id)sender;
 
 
 

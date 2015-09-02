@@ -25,13 +25,16 @@
     
     [self loadAsync];
     
+    //ラベルに前の画面から受け取った引数を表示
+    self.genreLabel.text = _btnGenre;
+    
 }
 
 
 
 - (void)loadAsync {
     // request (jack johnson で検索)
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://itunes.apple.com/search?term=pop&limit=50"]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://itunes.apple.com/search?term=hiphop"]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     if (connection==nil) {
@@ -171,7 +174,7 @@
 
 
 
-// セルに文字を表示する
+// セルに画像を表示する
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     // 定数を宣言（static = 静的)
     static NSString *CellIdentifer = @"Cell";
@@ -182,6 +185,48 @@
         // セルの初期化とスタイルの決定
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
         
+    }
+    
+    
+    // 非同期処理(userImage)
+    if ([_imageCache objectForKey:indexPath]) {
+        
+        // すでにキャッシュしてある場合
+        //cell.imageView.image = [UIImage imageNamed:newMusicCell[indexPath.row]];
+        //[musicImageView setImage:[_imageCache2 objectForKey:indexPath]];
+        
+    } else {
+        //if (_musicTableView.dragging == NO && _musicTableView.decelerating == NO)
+        {
+            
+            // URLから画像を表示
+            dispatch_queue_t q_global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+            dispatch_queue_t q_main = dispatch_get_main_queue();
+            
+            //cell.imageView.image = nil;
+            dispatch_async(q_global, ^{
+                
+                // どこに画像を表示するか指定
+                UIImageView *userImageView = (UIImageView *)[cell viewWithTag:1];
+                
+                // cellに画像表示
+                NSURL *jurl =[NSURL URLWithString:_artistCell[indexPath.row][@"jacketUrl"]];
+                
+                // urlを画像データに変更
+                NSData *imageData = [NSData dataWithContentsOfURL:jurl];
+                
+                dispatch_async(q_main, ^{
+                    
+                    //[cell.imageView setImage:(UIImage *)musicImageView.image];
+                    if(imageData !=nil){
+                        
+                        // 画像表示位置指定
+                        userImageView.image = [UIImage imageWithData:imageData];
+                    }
+                    
+                });
+            });
+        }
     }
     
     
@@ -251,5 +296,9 @@
     // ナビゲーションコントローラーの機能で画面遷移
     [[self navigationController] pushViewController:secondVC animated:YES];
     
+}
+- (IBAction)backBtn:(id)sender {
+    //前の画面へ戻る
+    [[self navigationController] popViewControllerAnimated:YES];
 }
 @end
