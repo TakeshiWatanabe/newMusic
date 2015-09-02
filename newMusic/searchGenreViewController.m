@@ -34,7 +34,7 @@
 
 - (void)loadAsync {
     // request (jack johnson で検索)
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://itunes.apple.com/search?term=hiphop"]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@",_btnGenre]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     if (connection==nil) {

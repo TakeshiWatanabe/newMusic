@@ -56,7 +56,7 @@
     
     
     //次の画面へ渡す引数をセット
-    _btnGenre = @"arguments";
+    _btnGenre = @"jazz";
 
     
 }
