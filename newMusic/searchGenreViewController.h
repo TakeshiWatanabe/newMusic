@@ -34,7 +34,7 @@
     
 }
 
-@property (nonatomic) NSString *btnGenre;
+@property (nonatomic) NSString *genreInfo;
 
 
 @property (weak, nonatomic) IBOutlet UITableView *artistTableView;

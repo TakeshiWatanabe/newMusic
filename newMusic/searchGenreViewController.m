@@ -17,27 +17,33 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.artistTableView.dataSource = self;
-    self.artistTableView.delegate = self;
-    NSLog(@"%@",_artistTableView);
-    //_audioPlayer = nil;
-    //self.conne
+    //labeleに前の画面から受け取った引数を表示
+    self.genreLabel.text = _genreInfo;
     
-    [self loadAsync];
-    
-    //ラベルに前の画面から受け取った引数を表示
-    self.genreLabel.text = _btnGenre;
+    if (!(_genreInfo == nil)){
+        self.artistTableView.dataSource = self;
+        self.artistTableView.delegate = self;
+        NSLog(@"%@",_artistTableView);
+        
+        // genre検索
+        [self loadAsync];
+        
+    } else {
+        
+        return;
+        
+    }
     
 }
 
 
 
 - (void)loadAsync {
-    // request (jack johnson で検索)
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@",_btnGenre]];
+    // request
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@",_genreInfo]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    if (connection==nil) {
+    if (connection == nil) {
         UIAlertView *alert = [[UIAlertView alloc]
                               initWithTitle : @"ConnectionError"
                               message : @"ConnectionError"
@@ -297,8 +303,11 @@
     [[self navigationController] pushViewController:secondVC animated:YES];
     
 }
+
 - (IBAction)backBtn:(id)sender {
     //前の画面へ戻る
     [[self navigationController] popViewControllerAnimated:YES];
 }
+
+
 @end

@@ -34,7 +34,7 @@
     
 }
 
-@property (nonatomic) NSString *btnGenre;
+@property (nonatomic) NSString *genreInfo;
 @property (weak, nonatomic) IBOutlet UIButton *nextGenre;
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBer;
