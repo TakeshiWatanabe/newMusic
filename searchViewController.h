@@ -35,7 +35,6 @@
 }
 
 @property (nonatomic) NSString *genreInfo;
-@property (weak, nonatomic) IBOutlet UIButton *nextGenre;
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBer;
 
@@ -60,7 +59,6 @@
 - (IBAction)serchButton:(id)sender;
 - (IBAction)mainButton:(id)sender;
 - (IBAction)userInfoButton:(id)sender;
-- (IBAction)nextgenre:(id)sender;
 
 
 
