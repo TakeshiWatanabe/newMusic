@@ -33,9 +33,11 @@
     okButton.layer.cornerRadius = 10;
     [[okButton layer] setBorderColor:[[UIColor blackColor]CGColor]];
     [[okButton layer] setBorderWidth:1.0];
+    
     noButton.layer.cornerRadius = 10;
     [[noButton layer] setBorderColor:[[UIColor blackColor]CGColor]];
     [[noButton layer] setBorderWidth:1.0];
+    
     picButton.layer.cornerRadius = 10;
     [[picButton layer] setBorderColor:[[UIColor blackColor]CGColor]];
     [[picButton layer] setBorderWidth:1.0];

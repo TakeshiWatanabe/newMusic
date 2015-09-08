@@ -18,7 +18,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [super viewDidLoad];
     
     // imageをタグで管理
     self.NewArtistImg.userInteractionEnabled = YES;
@@ -62,11 +61,11 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
-    UITouch *touch = [[event allTouches] anyObject];
+   UITouch *touch = [[event allTouches] anyObject];
     if ( touch.view.tag == _NewArtistImg.tag )
         [self clickNewArtistImg:_NewArtistImg];
     else if ( touch.view.tag == _classicImg.tag )
-        [self clickclassicImg:_classicImg];
+        [self clickclassicImg:_classicImg]; 
     else if ( touch.view.tag == _jazzImg.tag )
         [self clickjazzImg:_jazzImg];
     else if ( touch.view.tag == _soundTrackImg.tag )
@@ -101,16 +100,10 @@
 - (IBAction)clickNewArtistImg:(id)sender {
     
     //次の画面へ渡す引数をセット
-    _btnGenre = @"pop";
+    _btnGenre = @"";
     
-    //searchGenreiewControllerに画面遷移
-    // インスタンス化
-    searchGenreViewController *secondGenre = [self.storyboard instantiateViewControllerWithIdentifier:@"genreView"];
-    
-    // ナビゲーションコントローラーの機能で画面遷移
-    [[self navigationController] pushViewController:secondGenre animated:YES];
-    
-    [self performSegueWithIdentifier:@"secondSegue" sender:self];
+    // 画面遷移呼び出し
+    [self changePage];
     
 }
 
@@ -119,103 +112,154 @@
     //次の画面へ渡す引数をセット
     _btnGenre = @"classical";
     
-    //searchGenreiewControllerに画面遷移
-    // インスタンス化
-    searchGenreViewController *secondGenre = [self.storyboard instantiateViewControllerWithIdentifier:@"genreView"];
-    
-    // ナビゲーションコントローラーの機能で画面遷移
-    [[self navigationController] pushViewController:secondGenre animated:YES];
-    
-    [self performSegueWithIdentifier:@"secondSegue" sender:self];
+    // 画面遷移呼び出し
+    [self changePage];
     
 }
 
 -(IBAction)clickjazzImg:(id)sender
 {
-    NSLog(@"in clickjazzImg");
+    // 次の画面へ渡す引数セット
+    _btnGenre = @"jazz";
+    
+    // 画面遷移呼び出し
+    [self changePage];
     
 }
 
 -(IBAction)clicksoundTrackImg:(id)sender
 {
-    NSLog(@"in clicksoundTrackImg");
+    // 次の画面へ渡す引数セット
+    _btnGenre = @"soundtrack";
+    
+    //　画面遷移呼び出し
+    [self changePage];
     
 }
 
 -(IBAction)clickedmImg:(id)sender
 {
-    NSLog(@"in clickedmImg");
+    // 次の画面へ渡す引数セット
+    _btnGenre = @"edm";
+    
+    //　画面遷移呼び出し
+    [self changePage];
     
 }
 
 -(IBAction)clickrockImg:(id)sender
 {
-    NSLog(@"in clickrockImg");
+    // 次の画面へ渡す引数セット
+    _btnGenre = @"rock";
+    
+    // 画面遷移呼び出し
+    [self changePage];
     
 }
 
 -(IBAction)clickpopImg:(id)sender
 {
-    NSLog(@"in clickpopImg");
+    // 次の画面へ渡す引数セット
+    _btnGenre = @"pop";
+    
+    // 画面遷移呼び出し
+    [self changePage];
     
 }
 
 -(IBAction)clickrbImg:(id)sender
 {
-    NSLog(@"in clickrbImg");
+    // 次の画面へ渡す引数セット
+    _btnGenre = @"rb";
+    
+    // 画面遷移呼び出し
+    [self changePage];
     
 }
 
 -(IBAction)clickhiphopImg:(id)sender
 {
-    NSLog(@"in clickhiphopImg");
+    // 次の画面へ渡す引数セット
+    _btnGenre = @"hiphop";
+    
+    // 画面遷移呼び出し
+    [self changePage];
     
 }
 
 -(IBAction)clickhitSongImg:(id)sender
 {
-    NSLog(@"in clickhitSongImg");
+    // 次の画面に渡す引数セット
+    _btnGenre = @"hitsong";
+    
+    // 画面遷移呼び出し
+    [self changePage];
     
 }
 
 -(IBAction)clickreggaeImg:(id)sender
 {
-    NSLog(@"in clickreggaeImg");
+    // 次の画面に渡す引数セット
+    _btnGenre = @"reggae";
+    
+    // 画面遷移呼び出し
+    [self changePage];
     
 }
 
 -(IBAction)clickalternativeImg:(id)sender
 {
-    NSLog(@"in clickalternativeImg");
+    // 次の画面へ渡す引数セット
+    _btnGenre = @"alternative";
+    
+    // 画面遷移呼び出し
+    [self changePage];
     
 }
 
 -(IBAction)clickjpopImg:(id)sender
 {
-    NSLog(@"in clickjpopImg");
+    // 次の画面へ渡す引数セット
+    _btnGenre = @"jpop";
+    
+    // 画面遷移呼び出し
+    [self changePage];
     
 }
 
 -(IBAction)clickanimeImg:(id)sender
 {
-    NSLog(@"in clickanimeImg");
+    // 次の画面へ渡す引数セット
+    _btnGenre = @"anime";
+    
+    // 画面遷移呼び出し
+    [self changePage];
     
 }
 
 -(IBAction)clickfitnessImg:(id)sender
 {
-    NSLog(@"in clickfitnessImg");
+    // 次の画面へ渡す引数セット
+    _btnGenre = @"fitness";
+    
+    // 画面遷移呼び出し
+    [self changePage];
     
 }
 
 -(IBAction)clickdanceImg:(id)sender
 {
-    NSLog(@"in clickdanceImg");
+    // 次の画面へ渡す引数セット
+    _btnGenre = @"dance";
+    
+    //　画面遷移呼び出し
+    [self changePage];
     
 }
 
 
-//画面遷移時に呼ばれるメソッド
+
+// 画面遷移時に呼ばれるメソッド
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     //2つ目の画面にパラメータを渡して遷移する
@@ -224,6 +268,21 @@
         searchGenreViewController *searchGenreViewController = segue.destinationViewController;
         searchGenreViewController.genreInfo = _btnGenre;
     }
+}
+
+
+
+// 画面遷移
+- (void)changePage {
+    
+    //searchGenreiewControllerに画面遷移
+    // インスタンス化
+    searchGenreViewController *secondGenre = [self.storyboard instantiateViewControllerWithIdentifier:@"genreView"];
+    
+    // ナビゲーションコントローラーの機能で画面遷移
+    [[self navigationController] pushViewController:secondGenre animated:YES];
+    
+    [self performSegueWithIdentifier:@"secondSegue" sender:self];
 }
 
 
@@ -336,6 +395,8 @@
     [[self navigationController] pushViewController:secondUser animated:YES];
     
 }
+
+
 
 - (IBAction)nextgenre:(id)sender {
     
