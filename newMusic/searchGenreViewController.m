@@ -290,7 +290,7 @@
     NSLog(@"%@",_btnGenre);
     
     // toViewController
-    [self performSegueWithIdentifier:@"playBackViewController" sender:self];
+    //[self performSegueWithIdentifier:@"playBackViewController" sender:self];
     
 }
 
