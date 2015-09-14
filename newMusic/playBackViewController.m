@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     
     UIProgressView *progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleBar];
@@ -26,8 +27,8 @@
 
     
     
-    // 検索された文字
-    self.searchDetail.delegate=self;
+//    // 検索された文字
+//    self.searchDetail.delegate=self;
     
 }
 
@@ -85,7 +86,7 @@
 // 検索文字を取り出す
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     // 変数
-    searchSongArtist = self.searchDetail.text;
+//    searchSongArtist = self.searchDetail.text;
     
     // エンコード
     searchSongArtist = [searchSongArtist stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -361,6 +362,8 @@
         
     }
     
+    
+    
     // ここからPOSTDATAの作成
     NSString *urlString = @"http://takeshi-w.sakura.ne.jp";
     
@@ -411,6 +414,14 @@
     
     // ナビゲーションコントローラーの機能で画面遷移
     [[self navigationController] pushViewController:secondVC animated:YES];
+}
+
+
+
+- (IBAction)backBtn:(id)sender {
+    //前の画面へ戻る
+    [[self navigationController] popViewControllerAnimated:YES];
+
 }
 
 

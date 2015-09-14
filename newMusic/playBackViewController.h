@@ -33,9 +33,12 @@
     NSArray *_musicListSound;
     NSMutableArray *_musicPlay;
     NSData *imageData;
+    
+    NSString *_btnGenre;
 }
 
-@property (weak, nonatomic) IBOutlet UISearchBar *searchDetail;
+@property (nonatomic) NSString *genreInfo;
+
 @property (weak, nonatomic) IBOutlet UIImageView *artistImg;
 @property (weak, nonatomic) IBOutlet UILabel *tittleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *artistname;
@@ -45,5 +48,6 @@
 @property(nonatomic) AVAudioPlayer *audioPlayer;
 //- (IBAction)goodButton:(id)sender;
 - (IBAction)favouriteButton:(id)sender;
+- (IBAction)backBtn:(id)sender;
 
 @end

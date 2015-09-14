@@ -19,7 +19,7 @@
     [super viewDidLoad];
     
     
-    // imageをタグで管理
+    // imageをタグで管理、画像をボタンにする
     self.NewArtistImg.userInteractionEnabled = YES;
     self.NewArtistImg.tag = 1;
     self.classicImg.userInteractionEnabled = YES;
@@ -285,74 +285,6 @@
     [self performSegueWithIdentifier:@"secondSegue" sender:self];
 }
 
-
-
-//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-//    //押されたか確認する
-//    UITouch *touch = [touches anyObject];
-//    NSLog( @"%d",touch.view.tag );
-//    switch (touch.view.tag) {
-//        case 1:
-//            // タグ1の処理(NewArtistImg)
-//            //searchGenreViewControllerに画面遷移
-//            // インスタンス化
-////            searchGenreViewController *testVC2 = [self.storyboard instantiateViewControllerWithIdentifier:@"searchGenreViewController"];
-////            
-////            // ナビゲーションコントローラーの機能で画面遷移
-////            [self presentModalViewController:testVC2 animated:YES ];
-//            
-//            break;
-//        case 2:
-//            // タグ2の処理(classicImg)
-//            break;
-//        case 3:
-//            // タグ3の処理(jazzImg)
-//            break;
-//        case 4:
-//            // タグ1の処理(hitSongImg)
-//            break;
-//        case 5:
-//            // タグ2の処理(edmImg)
-//            break;
-//        case 6:
-//            // タグ3の処理(rockImg)
-//            break;
-//        case 7:
-//            // タグ1の処理(popImg)
-//            break;
-//        case 8:
-//            // タグ2の処理(rbImg)
-//            break;
-//        case 9:
-//            // タグ3の処理(hiphopImg)
-//            break;
-//        case 10:
-//            // タグ1の処理(alternativeImg)
-//            break;
-//        case 11:
-//            // タグ2の処理(reggaeImg)
-//            break;
-//        case 12:
-//            // タグ3の処理(danceImg)
-//            break;
-//        case 13:
-//            // タグ1の処理(jpopImg)
-//            break;
-//        case 14:
-//            // タグ2の処理(animeImg)
-//            break;
-//        case 15:
-//            // タグ3の処理(soundTrackImg)
-//            break;
-//        case 16:
-//            // タグ1の処理(fitnessImg)
-//            break;
-//        default:
-//            break;
-//            
-//    }
-//    
-//}
 
 
 - (void)didReceiveMemoryWarning {

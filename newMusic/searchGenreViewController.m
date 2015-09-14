@@ -213,7 +213,7 @@
             dispatch_async(q_global, ^{
                 
                 // どこに画像を表示するか指定
-                UIImageView *userImageView = (UIImageView *)[cell viewWithTag:1];
+                UIImageView *artistImage = (UIImageView *)[cell viewWithTag:1];
                 
                 // cellに画像表示
                 NSURL *jurl =[NSURL URLWithString:_artistCell[indexPath.row][@"jacketUrl"]];
@@ -227,7 +227,7 @@
                     if(imageData !=nil){
                         
                         // 画像表示位置指定
-                        userImageView.image = [UIImage imageWithData:imageData];
+                        artistImage.image = [UIImage imageWithData:imageData];
                     }
                     
                 });
@@ -239,16 +239,27 @@
     
     // image,labelをタグで管理する
     UIImageView *artistImage1 = (UIImageView *)[cell viewWithTag:1];
+    //タップを有効化する。
+    artistImage1.userInteractionEnabled = YES;
+    
     UIImageView *artistImage2 = (UIImageView *)[cell viewWithTag:2];
+    //タップを有効化する。
+    artistImage2.userInteractionEnabled = YES;
+    
     UIImageView *artistImage3 = (UIImageView *)[cell viewWithTag:3];
+    //タップを有効化する。
+    artistImage3.userInteractionEnabled = YES;
+    
     UIImageView *artistImage4 = (UIImageView *)[cell viewWithTag:4];
+    //タップを有効化する。
+    artistImage4.userInteractionEnabled = YES;
     
     // cellに表示
     NSURL *jurl =[NSURL URLWithString:_artistCell[indexPath.row*4][@"artworkUrl100"]];
     NSURL *jurl2 =[NSURL URLWithString:_artistCell[indexPath.row*4+1][@"artworkUrl100"]];
     NSURL *jurl3 =[NSURL URLWithString:_artistCell[indexPath.row*4+2][@"artworkUrl100"]];
     NSURL *jurl4 =[NSURL URLWithString:_artistCell[indexPath.row*4+3][@"artworkUrl100"]];
-    //NSLog(@"%@",jurl);
+    NSLog(@"%@",jurl);
     
     // urlを画像データに変更
     NSData *imageData = [NSData dataWithContentsOfURL:jurl];
@@ -267,6 +278,40 @@
     
 }
 
+
+
+// 押された画像のデータを送る
+- (void)touchesBegan: (NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [[event allTouches] anyObject];
+    NSLog(@"%d",touch.view.tag);
+}
+
+
+
+// 画面遷移時に呼ばれるメソッド
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    //2つ目の画面にパラメータを渡して遷移する
+    if ([segue.identifier isEqualToString:@"secondSegue"]) {
+        //ここでパラメータを渡す
+        playBackViewController *playBackView = segue.destinationViewController;
+        playBackView.genreInfo = _btnGenre;
+    }
+}
+
+
+
+// 画面遷移
+- (void)changePage {
+    //playBackViewControllerに画面遷移
+    // インスタンス化
+    playBackViewController *playBack = [self.storyboard instantiateViewControllerWithIdentifier:@"playBackViewController"];
+    
+    // ナビゲーションコントローラーの機能で画面遷移
+    [[self navigationController] pushViewController:playBack animated:YES];
+    
+    [self performSegueWithIdentifier:@"secondSegue" sender:self];
+}
 
 
 - (void)didReceiveMemoryWarning {
