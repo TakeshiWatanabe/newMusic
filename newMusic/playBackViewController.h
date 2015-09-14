@@ -11,7 +11,7 @@
 
 #import "mainViewController.h"
 #import "searchArtistViewController.h"
-#import "searchViewController.h"
+#import "searchGenreViewController.h"
 
 @interface playBackViewController : UIViewController <NSURLConnectionDelegate,UISearchBarDelegate,UITextFieldDelegate,AVAudioPlayerDelegate,UITableViewDataSource,UITableViewDelegate> {
     
@@ -36,6 +36,8 @@
     
     NSString *_btnGenre;
 }
+
+@property NSString *imageName;
 
 @property (nonatomic) NSString *genreInfo;
 

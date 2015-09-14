@@ -34,6 +34,8 @@
     
 }
 
+@property NSString *imageName;
+
 @property (nonatomic) NSString *genreInfo;
 
 

@@ -280,23 +280,41 @@
 
 
 
-// 押された画像のデータを送る
-- (void)touchesBegan: (NSSet *)touches withEvent:(UIEvent *)event {
-    UITouch *touch = [[event allTouches] anyObject];
-    NSLog(@"%d",touch.view.tag);
+
+
+
+// Cell が選択された時
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath: (NSIndexPath*) indexPath{
+    _str = [_artistCell objectAtIndex:indexPath.row];
+    _btnGenre = [_str objectForKey:@"artworkUrl100"];
+    NSLog(@"%@",_btnGenre);
+    
+    // toViewController
+    [self performSegueWithIdentifier:@"playBackViewController" sender:self];
+    
 }
 
 
 
-// 画面遷移時に呼ばれるメソッド
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    //2つ目の画面にパラメータを渡して遷移する
-    if ([segue.identifier isEqualToString:@"secondSegue"]) {
-        //ここでパラメータを渡す
-        playBackViewController *playBackView = segue.destinationViewController;
-        playBackView.genreInfo = _btnGenre;
+// Segue で次の palyBackViewController へ移行するときに選択されたCellの画像情報を渡す
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    // identifier が toViewController であることの確認
+    if ([[segue identifier] isEqualToString:@"playBackViewController"]) {
+        playBackViewController *vc = (playBackViewController*)[segue destinationViewController];
+        
+        // 移行先の ViewController に画像名を渡す
+        vc.imageName = _btnGenre;
     }
+}
+
+
+
+
+
+// 押された画像のデータを送る
+- (void)touchesBegan: (NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [[event allTouches] anyObject];
+    NSLog(@"%d",touch.view.tag);
 }
 
 
@@ -314,6 +332,7 @@
 }
 
 
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -328,6 +347,8 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
 
 - (IBAction)artistButton:(id)sender {
     // searchViewControllerに画面遷移
