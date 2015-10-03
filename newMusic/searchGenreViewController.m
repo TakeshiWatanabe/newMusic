@@ -17,6 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //　背景画像
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:@"background.png"] drawInRect:self.view.bounds];
+    UIImage *backgroundImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
+    
+    
     //labeleに前の画面から受け取った引数を表示
     self.genreLabel.text = _genreInfo;
     

@@ -20,7 +20,7 @@
     UIButton *_mySignUpButton; // SignUpButtonを宣言
     UIButton *_mySignInButton; // SignInButtonを宣言
     bool _is_playing;          // ムービーが再生中である事を示す
-    UILabel *soundUp;          // タイトル表示
+    UIImageView *soundUp;          // タイトル表示
     
     // データベースに接続で使用
     NSString *nowTagStr;
@@ -35,9 +35,14 @@
     UIAlertView *alertSignUp;
     NSString *second;
     
+    UIImage *image;
+    UIImageView *imageView;
+    
 }
 // リピート再生するか
 @property (nonatomic,assign) BOOL repeat;
+@property (weak, nonatomic) IBOutlet UIImageView *backImg;
+@property (weak, nonatomic) IBOutlet UIImageView *titleImg;
 
 
 @end

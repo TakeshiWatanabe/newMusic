@@ -17,6 +17,7 @@
 @implementation userSignUpViewController
 
 
+
 // tabBer
 @synthesize window;
 @synthesize tabBarController;
@@ -28,6 +29,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //　背景画像
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:@"background.png"] drawInRect:self.view.bounds];
+    UIImage *backgroundImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
+    
     
     // ボタンに枠を付ける処理
     okButton.layer.cornerRadius = 10;

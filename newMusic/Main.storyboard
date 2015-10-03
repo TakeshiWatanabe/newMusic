@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tG9-4x-xl6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tG9-4x-xl6">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -20,9 +21,9 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ご利用ありがとうございました" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZK-Xn-I0Y">
                                 <rect key="frame" x="42" y="208" width="238" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.16305233629999999" green="0.19760561800000001" blue="0.30587121210000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="shadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -160,7 +161,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="teZ-5P-1Q8">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="teZ-5P-1Q8">
                                 <rect key="frame" x="16" y="710" width="288" height="120"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbx-j6-WJs">
@@ -172,7 +173,7 @@
                                             <action selector="done:" destination="Qtn-8s-8d2" eventType="touchUpInside" id="COo-oM-cX6"/>
                                         </connections>
                                     </button>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qEW-Zt-ZSl">
+                                    <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qEW-Zt-ZSl">
                                         <rect key="frame" x="-16" y="-17" width="320" height="162"/>
                                         <color key="backgroundColor" red="0.83489188759999999" green="0.83489188759999999" blue="0.83489188759999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </pickerView>
@@ -358,50 +359,54 @@
                             <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGG-R1-dWb">
                                 <rect key="frame" x="52" y="305" width="248" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVz-FZ-Ty7">
                                 <rect key="frame" x="52" y="349" width="248" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQP-vG-cT9">
-                                <rect key="frame" x="71" y="423" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQP-vG-cT9">
+                                <rect key="frame" x="96" y="400" width="37" height="37"/>
+                                <state key="normal" image="icon03.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="favouriteButton:" destination="w9g-lP-1fk" eventType="touchUpInside" id="fjQ-Sd-HsL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEw-86-pDK">
-                                <rect key="frame" x="201" y="423" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggt-0F-QLW">
+                                <rect key="frame" x="143" y="518" width="35" height="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backBtn:" destination="w9g-lP-1fk" eventType="touchUpInside" id="NjS-8Z-YHK"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon01.png" translatesAutoresizingMaskIntoConstraints="NO" id="5aE-2P-k6O">
+                                <rect key="frame" x="21" y="308" width="23" height="24"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon02.png" translatesAutoresizingMaskIntoConstraints="NO" id="gUh-6X-JtE">
+                                <rect key="frame" x="19" y="352" width="23" height="23"/>
+                            </imageView>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEw-86-pDK">
+                                <rect key="frame" x="193" y="400" width="37" height="37"/>
+                                <state key="normal" image="btn_speaker.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="soundbutton:" destination="w9g-lP-1fk" eventType="touchUpInside" id="IOz-2Y-wbD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggt-0F-QLW">
-                                <rect key="frame" x="143" y="518" width="35" height="30"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="backBtn:" destination="w9g-lP-1fk" eventType="touchUpInside" id="NjS-8Z-YHK"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="newSound2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="5aE-2P-k6O">
-                                <rect key="frame" x="21" y="308" width="23" height="24"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="newSinger.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="gUh-6X-JtE">
-                                <rect key="frame" x="19" y="352" width="23" height="23"/>
-                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.16305233629999999" green="0.19760561800000001" blue="0.30587121210000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.16305233629999999" green="0.19760561800000001" blue="0.30587121210000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="1Ci-Fo-JcA"/>
                     <navigationItem key="navigationItem" id="Lf0-kt-Je3"/>
@@ -428,17 +433,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="cell" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="467" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="we0-fj-A8U">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="cell" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="498" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="we0-fj-A8U">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.83489188759999999" green="0.83489188759999999" blue="0.83489188759999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.16305233629999999" green="0.19760561800000001" blue="0.30587121210000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.83489188759999999" green="0.83489188759999999" blue="0.83489188759999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="467" id="9bU-zL-0UZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="498" id="9bU-zL-0UZ">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="498"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9bU-zL-0UZ" id="kcF-tm-uoC">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="497"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhm-3Q-SnZ">
@@ -447,15 +453,6 @@
                                                     <color key="textColor" red="0.83489188759999999" green="0.83489188759999999" blue="0.83489188759999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZl-hc-icQ">
-                                                    <rect key="frame" x="193" y="418" width="37" height="37"/>
-                                                    <state key="normal" title="Button" image="newSound.jpg">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="playButton:" destination="YoX-uX-WIW" eventType="touchUpInside" id="jcR-tg-nVe"/>
-                                                    </connections>
-                                                </button>
                                                 <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4px-kC-Rh5">
                                                     <rect key="frame" x="60" y="104" width="200" height="200"/>
                                                 </imageView>
@@ -475,21 +472,21 @@
                                                     <color key="highlightedColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="newSound2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="jnf-Mc-Q70">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon01.png" translatesAutoresizingMaskIntoConstraints="NO" id="jnf-Mc-Q70">
                                                     <rect key="frame" x="8" y="312" width="20" height="22"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="newSinger.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="xzh-mh-F4B">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon02.png" translatesAutoresizingMaskIntoConstraints="NO" id="xzh-mh-F4B">
                                                     <rect key="frame" x="7" y="345" width="20" height="24"/>
                                                 </imageView>
                                                 <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69N-KD-Xhh">
                                                     <rect key="frame" x="10" y="386" width="16" height="17"/>
-                                                    <state key="normal" title="Button" image="newGood.jpg">
+                                                    <state key="normal" title="Button" image="icon03.png">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVh-FC-c0Q">
-                                                    <rect key="frame" x="96" y="419" width="37" height="37"/>
-                                                    <state key="normal" image="newGood.jpg">
+                                                    <rect key="frame" x="96" y="416" width="37" height="37"/>
+                                                    <state key="normal" image="btn_star.png">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -509,6 +506,15 @@
                                                     <color key="highlightedColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
+                                                <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZl-hc-icQ">
+                                                    <rect key="frame" x="192" y="416" width="37" height="37"/>
+                                                    <state key="normal" title="Button" image="btn_speaker.png">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="playButton:" destination="YoX-uX-WIW" eventType="touchUpInside" id="jcR-tg-nVe"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.16305233629999999" green="0.19760561800000001" blue="0.30587121210000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -519,8 +525,8 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2C-8b-ZEa">
-                                <rect key="frame" x="107" y="524" width="36" height="36"/>
-                                <state key="normal" title="ke" image="serch.jpg">
+                                <rect key="frame" x="80" y="518" width="80" height="50"/>
+                                <state key="normal" title="ke" image="btn_search.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -528,8 +534,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBq-wI-enn">
-                                <rect key="frame" x="34" y="523" width="35" height="36"/>
-                                <state key="normal" title="Button" image="home.jpg">
+                                <rect key="frame" x="0.0" y="518" width="80" height="50"/>
+                                <state key="normal" title="Button" image="btn_home.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -537,8 +543,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuJ-Jj-Hh6">
-                                <rect key="frame" x="255" y="525" width="33" height="34"/>
-                                <state key="normal" title="Button" image="スクリーンショット 2015-06-24 2.44.21.png">
+                                <rect key="frame" x="240" y="518" width="80" height="50"/>
+                                <state key="normal" title="Button" image="btn_profile.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -546,8 +552,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIE-A1-Nnq">
-                                <rect key="frame" x="179" y="525" width="44" height="35"/>
-                                <state key="normal" title="Button" image="edmImg.jpg">
+                                <rect key="frame" x="160" y="519" width="80" height="50"/>
+                                <state key="normal" title="Button" image="btn_genre.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -604,9 +610,10 @@
                                 <color key="sectionIndexBackgroundColor" red="0.16305233629999999" green="0.19760561800000001" blue="0.30587121210000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="378" id="VV3-vN-hPl" colorLabel="IBBuiltInLabel-Yellow">
-                                        <rect key="frame" x="0.0" y="0.0" width="338" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="324" height="378"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VV3-vN-hPl" id="ygy-ml-356">
+                                            <rect key="frame" x="0.0" y="0.0" width="324" height="377"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DH1-FO-iFL">
@@ -626,7 +633,7 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ko6-ZH-4UN">
                                                     <rect key="frame" x="194" y="319" width="37" height="37"/>
-                                                    <state key="normal" title="Button" image="newSound.jpg">
+                                                    <state key="normal" title="Button" image="btn_speaker.png">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -635,17 +642,17 @@
                                                 </button>
                                                 <button opaque="NO" tag="50" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P31-pO-O60">
                                                     <rect key="frame" x="95" y="319" width="37" height="37"/>
-                                                    <state key="normal" image="newGood.jpg">
+                                                    <state key="normal" image="btn_star.png">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="favouriteButton:" destination="p1f-BM-vHR" eventType="touchUpInside" id="vFD-0o-ZpY"/>
                                                     </connections>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="newSound2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Awt-50-dKu">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon01.png" translatesAutoresizingMaskIntoConstraints="NO" id="Awt-50-dKu">
                                                     <rect key="frame" x="13" y="242" width="23" height="24"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="newSinger.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="KCj-mP-Kmi">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon02.png" translatesAutoresizingMaskIntoConstraints="NO" id="KCj-mP-Kmi">
                                                     <rect key="frame" x="11" y="280" width="23" height="23"/>
                                                 </imageView>
                                             </subviews>
@@ -655,8 +662,8 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NjW-do-G3f">
-                                <rect key="frame" x="106" y="523" width="36" height="36"/>
-                                <state key="normal" title="ke" image="serch.jpg">
+                                <rect key="frame" x="80" y="518" width="80" height="50"/>
+                                <state key="normal" title="ke" image="btn_search.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -664,30 +671,30 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfH-LB-Ju4">
-                                <rect key="frame" x="33" y="522" width="35" height="36"/>
-                                <state key="normal" title="Button" image="home.jpg">
+                                <rect key="frame" x="0.0" y="518" width="80" height="50"/>
+                                <state key="normal" title="Button" image="btn_home.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="mainButton:" destination="p1f-BM-vHR" eventType="touchUpInside" id="UfW-uw-hHt"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28N-JD-K2S">
-                                <rect key="frame" x="254" y="524" width="33" height="34"/>
-                                <state key="normal" title="Button" image="スクリーンショット 2015-06-24 2.44.21.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="userInfoButton:" destination="p1f-BM-vHR" eventType="touchUpInside" id="7lq-Xp-oBc"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pa3-E3-p5O">
-                                <rect key="frame" x="178" y="524" width="44" height="35"/>
-                                <state key="normal" title="Button" image="edmImg.jpg">
+                                <rect key="frame" x="160" y="518" width="80" height="50"/>
+                                <state key="normal" title="Button" image="btn_genre.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="genretButton:" destination="p1f-BM-vHR" eventType="touchUpInside" id="QW8-5l-P0b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28N-JD-K2S">
+                                <rect key="frame" x="240" y="518" width="80" height="50"/>
+                                <state key="normal" title="Button" image="btn_profile.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="userInfoButton:" destination="p1f-BM-vHR" eventType="touchUpInside" id="7lq-Xp-oBc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -749,8 +756,8 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wp7-zm-a1b">
-                                <rect key="frame" x="106" y="524" width="36" height="36"/>
-                                <state key="normal" title="ke" image="serch.jpg">
+                                <rect key="frame" x="80" y="518" width="80" height="50"/>
+                                <state key="normal" title="ke" image="btn_search.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -758,8 +765,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6Z-Ks-pGQ">
-                                <rect key="frame" x="33" y="523" width="35" height="36"/>
-                                <state key="normal" title="Button" image="home.jpg">
+                                <rect key="frame" x="0.0" y="518" width="80" height="50"/>
+                                <state key="normal" title="Button" image="btn_home.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -767,8 +774,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QV3-A0-nOS">
-                                <rect key="frame" x="175" y="525" width="44" height="35"/>
-                                <state key="normal" title="Button" image="edmImg.jpg">
+                                <rect key="frame" x="160" y="518" width="80" height="50"/>
+                                <state key="normal" title="Button" image="btn_genre.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -776,8 +783,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJw-yd-SAk">
-                                <rect key="frame" x="254" y="525" width="33" height="34"/>
-                                <state key="normal" title="Button" image="スクリーンショット 2015-06-24 2.44.21.png">
+                                <rect key="frame" x="240" y="518" width="80" height="50"/>
+                                <state key="normal" title="Button" image="btn_profile.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -789,9 +796,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="88" id="mdm-wC-fGD">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mdm-wC-fGD" id="Njo-Zi-6Iv">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HGA-YZ-knn">
@@ -826,52 +834,6 @@
             </objects>
             <point key="canvasLocation" x="4511" y="725"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="tru-4n-3xd">
-            <objects>
-                <viewController id="VNJ-zC-YmC" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6L6-hQ-PGg"/>
-                        <viewControllerLayoutGuide type="bottom" id="G4O-1t-BDR"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="XLJ-kc-A6k">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cq1-bh-dRo">
-                                <rect key="frame" x="0.0" y="100" width="320" height="568"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qWi-ej-IqS">
-                                    <size key="itemSize" width="80" height="80"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="JH0-oq-QRv">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vm9-vw-App">
-                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
-                                                </imageView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Adm-8R-t1L" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5076" y="791"/>
-        </scene>
         <!--searchGenreViewController-->
         <scene sceneID="ai7-75-fUB">
             <objects>
@@ -889,9 +851,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="88" id="bCE-IH-zMX">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bCE-IH-zMX" id="qvJ-cM-PJn">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nEZ-cI-78G">
@@ -914,12 +877,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWd-rK-5J8">
                                 <rect key="frame" x="97" y="39" width="127" height="31"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4w2-Et-WK3">
                                 <rect key="frame" x="143" y="520" width="35" height="28"/>
                                 <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -927,7 +891,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.16305233629999999" green="0.19760561800000001" blue="0.30587121210000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Zaq-FP-u1G"/>
                     <navigationItem key="navigationItem" id="Tnb-mx-PRv"/>
@@ -1097,8 +1061,8 @@
                                 <rect key="frame" x="7" y="111" width="70" height="70"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBG-yt-fn6">
-                                <rect key="frame" x="106" y="521" width="36" height="36"/>
-                                <state key="normal" title="ke" image="serch.jpg">
+                                <rect key="frame" x="80" y="518" width="80" height="50"/>
+                                <state key="normal" title="ke" image="btn_search.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1106,8 +1070,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4c-rm-R9f">
-                                <rect key="frame" x="33" y="520" width="35" height="36"/>
-                                <state key="normal" title="Button" image="home.jpg">
+                                <rect key="frame" x="0.0" y="518" width="80" height="50"/>
+                                <state key="normal" title="Button" image="btn_home.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1115,19 +1079,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5JT-SX-qin">
-                                <rect key="frame" x="254" y="522" width="33" height="34"/>
-                                <state key="normal" title="Button" image="スクリーンショット 2015-06-24 2.44.21.png">
+                                <rect key="frame" x="240" y="518" width="80" height="50"/>
+                                <state key="normal" title="Button" image="btn_profile.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="userInfoButton:" destination="ft2-kE-jbS" eventType="touchUpInside" id="PJE-et-6JG"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9g-Mr-b1A">
-                                <rect key="frame" x="178" y="522" width="44" height="35"/>
-                                <state key="normal" title="Button" image="edmImg.jpg">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ジャズ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heN-Gp-8Of">
                                 <rect key="frame" x="176" y="181" width="51" height="21"/>
@@ -1135,6 +1093,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9g-Mr-b1A">
+                                <rect key="frame" x="160" y="518" width="80" height="50"/>
+                                <state key="normal" title="Button" image="btn_genre.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1170,27 +1134,29 @@
         <image name="NewArtistImg.jpg" width="86" height="86"/>
         <image name="alternativeImg.jpg" width="86" height="86"/>
         <image name="animeImg.jpg" width="86" height="86"/>
+        <image name="btn_genre.png" width="158" height="98"/>
+        <image name="btn_home.png" width="158" height="98"/>
+        <image name="btn_profile.png" width="158" height="98"/>
+        <image name="btn_search.png" width="158" height="98"/>
+        <image name="btn_speaker.png" width="90" height="90"/>
+        <image name="btn_star.png" width="90" height="90"/>
         <image name="classicImg.jpg" width="86" height="86"/>
         <image name="danceImg.jpg" width="85" height="86"/>
         <image name="edmImg.jpg" width="86" height="86"/>
         <image name="fitnessImg.jpg" width="86" height="86"/>
         <image name="hipHopImg.jpg" width="86" height="86"/>
         <image name="hitSongImg.jpg" width="86" height="86"/>
-        <image name="home.jpg" width="1024" height="1024"/>
+        <image name="icon01.png" width="46" height="46"/>
+        <image name="icon02.png" width="46" height="46"/>
+        <image name="icon03.png" width="46" height="46"/>
         <image name="jPopImg.jpg" width="86" height="86"/>
         <image name="jazzImg.jpg" width="86" height="86"/>
         <image name="newClickButton.jpg" width="1024" height="1024"/>
-        <image name="newGood.jpg" width="35" height="36"/>
-        <image name="newSinger.jpg" width="1024" height="1024"/>
-        <image name="newSound.jpg" width="1024" height="1024"/>
-        <image name="newSound2.jpg" width="1024" height="1024"/>
         <image name="no_image.gif" width="640" height="480"/>
         <image name="popImg.jpg" width="86" height="86"/>
         <image name="rbImg.jpg" width="86" height="86"/>
         <image name="reggaeImg.jpg" width="86" height="86"/>
         <image name="rockImg.jpg" width="86" height="86"/>
-        <image name="serch.jpg" width="1024" height="1024"/>
         <image name="soundTrackImg.jpg" width="60" height="86"/>
-        <image name="スクリーンショット 2015-06-24 2.44.21.png" width="160" height="158"/>
     </resources>
 </document>

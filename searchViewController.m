@@ -18,6 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //　背景画像
+    
+    
     
     // imageをタグで管理、画像をボタンにする
     self.NewArtistImg.userInteractionEnabled = YES;

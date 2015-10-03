@@ -68,6 +68,24 @@
     [self.view addSubview:MPMPlayerController.view];
     
     
+    //　網画像
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:@"scanning-line.png"] drawInRect:self.view.bounds];
+    UIImage *backgroundImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
+    
+    // logo
+    CGRect rect = CGRectMake(10, 250, 300, 50);
+    imageView = [[UIImageView alloc]initWithFrame:rect];
+    
+    // 画像の読み込み
+    imageView.image = [UIImage imageNamed:@"logo.png"];
+    
+    // UIImageViewのインスタンスをビューに追加
+    [self.view addSubview:imageView];
+    
+    
     
     // ボタンの位置、操作関数呼び出し
     [self newMyButton];
@@ -102,6 +120,7 @@
         alertView.tag = 1;
         
         [alertView show];
+        
         
     }
 }
@@ -180,31 +199,6 @@
     [_mySignUpButton addTarget:self action:@selector(tapBtn1:) forControlEvents:UIControlEventTouchUpInside];
     [_mySignInButton addTarget:self action:@selector(tapBtn2:) forControlEvents:UIControlEventTouchUpInside];
     
-    
-    
-    // タイトル位置指定
-    soundUp = [[UILabel alloc] initWithFrame:CGRectMake(80, 430, 200, 50)];
-    // 標準14pt
-    soundUp.font = [UIFont systemFontOfSize:40];
-    
-    // 太字14pt
-    soundUp.font = [UIFont boldSystemFontOfSize:40];
-    
-    // 斜体14pt
-    soundUp.font = [UIFont italicSystemFontOfSize:40];
-    
-    // ラベルのテキストの色を設定
-    soundUp.textColor = [UIColor whiteColor];
-    
-    // ラベルのテキストの影を設定
-    soundUp.shadowColor = [UIColor grayColor];
-    soundUp.shadowOffset = CGSizeMake(1, 1);
-    
-    // タイトル表示
-    soundUp.text = @"soundUp";
-    
-    // 文字色指定
-    //soundUp = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
 
     
     // 画面上にボタンを追加（設置）
