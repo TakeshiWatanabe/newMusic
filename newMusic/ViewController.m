@@ -161,7 +161,7 @@
     
         // signInのアラート
         if (buttonIndex == 0) {
-            NSLog(@"%d",buttonIndex);
+            //NSLog(@"%d",buttonIndex);
             
             // 動画を停止する
             [MPMPlayerController.moviePlayer stop];
